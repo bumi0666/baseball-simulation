@@ -1,0 +1,102 @@
+{
+    "id": 2141,
+    "name": "Taylor",
+    "pos": "1B",
+    "team": "Twins",
+    "backnumber": 141,
+    "captain": false,
+    "bio": {
+        "birth": "1996-08-04",
+        "height": 178,
+        "weight": 97,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 52203,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 70,
+            "pot": 93
+        },
+        "power": {
+            "cur": 54,
+            "pot": 88
+        },
+        "eye": {
+            "cur": 67,
+            "pot": 83
+        },
+        "run": {
+            "cur": 73,
+            "pot": 87
+        },
+        "defense": {
+            "cur": 78,
+            "pot": 86
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 139,
+                "ab": 581,
+                "r": 77,
+                "h": 137,
+                "hr": 16,
+                "rbi": 65,
+                "bb": 70,
+                "so": 122,
+                "sb": 22
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 131,
+                "ab": 509,
+                "r": 61,
+                "h": 154,
+                "hr": 5,
+                "rbi": 51,
+                "bb": 60,
+                "so": 95,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 134,
+                "ab": 593,
+                "r": 52,
+                "h": 128,
+                "hr": 20,
+                "rbi": 130,
+                "bb": 80,
+                "so": 82,
+                "sb": 11
+            }
+        }
+    ]
+}

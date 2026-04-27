@@ -1,0 +1,122 @@
+{
+  "Twins": {
+    "city": "Seoul",
+    "stadium": "Seoul Sports Complex Baseball Stadium",
+    "manager": "Yeom Kyung-yup",
+    "captain": "Oh Ji-hwan",
+    "attendance": 18000,
+    "budget": 50000000,
+    "finance_status": "Rich",
+    "facilities": "World Class",
+    "logo_path": "assets/logos/twins.png",
+    "recent_form": []
+  },
+  "Wizards": {
+    "city": "Suwon",
+    "stadium": "Suwon KT Wiz Park",
+    "manager": "Lee Kang-chul",
+    "captain": "Park Kyung-su",
+    "attendance": 12000,
+    "budget": 35000000,
+    "finance_status": "Stable",
+    "facilities": "Great",
+    "logo_path": "assets/logos/wiz.png",
+    "recent_form": []
+  },
+  "Landers": {
+    "city": "Incheon",
+    "stadium": "Incheon SSG Landers Field",
+    "manager": "Lee Sung-yong",
+    "captain": "Choo Shin-soo",
+    "attendance": 15000,
+    "budget": 45000000,
+    "finance_status": "Rich",
+    "facilities": "World Class",
+    "logo_path": "assets/logos/landers.png",
+    "recent_form": []
+  },
+  "Dinos": {
+    "city": "Changwon",
+    "stadium": "Changwon NC Park",
+    "manager": "Kang In-kwon",
+    "captain": "Son Ah-seop",
+    "attendance": 10000,
+    "budget": 30000000,
+    "finance_status": "Stable",
+    "facilities": "World Class",
+    "logo_path": "assets/logos/dinos.png",
+    "recent_form": []
+  },
+  "Bears": {
+    "city": "Seoul",
+    "stadium": "Seoul Sports Complex Baseball Stadium",
+    "manager": "Lee Seung-yuop",
+    "captain": "Yang Suk-hwan",
+    "attendance": 16000,
+    "budget": 40000000,
+    "finance_status": "Stable",
+    "facilities": "Great",
+    "logo_path": "assets/logos/bears.png",
+    "recent_form": []
+  },
+  "Tigers": {
+    "city": "Gwangju",
+    "stadium": "Gwangju-Kia Champions Field",
+    "manager": "Lee Bum-ho",
+    "captain": "Na Sung-bum",
+    "attendance": 14000,
+    "budget": 42000000,
+    "finance_status": "Rich",
+    "facilities": "Great",
+    "logo_path": "assets/logos/tigers.png",
+    "recent_form": []
+  },
+  "Giants": {
+    "city": "Busan",
+    "stadium": "Sajik Baseball Stadium",
+    "manager": "Kim Tae-hyoung",
+    "captain": "Jeon Jun-woo",
+    "attendance": 17000,
+    "budget": 38000000,
+    "finance_status": "Stable",
+    "facilities": "Average",
+    "logo_path": "assets/logos/giants.png",
+    "recent_form": []
+  },
+  "Lions": {
+    "city": "Daegu",
+    "stadium": "Daegu Samsung Lions Park",
+    "manager": "player",
+    "captain": "vacant",
+    "attendance": 13000,
+    "budget": 37000000,
+    "finance_status": "Stable",
+    "facilities": "Great",
+    "logo_path": "assets/logos/lions.png",
+    "recent_form": []
+  },
+  "Eagles": {
+    "city": "Daejeon",
+    "stadium": "Daejeon Hanwha Life Eagles Park",
+    "manager": "Kim Kyung-moon",
+    "captain": "Chae Eun-seong",
+    "attendance": 11000,
+    "budget": 32000000,
+    "finance_status": "Stable",
+    "facilities": "Average",
+    "logo_path": "assets/logos/eagles.png",
+    "recent_form": []
+  },
+  "Heroes": {
+    "city": "Seoul",
+    "stadium": "Gocheok Sky Dome",
+    "manager": "Hong Won-ki",
+    "captain": "Kim Hye-seong",
+    "attendance": 9000,
+    "budget": 20000000,
+    "finance_status": "Insecure",
+    "facilities": "Great",
+    "logo_path": "assets/logos/heroes.png",
+    "recent_form": []
+  }
+}

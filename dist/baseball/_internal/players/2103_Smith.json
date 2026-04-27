@@ -1,0 +1,102 @@
+{
+    "id": 2103,
+    "name": "Smith",
+    "pos": "DH",
+    "team": "Wizards",
+    "backnumber": 103,
+    "captain": false,
+    "bio": {
+        "birth": "2000-12-10",
+        "height": 183,
+        "weight": 94,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 64973,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 67,
+            "pot": 80
+        },
+        "power": {
+            "cur": 65,
+            "pot": 97
+        },
+        "eye": {
+            "cur": 62,
+            "pot": 86
+        },
+        "run": {
+            "cur": 80,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 67,
+            "pot": 86
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 121,
+                "ab": 497,
+                "r": 96,
+                "h": 155,
+                "hr": 13,
+                "rbi": 62,
+                "bb": 57,
+                "so": 98,
+                "sb": 27
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 137,
+                "ab": 477,
+                "r": 92,
+                "h": 157,
+                "hr": 22,
+                "rbi": 128,
+                "bb": 60,
+                "so": 88,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 140,
+                "ab": 465,
+                "r": 47,
+                "h": 120,
+                "hr": 21,
+                "rbi": 114,
+                "bb": 78,
+                "so": 116,
+                "sb": 1
+            }
+        }
+    ]
+}

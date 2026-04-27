@@ -1,0 +1,120 @@
+{
+    "id": 2183,
+    "name": "Miller",
+    "pos": "P",
+    "team": "Dinos",
+    "backnumber": 183,
+    "captain": false,
+    "bio": {
+        "birth": "1994-05-22",
+        "height": 183,
+        "weight": 80,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 79423,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 94,
+            "pot": 98
+        },
+        "control": {
+            "cur": 86,
+            "pot": 90
+        },
+        "stuff": {
+            "cur": 69,
+            "pot": 87
+        },
+        "stamina": {
+            "cur": 70,
+            "pot": 99
+        },
+        "defense": {
+            "cur": 77,
+            "pot": 80
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 22,
+                "gs": 32,
+                "w": 7,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 188,
+                "ip_outs": 564,
+                "h_allowed": 206,
+                "bb_allowed": 47,
+                "er": 103,
+                "so": 135,
+                "hbp": 3,
+                "era": 4.96,
+                "whip": 1.35
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 22,
+                "gs": 20,
+                "w": 6,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 163,
+                "ip_outs": 489,
+                "h_allowed": 200,
+                "bb_allowed": 44,
+                "er": 79,
+                "so": 137,
+                "hbp": 3,
+                "era": 4.4,
+                "whip": 1.5
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 31,
+                "gs": 28,
+                "w": 4,
+                "l": 12,
+                "sv": 0,
+                "hld": 0,
+                "ip": 193,
+                "ip_outs": 579,
+                "h_allowed": 232,
+                "bb_allowed": 45,
+                "er": 105,
+                "so": 163,
+                "hbp": 8,
+                "era": 4.92,
+                "whip": 1.44
+            }
+        }
+    ]
+}

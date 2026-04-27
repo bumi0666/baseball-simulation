@@ -1,0 +1,102 @@
+{
+    "id": 2093,
+    "name": "Johnson",
+    "pos": "3B",
+    "team": "Wizards",
+    "backnumber": 93,
+    "captain": false,
+    "bio": {
+        "birth": "1995-05-01",
+        "height": 177,
+        "weight": 105,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 62629,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 74,
+            "pot": 81
+        },
+        "power": {
+            "cur": 76,
+            "pot": 82
+        },
+        "eye": {
+            "cur": 86,
+            "pot": 95
+        },
+        "run": {
+            "cur": 61,
+            "pot": 85
+        },
+        "defense": {
+            "cur": 55,
+            "pot": 75
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 127,
+                "ab": 510,
+                "r": 53,
+                "h": 146,
+                "hr": 18,
+                "rbi": 62,
+                "bb": 56,
+                "so": 81,
+                "sb": 0
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 139,
+                "ab": 565,
+                "r": 72,
+                "h": 122,
+                "hr": 10,
+                "rbi": 137,
+                "bb": 61,
+                "so": 81,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 124,
+                "ab": 450,
+                "r": 48,
+                "h": 169,
+                "hr": 21,
+                "rbi": 71,
+                "bb": 51,
+                "so": 103,
+                "sb": 23
+            }
+        }
+    ]
+}

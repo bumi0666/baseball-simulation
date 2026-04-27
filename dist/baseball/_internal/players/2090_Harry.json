@@ -1,0 +1,102 @@
+{
+    "id": 2090,
+    "name": "Harry",
+    "pos": "1B",
+    "team": "Wizards",
+    "backnumber": 90,
+    "captain": false,
+    "bio": {
+        "birth": "2001-04-10",
+        "height": 191,
+        "weight": 93,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 97221,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 72,
+            "pot": 93
+        },
+        "power": {
+            "cur": 86,
+            "pot": 96
+        },
+        "eye": {
+            "cur": 67,
+            "pot": 77
+        },
+        "run": {
+            "cur": 68,
+            "pot": 80
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 91
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 125,
+                "ab": 558,
+                "r": 98,
+                "h": 149,
+                "hr": 25,
+                "rbi": 129,
+                "bb": 74,
+                "so": 127,
+                "sb": 21
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 126,
+                "ab": 553,
+                "r": 40,
+                "h": 132,
+                "hr": 23,
+                "rbi": 134,
+                "bb": 60,
+                "so": 94,
+                "sb": 12
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 130,
+                "ab": 461,
+                "r": 83,
+                "h": 123,
+                "hr": 12,
+                "rbi": 84,
+                "bb": 61,
+                "so": 100,
+                "sb": 21
+            }
+        }
+    ]
+}

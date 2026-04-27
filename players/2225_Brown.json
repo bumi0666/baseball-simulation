@@ -1,0 +1,119 @@
+{
+    "id": 2225,
+    "name": "Brown",
+    "pos": "SS",
+    "team": "Heroes",
+    "backnumber": 225,
+    "captain": false,
+    "market_value": 2788245612,
+    "bio": {
+        "birth": "1995-08-04",
+        "height": 192,
+        "weight": 98,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 54766,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 82,
+            "pot": 93
+        },
+        "power": {
+            "cur": 61,
+            "pot": 94
+        },
+        "eye": {
+            "cur": 76,
+            "pot": 83
+        },
+        "run": {
+            "cur": 81,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 82
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 138,
+                "ab": 530,
+                "r": 70,
+                "h": 134,
+                "2b": 15,
+                "3b": 6,
+                "hr": 23,
+                "rbi": 76,
+                "bb": 68,
+                "so": 89,
+                "sb": 0,
+                "obp": 0.338,
+                "slg": 0.434,
+                "ops": 0.772
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 135,
+                "ab": 559,
+                "r": 85,
+                "h": 149,
+                "2b": 31,
+                "3b": 9,
+                "hr": 13,
+                "rbi": 93,
+                "bb": 61,
+                "so": 94,
+                "sb": 2,
+                "obp": 0.339,
+                "slg": 0.424,
+                "ops": 0.763
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 123,
+                "ab": 585,
+                "r": 69,
+                "h": 131,
+                "2b": 16,
+                "3b": 10,
+                "hr": 17,
+                "rbi": 98,
+                "bb": 45,
+                "so": 99,
+                "sb": 4,
+                "obp": 0.279,
+                "slg": 0.373,
+                "ops": 0.652
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2154,
+    "name": "Garcia",
+    "pos": "RF",
+    "team": "Twins",
+    "backnumber": 154,
+    "captain": false,
+    "bio": {
+        "birth": "1988-01-05",
+        "height": 192,
+        "weight": 79,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 95565,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 68,
+            "pot": 88
+        },
+        "power": {
+            "cur": 70,
+            "pot": 85
+        },
+        "eye": {
+            "cur": 65,
+            "pot": 81
+        },
+        "run": {
+            "cur": 61,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 69,
+            "pot": 81
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 136,
+                "ab": 521,
+                "r": 60,
+                "h": 163,
+                "hr": 25,
+                "rbi": 59,
+                "bb": 63,
+                "so": 87,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 143,
+                "ab": 471,
+                "r": 89,
+                "h": 146,
+                "hr": 12,
+                "rbi": 59,
+                "bb": 59,
+                "so": 78,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 144,
+                "ab": 475,
+                "r": 81,
+                "h": 149,
+                "hr": 15,
+                "rbi": 97,
+                "bb": 64,
+                "so": 129,
+                "sb": 25
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2035,
+    "name": "Davis",
+    "pos": "C",
+    "team": "Tigers",
+    "backnumber": 35,
+    "captain": false,
+    "bio": {
+        "birth": "1989-08-18",
+        "height": 185,
+        "weight": 83,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 65154,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 65,
+            "pot": 93
+        },
+        "power": {
+            "cur": 61,
+            "pot": 78
+        },
+        "eye": {
+            "cur": 82,
+            "pot": 97
+        },
+        "run": {
+            "cur": 84,
+            "pot": 90
+        },
+        "defense": {
+            "cur": 59,
+            "pot": 79
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 121,
+                "ab": 563,
+                "r": 79,
+                "h": 178,
+                "hr": 14,
+                "rbi": 123,
+                "bb": 65,
+                "so": 107,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 140,
+                "ab": 539,
+                "r": 86,
+                "h": 165,
+                "hr": 21,
+                "rbi": 95,
+                "bb": 51,
+                "so": 127,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 140,
+                "ab": 587,
+                "r": 80,
+                "h": 133,
+                "hr": 14,
+                "rbi": 108,
+                "bb": 40,
+                "so": 117,
+                "sb": 28
+            }
+        }
+    ]
+}

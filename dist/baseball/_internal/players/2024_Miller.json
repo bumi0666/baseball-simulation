@@ -1,0 +1,102 @@
+{
+    "id": 2024,
+    "name": "Miller",
+    "pos": "RF",
+    "team": "Lions",
+    "backnumber": 24,
+    "captain": false,
+    "bio": {
+        "birth": "1990-08-10",
+        "height": 192,
+        "weight": 66,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 79171,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 77,
+            "pot": 92
+        },
+        "power": {
+            "cur": 61,
+            "pot": 85
+        },
+        "eye": {
+            "cur": 61,
+            "pot": 80
+        },
+        "run": {
+            "cur": 70,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 56,
+            "pot": 95
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 144,
+                "ab": 486,
+                "r": 58,
+                "h": 144,
+                "hr": 28,
+                "rbi": 118,
+                "bb": 79,
+                "so": 79,
+                "sb": 28
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 138,
+                "ab": 596,
+                "r": 62,
+                "h": 177,
+                "hr": 11,
+                "rbi": 57,
+                "bb": 56,
+                "so": 125,
+                "sb": 19
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 143,
+                "ab": 462,
+                "r": 100,
+                "h": 132,
+                "hr": 17,
+                "rbi": 65,
+                "bb": 69,
+                "so": 113,
+                "sb": 19
+            }
+        }
+    ]
+}

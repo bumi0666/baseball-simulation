@@ -1,0 +1,102 @@
+{
+    "id": 2098,
+    "name": "Rodriguez",
+    "pos": "LF",
+    "team": "Wizards",
+    "backnumber": 98,
+    "captain": false,
+    "bio": {
+        "birth": "2000-07-04",
+        "height": 190,
+        "weight": 71,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 97337,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 72,
+            "pot": 99
+        },
+        "power": {
+            "cur": 55,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 73,
+            "pot": 78
+        },
+        "run": {
+            "cur": 64,
+            "pot": 91
+        },
+        "defense": {
+            "cur": 59,
+            "pot": 77
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 126,
+                "ab": 576,
+                "r": 40,
+                "h": 140,
+                "hr": 24,
+                "rbi": 81,
+                "bb": 59,
+                "so": 110,
+                "sb": 5
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 121,
+                "ab": 460,
+                "r": 65,
+                "h": 129,
+                "hr": 28,
+                "rbi": 90,
+                "bb": 57,
+                "so": 126,
+                "sb": 5
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 134,
+                "ab": 565,
+                "r": 87,
+                "h": 124,
+                "hr": 18,
+                "rbi": 137,
+                "bb": 68,
+                "so": 106,
+                "sb": 13
+            }
+        }
+    ]
+}

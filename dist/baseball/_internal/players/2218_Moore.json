@@ -1,0 +1,102 @@
+{
+    "id": 2218,
+    "name": "Moore",
+    "pos": "C",
+    "team": "Heroes",
+    "backnumber": 218,
+    "captain": false,
+    "bio": {
+        "birth": "1997-06-01",
+        "height": 179,
+        "weight": 89,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 78761,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 81,
+            "pot": 84
+        },
+        "power": {
+            "cur": 58,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 90,
+            "pot": 96
+        },
+        "run": {
+            "cur": 89,
+            "pot": 92
+        },
+        "defense": {
+            "cur": 95,
+            "pot": 98
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 139,
+                "ab": 491,
+                "r": 72,
+                "h": 165,
+                "hr": 19,
+                "rbi": 126,
+                "bb": 49,
+                "so": 63,
+                "sb": 18
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 127,
+                "ab": 504,
+                "r": 51,
+                "h": 142,
+                "hr": 28,
+                "rbi": 99,
+                "bb": 76,
+                "so": 68,
+                "sb": 22
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 123,
+                "ab": 584,
+                "r": 74,
+                "h": 135,
+                "hr": 10,
+                "rbi": 94,
+                "bb": 74,
+                "so": 62,
+                "sb": 22
+            }
+        }
+    ]
+}

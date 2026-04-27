@@ -1,0 +1,102 @@
+{
+    "id": 2104,
+    "name": "Martinez",
+    "pos": "DH",
+    "team": "Wizards",
+    "backnumber": 104,
+    "captain": false,
+    "bio": {
+        "birth": "1988-08-24",
+        "height": 179,
+        "weight": 91,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 95038,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 63,
+            "pot": 80
+        },
+        "power": {
+            "cur": 59,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 65,
+            "pot": 99
+        },
+        "run": {
+            "cur": 74,
+            "pot": 83
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 92
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 143,
+                "ab": 584,
+                "r": 50,
+                "h": 154,
+                "hr": 21,
+                "rbi": 126,
+                "bb": 57,
+                "so": 72,
+                "sb": 24
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 138,
+                "ab": 531,
+                "r": 67,
+                "h": 133,
+                "hr": 17,
+                "rbi": 64,
+                "bb": 76,
+                "so": 96,
+                "sb": 27
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 133,
+                "ab": 498,
+                "r": 66,
+                "h": 151,
+                "hr": 6,
+                "rbi": 54,
+                "bb": 61,
+                "so": 126,
+                "sb": 18
+            }
+        }
+    ]
+}

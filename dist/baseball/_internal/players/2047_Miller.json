@@ -1,0 +1,102 @@
+{
+    "id": 2047,
+    "name": "Miller",
+    "pos": "CF",
+    "team": "Tigers",
+    "backnumber": 47,
+    "captain": false,
+    "bio": {
+        "birth": "1990-11-25",
+        "height": 172,
+        "weight": 75,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 86029,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 76,
+            "pot": 98
+        },
+        "power": {
+            "cur": 87,
+            "pot": 90
+        },
+        "eye": {
+            "cur": 79,
+            "pot": 86
+        },
+        "run": {
+            "cur": 70,
+            "pot": 80
+        },
+        "defense": {
+            "cur": 71,
+            "pot": 84
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 123,
+                "ab": 552,
+                "r": 94,
+                "h": 149,
+                "hr": 15,
+                "rbi": 139,
+                "bb": 74,
+                "so": 90,
+                "sb": 10
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 139,
+                "ab": 508,
+                "r": 50,
+                "h": 131,
+                "hr": 7,
+                "rbi": 138,
+                "bb": 43,
+                "so": 77,
+                "sb": 20
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 127,
+                "ab": 457,
+                "r": 63,
+                "h": 122,
+                "hr": 20,
+                "rbi": 131,
+                "bb": 59,
+                "so": 105,
+                "sb": 18
+            }
+        }
+    ]
+}

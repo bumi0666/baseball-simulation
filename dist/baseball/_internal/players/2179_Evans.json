@@ -1,0 +1,102 @@
+{
+    "id": 2179,
+    "name": "Evans",
+    "pos": "RF",
+    "team": "Landers",
+    "backnumber": 179,
+    "captain": false,
+    "bio": {
+        "birth": "1988-01-05",
+        "height": 180,
+        "weight": 103,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 58716,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 75,
+            "pot": 95
+        },
+        "power": {
+            "cur": 77,
+            "pot": 80
+        },
+        "eye": {
+            "cur": 74,
+            "pot": 75
+        },
+        "run": {
+            "cur": 78,
+            "pot": 99
+        },
+        "defense": {
+            "cur": 80,
+            "pot": 90
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 135,
+                "ab": 579,
+                "r": 57,
+                "h": 152,
+                "hr": 21,
+                "rbi": 111,
+                "bb": 51,
+                "so": 83,
+                "sb": 20
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 141,
+                "ab": 541,
+                "r": 79,
+                "h": 147,
+                "hr": 12,
+                "rbi": 51,
+                "bb": 58,
+                "so": 119,
+                "sb": 19
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 121,
+                "ab": 543,
+                "r": 56,
+                "h": 136,
+                "hr": 10,
+                "rbi": 63,
+                "bb": 52,
+                "so": 100,
+                "sb": 25
+            }
+        }
+    ]
+}

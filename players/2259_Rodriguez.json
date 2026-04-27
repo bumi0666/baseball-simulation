@@ -1,0 +1,119 @@
+{
+    "id": 2259,
+    "name": "Rodriguez",
+    "pos": "DH",
+    "team": "Giants",
+    "backnumber": 259,
+    "captain": false,
+    "market_value": 1092980426,
+    "bio": {
+        "birth": "1997-09-08",
+        "height": 182,
+        "weight": 91,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 78781,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 62,
+            "pot": 98
+        },
+        "power": {
+            "cur": 76,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 84,
+            "pot": 95
+        },
+        "run": {
+            "cur": 82,
+            "pot": 92
+        },
+        "defense": {
+            "cur": 58,
+            "pot": 75
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 122,
+                "ab": 521,
+                "r": 82,
+                "h": 153,
+                "2b": 26,
+                "3b": 2,
+                "hr": 18,
+                "rbi": 136,
+                "bb": 60,
+                "so": 80,
+                "sb": 20,
+                "obp": 0.367,
+                "slg": 0.455,
+                "ops": 0.822
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 141,
+                "ab": 468,
+                "r": 88,
+                "h": 147,
+                "2b": 15,
+                "3b": 2,
+                "hr": 24,
+                "rbi": 113,
+                "bb": 68,
+                "so": 80,
+                "sb": 10,
+                "obp": 0.401,
+                "slg": 0.509,
+                "ops": 0.91
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 143,
+                "ab": 525,
+                "r": 96,
+                "h": 134,
+                "2b": 30,
+                "3b": 2,
+                "hr": 13,
+                "rbi": 128,
+                "bb": 41,
+                "so": 104,
+                "sb": 9,
+                "obp": 0.309,
+                "slg": 0.394,
+                "ops": 0.703
+            }
+        }
+    ]
+}

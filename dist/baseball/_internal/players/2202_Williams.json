@@ -1,0 +1,102 @@
+{
+    "id": 2202,
+    "name": "Williams",
+    "pos": "LF",
+    "team": "Dinos",
+    "backnumber": 202,
+    "captain": false,
+    "bio": {
+        "birth": "1986-10-09",
+        "height": 186,
+        "weight": 65,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 99603,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 67,
+            "pot": 90
+        },
+        "power": {
+            "cur": 75,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 81,
+            "pot": 90
+        },
+        "run": {
+            "cur": 72,
+            "pot": 96
+        },
+        "defense": {
+            "cur": 56,
+            "pot": 80
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 141,
+                "ab": 467,
+                "r": 86,
+                "h": 131,
+                "hr": 17,
+                "rbi": 94,
+                "bb": 47,
+                "so": 108,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 134,
+                "ab": 563,
+                "r": 61,
+                "h": 126,
+                "hr": 21,
+                "rbi": 53,
+                "bb": 72,
+                "so": 122,
+                "sb": 20
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 133,
+                "ab": 451,
+                "r": 76,
+                "h": 124,
+                "hr": 28,
+                "rbi": 92,
+                "bb": 53,
+                "so": 116,
+                "sb": 7
+            }
+        }
+    ]
+}

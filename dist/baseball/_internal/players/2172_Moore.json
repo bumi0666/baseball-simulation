@@ -1,0 +1,102 @@
+{
+    "id": 2172,
+    "name": "Moore",
+    "pos": "3B",
+    "team": "Landers",
+    "backnumber": 172,
+    "captain": false,
+    "bio": {
+        "birth": "2002-01-14",
+        "height": 189,
+        "weight": 81,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 61945,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 68,
+            "pot": 87
+        },
+        "power": {
+            "cur": 61,
+            "pot": 82
+        },
+        "eye": {
+            "cur": 90,
+            "pot": 91
+        },
+        "run": {
+            "cur": 75,
+            "pot": 93
+        },
+        "defense": {
+            "cur": 78,
+            "pot": 82
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 133,
+                "ab": 513,
+                "r": 60,
+                "h": 163,
+                "hr": 19,
+                "rbi": 101,
+                "bb": 60,
+                "so": 129,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 141,
+                "ab": 476,
+                "r": 73,
+                "h": 161,
+                "hr": 23,
+                "rbi": 122,
+                "bb": 55,
+                "so": 104,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 136,
+                "ab": 484,
+                "r": 93,
+                "h": 176,
+                "hr": 13,
+                "rbi": 88,
+                "bb": 80,
+                "so": 119,
+                "sb": 25
+            }
+        }
+    ]
+}

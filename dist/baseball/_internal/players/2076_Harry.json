@@ -1,0 +1,102 @@
+{
+    "id": 2076,
+    "name": "Harry",
+    "pos": "RF",
+    "team": "Bears",
+    "backnumber": 76,
+    "captain": false,
+    "bio": {
+        "birth": "1994-05-21",
+        "height": 195,
+        "weight": 99,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 87792,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 63,
+            "pot": 85
+        },
+        "power": {
+            "cur": 60,
+            "pot": 81
+        },
+        "eye": {
+            "cur": 67,
+            "pot": 75
+        },
+        "run": {
+            "cur": 70,
+            "pot": 97
+        },
+        "defense": {
+            "cur": 68,
+            "pot": 80
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 130,
+                "ab": 600,
+                "r": 55,
+                "h": 165,
+                "hr": 18,
+                "rbi": 111,
+                "bb": 48,
+                "so": 63,
+                "sb": 0
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 133,
+                "ab": 587,
+                "r": 91,
+                "h": 180,
+                "hr": 17,
+                "rbi": 140,
+                "bb": 74,
+                "so": 83,
+                "sb": 12
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 135,
+                "ab": 558,
+                "r": 75,
+                "h": 180,
+                "hr": 22,
+                "rbi": 139,
+                "bb": 65,
+                "so": 102,
+                "sb": 6
+            }
+        }
+    ]
+}

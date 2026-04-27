@@ -1,0 +1,102 @@
+{
+    "id": 2095,
+    "name": "Williams",
+    "pos": "SS",
+    "team": "Wizards",
+    "backnumber": 95,
+    "captain": false,
+    "bio": {
+        "birth": "1988-09-03",
+        "height": 194,
+        "weight": 104,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 50557,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 96,
+            "pot": 96
+        },
+        "power": {
+            "cur": 77,
+            "pot": 96
+        },
+        "eye": {
+            "cur": 69,
+            "pot": 88
+        },
+        "run": {
+            "cur": 76,
+            "pot": 96
+        },
+        "defense": {
+            "cur": 61,
+            "pot": 84
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 124,
+                "ab": 599,
+                "r": 80,
+                "h": 167,
+                "hr": 7,
+                "rbi": 77,
+                "bb": 48,
+                "so": 89,
+                "sb": 9
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 138,
+                "ab": 580,
+                "r": 45,
+                "h": 174,
+                "hr": 15,
+                "rbi": 138,
+                "bb": 42,
+                "so": 76,
+                "sb": 1
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 131,
+                "ab": 466,
+                "r": 71,
+                "h": 156,
+                "hr": 15,
+                "rbi": 132,
+                "bb": 46,
+                "so": 117,
+                "sb": 29
+            }
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+{
+    "id": 2090,
+    "name": "Martinez",
+    "pos": "1B",
+    "team": "Wizards",
+    "backnumber": 90,
+    "captain": false,
+    "market_value": 1311895682,
+    "bio": {
+        "birth": "2002-12-09",
+        "height": 190,
+        "weight": 77,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 74315,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 78,
+            "pot": 98
+        },
+        "power": {
+            "cur": 94,
+            "pot": 95
+        },
+        "eye": {
+            "cur": 86,
+            "pot": 93
+        },
+        "run": {
+            "cur": 75,
+            "pot": 87
+        },
+        "defense": {
+            "cur": 93,
+            "pot": 97
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 130,
+                "ab": 553,
+                "r": 66,
+                "h": 121,
+                "2b": 45,
+                "3b": 5,
+                "hr": 30,
+                "rbi": 101,
+                "bb": 63,
+                "so": 61,
+                "sb": 1,
+                "obp": 0.299,
+                "slg": 0.481,
+                "ops": 0.78
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 120,
+                "ab": 462,
+                "r": 67,
+                "h": 129,
+                "2b": 36,
+                "3b": 1,
+                "hr": 25,
+                "rbi": 55,
+                "bb": 50,
+                "so": 100,
+                "sb": 26,
+                "obp": 0.35,
+                "slg": 0.524,
+                "ops": 0.874
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 143,
+                "ab": 567,
+                "r": 42,
+                "h": 158,
+                "2b": 28,
+                "3b": 12,
+                "hr": 9,
+                "rbi": 131,
+                "bb": 80,
+                "so": 126,
+                "sb": 7,
+                "obp": 0.368,
+                "slg": 0.418,
+                "ops": 0.786
+            }
+        }
+    ]
+}

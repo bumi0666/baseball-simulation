@@ -1,0 +1,102 @@
+{
+    "id": 2026,
+    "name": "Williams",
+    "pos": "DH",
+    "team": "Lions",
+    "backnumber": 26,
+    "captain": false,
+    "bio": {
+        "birth": "2001-04-19",
+        "height": 185,
+        "weight": 74,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 84883,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 68,
+            "pot": 80
+        },
+        "power": {
+            "cur": 56,
+            "pot": 87
+        },
+        "eye": {
+            "cur": 78,
+            "pot": 80
+        },
+        "run": {
+            "cur": 98,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 78,
+            "pot": 91
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 138,
+                "ab": 458,
+                "r": 99,
+                "h": 172,
+                "hr": 24,
+                "rbi": 122,
+                "bb": 73,
+                "so": 80,
+                "sb": 1
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 133,
+                "ab": 589,
+                "r": 75,
+                "h": 177,
+                "hr": 12,
+                "rbi": 94,
+                "bb": 53,
+                "so": 105,
+                "sb": 3
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 134,
+                "ab": 525,
+                "r": 53,
+                "h": 134,
+                "hr": 10,
+                "rbi": 120,
+                "bb": 56,
+                "so": 71,
+                "sb": 22
+            }
+        }
+    ]
+}

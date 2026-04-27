@@ -1,0 +1,102 @@
+{
+    "id": 2144,
+    "name": "Cooper",
+    "pos": "2B",
+    "team": "Twins",
+    "backnumber": 144,
+    "captain": false,
+    "bio": {
+        "birth": "1998-04-17",
+        "height": 194,
+        "weight": 86,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 55700,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 84,
+            "pot": 96
+        },
+        "power": {
+            "cur": 76,
+            "pot": 83
+        },
+        "eye": {
+            "cur": 61,
+            "pot": 79
+        },
+        "run": {
+            "cur": 83,
+            "pot": 91
+        },
+        "defense": {
+            "cur": 79,
+            "pot": 82
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 120,
+                "ab": 575,
+                "r": 60,
+                "h": 123,
+                "hr": 7,
+                "rbi": 123,
+                "bb": 59,
+                "so": 63,
+                "sb": 0
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 121,
+                "ab": 540,
+                "r": 75,
+                "h": 126,
+                "hr": 13,
+                "rbi": 112,
+                "bb": 50,
+                "so": 128,
+                "sb": 7
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 127,
+                "ab": 480,
+                "r": 85,
+                "h": 178,
+                "hr": 28,
+                "rbi": 86,
+                "bb": 64,
+                "so": 112,
+                "sb": 15
+            }
+        }
+    ]
+}

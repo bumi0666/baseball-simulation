@@ -1,0 +1,102 @@
+{
+    "id": 2048,
+    "name": "Martinez",
+    "pos": "CF",
+    "team": "Tigers",
+    "backnumber": 48,
+    "captain": false,
+    "bio": {
+        "birth": "1986-11-14",
+        "height": 195,
+        "weight": 68,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 82886,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 62,
+            "pot": 84
+        },
+        "power": {
+            "cur": 54,
+            "pot": 96
+        },
+        "eye": {
+            "cur": 63,
+            "pot": 84
+        },
+        "run": {
+            "cur": 64,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 60,
+            "pot": 97
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 138,
+                "ab": 495,
+                "r": 51,
+                "h": 135,
+                "hr": 24,
+                "rbi": 92,
+                "bb": 72,
+                "so": 65,
+                "sb": 15
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 122,
+                "ab": 482,
+                "r": 100,
+                "h": 143,
+                "hr": 15,
+                "rbi": 68,
+                "bb": 68,
+                "so": 118,
+                "sb": 15
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 137,
+                "ab": 499,
+                "r": 91,
+                "h": 136,
+                "hr": 24,
+                "rbi": 94,
+                "bb": 72,
+                "so": 128,
+                "sb": 9
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2022,
+    "name": "Rodriguez",
+    "pos": "CF",
+    "team": "Lions",
+    "backnumber": 22,
+    "captain": false,
+    "bio": {
+        "birth": "1990-06-01",
+        "height": 172,
+        "weight": 68,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 73019,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 74,
+            "pot": 99
+        },
+        "power": {
+            "cur": 52,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 68,
+            "pot": 93
+        },
+        "run": {
+            "cur": 70,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 75,
+            "pot": 75
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 142,
+                "ab": 450,
+                "r": 47,
+                "h": 129,
+                "hr": 8,
+                "rbi": 54,
+                "bb": 45,
+                "so": 119,
+                "sb": 23
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 128,
+                "ab": 503,
+                "r": 75,
+                "h": 121,
+                "hr": 7,
+                "rbi": 53,
+                "bb": 46,
+                "so": 68,
+                "sb": 20
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 132,
+                "ab": 499,
+                "r": 92,
+                "h": 133,
+                "hr": 22,
+                "rbi": 69,
+                "bb": 55,
+                "so": 119,
+                "sb": 4
+            }
+        }
+    ]
+}

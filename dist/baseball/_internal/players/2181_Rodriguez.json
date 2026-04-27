@@ -1,0 +1,102 @@
+{
+    "id": 2181,
+    "name": "Rodriguez",
+    "pos": "DH",
+    "team": "Landers",
+    "backnumber": 181,
+    "captain": false,
+    "bio": {
+        "birth": "2004-04-21",
+        "height": 176,
+        "weight": 85,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 87692,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 68,
+            "pot": 98
+        },
+        "power": {
+            "cur": 85,
+            "pot": 93
+        },
+        "eye": {
+            "cur": 71,
+            "pot": 95
+        },
+        "run": {
+            "cur": 85,
+            "pot": 96
+        },
+        "defense": {
+            "cur": 84,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 143,
+                "ab": 557,
+                "r": 41,
+                "h": 165,
+                "hr": 10,
+                "rbi": 97,
+                "bb": 50,
+                "so": 121,
+                "sb": 18
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 132,
+                "ab": 494,
+                "r": 86,
+                "h": 160,
+                "hr": 8,
+                "rbi": 55,
+                "bb": 77,
+                "so": 68,
+                "sb": 4
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 127,
+                "ab": 531,
+                "r": 91,
+                "h": 161,
+                "hr": 28,
+                "rbi": 135,
+                "bb": 67,
+                "so": 87,
+                "sb": 1
+            }
+        }
+    ]
+}

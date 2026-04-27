@@ -1,0 +1,102 @@
+{
+    "id": 2075,
+    "name": "Martinez",
+    "pos": "RF",
+    "team": "Bears",
+    "backnumber": 75,
+    "captain": false,
+    "bio": {
+        "birth": "1985-02-12",
+        "height": 193,
+        "weight": 71,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 58342,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 71,
+            "pot": 80
+        },
+        "power": {
+            "cur": 71,
+            "pot": 90
+        },
+        "eye": {
+            "cur": 77,
+            "pot": 93
+        },
+        "run": {
+            "cur": 61,
+            "pot": 84
+        },
+        "defense": {
+            "cur": 74,
+            "pot": 97
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 126,
+                "ab": 574,
+                "r": 71,
+                "h": 146,
+                "hr": 9,
+                "rbi": 58,
+                "bb": 80,
+                "so": 63,
+                "sb": 11
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 141,
+                "ab": 513,
+                "r": 96,
+                "h": 136,
+                "hr": 6,
+                "rbi": 109,
+                "bb": 76,
+                "so": 82,
+                "sb": 16
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 135,
+                "ab": 583,
+                "r": 53,
+                "h": 129,
+                "hr": 21,
+                "rbi": 95,
+                "bb": 67,
+                "so": 112,
+                "sb": 16
+            }
+        }
+    ]
+}

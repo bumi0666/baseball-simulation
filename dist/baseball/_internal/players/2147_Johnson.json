@@ -1,0 +1,102 @@
+{
+    "id": 2147,
+    "name": "Johnson",
+    "pos": "SS",
+    "team": "Twins",
+    "backnumber": 147,
+    "captain": false,
+    "bio": {
+        "birth": "2000-03-20",
+        "height": 192,
+        "weight": 72,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 76439,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 69,
+            "pot": 81
+        },
+        "power": {
+            "cur": 89,
+            "pot": 99
+        },
+        "eye": {
+            "cur": 78,
+            "pot": 86
+        },
+        "run": {
+            "cur": 82,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 59,
+            "pot": 70
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 126,
+                "ab": 470,
+                "r": 89,
+                "h": 142,
+                "hr": 15,
+                "rbi": 107,
+                "bb": 67,
+                "so": 108,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 133,
+                "ab": 591,
+                "r": 75,
+                "h": 171,
+                "hr": 16,
+                "rbi": 87,
+                "bb": 46,
+                "so": 110,
+                "sb": 7
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 137,
+                "ab": 479,
+                "r": 95,
+                "h": 124,
+                "hr": 29,
+                "rbi": 53,
+                "bb": 70,
+                "so": 116,
+                "sb": 0
+            }
+        }
+    ]
+}

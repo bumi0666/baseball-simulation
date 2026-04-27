@@ -1,0 +1,102 @@
+{
+    "id": 2114,
+    "name": "Martinez",
+    "pos": "C",
+    "team": "Eagles",
+    "backnumber": 114,
+    "captain": false,
+    "bio": {
+        "birth": "1998-06-15",
+        "height": 171,
+        "weight": 67,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 89141,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 71,
+            "pot": 87
+        },
+        "power": {
+            "cur": 66,
+            "pot": 97
+        },
+        "eye": {
+            "cur": 69,
+            "pot": 85
+        },
+        "run": {
+            "cur": 85,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 77,
+            "pot": 80
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 133,
+                "ab": 454,
+                "r": 76,
+                "h": 134,
+                "hr": 30,
+                "rbi": 77,
+                "bb": 61,
+                "so": 102,
+                "sb": 27
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 132,
+                "ab": 528,
+                "r": 94,
+                "h": 137,
+                "hr": 23,
+                "rbi": 107,
+                "bb": 65,
+                "so": 99,
+                "sb": 28
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 121,
+                "ab": 591,
+                "r": 44,
+                "h": 161,
+                "hr": 10,
+                "rbi": 120,
+                "bb": 77,
+                "so": 66,
+                "sb": 23
+            }
+        }
+    ]
+}

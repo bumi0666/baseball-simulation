@@ -1,0 +1,119 @@
+{
+    "id": 2046,
+    "name": "Wilson",
+    "pos": "LF",
+    "team": "Tigers",
+    "backnumber": 46,
+    "captain": false,
+    "market_value": 9613877202,
+    "bio": {
+        "birth": "1988-09-25",
+        "height": 181,
+        "weight": 68,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 55427,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 81,
+            "pot": 96
+        },
+        "power": {
+            "cur": 50,
+            "pot": 85
+        },
+        "eye": {
+            "cur": 87,
+            "pot": 91
+        },
+        "run": {
+            "cur": 89,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 73
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 130,
+                "ab": 531,
+                "r": 97,
+                "h": 138,
+                "2b": 31,
+                "3b": 11,
+                "hr": 8,
+                "rbi": 119,
+                "bb": 43,
+                "so": 119,
+                "sb": 18,
+                "obp": 0.315,
+                "slg": 0.405,
+                "ops": 0.72
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 127,
+                "ab": 513,
+                "r": 70,
+                "h": 122,
+                "2b": 36,
+                "3b": 5,
+                "hr": 24,
+                "rbi": 125,
+                "bb": 69,
+                "so": 98,
+                "sb": 11,
+                "obp": 0.328,
+                "slg": 0.468,
+                "ops": 0.796
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 122,
+                "ab": 516,
+                "r": 80,
+                "h": 141,
+                "2b": 39,
+                "3b": 9,
+                "hr": 6,
+                "rbi": 121,
+                "bb": 66,
+                "so": 111,
+                "sb": 22,
+                "obp": 0.356,
+                "slg": 0.419,
+                "ops": 0.775
+            }
+        }
+    ]
+}

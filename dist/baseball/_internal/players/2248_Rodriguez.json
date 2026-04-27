@@ -1,0 +1,102 @@
+{
+    "id": 2248,
+    "name": "Rodriguez",
+    "pos": "2B",
+    "team": "Giants",
+    "backnumber": 248,
+    "captain": false,
+    "bio": {
+        "birth": "1985-10-09",
+        "height": 177,
+        "weight": 96,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 94045,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 82,
+            "pot": 87
+        },
+        "power": {
+            "cur": 66,
+            "pot": 79
+        },
+        "eye": {
+            "cur": 92,
+            "pot": 96
+        },
+        "run": {
+            "cur": 84,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 79,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 136,
+                "ab": 455,
+                "r": 45,
+                "h": 156,
+                "hr": 10,
+                "rbi": 93,
+                "bb": 57,
+                "so": 90,
+                "sb": 29
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 133,
+                "ab": 454,
+                "r": 96,
+                "h": 126,
+                "hr": 23,
+                "rbi": 104,
+                "bb": 41,
+                "so": 68,
+                "sb": 21
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 127,
+                "ab": 530,
+                "r": 74,
+                "h": 135,
+                "hr": 16,
+                "rbi": 98,
+                "bb": 51,
+                "so": 123,
+                "sb": 21
+            }
+        }
+    ]
+}

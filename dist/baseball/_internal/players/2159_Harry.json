@@ -1,0 +1,120 @@
+{
+    "id": 2159,
+    "name": "Harry",
+    "pos": "P",
+    "team": "Landers",
+    "backnumber": 159,
+    "captain": false,
+    "bio": {
+        "birth": "2004-08-11",
+        "height": 176,
+        "weight": 86,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 65394,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 81,
+            "pot": 87
+        },
+        "control": {
+            "cur": 86,
+            "pot": 86
+        },
+        "stuff": {
+            "cur": 77,
+            "pot": 90
+        },
+        "stamina": {
+            "cur": 66,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 70,
+            "pot": 78
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 26,
+                "gs": 32,
+                "w": 15,
+                "l": 11,
+                "sv": 0,
+                "hld": 0,
+                "ip": 148,
+                "ip_outs": 444,
+                "h_allowed": 182,
+                "bb_allowed": 25,
+                "er": 51,
+                "so": 167,
+                "hbp": 3,
+                "era": 3.12,
+                "whip": 1.4
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 25,
+                "gs": 27,
+                "w": 17,
+                "l": 14,
+                "sv": 0,
+                "hld": 0,
+                "ip": 129,
+                "ip_outs": 387,
+                "h_allowed": 161,
+                "bb_allowed": 19,
+                "er": 60,
+                "so": 202,
+                "hbp": 4,
+                "era": 4.21,
+                "whip": 1.4
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 21,
+                "gs": 28,
+                "w": 15,
+                "l": 11,
+                "sv": 0,
+                "hld": 0,
+                "ip": 174,
+                "ip_outs": 522,
+                "h_allowed": 162,
+                "bb_allowed": 43,
+                "er": 82,
+                "so": 173,
+                "hbp": 10,
+                "era": 4.29,
+                "whip": 1.18
+            }
+        }
+    ]
+}

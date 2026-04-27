@@ -1,0 +1,119 @@
+{
+    "id": 2128,
+    "name": "Jones",
+    "pos": "RF",
+    "team": "Eagles",
+    "backnumber": 128,
+    "captain": false,
+    "market_value": 6350749544,
+    "bio": {
+        "birth": "2004-11-20",
+        "height": 189,
+        "weight": 104,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 70379,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 78,
+            "pot": 84
+        },
+        "power": {
+            "cur": 65,
+            "pot": 98
+        },
+        "eye": {
+            "cur": 86,
+            "pot": 87
+        },
+        "run": {
+            "cur": 65,
+            "pot": 97
+        },
+        "defense": {
+            "cur": 75,
+            "pot": 77
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 131,
+                "ab": 553,
+                "r": 87,
+                "h": 132,
+                "2b": 22,
+                "3b": 11,
+                "hr": 12,
+                "rbi": 65,
+                "bb": 72,
+                "so": 103,
+                "sb": 26,
+                "obp": 0.326,
+                "slg": 0.383,
+                "ops": 0.709
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 142,
+                "ab": 534,
+                "r": 95,
+                "h": 163,
+                "2b": 38,
+                "3b": 1,
+                "hr": 29,
+                "rbi": 53,
+                "bb": 54,
+                "so": 110,
+                "sb": 25,
+                "obp": 0.369,
+                "slg": 0.543,
+                "ops": 0.912
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 124,
+                "ab": 494,
+                "r": 96,
+                "h": 140,
+                "2b": 16,
+                "3b": 4,
+                "hr": 13,
+                "rbi": 134,
+                "bb": 47,
+                "so": 61,
+                "sb": 4,
+                "obp": 0.346,
+                "slg": 0.411,
+                "ops": 0.757
+            }
+        }
+    ]
+}

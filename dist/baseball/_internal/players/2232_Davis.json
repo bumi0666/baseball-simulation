@@ -1,0 +1,102 @@
+{
+    "id": 2232,
+    "name": "Davis",
+    "pos": "RF",
+    "team": "Heroes",
+    "backnumber": 232,
+    "captain": false,
+    "bio": {
+        "birth": "1997-01-06",
+        "height": 171,
+        "weight": 75,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 92953,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 69,
+            "pot": 87
+        },
+        "power": {
+            "cur": 82,
+            "pot": 84
+        },
+        "eye": {
+            "cur": 83,
+            "pot": 94
+        },
+        "run": {
+            "cur": 63,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 72,
+            "pot": 84
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 134,
+                "ab": 584,
+                "r": 96,
+                "h": 125,
+                "hr": 10,
+                "rbi": 123,
+                "bb": 65,
+                "so": 92,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 133,
+                "ab": 559,
+                "r": 100,
+                "h": 130,
+                "hr": 21,
+                "rbi": 69,
+                "bb": 72,
+                "so": 80,
+                "sb": 14
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 128,
+                "ab": 490,
+                "r": 98,
+                "h": 127,
+                "hr": 10,
+                "rbi": 66,
+                "bb": 56,
+                "so": 72,
+                "sb": 18
+            }
+        }
+    ]
+}

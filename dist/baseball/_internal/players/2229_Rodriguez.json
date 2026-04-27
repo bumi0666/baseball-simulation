@@ -1,0 +1,102 @@
+{
+    "id": 2229,
+    "name": "Rodriguez",
+    "pos": "CF",
+    "team": "Heroes",
+    "backnumber": 229,
+    "captain": false,
+    "bio": {
+        "birth": "1987-04-21",
+        "height": 173,
+        "weight": 98,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 59799,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 84,
+            "pot": 95
+        },
+        "power": {
+            "cur": 73,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 90,
+            "pot": 92
+        },
+        "run": {
+            "cur": 60,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 68,
+            "pot": 71
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 135,
+                "ab": 511,
+                "r": 42,
+                "h": 123,
+                "hr": 23,
+                "rbi": 55,
+                "bb": 62,
+                "so": 96,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 143,
+                "ab": 507,
+                "r": 41,
+                "h": 169,
+                "hr": 28,
+                "rbi": 71,
+                "bb": 61,
+                "so": 74,
+                "sb": 12
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 122,
+                "ab": 600,
+                "r": 96,
+                "h": 154,
+                "hr": 25,
+                "rbi": 50,
+                "bb": 75,
+                "so": 100,
+                "sb": 4
+            }
+        }
+    ]
+}

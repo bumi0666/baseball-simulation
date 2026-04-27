@@ -1,0 +1,120 @@
+{
+    "id": 2157,
+    "name": "Smith",
+    "pos": "P",
+    "team": "Landers",
+    "backnumber": 157,
+    "captain": false,
+    "bio": {
+        "birth": "2002-09-11",
+        "height": 173,
+        "weight": 67,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 75615,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 73,
+            "pot": 87
+        },
+        "control": {
+            "cur": 66,
+            "pot": 80
+        },
+        "stuff": {
+            "cur": 94,
+            "pot": 94
+        },
+        "stamina": {
+            "cur": 71,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 60,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 29,
+                "gs": 21,
+                "w": 13,
+                "l": 5,
+                "sv": 0,
+                "hld": 0,
+                "ip": 126,
+                "ip_outs": 378,
+                "h_allowed": 135,
+                "bb_allowed": 19,
+                "er": 77,
+                "so": 176,
+                "hbp": 2,
+                "era": 5.52,
+                "whip": 1.23
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 25,
+                "gs": 26,
+                "w": 4,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 166,
+                "ip_outs": 498,
+                "h_allowed": 189,
+                "bb_allowed": 33,
+                "er": 75,
+                "so": 128,
+                "hbp": 6,
+                "era": 4.1,
+                "whip": 1.34
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 28,
+                "gs": 24,
+                "w": 5,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 162,
+                "ip_outs": 486,
+                "h_allowed": 132,
+                "bb_allowed": 49,
+                "er": 52,
+                "so": 202,
+                "hbp": 2,
+                "era": 2.93,
+                "whip": 1.12
+            }
+        }
+    ]
+}

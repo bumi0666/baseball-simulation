@@ -1,0 +1,102 @@
+{
+    "id": 2191,
+    "name": "Miller",
+    "pos": "C",
+    "team": "Dinos",
+    "backnumber": 191,
+    "captain": false,
+    "bio": {
+        "birth": "1986-08-14",
+        "height": 176,
+        "weight": 71,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 96183,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 62,
+            "pot": 97
+        },
+        "power": {
+            "cur": 68,
+            "pot": 89
+        },
+        "eye": {
+            "cur": 84,
+            "pot": 86
+        },
+        "run": {
+            "cur": 65,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 74,
+            "pot": 98
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 128,
+                "ab": 578,
+                "r": 50,
+                "h": 120,
+                "hr": 18,
+                "rbi": 113,
+                "bb": 43,
+                "so": 87,
+                "sb": 5
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 140,
+                "ab": 530,
+                "r": 93,
+                "h": 129,
+                "hr": 5,
+                "rbi": 103,
+                "bb": 79,
+                "so": 107,
+                "sb": 5
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 126,
+                "ab": 559,
+                "r": 49,
+                "h": 148,
+                "hr": 22,
+                "rbi": 54,
+                "bb": 68,
+                "so": 69,
+                "sb": 0
+            }
+        }
+    ]
+}

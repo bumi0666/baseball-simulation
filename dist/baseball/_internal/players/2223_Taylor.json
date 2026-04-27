@@ -1,0 +1,102 @@
+{
+    "id": 2223,
+    "name": "Taylor",
+    "pos": "3B",
+    "team": "Heroes",
+    "backnumber": 223,
+    "captain": false,
+    "bio": {
+        "birth": "1998-10-18",
+        "height": 190,
+        "weight": 92,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 61842,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 69,
+            "pot": 92
+        },
+        "power": {
+            "cur": 71,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 71,
+            "pot": 77
+        },
+        "run": {
+            "cur": 63,
+            "pot": 87
+        },
+        "defense": {
+            "cur": 76,
+            "pot": 88
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 129,
+                "ab": 502,
+                "r": 93,
+                "h": 144,
+                "hr": 8,
+                "rbi": 54,
+                "bb": 80,
+                "so": 75,
+                "sb": 15
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 139,
+                "ab": 510,
+                "r": 87,
+                "h": 123,
+                "hr": 10,
+                "rbi": 111,
+                "bb": 67,
+                "so": 94,
+                "sb": 22
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 136,
+                "ab": 517,
+                "r": 71,
+                "h": 133,
+                "hr": 10,
+                "rbi": 121,
+                "bb": 52,
+                "so": 112,
+                "sb": 9
+            }
+        }
+    ]
+}

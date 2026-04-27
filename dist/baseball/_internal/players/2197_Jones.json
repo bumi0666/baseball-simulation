@@ -1,0 +1,102 @@
+{
+    "id": 2197,
+    "name": "Jones",
+    "pos": "3B",
+    "team": "Dinos",
+    "backnumber": 197,
+    "captain": false,
+    "bio": {
+        "birth": "1996-07-05",
+        "height": 195,
+        "weight": 85,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 50178,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 84,
+            "pot": 95
+        },
+        "power": {
+            "cur": 62,
+            "pot": 87
+        },
+        "eye": {
+            "cur": 72,
+            "pot": 84
+        },
+        "run": {
+            "cur": 69,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 60,
+            "pot": 70
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 128,
+                "ab": 539,
+                "r": 65,
+                "h": 157,
+                "hr": 26,
+                "rbi": 69,
+                "bb": 59,
+                "so": 112,
+                "sb": 27
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 133,
+                "ab": 470,
+                "r": 88,
+                "h": 174,
+                "hr": 9,
+                "rbi": 102,
+                "bb": 49,
+                "so": 89,
+                "sb": 24
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 131,
+                "ab": 494,
+                "r": 51,
+                "h": 179,
+                "hr": 14,
+                "rbi": 79,
+                "bb": 40,
+                "so": 100,
+                "sb": 20
+            }
+        }
+    ]
+}

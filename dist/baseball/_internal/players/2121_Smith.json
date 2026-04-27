@@ -1,0 +1,102 @@
+{
+    "id": 2121,
+    "name": "Smith",
+    "pos": "SS",
+    "team": "Eagles",
+    "backnumber": 121,
+    "captain": false,
+    "bio": {
+        "birth": "2002-11-14",
+        "height": 179,
+        "weight": 79,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 50397,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 76,
+            "pot": 85
+        },
+        "power": {
+            "cur": 53,
+            "pot": 75
+        },
+        "eye": {
+            "cur": 83,
+            "pot": 94
+        },
+        "run": {
+            "cur": 66,
+            "pot": 97
+        },
+        "defense": {
+            "cur": 64,
+            "pot": 71
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 139,
+                "ab": 588,
+                "r": 75,
+                "h": 125,
+                "hr": 17,
+                "rbi": 99,
+                "bb": 45,
+                "so": 68,
+                "sb": 11
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 121,
+                "ab": 539,
+                "r": 82,
+                "h": 125,
+                "hr": 17,
+                "rbi": 90,
+                "bb": 56,
+                "so": 108,
+                "sb": 9
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 128,
+                "ab": 580,
+                "r": 71,
+                "h": 179,
+                "hr": 21,
+                "rbi": 78,
+                "bb": 46,
+                "so": 72,
+                "sb": 16
+            }
+        }
+    ]
+}

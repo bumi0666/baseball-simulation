@@ -1,0 +1,122 @@
+{
+    "id": 2213,
+    "name": "Wilson",
+    "pos": "P",
+    "team": "Heroes",
+    "backnumber": 213,
+    "captain": false,
+    "market_value": 1217380571,
+    "bio": {
+        "birth": "1985-06-27",
+        "height": 185,
+        "weight": 85,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 54391,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 71,
+            "pot": 95
+        },
+        "control": {
+            "cur": 71,
+            "pot": 82
+        },
+        "stuff": {
+            "cur": 88,
+            "pot": 89
+        },
+        "stamina": {
+            "cur": 82,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 72,
+            "pot": 87
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 32,
+                "gs": 22,
+                "w": 14,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 131,
+                "ip_outs": 393,
+                "h_allowed": 111,
+                "bb_allowed": 40,
+                "er": 50,
+                "so": 171,
+                "hbp": 5,
+                "era": 3.5,
+                "whip": 1.16
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 20,
+                "gs": 30,
+                "w": 12,
+                "l": 14,
+                "sv": 0,
+                "hld": 0,
+                "ip": 200,
+                "ip_outs": 600,
+                "h_allowed": 201,
+                "bb_allowed": 75,
+                "er": 88,
+                "so": 116,
+                "hbp": 3,
+                "era": 3.99,
+                "whip": 1.38
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 23,
+                "gs": 30,
+                "w": 4,
+                "l": 15,
+                "sv": 0,
+                "hld": 0,
+                "ip": 121,
+                "ip_outs": 363,
+                "h_allowed": 134,
+                "bb_allowed": 31,
+                "er": 54,
+                "so": 198,
+                "hbp": 6,
+                "era": 4.06,
+                "whip": 1.37
+            }
+        }
+    ]
+}

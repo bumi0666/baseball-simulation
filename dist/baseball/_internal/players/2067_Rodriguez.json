@@ -1,0 +1,102 @@
+{
+    "id": 2067,
+    "name": "Rodriguez",
+    "pos": "3B",
+    "team": "Bears",
+    "backnumber": 67,
+    "captain": false,
+    "bio": {
+        "birth": "2001-07-04",
+        "height": 178,
+        "weight": 82,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 85655,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 81,
+            "pot": 81
+        },
+        "power": {
+            "cur": 89,
+            "pot": 98
+        },
+        "eye": {
+            "cur": 67,
+            "pot": 80
+        },
+        "run": {
+            "cur": 86,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 85,
+            "pot": 92
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 132,
+                "ab": 501,
+                "r": 80,
+                "h": 145,
+                "hr": 18,
+                "rbi": 58,
+                "bb": 73,
+                "so": 85,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 137,
+                "ab": 549,
+                "r": 77,
+                "h": 167,
+                "hr": 17,
+                "rbi": 131,
+                "bb": 51,
+                "so": 122,
+                "sb": 21
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 134,
+                "ab": 532,
+                "r": 86,
+                "h": 121,
+                "hr": 14,
+                "rbi": 64,
+                "bb": 40,
+                "so": 68,
+                "sb": 18
+            }
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+
+from scenes.base_scene import Scene
+from models.staff import Staff
+from ui.button import Button
+from config import *
+from ui.layout import get_common_buttons, draw_common_ui 
+import pygame
+
+class StaffScene(Scene):
+    def __init__(self, state):
+        self.state = state
+        self.FONT = pygame.font.SysFont("malgungothic", 25)
+        self.SMALL_FONT = pygame.font.SysFont("malgungothic", 18)
+        
+        # 1. 스태프 보직 슬롯 정의
+        self.roles = ["HD", "HC", "PC", "DC"]
+        self.slot_buttons = []
+        self.setup_slots()
+        
+        # 2. 보유 스태프 데이터 (없을 경우 초기화)
+        if not hasattr(self.state, 'owned_staff'):
+            self.state.owned_staff = [
+                Staff("kim", "HD", 4, "Training ++  Fatigue --  Recovery ++",{}),
+                Staff("lee", "HC", 3, "Contact ++  Eye ++", {"contact": 1, "eye": 1}),
+                Staff("choi", "HC", 3, "Power ++ Eye ++", {"power": 1, "eye": 1}),
+                Staff("park", "PC", 5, "Velocity ++  Stuff ++", {"velocity": 1, "stuff": 1}),
+                Staff("son", "PC", 5, "Control ++  Stuff ++", {"control": 1, "stuff": 1}),
+                #Staff("choi", "BC", 2, "Bullpen ++"),
+                Staff("jung", "DC", 3, "Defense ++",{"defense": 1})
+            ]
+        
+        # 3. 공통 버튼 (뒤로가기 등)
+        self.common_buttons = get_common_buttons(self)
+        
+        self.selected_role = "HD"
+        self.staff_cards = []
+        self.setup_staff_cards()
+
+    def setup_slots(self):
+        # 왼쪽 공통 버튼들을 피해서 300px 지점부터 슬롯 시작
+        start_x = 300 
+        for i, role in enumerate(self.roles):
+            btn = Button((start_x, 100 + i*110, 180, 90), role, lambda r=role: self.select_role(r))
+            self.slot_buttons.append(btn)
+
+    def select_role(self, role):
+        self.selected_role = role
+        print(f"Selected Role: {role}")
+
+    def setup_staff_cards(self):
+        self.staff_cards = []
+        # 슬롯(300~480) 뒤인 500px 지점부터 리스트 시작
+        start_x, start_y = 500, 70
+        for i, s in enumerate(self.state.owned_staff):
+            # 우측 남은 공간에 맞춰 너비 조정 (1280 - 500 - 여백)
+            btn = Button((start_x, start_y + i*90, 750, 80), "", lambda staff=s: self.assign_staff(staff))
+            self.staff_cards.append((btn, s))
+
+    def assign_staff(self, staff):
+        """스태프를 슬롯에 배정"""
+        # 보직 일치 여부 확인
+        if staff.role == self.selected_role:
+            self.state.staff_slots[self.selected_role] = staff
+            print(f"{staff.name} 배정 완료!")
+        else:
+            print(f"보직 불일치: {staff.name}은 {staff.role} 전용입니다.")
+
+    def update(self, events):
+        mouse_pos = pygame.mouse.get_pos()
+        
+        # 모든 버튼 업데이트 (슬롯 + 스태프 카드 + 공통 버튼)
+        all_btns = self.slot_buttons + [c[0] for c in self.staff_cards] + self.common_buttons
+        for btn in all_btns:
+            btn.update_hover(mouse_pos)
+
+        for e in events:
+            if e.type == pygame.MOUSEBUTTONDOWN:
+                if e.button == 1:
+                    for btn in all_btns:
+                        res = btn.handle_event(e)
+                        if res: return res
+        return None
+
+    def draw(self, screen):
+        screen.fill((20, 20, 20))
+        
+        # 1. 공통 UI 먼저 그리기 (바닥에 깔림)
+        draw_common_ui(screen, self.state, FONT)
+        
+        # 2. 우측 배경 판넬 좌표 수정
+        # 버튼 시작이 130이므로 배경은 120부터 시작하도록 Y축 수정
+        panel_rect = pygame.Rect(490, 60, 770, 640)
+        pygame.draw.rect(screen, (45, 45, 50), panel_rect, border_radius=10)
+        
+        # --- 좌측: 보직 슬롯 (수정된 좌표로 그려짐) ---
+        for btn in self.slot_buttons:
+            is_active = (btn.text == self.selected_role)
+            if is_active:
+                btn.color = (0, 180, 255)  # 활성화된 색상
+                # 선택 강조 외곽선 (사각형을 버튼보다 살짝 크게)
+                pygame.draw.rect(screen, (255, 255, 255), btn.rect.inflate(6, 6), 2, border_radius=5)
+            else:
+                btn.color = (60, 60, 65)  # 비활성 색상
+            btn.draw(screen)
+            
+            assigned = self.state.staff_slots.get(btn.text)
+            if assigned:
+                name_txt = self.SMALL_FONT.render(assigned.name, True, (255, 255, 255))
+                star_txt = self.SMALL_FONT.render(assigned.get_star_text(), True, (255, 215, 0))
+                screen.blit(name_txt, (btn.rect.x + 10, btn.rect.y + 40))
+                screen.blit(star_txt, (btn.rect.x + 10, btn.rect.y + 65))
+
+        # --- 우측: 보유 스태프 카드 리스트 ---
+        for btn, staff in self.staff_cards:
+            btn.draw(screen)
+            name_surf = self.FONT.render(f"[{staff.role}] {staff.name}", True, (255, 255, 255))
+            star_surf = self.FONT.render(staff.get_star_text(), True, (255, 215, 0))
+            desc_surf = self.SMALL_FONT.render(staff.effect_desc, True, (180, 180, 180))
+            
+            screen.blit(name_surf, (btn.rect.x + 20, btn.rect.y + 10))
+            screen.blit(star_surf, (btn.rect.x + 20, btn.rect.y + 40))
+            screen.blit(desc_surf, (btn.rect.x + 300, btn.rect.y + 30))
+
+        # 3. 공통 버튼(뒤로가기 등)은 가장 마지막에 그려서 클릭 우선순위 확보
+        for btn in self.common_buttons:
+            btn.draw(screen)
+            
+    def back(self):
+        return "hub"

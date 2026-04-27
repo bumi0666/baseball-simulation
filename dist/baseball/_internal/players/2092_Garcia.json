@@ -1,0 +1,102 @@
+{
+    "id": 2092,
+    "name": "Garcia",
+    "pos": "2B",
+    "team": "Wizards",
+    "backnumber": 92,
+    "captain": false,
+    "bio": {
+        "birth": "1988-03-21",
+        "height": 186,
+        "weight": 73,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 59228,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 63,
+            "pot": 93
+        },
+        "power": {
+            "cur": 80,
+            "pot": 82
+        },
+        "eye": {
+            "cur": 73,
+            "pot": 75
+        },
+        "run": {
+            "cur": 76,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 56,
+            "pot": 88
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 140,
+                "ab": 489,
+                "r": 70,
+                "h": 151,
+                "hr": 26,
+                "rbi": 86,
+                "bb": 75,
+                "so": 127,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 125,
+                "ab": 496,
+                "r": 53,
+                "h": 180,
+                "hr": 9,
+                "rbi": 68,
+                "bb": 67,
+                "so": 101,
+                "sb": 7
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 139,
+                "ab": 455,
+                "r": 40,
+                "h": 152,
+                "hr": 5,
+                "rbi": 112,
+                "bb": 80,
+                "so": 108,
+                "sb": 7
+            }
+        }
+    ]
+}

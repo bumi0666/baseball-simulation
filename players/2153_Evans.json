@@ -1,0 +1,119 @@
+{
+    "id": 2153,
+    "name": "Evans",
+    "pos": "RF",
+    "team": "Twins",
+    "backnumber": 153,
+    "captain": false,
+    "market_value": 2915929085,
+    "bio": {
+        "birth": "1998-09-03",
+        "height": 194,
+        "weight": 101,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 77694,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 78,
+            "pot": 84
+        },
+        "power": {
+            "cur": 54,
+            "pot": 99
+        },
+        "eye": {
+            "cur": 61,
+            "pot": 97
+        },
+        "run": {
+            "cur": 72,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 68,
+            "pot": 91
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 124,
+                "ab": 584,
+                "r": 40,
+                "h": 124,
+                "2b": 34,
+                "3b": 12,
+                "hr": 10,
+                "rbi": 122,
+                "bb": 74,
+                "so": 87,
+                "sb": 11,
+                "obp": 0.301,
+                "slg": 0.363,
+                "ops": 0.664
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 135,
+                "ab": 581,
+                "r": 58,
+                "h": 140,
+                "2b": 31,
+                "3b": 4,
+                "hr": 15,
+                "rbi": 111,
+                "bb": 68,
+                "so": 73,
+                "sb": 29,
+                "obp": 0.32,
+                "slg": 0.386,
+                "ops": 0.706
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 124,
+                "ab": 597,
+                "r": 59,
+                "h": 175,
+                "2b": 29,
+                "3b": 1,
+                "hr": 16,
+                "rbi": 62,
+                "bb": 76,
+                "so": 60,
+                "sb": 30,
+                "obp": 0.373,
+                "slg": 0.425,
+                "ops": 0.798
+            }
+        }
+    ]
+}

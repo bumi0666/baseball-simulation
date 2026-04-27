@@ -1,0 +1,102 @@
+{
+    "id": 2175,
+    "name": "Thomas",
+    "pos": "LF",
+    "team": "Landers",
+    "backnumber": 175,
+    "captain": false,
+    "bio": {
+        "birth": "2005-04-28",
+        "height": 177,
+        "weight": 74,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 74315,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 74,
+            "pot": 80
+        },
+        "power": {
+            "cur": 50,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 62,
+            "pot": 81
+        },
+        "run": {
+            "cur": 88,
+            "pot": 97
+        },
+        "defense": {
+            "cur": 66,
+            "pot": 95
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 135,
+                "ab": 503,
+                "r": 45,
+                "h": 154,
+                "hr": 27,
+                "rbi": 127,
+                "bb": 40,
+                "so": 103,
+                "sb": 10
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 122,
+                "ab": 591,
+                "r": 60,
+                "h": 152,
+                "hr": 29,
+                "rbi": 85,
+                "bb": 77,
+                "so": 123,
+                "sb": 29
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 136,
+                "ab": 481,
+                "r": 78,
+                "h": 170,
+                "hr": 21,
+                "rbi": 71,
+                "bb": 42,
+                "so": 117,
+                "sb": 17
+            }
+        }
+    ]
+}

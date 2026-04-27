@@ -1,0 +1,120 @@
+{
+    "id": 2085,
+    "name": "Thomas",
+    "pos": "P",
+    "team": "Wizards",
+    "backnumber": 85,
+    "captain": false,
+    "bio": {
+        "birth": "2003-07-26",
+        "height": 194,
+        "weight": 80,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 89228,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 81,
+            "pot": 88
+        },
+        "control": {
+            "cur": 79,
+            "pot": 84
+        },
+        "stuff": {
+            "cur": 78,
+            "pot": 80
+        },
+        "stamina": {
+            "cur": 72,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 69,
+            "pot": 81
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 23,
+                "gs": 32,
+                "w": 12,
+                "l": 13,
+                "sv": 0,
+                "hld": 0,
+                "ip": 168,
+                "ip_outs": 504,
+                "h_allowed": 173,
+                "bb_allowed": 21,
+                "er": 75,
+                "so": 156,
+                "hbp": 5,
+                "era": 4.03,
+                "whip": 1.16
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 28,
+                "gs": 24,
+                "w": 8,
+                "l": 14,
+                "sv": 0,
+                "hld": 0,
+                "ip": 144,
+                "ip_outs": 432,
+                "h_allowed": 136,
+                "bb_allowed": 52,
+                "er": 86,
+                "so": 126,
+                "hbp": 2,
+                "era": 5.39,
+                "whip": 1.31
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 23,
+                "gs": 29,
+                "w": 18,
+                "l": 9,
+                "sv": 0,
+                "hld": 0,
+                "ip": 165,
+                "ip_outs": 495,
+                "h_allowed": 160,
+                "bb_allowed": 51,
+                "er": 57,
+                "so": 197,
+                "hbp": 6,
+                "era": 3.14,
+                "whip": 1.28
+            }
+        }
+    ]
+}

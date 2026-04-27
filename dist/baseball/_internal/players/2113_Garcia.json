@@ -1,0 +1,102 @@
+{
+    "id": 2113,
+    "name": "Garcia",
+    "pos": "C",
+    "team": "Eagles",
+    "backnumber": 113,
+    "captain": false,
+    "bio": {
+        "birth": "1991-09-14",
+        "height": 191,
+        "weight": 94,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 63258,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 67,
+            "pot": 92
+        },
+        "power": {
+            "cur": 55,
+            "pot": 75
+        },
+        "eye": {
+            "cur": 60,
+            "pot": 90
+        },
+        "run": {
+            "cur": 73,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 64,
+            "pot": 71
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 134,
+                "ab": 513,
+                "r": 93,
+                "h": 127,
+                "hr": 29,
+                "rbi": 119,
+                "bb": 75,
+                "so": 123,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 131,
+                "ab": 566,
+                "r": 45,
+                "h": 147,
+                "hr": 10,
+                "rbi": 58,
+                "bb": 54,
+                "so": 63,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 130,
+                "ab": 585,
+                "r": 68,
+                "h": 175,
+                "hr": 18,
+                "rbi": 69,
+                "bb": 53,
+                "so": 62,
+                "sb": 22
+            }
+        }
+    ]
+}

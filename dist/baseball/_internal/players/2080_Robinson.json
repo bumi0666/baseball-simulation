@@ -1,0 +1,120 @@
+{
+    "id": 2080,
+    "name": "Robinson",
+    "pos": "P",
+    "team": "Wizards",
+    "backnumber": 80,
+    "captain": false,
+    "bio": {
+        "birth": "2000-01-16",
+        "height": 192,
+        "weight": 105,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 71785,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 81,
+            "pot": 89
+        },
+        "control": {
+            "cur": 83,
+            "pot": 92
+        },
+        "stuff": {
+            "cur": 57,
+            "pot": 95
+        },
+        "stamina": {
+            "cur": 85,
+            "pot": 94
+        },
+        "defense": {
+            "cur": 90,
+            "pot": 90
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 31,
+                "gs": 30,
+                "w": 19,
+                "l": 11,
+                "sv": 0,
+                "hld": 0,
+                "ip": 178,
+                "ip_outs": 534,
+                "h_allowed": 208,
+                "bb_allowed": 37,
+                "er": 66,
+                "so": 136,
+                "hbp": 6,
+                "era": 3.37,
+                "whip": 1.38
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 20,
+                "gs": 26,
+                "w": 4,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 188,
+                "ip_outs": 564,
+                "h_allowed": 209,
+                "bb_allowed": 57,
+                "er": 124,
+                "so": 142,
+                "hbp": 7,
+                "era": 5.94,
+                "whip": 1.42
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 26,
+                "gs": 26,
+                "w": 19,
+                "l": 9,
+                "sv": 0,
+                "hld": 0,
+                "ip": 141,
+                "ip_outs": 423,
+                "h_allowed": 132,
+                "bb_allowed": 28,
+                "er": 72,
+                "so": 171,
+                "hbp": 9,
+                "era": 4.62,
+                "whip": 1.14
+            }
+        }
+    ]
+}

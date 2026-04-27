@@ -1,0 +1,102 @@
+{
+    "id": 2096,
+    "name": "Evans",
+    "pos": "SS",
+    "team": "Wizards",
+    "backnumber": 96,
+    "captain": false,
+    "bio": {
+        "birth": "2000-04-19",
+        "height": 179,
+        "weight": 74,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 56854,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 82,
+            "pot": 88
+        },
+        "power": {
+            "cur": 77,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 62,
+            "pot": 77
+        },
+        "run": {
+            "cur": 69,
+            "pot": 81
+        },
+        "defense": {
+            "cur": 75,
+            "pot": 76
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 125,
+                "ab": 462,
+                "r": 66,
+                "h": 142,
+                "hr": 10,
+                "rbi": 81,
+                "bb": 58,
+                "so": 61,
+                "sb": 12
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 139,
+                "ab": 554,
+                "r": 93,
+                "h": 155,
+                "hr": 13,
+                "rbi": 72,
+                "bb": 71,
+                "so": 116,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 131,
+                "ab": 523,
+                "r": 69,
+                "h": 165,
+                "hr": 18,
+                "rbi": 127,
+                "bb": 60,
+                "so": 79,
+                "sb": 5
+            }
+        }
+    ]
+}

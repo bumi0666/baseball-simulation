@@ -1,0 +1,102 @@
+{
+    "id": 2244,
+    "name": "Jones",
+    "pos": "C",
+    "team": "Giants",
+    "backnumber": 244,
+    "captain": false,
+    "bio": {
+        "birth": "2001-12-24",
+        "height": 194,
+        "weight": 102,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 50535,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 62,
+            "pot": 88
+        },
+        "power": {
+            "cur": 75,
+            "pot": 94
+        },
+        "eye": {
+            "cur": 74,
+            "pot": 85
+        },
+        "run": {
+            "cur": 85,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 80,
+            "pot": 96
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 125,
+                "ab": 574,
+                "r": 56,
+                "h": 128,
+                "hr": 8,
+                "rbi": 124,
+                "bb": 44,
+                "so": 70,
+                "sb": 19
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 123,
+                "ab": 472,
+                "r": 43,
+                "h": 137,
+                "hr": 26,
+                "rbi": 86,
+                "bb": 72,
+                "so": 129,
+                "sb": 19
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 124,
+                "ab": 564,
+                "r": 66,
+                "h": 132,
+                "hr": 10,
+                "rbi": 54,
+                "bb": 76,
+                "so": 123,
+                "sb": 15
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2019,
+    "name": "Brown",
+    "pos": "LF",
+    "team": "Lions",
+    "backnumber": 19,
+    "captain": false,
+    "bio": {
+        "birth": "1987-08-19",
+        "height": 194,
+        "weight": 104,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 58634,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 84,
+            "pot": 87
+        },
+        "power": {
+            "cur": 84,
+            "pot": 88
+        },
+        "eye": {
+            "cur": 84,
+            "pot": 86
+        },
+        "run": {
+            "cur": 84,
+            "pot": 97
+        },
+        "defense": {
+            "cur": 93,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 129,
+                "ab": 455,
+                "r": 62,
+                "h": 143,
+                "hr": 10,
+                "rbi": 128,
+                "bb": 45,
+                "so": 70,
+                "sb": 18
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 121,
+                "ab": 511,
+                "r": 100,
+                "h": 175,
+                "hr": 13,
+                "rbi": 111,
+                "bb": 80,
+                "so": 64,
+                "sb": 3
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 127,
+                "ab": 600,
+                "r": 89,
+                "h": 160,
+                "hr": 10,
+                "rbi": 133,
+                "bb": 77,
+                "so": 76,
+                "sb": 8
+            }
+        }
+    ]
+}

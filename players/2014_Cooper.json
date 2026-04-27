@@ -1,0 +1,119 @@
+{
+    "id": 2014,
+    "name": "Cooper",
+    "pos": "2B",
+    "team": "Lions",
+    "backnumber": 14,
+    "captain": false,
+    "market_value": 5121441066,
+    "bio": {
+        "birth": "1986-12-02",
+        "height": 189,
+        "weight": 91,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 52465,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 83,
+            "pot": 96
+        },
+        "power": {
+            "cur": 52,
+            "pot": 78
+        },
+        "eye": {
+            "cur": 74,
+            "pot": 92
+        },
+        "run": {
+            "cur": 60,
+            "pot": 84
+        },
+        "defense": {
+            "cur": 95,
+            "pot": 99
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 135,
+                "ab": 474,
+                "r": 46,
+                "h": 163,
+                "2b": 17,
+                "3b": 10,
+                "hr": 30,
+                "rbi": 131,
+                "bb": 54,
+                "so": 60,
+                "sb": 22,
+                "obp": 0.411,
+                "slg": 0.612,
+                "ops": 1.023
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 143,
+                "ab": 579,
+                "r": 54,
+                "h": 126,
+                "2b": 16,
+                "3b": 10,
+                "hr": 9,
+                "rbi": 76,
+                "bb": 47,
+                "so": 101,
+                "sb": 5,
+                "obp": 0.276,
+                "slg": 0.326,
+                "ops": 0.602
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 139,
+                "ab": 475,
+                "r": 58,
+                "h": 180,
+                "2b": 28,
+                "3b": 6,
+                "hr": 20,
+                "rbi": 50,
+                "bb": 67,
+                "so": 67,
+                "sb": 20,
+                "obp": 0.456,
+                "slg": 0.589,
+                "ops": 1.045
+            }
+        }
+    ]
+}

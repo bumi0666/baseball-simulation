@@ -1,0 +1,122 @@
+{
+    "id": 2033,
+    "name": "Jones",
+    "pos": "P",
+    "team": "Tigers",
+    "backnumber": 33,
+    "captain": false,
+    "market_value": 3856854350,
+    "bio": {
+        "birth": "1985-02-22",
+        "height": 193,
+        "weight": 104,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 83286,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 75,
+            "pot": 92
+        },
+        "control": {
+            "cur": 74,
+            "pot": 89
+        },
+        "stuff": {
+            "cur": 66,
+            "pot": 98
+        },
+        "stamina": {
+            "cur": 92,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 63,
+            "pot": 89
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 32,
+                "gs": 23,
+                "w": 14,
+                "l": 8,
+                "sv": 0,
+                "hld": 0,
+                "ip": 125,
+                "ip_outs": 375,
+                "h_allowed": 142,
+                "bb_allowed": 33,
+                "er": 76,
+                "so": 106,
+                "hbp": 5,
+                "era": 5.54,
+                "whip": 1.4
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 28,
+                "gs": 21,
+                "w": 15,
+                "l": 6,
+                "sv": 0,
+                "hld": 0,
+                "ip": 129,
+                "ip_outs": 387,
+                "h_allowed": 138,
+                "bb_allowed": 46,
+                "er": 36,
+                "so": 176,
+                "hbp": 6,
+                "era": 2.54,
+                "whip": 1.43
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 22,
+                "gs": 32,
+                "w": 9,
+                "l": 8,
+                "sv": 0,
+                "hld": 0,
+                "ip": 189,
+                "ip_outs": 567,
+                "h_allowed": 214,
+                "bb_allowed": 35,
+                "er": 78,
+                "so": 152,
+                "hbp": 2,
+                "era": 3.73,
+                "whip": 1.32
+            }
+        }
+    ]
+}

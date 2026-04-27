@@ -1,0 +1,102 @@
+{
+    "id": 2099,
+    "name": "Wilson",
+    "pos": "CF",
+    "team": "Wizards",
+    "backnumber": 99,
+    "captain": false,
+    "bio": {
+        "birth": "1998-12-25",
+        "height": 183,
+        "weight": 80,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 87240,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 64,
+            "pot": 92
+        },
+        "power": {
+            "cur": 68,
+            "pot": 81
+        },
+        "eye": {
+            "cur": 63,
+            "pot": 78
+        },
+        "run": {
+            "cur": 63,
+            "pot": 90
+        },
+        "defense": {
+            "cur": 57,
+            "pot": 72
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 126,
+                "ab": 569,
+                "r": 52,
+                "h": 135,
+                "hr": 25,
+                "rbi": 102,
+                "bb": 58,
+                "so": 125,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 141,
+                "ab": 483,
+                "r": 84,
+                "h": 127,
+                "hr": 30,
+                "rbi": 94,
+                "bb": 41,
+                "so": 78,
+                "sb": 12
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 132,
+                "ab": 534,
+                "r": 50,
+                "h": 144,
+                "hr": 9,
+                "rbi": 54,
+                "bb": 46,
+                "so": 103,
+                "sb": 30
+            }
+        }
+    ]
+}

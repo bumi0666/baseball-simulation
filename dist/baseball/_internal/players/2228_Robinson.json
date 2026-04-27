@@ -1,0 +1,102 @@
+{
+    "id": 2228,
+    "name": "Robinson",
+    "pos": "LF",
+    "team": "Heroes",
+    "backnumber": 228,
+    "captain": false,
+    "bio": {
+        "birth": "1987-06-14",
+        "height": 193,
+        "weight": 101,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 76663,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 68,
+            "pot": 95
+        },
+        "power": {
+            "cur": 67,
+            "pot": 76
+        },
+        "eye": {
+            "cur": 63,
+            "pot": 85
+        },
+        "run": {
+            "cur": 69,
+            "pot": 83
+        },
+        "defense": {
+            "cur": 65,
+            "pot": 70
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 123,
+                "ab": 583,
+                "r": 80,
+                "h": 179,
+                "hr": 29,
+                "rbi": 51,
+                "bb": 78,
+                "so": 104,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 137,
+                "ab": 523,
+                "r": 78,
+                "h": 167,
+                "hr": 9,
+                "rbi": 83,
+                "bb": 41,
+                "so": 117,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 140,
+                "ab": 514,
+                "r": 55,
+                "h": 134,
+                "hr": 22,
+                "rbi": 123,
+                "bb": 65,
+                "so": 89,
+                "sb": 24
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2171,
+    "name": "Davis",
+    "pos": "3B",
+    "team": "Landers",
+    "backnumber": 171,
+    "captain": false,
+    "bio": {
+        "birth": "2005-10-11",
+        "height": 183,
+        "weight": 65,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 94245,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 88,
+            "pot": 95
+        },
+        "power": {
+            "cur": 68,
+            "pot": 86
+        },
+        "eye": {
+            "cur": 79,
+            "pot": 89
+        },
+        "run": {
+            "cur": 93,
+            "pot": 99
+        },
+        "defense": {
+            "cur": 60,
+            "pot": 99
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 130,
+                "ab": 576,
+                "r": 75,
+                "h": 157,
+                "hr": 9,
+                "rbi": 83,
+                "bb": 42,
+                "so": 81,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 144,
+                "ab": 461,
+                "r": 74,
+                "h": 179,
+                "hr": 26,
+                "rbi": 97,
+                "bb": 77,
+                "so": 74,
+                "sb": 24
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 136,
+                "ab": 452,
+                "r": 85,
+                "h": 156,
+                "hr": 12,
+                "rbi": 98,
+                "bb": 44,
+                "so": 75,
+                "sb": 30
+            }
+        }
+    ]
+}

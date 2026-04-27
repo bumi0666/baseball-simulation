@@ -1,0 +1,119 @@
+{
+    "id": 2167,
+    "name": "Evans",
+    "pos": "1B",
+    "team": "Landers",
+    "backnumber": 167,
+    "captain": false,
+    "market_value": 4579718847,
+    "bio": {
+        "birth": "1988-09-18",
+        "height": 191,
+        "weight": 100,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 88374,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 63,
+            "pot": 82
+        },
+        "power": {
+            "cur": 60,
+            "pot": 87
+        },
+        "eye": {
+            "cur": 61,
+            "pot": 77
+        },
+        "run": {
+            "cur": 79,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 57,
+            "pot": 92
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 134,
+                "ab": 594,
+                "r": 96,
+                "h": 140,
+                "2b": 18,
+                "3b": 11,
+                "hr": 14,
+                "rbi": 102,
+                "bb": 49,
+                "so": 114,
+                "sb": 4,
+                "obp": 0.294,
+                "slg": 0.374,
+                "ops": 0.668
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 122,
+                "ab": 490,
+                "r": 91,
+                "h": 176,
+                "2b": 15,
+                "3b": 3,
+                "hr": 27,
+                "rbi": 93,
+                "bb": 48,
+                "so": 85,
+                "sb": 1,
+                "obp": 0.416,
+                "slg": 0.567,
+                "ops": 0.983
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 123,
+                "ab": 477,
+                "r": 49,
+                "h": 180,
+                "2b": 35,
+                "3b": 1,
+                "hr": 30,
+                "rbi": 85,
+                "bb": 62,
+                "so": 68,
+                "sb": 0,
+                "obp": 0.449,
+                "slg": 0.644,
+                "ops": 1.093
+            }
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "id": 2107,
+    "name": "Harry",
+    "pos": "P",
+    "team": "Eagles",
+    "backnumber": 107,
+    "captain": false,
+    "bio": {
+        "birth": "2000-11-11",
+        "height": 191,
+        "weight": 70,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 51145,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 76,
+            "pot": 86
+        },
+        "control": {
+            "cur": 90,
+            "pot": 99
+        },
+        "stuff": {
+            "cur": 74,
+            "pot": 88
+        },
+        "stamina": {
+            "cur": 70,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 59,
+            "pot": 71
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 30,
+                "gs": 31,
+                "w": 10,
+                "l": 15,
+                "sv": 0,
+                "hld": 0,
+                "ip": 131,
+                "ip_outs": 393,
+                "h_allowed": 112,
+                "bb_allowed": 38,
+                "er": 65,
+                "so": 174,
+                "hbp": 5,
+                "era": 4.51,
+                "whip": 1.15
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 24,
+                "gs": 30,
+                "w": 14,
+                "l": 10,
+                "sv": 0,
+                "hld": 0,
+                "ip": 146,
+                "ip_outs": 438,
+                "h_allowed": 157,
+                "bb_allowed": 18,
+                "er": 50,
+                "so": 185,
+                "hbp": 10,
+                "era": 3.13,
+                "whip": 1.2
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 32,
+                "gs": 27,
+                "w": 6,
+                "l": 13,
+                "sv": 0,
+                "hld": 0,
+                "ip": 197,
+                "ip_outs": 591,
+                "h_allowed": 196,
+                "bb_allowed": 69,
+                "er": 120,
+                "so": 139,
+                "hbp": 7,
+                "era": 5.49,
+                "whip": 1.35
+            }
+        }
+    ]
+}

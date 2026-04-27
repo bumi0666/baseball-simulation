@@ -1,0 +1,102 @@
+{
+    "id": 2069,
+    "name": "Miller",
+    "pos": "SS",
+    "team": "Bears",
+    "backnumber": 69,
+    "captain": false,
+    "bio": {
+        "birth": "1998-05-13",
+        "height": 179,
+        "weight": 91,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 99136,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 67,
+            "pot": 81
+        },
+        "power": {
+            "cur": 77,
+            "pot": 94
+        },
+        "eye": {
+            "cur": 63,
+            "pot": 95
+        },
+        "run": {
+            "cur": 79,
+            "pot": 85
+        },
+        "defense": {
+            "cur": 61,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 125,
+                "ab": 525,
+                "r": 75,
+                "h": 127,
+                "hr": 15,
+                "rbi": 127,
+                "bb": 44,
+                "so": 74,
+                "sb": 23
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 130,
+                "ab": 566,
+                "r": 58,
+                "h": 134,
+                "hr": 23,
+                "rbi": 127,
+                "bb": 45,
+                "so": 125,
+                "sb": 29
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 122,
+                "ab": 566,
+                "r": 53,
+                "h": 125,
+                "hr": 24,
+                "rbi": 76,
+                "bb": 42,
+                "so": 117,
+                "sb": 18
+            }
+        }
+    ]
+}

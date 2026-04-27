@@ -1,0 +1,102 @@
+{
+    "id": 2253,
+    "name": "Wilson",
+    "pos": "LF",
+    "team": "Giants",
+    "backnumber": 253,
+    "captain": false,
+    "bio": {
+        "birth": "2000-06-27",
+        "height": 191,
+        "weight": 65,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 97885,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 65,
+            "pot": 91
+        },
+        "power": {
+            "cur": 55,
+            "pot": 96
+        },
+        "eye": {
+            "cur": 77,
+            "pot": 79
+        },
+        "run": {
+            "cur": 78,
+            "pot": 91
+        },
+        "defense": {
+            "cur": 63,
+            "pot": 71
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 140,
+                "ab": 545,
+                "r": 91,
+                "h": 142,
+                "hr": 14,
+                "rbi": 102,
+                "bb": 51,
+                "so": 101,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 144,
+                "ab": 524,
+                "r": 41,
+                "h": 178,
+                "hr": 21,
+                "rbi": 113,
+                "bb": 46,
+                "so": 92,
+                "sb": 15
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 120,
+                "ab": 536,
+                "r": 89,
+                "h": 141,
+                "hr": 8,
+                "rbi": 51,
+                "bb": 55,
+                "so": 61,
+                "sb": 26
+            }
+        }
+    ]
+}

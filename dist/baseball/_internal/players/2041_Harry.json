@@ -1,0 +1,102 @@
+{
+    "id": 2041,
+    "name": "Harry",
+    "pos": "3B",
+    "team": "Tigers",
+    "backnumber": 41,
+    "captain": false,
+    "bio": {
+        "birth": "1994-01-04",
+        "height": 189,
+        "weight": 67,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 63657,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 85,
+            "pot": 94
+        },
+        "power": {
+            "cur": 62,
+            "pot": 99
+        },
+        "eye": {
+            "cur": 70,
+            "pot": 78
+        },
+        "run": {
+            "cur": 79,
+            "pot": 85
+        },
+        "defense": {
+            "cur": 88,
+            "pot": 90
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Tigers",
+            "stats": {
+                "g": 144,
+                "ab": 553,
+                "r": 65,
+                "h": 167,
+                "hr": 11,
+                "rbi": 129,
+                "bb": 74,
+                "so": 100,
+                "sb": 30
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Tigers",
+            "stats": {
+                "g": 123,
+                "ab": 525,
+                "r": 64,
+                "h": 179,
+                "hr": 26,
+                "rbi": 100,
+                "bb": 62,
+                "so": 97,
+                "sb": 20
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Tigers",
+            "stats": {
+                "g": 135,
+                "ab": 537,
+                "r": 91,
+                "h": 147,
+                "hr": 18,
+                "rbi": 124,
+                "bb": 79,
+                "so": 94,
+                "sb": 23
+            }
+        }
+    ]
+}

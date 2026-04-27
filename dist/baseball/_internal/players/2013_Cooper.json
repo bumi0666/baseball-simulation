@@ -1,0 +1,102 @@
+{
+    "id": 2013,
+    "name": "Cooper",
+    "pos": "2B",
+    "team": "Lions",
+    "backnumber": 13,
+    "captain": false,
+    "bio": {
+        "birth": "1998-06-16",
+        "height": 187,
+        "weight": 76,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 64804,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 62,
+            "pot": 91
+        },
+        "power": {
+            "cur": 82,
+            "pot": 86
+        },
+        "eye": {
+            "cur": 78,
+            "pot": 97
+        },
+        "run": {
+            "cur": 75,
+            "pot": 83
+        },
+        "defense": {
+            "cur": 66,
+            "pot": 90
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 142,
+                "ab": 500,
+                "r": 80,
+                "h": 125,
+                "hr": 12,
+                "rbi": 60,
+                "bb": 45,
+                "so": 88,
+                "sb": 22
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 120,
+                "ab": 559,
+                "r": 80,
+                "h": 146,
+                "hr": 21,
+                "rbi": 64,
+                "bb": 45,
+                "so": 98,
+                "sb": 8
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 123,
+                "ab": 582,
+                "r": 42,
+                "h": 131,
+                "hr": 20,
+                "rbi": 91,
+                "bb": 52,
+                "so": 98,
+                "sb": 21
+            }
+        }
+    ]
+}

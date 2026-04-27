@@ -1,0 +1,102 @@
+{
+    "id": 2198,
+    "name": "Taylor",
+    "pos": "3B",
+    "team": "Dinos",
+    "backnumber": 198,
+    "captain": false,
+    "bio": {
+        "birth": "2004-07-18",
+        "height": 173,
+        "weight": 76,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 93924,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 90,
+            "pot": 99
+        },
+        "power": {
+            "cur": 69,
+            "pot": 90
+        },
+        "eye": {
+            "cur": 68,
+            "pot": 76
+        },
+        "run": {
+            "cur": 86,
+            "pot": 92
+        },
+        "defense": {
+            "cur": 69,
+            "pot": 82
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 121,
+                "ab": 453,
+                "r": 81,
+                "h": 135,
+                "hr": 17,
+                "rbi": 104,
+                "bb": 57,
+                "so": 73,
+                "sb": 4
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 124,
+                "ab": 480,
+                "r": 56,
+                "h": 167,
+                "hr": 25,
+                "rbi": 53,
+                "bb": 60,
+                "so": 74,
+                "sb": 6
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 126,
+                "ab": 592,
+                "r": 57,
+                "h": 120,
+                "hr": 28,
+                "rbi": 130,
+                "bb": 64,
+                "so": 63,
+                "sb": 20
+            }
+        }
+    ]
+}

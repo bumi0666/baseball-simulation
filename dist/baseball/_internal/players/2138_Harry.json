@@ -1,0 +1,120 @@
+{
+    "id": 2138,
+    "name": "Harry",
+    "pos": "P",
+    "team": "Twins",
+    "backnumber": 138,
+    "captain": false,
+    "bio": {
+        "birth": "1997-11-08",
+        "height": 183,
+        "weight": 102,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 92015,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 76,
+            "pot": 96
+        },
+        "control": {
+            "cur": 62,
+            "pot": 89
+        },
+        "stuff": {
+            "cur": 55,
+            "pot": 83
+        },
+        "stamina": {
+            "cur": 88,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 75,
+            "pot": 87
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Twins",
+            "stats": {
+                "g": 25,
+                "gs": 23,
+                "w": 13,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 175,
+                "ip_outs": 525,
+                "h_allowed": 195,
+                "bb_allowed": 57,
+                "er": 83,
+                "so": 178,
+                "hbp": 6,
+                "era": 4.3,
+                "whip": 1.44
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Twins",
+            "stats": {
+                "g": 23,
+                "gs": 29,
+                "w": 6,
+                "l": 13,
+                "sv": 0,
+                "hld": 0,
+                "ip": 140,
+                "ip_outs": 420,
+                "h_allowed": 143,
+                "bb_allowed": 30,
+                "er": 75,
+                "so": 198,
+                "hbp": 9,
+                "era": 4.87,
+                "whip": 1.24
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Twins",
+            "stats": {
+                "g": 22,
+                "gs": 25,
+                "w": 10,
+                "l": 14,
+                "sv": 0,
+                "hld": 0,
+                "ip": 141,
+                "ip_outs": 423,
+                "h_allowed": 113,
+                "bb_allowed": 43,
+                "er": 41,
+                "so": 216,
+                "hbp": 5,
+                "era": 2.63,
+                "whip": 1.11
+            }
+        }
+    ]
+}

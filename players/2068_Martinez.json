@@ -1,0 +1,119 @@
+{
+    "id": 2068,
+    "name": "Martinez",
+    "pos": "3B",
+    "team": "Bears",
+    "backnumber": 68,
+    "captain": false,
+    "market_value": 1172913911,
+    "bio": {
+        "birth": "2001-08-16",
+        "height": 186,
+        "weight": 93,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 73023,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 65,
+            "pot": 85
+        },
+        "power": {
+            "cur": 51,
+            "pot": 89
+        },
+        "eye": {
+            "cur": 74,
+            "pot": 99
+        },
+        "run": {
+            "cur": 71,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 79
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 125,
+                "ab": 556,
+                "r": 52,
+                "h": 147,
+                "2b": 17,
+                "3b": 8,
+                "hr": 25,
+                "rbi": 68,
+                "bb": 52,
+                "so": 117,
+                "sb": 23,
+                "obp": 0.327,
+                "slg": 0.459,
+                "ops": 0.786
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 131,
+                "ab": 590,
+                "r": 65,
+                "h": 150,
+                "2b": 19,
+                "3b": 6,
+                "hr": 9,
+                "rbi": 61,
+                "bb": 80,
+                "so": 60,
+                "sb": 6,
+                "obp": 0.343,
+                "slg": 0.353,
+                "ops": 0.696
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 120,
+                "ab": 586,
+                "r": 91,
+                "h": 165,
+                "2b": 45,
+                "3b": 1,
+                "hr": 13,
+                "rbi": 91,
+                "bb": 66,
+                "so": 100,
+                "sb": 1,
+                "obp": 0.354,
+                "slg": 0.428,
+                "ops": 0.782
+            }
+        }
+    ]
+}

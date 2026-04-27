@@ -1,0 +1,119 @@
+{
+    "id": 2201,
+    "name": "Cooper",
+    "pos": "LF",
+    "team": "Dinos",
+    "backnumber": 201,
+    "captain": false,
+    "market_value": 6034239354,
+    "bio": {
+        "birth": "1998-01-24",
+        "height": 182,
+        "weight": 95,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 54097,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 79,
+            "pot": 96
+        },
+        "power": {
+            "cur": 76,
+            "pot": 91
+        },
+        "eye": {
+            "cur": 72,
+            "pot": 78
+        },
+        "run": {
+            "cur": 72,
+            "pot": 96
+        },
+        "defense": {
+            "cur": 78,
+            "pot": 85
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 131,
+                "ab": 595,
+                "r": 63,
+                "h": 166,
+                "2b": 37,
+                "3b": 10,
+                "hr": 22,
+                "rbi": 50,
+                "bb": 73,
+                "so": 113,
+                "sb": 12,
+                "obp": 0.358,
+                "slg": 0.486,
+                "ops": 0.844
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 144,
+                "ab": 481,
+                "r": 53,
+                "h": 180,
+                "2b": 28,
+                "3b": 4,
+                "hr": 16,
+                "rbi": 112,
+                "bb": 76,
+                "so": 69,
+                "sb": 12,
+                "obp": 0.46,
+                "slg": 0.549,
+                "ops": 1.009
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 127,
+                "ab": 535,
+                "r": 47,
+                "h": 179,
+                "2b": 40,
+                "3b": 1,
+                "hr": 8,
+                "rbi": 55,
+                "bb": 77,
+                "so": 109,
+                "sb": 8,
+                "obp": 0.418,
+                "slg": 0.458,
+                "ops": 0.876
+            }
+        }
+    ]
+}

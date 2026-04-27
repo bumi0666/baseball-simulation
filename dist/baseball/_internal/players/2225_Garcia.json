@@ -1,0 +1,102 @@
+{
+    "id": 2225,
+    "name": "Garcia",
+    "pos": "SS",
+    "team": "Heroes",
+    "backnumber": 225,
+    "captain": false,
+    "bio": {
+        "birth": "1995-09-27",
+        "height": 173,
+        "weight": 83,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 96061,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 66,
+            "pot": 96
+        },
+        "power": {
+            "cur": 68,
+            "pot": 96
+        },
+        "eye": {
+            "cur": 84,
+            "pot": 84
+        },
+        "run": {
+            "cur": 82,
+            "pot": 91
+        },
+        "defense": {
+            "cur": 69,
+            "pot": 70
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Heroes",
+            "stats": {
+                "g": 120,
+                "ab": 476,
+                "r": 82,
+                "h": 134,
+                "hr": 23,
+                "rbi": 125,
+                "bb": 69,
+                "so": 72,
+                "sb": 30
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Heroes",
+            "stats": {
+                "g": 132,
+                "ab": 476,
+                "r": 92,
+                "h": 161,
+                "hr": 28,
+                "rbi": 68,
+                "bb": 44,
+                "so": 103,
+                "sb": 16
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Heroes",
+            "stats": {
+                "g": 135,
+                "ab": 501,
+                "r": 45,
+                "h": 129,
+                "hr": 11,
+                "rbi": 57,
+                "bb": 67,
+                "so": 72,
+                "sb": 21
+            }
+        }
+    ]
+}

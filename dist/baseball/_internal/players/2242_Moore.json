@@ -1,0 +1,120 @@
+{
+    "id": 2242,
+    "name": "Moore",
+    "pos": "P",
+    "team": "Giants",
+    "backnumber": 242,
+    "captain": false,
+    "bio": {
+        "birth": "2002-08-28",
+        "height": 170,
+        "weight": 77,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 51273,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 91,
+            "pot": 95
+        },
+        "control": {
+            "cur": 76,
+            "pot": 80
+        },
+        "stuff": {
+            "cur": 57,
+            "pot": 81
+        },
+        "stamina": {
+            "cur": 74,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 66,
+            "pot": 96
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 23,
+                "gs": 30,
+                "w": 12,
+                "l": 6,
+                "sv": 0,
+                "hld": 0,
+                "ip": 140,
+                "ip_outs": 420,
+                "h_allowed": 132,
+                "bb_allowed": 31,
+                "er": 71,
+                "so": 130,
+                "hbp": 2,
+                "era": 4.61,
+                "whip": 1.17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 32,
+                "gs": 20,
+                "w": 7,
+                "l": 6,
+                "sv": 0,
+                "hld": 0,
+                "ip": 177,
+                "ip_outs": 531,
+                "h_allowed": 184,
+                "bb_allowed": 63,
+                "er": 62,
+                "so": 205,
+                "hbp": 4,
+                "era": 3.2,
+                "whip": 1.4
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 20,
+                "gs": 29,
+                "w": 9,
+                "l": 12,
+                "sv": 0,
+                "hld": 0,
+                "ip": 120,
+                "ip_outs": 360,
+                "h_allowed": 94,
+                "bb_allowed": 40,
+                "er": 74,
+                "so": 132,
+                "hbp": 3,
+                "era": 5.58,
+                "whip": 1.12
+            }
+        }
+    ]
+}

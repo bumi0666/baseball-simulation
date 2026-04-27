@@ -1,0 +1,102 @@
+{
+    "id": 2120,
+    "name": "Wilson",
+    "pos": "3B",
+    "team": "Eagles",
+    "backnumber": 120,
+    "captain": false,
+    "bio": {
+        "birth": "1994-01-27",
+        "height": 192,
+        "weight": 76,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 80176,
+        "begin": "2023-01-01",
+        "end": "2030-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 81,
+            "pot": 97
+        },
+        "power": {
+            "cur": 60,
+            "pot": 77
+        },
+        "eye": {
+            "cur": 73,
+            "pot": 95
+        },
+        "run": {
+            "cur": 60,
+            "pot": 92
+        },
+        "defense": {
+            "cur": 65,
+            "pot": 80
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 140,
+                "ab": 578,
+                "r": 63,
+                "h": 171,
+                "hr": 5,
+                "rbi": 94,
+                "bb": 67,
+                "so": 74,
+                "sb": 17
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 120,
+                "ab": 471,
+                "r": 71,
+                "h": 156,
+                "hr": 11,
+                "rbi": 73,
+                "bb": 54,
+                "so": 101,
+                "sb": 19
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 137,
+                "ab": 517,
+                "r": 41,
+                "h": 163,
+                "hr": 7,
+                "rbi": 96,
+                "bb": 52,
+                "so": 111,
+                "sb": 6
+            }
+        }
+    ]
+}

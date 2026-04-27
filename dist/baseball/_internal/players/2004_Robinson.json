@@ -1,0 +1,120 @@
+{
+    "id": 2004,
+    "name": "Robinson",
+    "pos": "P",
+    "team": "Lions",
+    "backnumber": 4,
+    "captain": false,
+    "bio": {
+        "birth": "1986-09-22",
+        "height": 170,
+        "weight": 95,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 83639,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 71,
+            "pot": 92
+        },
+        "control": {
+            "cur": 78,
+            "pot": 80
+        },
+        "stuff": {
+            "cur": 75,
+            "pot": 86
+        },
+        "stamina": {
+            "cur": 72,
+            "pot": 99
+        },
+        "defense": {
+            "cur": 53,
+            "pot": 82
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 26,
+                "gs": 20,
+                "w": 14,
+                "l": 8,
+                "sv": 0,
+                "hld": 0,
+                "ip": 144,
+                "ip_outs": 432,
+                "h_allowed": 139,
+                "bb_allowed": 36,
+                "er": 95,
+                "so": 198,
+                "hbp": 10,
+                "era": 5.96,
+                "whip": 1.22
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 31,
+                "gs": 31,
+                "w": 6,
+                "l": 5,
+                "sv": 0,
+                "hld": 0,
+                "ip": 164,
+                "ip_outs": 492,
+                "h_allowed": 169,
+                "bb_allowed": 21,
+                "er": 62,
+                "so": 119,
+                "hbp": 3,
+                "era": 3.44,
+                "whip": 1.16
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 31,
+                "gs": 32,
+                "w": 10,
+                "l": 7,
+                "sv": 0,
+                "hld": 0,
+                "ip": 153,
+                "ip_outs": 459,
+                "h_allowed": 156,
+                "bb_allowed": 62,
+                "er": 65,
+                "so": 154,
+                "hbp": 8,
+                "era": 3.83,
+                "whip": 1.43
+            }
+        }
+    ]
+}

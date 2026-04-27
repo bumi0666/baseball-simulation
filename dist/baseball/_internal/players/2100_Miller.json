@@ -1,0 +1,102 @@
+{
+    "id": 2100,
+    "name": "Miller",
+    "pos": "CF",
+    "team": "Wizards",
+    "backnumber": 100,
+    "captain": false,
+    "bio": {
+        "birth": "1985-03-15",
+        "height": 185,
+        "weight": 69,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 51715,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 67,
+            "pot": 92
+        },
+        "power": {
+            "cur": 81,
+            "pot": 92
+        },
+        "eye": {
+            "cur": 79,
+            "pot": 81
+        },
+        "run": {
+            "cur": 89,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 76,
+            "pot": 87
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 125,
+                "ab": 478,
+                "r": 87,
+                "h": 131,
+                "hr": 26,
+                "rbi": 53,
+                "bb": 43,
+                "so": 113,
+                "sb": 18
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 140,
+                "ab": 463,
+                "r": 92,
+                "h": 145,
+                "hr": 14,
+                "rbi": 58,
+                "bb": 78,
+                "so": 91,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 140,
+                "ab": 591,
+                "r": 79,
+                "h": 136,
+                "hr": 30,
+                "rbi": 127,
+                "bb": 53,
+                "so": 99,
+                "sb": 2
+            }
+        }
+    ]
+}

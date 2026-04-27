@@ -1,0 +1,32 @@
+{
+  "id": 1001,
+  "name": "Kim",
+  "birth": "2001-03-12",
+  "pos": "CF",
+  "attributes": {
+    "power": 75,
+    "contact": 68,
+    "speed": 82
+  },
+  "career": [
+    {
+      "season": 2023,
+      "team": "Seoul",
+      "games": 120,
+      "avg": 0.312,
+      "hr": 28,
+      "rbi": 91
+    },
+    {
+      "season": 2024,
+      "team": "Seoul",
+      "games": 130,
+      "avg": 0.295,
+      "hr": 34,
+      "rbi": 104
+    }
+  ],
+  "awards": [
+    { "year": 2024, "name": "MVP" }
+  ]
+}

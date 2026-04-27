@@ -1,0 +1,102 @@
+{
+    "id": 2258,
+    "name": "Miller",
+    "pos": "RF",
+    "team": "Giants",
+    "backnumber": 258,
+    "captain": false,
+    "bio": {
+        "birth": "1993-08-25",
+        "height": 194,
+        "weight": 88,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 92790,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 94,
+            "pot": 94
+        },
+        "power": {
+            "cur": 66,
+            "pot": 79
+        },
+        "eye": {
+            "cur": 70,
+            "pot": 84
+        },
+        "run": {
+            "cur": 74,
+            "pot": 95
+        },
+        "defense": {
+            "cur": 70,
+            "pot": 89
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Giants",
+            "stats": {
+                "g": 126,
+                "ab": 552,
+                "r": 59,
+                "h": 165,
+                "hr": 5,
+                "rbi": 98,
+                "bb": 54,
+                "so": 81,
+                "sb": 10
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Giants",
+            "stats": {
+                "g": 120,
+                "ab": 595,
+                "r": 44,
+                "h": 155,
+                "hr": 29,
+                "rbi": 71,
+                "bb": 77,
+                "so": 79,
+                "sb": 13
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Giants",
+            "stats": {
+                "g": 137,
+                "ab": 557,
+                "r": 59,
+                "h": 126,
+                "hr": 10,
+                "rbi": 114,
+                "bb": 52,
+                "so": 123,
+                "sb": 18
+            }
+        }
+    ]
+}

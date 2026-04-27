@@ -1,0 +1,119 @@
+{
+    "id": 2193,
+    "name": "Smith",
+    "pos": "1B",
+    "team": "Dinos",
+    "backnumber": 193,
+    "captain": false,
+    "market_value": 4723129758,
+    "bio": {
+        "birth": "1999-07-12",
+        "height": 195,
+        "weight": 86,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 57546,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 84,
+            "pot": 88
+        },
+        "power": {
+            "cur": 57,
+            "pot": 80
+        },
+        "eye": {
+            "cur": 90,
+            "pot": 95
+        },
+        "run": {
+            "cur": 77,
+            "pot": 82
+        },
+        "defense": {
+            "cur": 81,
+            "pot": 92
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Dinos",
+            "stats": {
+                "g": 140,
+                "ab": 454,
+                "r": 96,
+                "h": 151,
+                "2b": 31,
+                "3b": 12,
+                "hr": 7,
+                "rbi": 55,
+                "bb": 51,
+                "so": 93,
+                "sb": 1,
+                "obp": 0.4,
+                "slg": 0.5,
+                "ops": 0.9
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Dinos",
+            "stats": {
+                "g": 132,
+                "ab": 593,
+                "r": 75,
+                "h": 157,
+                "2b": 27,
+                "3b": 1,
+                "hr": 25,
+                "rbi": 137,
+                "bb": 49,
+                "so": 104,
+                "sb": 6,
+                "obp": 0.321,
+                "slg": 0.44,
+                "ops": 0.761
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Dinos",
+            "stats": {
+                "g": 135,
+                "ab": 580,
+                "r": 79,
+                "h": 139,
+                "2b": 16,
+                "3b": 8,
+                "hr": 6,
+                "rbi": 115,
+                "bb": 78,
+                "so": 87,
+                "sb": 11,
+                "obp": 0.33,
+                "slg": 0.326,
+                "ops": 0.656
+            }
+        }
+    ]
+}

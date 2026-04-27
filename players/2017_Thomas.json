@@ -1,0 +1,119 @@
+{
+    "id": 2017,
+    "name": "Thomas",
+    "pos": "SS",
+    "team": "Lions",
+    "backnumber": 17,
+    "captain": false,
+    "market_value": 6584849031,
+    "bio": {
+        "birth": "1998-11-15",
+        "height": 173,
+        "weight": 75,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 78824,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 65,
+            "pot": 90
+        },
+        "power": {
+            "cur": 68,
+            "pot": 90
+        },
+        "eye": {
+            "cur": 65,
+            "pot": 78
+        },
+        "run": {
+            "cur": 77,
+            "pot": 87
+        },
+        "defense": {
+            "cur": 79,
+            "pot": 92
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Lions",
+            "stats": {
+                "g": 133,
+                "ab": 575,
+                "r": 76,
+                "h": 138,
+                "2b": 24,
+                "3b": 10,
+                "hr": 11,
+                "rbi": 127,
+                "bb": 66,
+                "so": 109,
+                "sb": 28,
+                "obp": 0.318,
+                "slg": 0.374,
+                "ops": 0.692
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Lions",
+            "stats": {
+                "g": 135,
+                "ab": 506,
+                "r": 42,
+                "h": 163,
+                "2b": 33,
+                "3b": 7,
+                "hr": 19,
+                "rbi": 63,
+                "bb": 70,
+                "so": 87,
+                "sb": 0,
+                "obp": 0.405,
+                "slg": 0.528,
+                "ops": 0.933
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Lions",
+            "stats": {
+                "g": 136,
+                "ab": 589,
+                "r": 57,
+                "h": 163,
+                "2b": 16,
+                "3b": 8,
+                "hr": 30,
+                "rbi": 70,
+                "bb": 74,
+                "so": 75,
+                "sb": 28,
+                "obp": 0.357,
+                "slg": 0.484,
+                "ops": 0.841
+            }
+        }
+    ]
+}

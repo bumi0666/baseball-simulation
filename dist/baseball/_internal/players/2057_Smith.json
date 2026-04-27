@@ -1,0 +1,120 @@
+{
+    "id": 2057,
+    "name": "Smith",
+    "pos": "P",
+    "team": "Bears",
+    "backnumber": 57,
+    "captain": false,
+    "bio": {
+        "birth": "1994-04-02",
+        "height": 178,
+        "weight": 69,
+        "nationality": "USA"
+    },
+    "contract": {
+        "salary": 75284,
+        "begin": "2023-01-01",
+        "end": "2028-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "velocity": {
+            "cur": 73,
+            "pot": 85
+        },
+        "control": {
+            "cur": 62,
+            "pot": 82
+        },
+        "stuff": {
+            "cur": 72,
+            "pot": 81
+        },
+        "stamina": {
+            "cur": 76,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 53,
+            "pot": 91
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 27,
+                "gs": 23,
+                "w": 11,
+                "l": 10,
+                "sv": 0,
+                "hld": 0,
+                "ip": 152,
+                "ip_outs": 456,
+                "h_allowed": 129,
+                "bb_allowed": 54,
+                "er": 67,
+                "so": 182,
+                "hbp": 6,
+                "era": 3.98,
+                "whip": 1.21
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 25,
+                "gs": 25,
+                "w": 5,
+                "l": 4,
+                "sv": 0,
+                "hld": 0,
+                "ip": 124,
+                "ip_outs": 372,
+                "h_allowed": 141,
+                "bb_allowed": 35,
+                "er": 39,
+                "so": 102,
+                "hbp": 10,
+                "era": 2.85,
+                "whip": 1.42
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 28,
+                "gs": 22,
+                "w": 11,
+                "l": 12,
+                "sv": 0,
+                "hld": 0,
+                "ip": 160,
+                "ip_outs": 480,
+                "h_allowed": 178,
+                "bb_allowed": 25,
+                "er": 58,
+                "so": 136,
+                "hbp": 6,
+                "era": 3.29,
+                "whip": 1.27
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2123,
+    "name": "Miller",
+    "pos": "LF",
+    "team": "Eagles",
+    "backnumber": 123,
+    "captain": false,
+    "bio": {
+        "birth": "2003-09-11",
+        "height": 194,
+        "weight": 66,
+        "nationality": "JPN"
+    },
+    "contract": {
+        "salary": 69570,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 72,
+            "pot": 86
+        },
+        "power": {
+            "cur": 66,
+            "pot": 78
+        },
+        "eye": {
+            "cur": 82,
+            "pot": 92
+        },
+        "run": {
+            "cur": 83,
+            "pot": 89
+        },
+        "defense": {
+            "cur": 80,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Eagles",
+            "stats": {
+                "g": 141,
+                "ab": 561,
+                "r": 63,
+                "h": 130,
+                "hr": 8,
+                "rbi": 132,
+                "bb": 69,
+                "so": 108,
+                "sb": 5
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Eagles",
+            "stats": {
+                "g": 138,
+                "ab": 577,
+                "r": 47,
+                "h": 141,
+                "hr": 28,
+                "rbi": 73,
+                "bb": 51,
+                "so": 71,
+                "sb": 26
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Eagles",
+            "stats": {
+                "g": 131,
+                "ab": 505,
+                "r": 63,
+                "h": 159,
+                "hr": 14,
+                "rbi": 80,
+                "bb": 44,
+                "so": 90,
+                "sb": 0
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2097,
+    "name": "Moore",
+    "pos": "LF",
+    "team": "Wizards",
+    "backnumber": 97,
+    "captain": false,
+    "bio": {
+        "birth": "1998-08-27",
+        "height": 190,
+        "weight": 105,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 89944,
+        "begin": "2023-01-01",
+        "end": "2027-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 88,
+            "pot": 93
+        },
+        "power": {
+            "cur": 70,
+            "pot": 87
+        },
+        "eye": {
+            "cur": 86,
+            "pot": 87
+        },
+        "run": {
+            "cur": 68,
+            "pot": 83
+        },
+        "defense": {
+            "cur": 83,
+            "pot": 94
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Wizards",
+            "stats": {
+                "g": 139,
+                "ab": 548,
+                "r": 76,
+                "h": 154,
+                "hr": 9,
+                "rbi": 56,
+                "bb": 52,
+                "so": 79,
+                "sb": 10
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Wizards",
+            "stats": {
+                "g": 143,
+                "ab": 541,
+                "r": 75,
+                "h": 134,
+                "hr": 7,
+                "rbi": 96,
+                "bb": 54,
+                "so": 113,
+                "sb": 29
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Wizards",
+            "stats": {
+                "g": 122,
+                "ab": 510,
+                "r": 46,
+                "h": 148,
+                "hr": 13,
+                "rbi": 121,
+                "bb": 78,
+                "so": 92,
+                "sb": 3
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2063,
+    "name": "Garcia",
+    "pos": "1B",
+    "team": "Bears",
+    "backnumber": 63,
+    "captain": false,
+    "bio": {
+        "birth": "2001-05-19",
+        "height": 175,
+        "weight": 101,
+        "nationality": "KOR"
+    },
+    "contract": {
+        "salary": 67359,
+        "begin": "2023-01-01",
+        "end": "2029-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "R"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 86,
+            "pot": 89
+        },
+        "power": {
+            "cur": 53,
+            "pot": 84
+        },
+        "eye": {
+            "cur": 64,
+            "pot": 75
+        },
+        "run": {
+            "cur": 88,
+            "pot": 91
+        },
+        "defense": {
+            "cur": 86,
+            "pot": 91
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 139,
+                "ab": 556,
+                "r": 58,
+                "h": 148,
+                "hr": 16,
+                "rbi": 106,
+                "bb": 73,
+                "so": 108,
+                "sb": 16
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 120,
+                "ab": 501,
+                "r": 81,
+                "h": 137,
+                "hr": 28,
+                "rbi": 88,
+                "bb": 59,
+                "so": 128,
+                "sb": 25
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 125,
+                "ab": 502,
+                "r": 58,
+                "h": 125,
+                "hr": 6,
+                "rbi": 127,
+                "bb": 78,
+                "so": 96,
+                "sb": 29
+            }
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "id": 2173,
+    "name": "Harry",
+    "pos": "SS",
+    "team": "Landers",
+    "backnumber": 173,
+    "captain": false,
+    "bio": {
+        "birth": "2002-04-26",
+        "height": 184,
+        "weight": 77,
+        "nationality": "CAN"
+    },
+    "contract": {
+        "salary": 65846,
+        "begin": "2023-01-01",
+        "end": "2026-01-01"
+    },
+    "main_stats": {
+        "handed_throw": "L",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1
+    },
+    "attributes": {
+        "contact": {
+            "cur": 81,
+            "pot": 93
+        },
+        "power": {
+            "cur": 65,
+            "pot": 75
+        },
+        "eye": {
+            "cur": 84,
+            "pot": 90
+        },
+        "run": {
+            "cur": 64,
+            "pot": 85
+        },
+        "defense": {
+            "cur": 62,
+            "pot": 74
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Landers",
+            "stats": {
+                "g": 129,
+                "ab": 508,
+                "r": 46,
+                "h": 142,
+                "hr": 27,
+                "rbi": 121,
+                "bb": 65,
+                "so": 126,
+                "sb": 22
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Landers",
+            "stats": {
+                "g": 138,
+                "ab": 451,
+                "r": 88,
+                "h": 126,
+                "hr": 15,
+                "rbi": 129,
+                "bb": 49,
+                "so": 73,
+                "sb": 30
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Landers",
+            "stats": {
+                "g": 140,
+                "ab": 496,
+                "r": 83,
+                "h": 122,
+                "hr": 22,
+                "rbi": 102,
+                "bb": 68,
+                "so": 107,
+                "sb": 23
+            }
+        }
+    ]
+}

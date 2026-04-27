@@ -1,0 +1,119 @@
+{
+    "id": 2072,
+    "name": "Harry",
+    "pos": "LF",
+    "team": "Bears",
+    "backnumber": 72,
+    "captain": false,
+    "market_value": 8691518007,
+    "bio": {
+        "birth": "1987-11-18",
+        "height": 170,
+        "weight": 102,
+        "nationality": "DOM"
+    },
+    "contract": {
+        "salary": 67340,
+        "begin": "2023-12-30",
+        "end": "2024-12-30"
+    },
+    "main_stats": {
+        "handed_throw": "R",
+        "handed_hit": "L"
+    },
+    "status": {
+        "health": 1000,
+        "condition": 100,
+        "fatigue": 0,
+        "is_injured": false,
+        "injury_days": 0,
+        "exp": 0,
+        "maxexp": 10000,
+        "level": 1,
+        "roster": "active"
+    },
+    "attributes": {
+        "contact": {
+            "cur": 69,
+            "pot": 92
+        },
+        "power": {
+            "cur": 51,
+            "pot": 89
+        },
+        "eye": {
+            "cur": 60,
+            "pot": 89
+        },
+        "run": {
+            "cur": 78,
+            "pot": 98
+        },
+        "defense": {
+            "cur": 81,
+            "pot": 87
+        }
+    },
+    "career": [
+        {
+            "season": 2021,
+            "team": "Bears",
+            "stats": {
+                "g": 137,
+                "ab": 513,
+                "r": 65,
+                "h": 125,
+                "2b": 35,
+                "3b": 6,
+                "hr": 10,
+                "rbi": 105,
+                "bb": 41,
+                "so": 77,
+                "sb": 9,
+                "obp": 0.3,
+                "slg": 0.394,
+                "ops": 0.694
+            }
+        },
+        {
+            "season": 2022,
+            "team": "Bears",
+            "stats": {
+                "g": 123,
+                "ab": 551,
+                "r": 79,
+                "h": 153,
+                "2b": 28,
+                "3b": 3,
+                "hr": 8,
+                "rbi": 61,
+                "bb": 41,
+                "so": 122,
+                "sb": 17,
+                "obp": 0.328,
+                "slg": 0.383,
+                "ops": 0.711
+            }
+        },
+        {
+            "season": 2023,
+            "team": "Bears",
+            "stats": {
+                "g": 143,
+                "ab": 563,
+                "r": 90,
+                "h": 158,
+                "2b": 25,
+                "3b": 3,
+                "hr": 22,
+                "rbi": 127,
+                "bb": 59,
+                "so": 100,
+                "sb": 7,
+                "obp": 0.349,
+                "slg": 0.453,
+                "ops": 0.802
+            }
+        }
+    ]
+}
