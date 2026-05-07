@@ -4,7 +4,7 @@ from config import *
 from ui.layout import get_common_buttons, draw_common_ui
 import pygame
 import calendar
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 
 class ScheduleScene(Scene):
@@ -41,13 +41,14 @@ class ScheduleScene(Scene):
         if self.state.schedule and self._date_fmt:
             first_date_str = sorted(self.state.schedule.keys())[0]
             first_date = datetime.strptime(first_date_str, self._date_fmt)
-            # MM/DD 형식이면 연도가 없으므로 현재 연도 사용
-            self.current_year  = first_date.year if "%Y" in self._date_fmt else date.today().year
+            # MM/DD 형식이면 실제 오늘 연도가 아니라 게임의 기준 연도를 사용해야 요일이 맞다.
+            self.current_year  = first_date.year if "%Y" in self._date_fmt else self.state.base_date[0]
             self.current_month = first_date.month
         else:
-            today = date.today()
-            self.current_year  = today.year
-            self.current_month = today.month
+            y, m, d = self.state.base_date
+            game_today = date(y, m, d) + timedelta(days=self.state.current_day - 1)
+            self.current_year  = game_today.year
+            self.current_month = game_today.month
 
         # 달력 레이아웃 상수 (왼쪽 공통 메뉴: 0~299px, 콘텐츠: 300px~)
         self.CX       = 310   # 콘텐츠 시작 X
@@ -178,7 +179,8 @@ class ScheduleScene(Scene):
 
         # ── 3. 달력 셀 ──────────────────────────────────────────
         month_games = self._get_month_games()
-        today       = date.today()
+        y, m, d = self.state.base_date
+        today       = date(y, m, d) + timedelta(days=self.state.current_day - 1)
 
         # 이달 1일의 요일(0=Mon) 및 총 일수
         first_weekday, total_days = calendar.monthrange(self.current_year, self.current_month)

@@ -1,3 +1,7 @@
+from cmath import rect
+from email.mime import text
+
+from models import player
 from scenes.base_scene import Scene
 from ui.button import Button
 from config import *
@@ -12,7 +16,8 @@ class TeamScene(Scene):
 
         self.is_user_team = (self.team_name == self.state.user_team)
         
-        self.smallFONT = pygame.font.SysFont(None, 30)
+        self.smallFONT = pygame.font.SysFont(None, 24)
+        self.headerFONT = pygame.font.SysFont(None, 25)
         
         self.buttons = get_common_buttons(self)
         
@@ -56,6 +61,61 @@ class TeamScene(Scene):
 
     def back(self):
         return "hub"
+    
+    def _short_text(self, text, max_len):
+        text = str(text)
+        return text if len(text) <= max_len else text[:max_len - 1] + "."
+
+    def _format_money(self, value):
+        try:
+            value = int(value)
+        except (TypeError, ValueError):
+            return "-"
+
+        if abs(value) >= 1_000_000:
+            return f"${value / 1_000_000:.1f}M"
+        if abs(value) >= 1_000:
+            return f"${value / 1_000:.0f}k"
+        return f"${value}"
+
+    def _contract_end(self, player):
+        end = player.contract_end()
+        if not end:
+            return "FA"
+        return str(end)[:4]
+
+    def _latest_stats(self, player):
+        if not player.career:
+            return {}
+        return player.career[-1].get("stats", {})
+
+    def _calc_batter_rates(self, stats):
+        ab = stats.get("ab", 0)
+        h = stats.get("h", 0)
+        bb = stats.get("bb", 0)
+        hr = stats.get("hr", 0)
+        doubles = stats.get("2b", 0)
+        triples = stats.get("3b", 0)
+
+        singles = max(0, h - doubles - triples - hr)
+        pa = ab + bb
+        tb = singles + 2 * doubles + 3 * triples + 4 * hr
+
+        obp = (h + bb) / pa if pa > 0 else 0.0
+        slg = tb / ab if ab > 0 else 0.0
+
+        return obp + slg
+
+    def _key_stat(self, player):
+        stats = self._latest_stats(player)
+        if not stats:
+            return "-"
+
+        if player.is_batter():
+            ops = self._calc_batter_rates(stats)
+            return f"OPS {ops:.3f} HR {stats.get('hr', 0)}"
+
+        return f"ERA {stats.get('era', 0.0):.2f} WHIP {stats.get('whip', 0.0):.2f}"
 
     def _draw_down_triangle(self, screen, cx, cy):
         """▼ 삼각형 (2군 내리기)"""
@@ -73,12 +133,21 @@ class TeamScene(Scene):
 
         # 헤더
         header_y = CONTENT_Y - 35
-        screen.blit(FONT.render("Num",     True, white), (CONTENT_X,       header_y))
-        screen.blit(FONT.render("Name",    True, white), (CONTENT_X + 60,  header_y))
-        screen.blit(FONT.render("Pos",     True, white), (CONTENT_X + 220, header_y))
-        screen.blit(FONT.render("Age",     True, white), (CONTENT_X + 320, header_y))
-        screen.blit(FONT.render("Hp/Con",  True, white), (CONTENT_X + 400, header_y))
-        screen.blit(FONT.render("Fatigue", True, white), (CONTENT_X + 520, header_y))
+        columns = [
+        ("#", CONTENT_X + 8),
+            ("Name", CONTENT_X + 48),
+            ("Pos", CONTENT_X + 178),
+            ("Age", CONTENT_X + 228),
+            ("OVR", CONTENT_X + 278),
+            ("Salary", CONTENT_X + 328),
+            ("End", CONTENT_X + 408),
+            ("HP/Con", CONTENT_X + 462),
+            ("Fat", CONTENT_X + 558),
+            ("Key Stat", CONTENT_X + 620),
+        ]
+
+        for label, x in columns:
+            screen.blit(self.headerFONT.render(label, True, white), (x, header_y + 5))
 
         self._arrow_rects = []
 
@@ -99,13 +168,23 @@ class TeamScene(Scene):
                            else "MID" if p.status["fatigue"] >= 100
                            else "LOW")
 
-            screen.blit(self.smallFONT.render(str(p.backnumber), True, black), (rect.x + 10,  rect.y + 8))
-            screen.blit(self.smallFONT.render(p.name,            True, black), (rect.x + 50,  rect.y + 8))
-            screen.blit(self.smallFONT.render(p.pos,             True, black), (rect.x + 230, rect.y + 8))
-            screen.blit(self.smallFONT.render(str(p.age()),      True, black), (rect.x + 330, rect.y + 8))
+            ovr = p.calculate_ovr()
+            salary = self._format_money(p.salary())
+            contract_end = self._contract_end(p)
+            key_stat = self._key_stat(p)
+
+            screen.blit(self.smallFONT.render(str(p.backnumber), True, black), (rect.x + 8, rect.y + 11))
+            screen.blit(self.smallFONT.render(self._short_text(p.name, 12), True, black), (rect.x + 48, rect.y + 11))
+            screen.blit(self.smallFONT.render(p.pos, True, black), (rect.x + 178, rect.y + 11))
+            screen.blit(self.smallFONT.render(str(p.age()), True, black), (rect.x + 228, rect.y + 11))
+            screen.blit(self.smallFONT.render(str(ovr), True, black), (rect.x + 278, rect.y + 11))
+            screen.blit(self.smallFONT.render(salary, True, black), (rect.x + 328, rect.y + 11))
+            screen.blit(self.smallFONT.render(contract_end, True, black), (rect.x + 408, rect.y + 11))
             screen.blit(self.smallFONT.render(
-                f"{int(p.status['health']/10)}%/{p.status['condition']}%", True, black), (rect.x + 390, rect.y + 8))
-            screen.blit(self.smallFONT.render(fatigue_str,       True, black), (rect.x + 540, rect.y + 8))
+                f"{int(p.status['health'] / 10)}%/{p.status['condition']}%", True, black), (rect.x + 462, rect.y + 11))
+            screen.blit(self.smallFONT.render(fatigue_str, True, black), (rect.x + 558, rect.y + 11))
+            screen.blit(self.smallFONT.render(key_stat, True, black), (rect.x + 620, rect.y + 11))
+
 
             # ▼ 삼각형 버튼 (내 팀일 때만)
             if self.is_user_team:

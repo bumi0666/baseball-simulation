@@ -13,6 +13,7 @@ from scenes.title_scene import TitleScene
 from scenes.hub_scene import HubScene
 from scenes.team_scene import TeamScene
 from scenes.player_detail_scene import PlayerDetailScene
+from scenes.staff_detail_scene import StaffDetailScene
 from scenes.option_scene import OptionScene
 from scenes.inbox_scene import InboxScene
 from scenes.finance_scene import FinanceScene
@@ -26,6 +27,7 @@ from scenes.game_scene import GameScene
 from scenes.result_scene import ResultScene
 from scenes.teamdetail_scene import TeamDetailScene
 from scenes.reserve_scene import ReserveScene
+from scenes.transfer_scene import TransferScene
 from saveload import load_game, save_game
 from datetime import date, timedelta
 
@@ -193,42 +195,118 @@ def load_team_data():
 
 import random
 
-def generate_season_schedule(state, total_games=3):
-    teams = ["Lions", "Tigers", "Bears", "Wizards", "Eagles", "Twins", "Landers", "Dinos", "Heroes", "Giants"]
+LEAGUE_TEAMS = ["Lions", "Tigers", "Bears", "Wizards", "Eagles",
+                "Twins", "Landers", "Dinos", "Heroes", "Giants"]
+
+def generate_round_robin_rounds(teams):
+    rounds = []
+    rotating = teams[:]
+    team_count = len(rotating)
+
+    for round_idx in range(team_count - 1):
+        matches = []
+        for i in range(team_count // 2):
+            team_a = rotating[i]
+            team_b = rotating[team_count - 1 - i]
+            if round_idx % 2 == 0:
+                matches.append((team_a, team_b))
+            else:
+                matches.append((team_b, team_a))
+        rounds.append(matches)
+        rotating = [rotating[0]] + [rotating[-1]] + rotating[1:-1]
+
+    return rounds
+
+def get_next_play_date(current_date):
+    current_date += timedelta(days=1)
+    while current_date.weekday() == 0:
+        current_date += timedelta(days=1)
+    return current_date
+
+def get_next_series_start(current_date):
+    current_date += timedelta(days=1)
+    while current_date.weekday() not in (1, 4):
+        current_date += timedelta(days=1)
+    return current_date
+
+def add_rest_days_between(state, start_date, end_date):
+    rest_date = start_date + timedelta(days=1)
+    while rest_date < end_date:
+        if rest_date.weekday() == 0:
+            date_str = rest_date.strftime("%m/%d")
+            state.schedule.setdefault(date_str, {
+                "opponent": None,
+                "type": "REST",
+                "played": True,
+                "stage": "rest"
+            })
+        rest_date += timedelta(days=1)
+
+def add_user_schedule_entry(state, date_str, day_matches, stage="regular", series_info=None):
+    my_match = next((m for m in day_matches if state.user_team in m), None)
+    if not my_match:
+        return
+
+    home_team, away_team = my_match
+    opponent = away_team if home_team == state.user_team else home_team
+    game_type = "HOME" if home_team == state.user_team else "AWAY"
+
+    entry = {
+        "opponent": opponent,
+        "type": game_type,
+        "played": False,
+        "stage": stage
+    }
+    if series_info:
+        entry.update(series_info)
+
+    state.schedule[date_str] = entry
+
+def generate_season_schedule(state, games_per_pair=16):
+    teams = LEAGUE_TEAMS[:]
     base_y, base_m, base_d = state.base_date
     current_date = date(base_y, base_m, base_d)
-    
-    state.master_schedule = {}
-    state.schedule = {} 
 
-    for i in range(total_games):
-        current_date += timedelta(days=1)
-        date_str = current_date.strftime("%m/%d")
-        
-        # 1. 모든 팀을 무작위로 섞음
-        shuffled = teams[:]
-        random.shuffle(shuffled)
-        
-        # 2. 10개 팀을 2개씩 짝지어 5경기를 만듦
-        day_matches = []
-        for j in range(0, 10, 2):
-            day_matches.append((shuffled[j], shuffled[j+1]))
-        
-        # 3. 전체 일정 저장
-        state.master_schedule[date_str] = {
-            "matches": day_matches,
-            "processed": False
-        }
-        
-        # 4. 내 팀(Lions) 일정 추출
-        my_match = next(m for m in day_matches if state.user_team in m)
-        opponent = my_match[1] if my_match[0] == state.user_team else my_match[0]
-        
-        state.schedule[date_str] = {
-            "opponent": opponent,
-            "type": random.choice(["HOME", "AWAY"]),
-            "played": False
-        }
+    state.master_schedule = {}
+    state.schedule = {}
+    state.postseason = {}
+
+    base_rounds = generate_round_robin_rounds(teams)
+    series_lengths = [3, 3, 3, 3, 2, 2]
+    if sum(series_lengths) != games_per_pair:
+        raise ValueError("series_lengths must add up to games_per_pair")
+
+    series_no = 1
+    last_scheduled_date = current_date
+
+    for cycle, series_len in enumerate(series_lengths):
+        rounds = base_rounds[:]
+
+        for round_idx, round_matches in enumerate(rounds):
+            day_matches = [(away, home) for home, away in round_matches] if cycle % 2 else round_matches[:]
+            series_start = get_next_series_start(current_date)
+            add_rest_days_between(state, last_scheduled_date, series_start)
+
+            for game_idx in range(series_len):
+                current_date = series_start + timedelta(days=game_idx)
+                date_str = current_date.strftime("%m/%d")
+                series_info = {
+                    "series_id": series_no,
+                    "series_game": game_idx + 1,
+                    "series_len": series_len,
+                    "cycle": cycle + 1
+                }
+
+                state.master_schedule[date_str] = {
+                    "matches": day_matches,
+                    "processed": False,
+                    "stage": "regular",
+                    **series_info
+                }
+                add_user_schedule_entry(state, date_str, day_matches, "regular", series_info)
+
+            last_scheduled_date = current_date
+            series_no += 1
             
 # MatchScene에서 경기 종료 시 호출
 def apply_daily_results(self):
@@ -250,22 +328,43 @@ def apply_daily_results(self):
 
 def load_players():
     players_dict = {}
-    players_dir = resource_path("players")
-    
-    if not os.path.exists(players_dir):
+    players_path = os.path.join(resource_path("players"), "players.json")
+
+    if not os.path.exists(players_path):
         return {}
 
-    for fname in os.listdir(players_dir):
-        if fname.endswith(".json"):
-            path = os.path.join(players_dir, fname)
-            with open(path, encoding="utf-8") as f:
-                try:
-                    data = json.load(f)
-                    players_dict[data["id"]] = data
-                except (json.JSONDecodeError, KeyError):
-                    print(f"파일 로드 실패: {fname}")
-                    continue
+    try:
+        with open(players_path, encoding="utf-8") as f:
+            data = json.load(f)
+
+        for player in data.get("players", []):
+            players_dict[player["id"]] = player
+
+    except (json.JSONDecodeError, KeyError, TypeError):
+        print("파일 로드 실패: players.json")
+        return {}
+
     return players_dict
+
+def load_staff():
+    staff_dict = {}
+    staff_path = os.path.join(resource_path("staff"), "staff.json")
+
+    if not os.path.exists(staff_path):
+        return {}
+
+    try:
+        with open(staff_path, encoding="utf-8") as f:
+            data = json.load(f)
+
+        for staff in data.get("staff", []):
+            staff_dict[staff["id"]] = staff
+
+    except (json.JSONDecodeError, KeyError, TypeError):
+        print("파일 로드 실패: staff.json")
+        return {}
+
+    return staff_dict
 
 def save_player(player_obj):
     
@@ -328,24 +427,254 @@ import random
 tutorial = 0
 #day1 = 0
 
+def get_regular_standings(state):
+    return sorted(
+        state.team_stats.items(),
+        key=lambda x: (
+            x[1]["win"] / max(x[1]["win"] + x[1]["loss"], 1),
+            x[1]["win"],
+            -x[1]["loss"]
+        ),
+        reverse=True
+    )
+
+def get_team_win_probability(state, team_a, team_b):
+    stats_a = state.team_stats.get(team_a, {})
+    stats_b = state.team_stats.get(team_b, {})
+    pct_a = stats_a.get("win", 0) / max(stats_a.get("win", 0) + stats_a.get("loss", 0), 1)
+    pct_b = stats_b.get("win", 0) / max(stats_b.get("win", 0) + stats_b.get("loss", 0), 1)
+    return max(0.35, min(0.65, 0.5 + (pct_a - pct_b) * 0.7))
+
+def simulate_postseason_game(state, team_a, team_b):
+    prob_a = get_team_win_probability(state, team_a, team_b)
+    winner = team_a if random.random() < prob_a else team_b
+    loser = team_b if winner == team_a else team_a
+    winner_score = random.randint(2, 9)
+    loser_score = random.randint(0, winner_score - 1)
+    return winner, loser, winner_score, loser_score
+
+def simulate_series(state, stage, team_a, team_b, wins_needed, initial_wins=None):
+    wins = {team_a: 0, team_b: 0}
+    if initial_wins:
+        wins.update(initial_wins)
+
+    lines = [f"=== {stage}: {team_a} vs {team_b} ==="]
+    if initial_wins:
+        lines.append(f"Starting series: {team_a} {wins[team_a]} - {wins[team_b]} {team_b}")
+
+    game_no = 1
+    while wins[team_a] < wins_needed and wins[team_b] < wins_needed:
+        winner, loser, w_score, l_score = simulate_postseason_game(state, team_a, team_b)
+        wins[winner] += 1
+        lines.append(f"G{game_no}: {winner} {w_score} - {l_score} {loser}  ({wins[team_a]}-{wins[team_b]})")
+        game_no += 1
+
+    series_winner = team_a if wins[team_a] >= wins_needed else team_b
+    lines.append(f"Winner: {series_winner}\n")
+    return series_winner, lines
+
+def simulate_kbo_postseason(state, standings):
+    seeds = [team for team, _ in standings[:5]]
+    if len(seeds) < 5:
+        return "Not enough teams for postseason."
+
+    first, second, third, fourth, fifth = seeds
+    report = ["=== KBO STYLE POSTSEASON ===", ""]
+    report.append("Seeds:")
+    for idx, team in enumerate(seeds, 1):
+        report.append(f"{idx}. {team}")
+    report.append("")
+
+    wc_winner, lines = simulate_series(
+        state, "Wild Card", fourth, fifth, 2,
+        initial_wins={fourth: 1, fifth: 0}
+    )
+    report.extend(lines)
+
+    semi_winner, lines = simulate_series(state, "Semi-Playoff", third, wc_winner, 3)
+    report.extend(lines)
+
+    playoff_winner, lines = simulate_series(state, "Playoff", second, semi_winner, 3)
+    report.extend(lines)
+
+    champion, lines = simulate_series(state, "Korean Series", first, playoff_winner, 4)
+    report.extend(lines)
+
+    state.champion = champion
+    state.postseason = {
+        "seeds": seeds,
+        "wild_card_winner": wc_winner,
+        "semi_playoff_winner": semi_winner,
+        "playoff_winner": playoff_winner,
+        "champion": champion
+    }
+    report.append(f"CHAMPION: {champion}")
+    return "\n".join(report)
+
+def get_next_postseason_date(state, from_date_str):
+    base_y, _, _ = state.base_date
+    month, day = map(int, from_date_str.split("/"))
+    current = date(base_y, month, day)
+
+    while True:
+        current += timedelta(days=1)
+        if current.weekday() == 0:
+            continue
+        date_str = current.strftime("%m/%d")
+        if date_str not in state.master_schedule:
+            return date_str
+
+def has_pending_postseason_game(state):
+    for date_str, game in state.schedule.items():
+        if game.get("stage") == "postseason" and not game.get("played", False):
+            return True
+
+    for day_data in state.master_schedule.values():
+        if day_data.get("stage") == "postseason" and not day_data.get("processed", False):
+            return True
+
+    return False
+
+def set_current_postseason_series(state, stage, team_a, team_b, wins_needed, initial_wins=None):
+    wins = {team_a: 0, team_b: 0}
+    if initial_wins:
+        wins.update(initial_wins)
+
+    state.postseason["current_series"] = {
+        "stage": stage,
+        "teams": [team_a, team_b],
+        "wins_needed": wins_needed,
+        "wins": wins,
+        "game_no": 1,
+        "results": [],
+        "winner": None
+    }
+
+def schedule_current_postseason_game(state, from_date_str):
+    if has_pending_postseason_game(state):
+        return None
+
+    ps = getattr(state, "postseason", {})
+    series = ps.get("current_series")
+    if not ps.get("active") or ps.get("completed") or not series or series.get("winner"):
+        return None
+
+    date_str = get_next_postseason_date(state, from_date_str)
+    home_team, away_team = series["teams"]
+    if series["game_no"] % 2 == 0:
+        home_team, away_team = away_team, home_team
+
+    state.master_schedule[date_str] = {
+        "matches": [(home_team, away_team)],
+        "processed": False,
+        "stage": "postseason",
+        "series": series["stage"]
+    }
+
+    if state.user_team in (home_team, away_team):
+        opponent = away_team if home_team == state.user_team else home_team
+        state.schedule[date_str] = {
+            "opponent": opponent,
+            "type": "HOME" if home_team == state.user_team else "AWAY",
+            "played": False,
+            "stage": "postseason",
+            "series": series["stage"]
+        }
+
+    return date_str
+
+def start_kbo_postseason(state, standings, date_str):
+    seeds = [team for team, _ in standings[:5]]
+    if len(seeds) < 5:
+        return None
+
+    state.postseason = {
+        "active": True,
+        "completed": False,
+        "seeds": seeds,
+        "round_index": 0,
+        "champion": None
+    }
+
+    first, second, third, fourth, fifth = seeds
+    set_current_postseason_series(
+        state,
+        "Wild Card",
+        fourth,
+        fifth,
+        2,
+        initial_wins={fourth: 1, fifth: 0}
+    )
+    return schedule_current_postseason_game(state, date_str)
+
+def record_postseason_result(state, winner, loser, date_str, score_text=None):
+    ps = getattr(state, "postseason", {})
+    series = ps.get("current_series")
+    if not ps.get("active") or ps.get("completed") or not series or series.get("winner"):
+        return
+
+    series["wins"][winner] += 1
+    series["results"].append({
+        "date": date_str,
+        "winner": winner,
+        "loser": loser,
+        "score": score_text
+    })
+    series["game_no"] += 1
+
+    if series["wins"][winner] >= series["wins_needed"]:
+        series["winner"] = winner
+
+def advance_postseason_if_needed(state, date_str):
+    ps = getattr(state, "postseason", {})
+    if not ps.get("active") or ps.get("completed"):
+        return None
+
+    series = ps.get("current_series")
+    if not series:
+        return None
+
+    if series.get("winner"):
+        seeds = ps.get("seeds", [])
+        winner = series["winner"]
+        stage = series["stage"]
+
+        if stage == "Wild Card":
+            set_current_postseason_series(state, "Semi-Playoff", seeds[2], winner, 3)
+        elif stage == "Semi-Playoff":
+            set_current_postseason_series(state, "Playoff", seeds[1], winner, 3)
+        elif stage == "Playoff":
+            set_current_postseason_series(state, "Korean Series", seeds[0], winner, 4)
+        elif stage == "Korean Series":
+            ps["completed"] = True
+            ps["champion"] = winner
+            state.champion = winner
+            state.season_ended = True
+            state.inbox.append({
+                "date": date_str,
+                "subject": "Korean Series Champion",
+                "body": f"{winner} won the Korean Series.",
+                "read": False
+            })
+            return "CHAMPION"
+
+    return schedule_current_postseason_game(state, date_str)
+
 def check_season_end(players, state, date_str):
-    # 모든 경기 처리 완료 여부
-    all_processed = all(v.get("processed", False) for v in state.master_schedule.values())
-    my_games_done = all(g.get("played", False) for g in state.schedule.values())
-    
+    regular_days = [v for v in state.master_schedule.values() if v.get("stage", "regular") == "regular"]
+    regular_user_games = [g for g in state.schedule.values() if g.get("stage", "regular") == "regular"]
+    all_processed = all(v.get("processed", False) for v in regular_days)
+    my_games_done = all(g.get("played", False) for g in regular_user_games)
+
     if not (all_processed and my_games_done):
         return False
 
-    if getattr(state, 'season_ended', False):
+    if getattr(state, 'regular_season_ended', False):
         return False
-    state.season_ended = True
+    state.regular_season_ended = True
 
     # 1. 최종 순위
-    standings = sorted(
-        state.team_stats.items(),
-        key=lambda x: (x[1]["win"], -x[1]["loss"]),
-        reverse=True
-    )
+    standings = get_regular_standings(state)
     rank_body = "=== FINAL STANDINGS ===\n\n"
     for i, (team, stats) in enumerate(standings):
         w, l = stats["win"], stats["loss"]
@@ -412,6 +741,21 @@ def check_season_end(players, state, date_str):
         "body": title_body,
         "read": False
     })
+
+    postseason_date = start_kbo_postseason(state, standings, date_str)
+    postseason_body = "=== KBO POSTSEASON ===\n\nSeeds:\n"
+    for idx, (team, _) in enumerate(standings[:5], 1):
+        postseason_body += f"{idx}. {team}\n"
+    if postseason_date:
+        postseason_body += f"\nWild Card starts on {postseason_date}."
+    else:
+        postseason_body += "\nPostseason could not be scheduled."
+    state.inbox.append({
+        "date": date_str,
+        "subject": "KBO Postseason Begins",
+        "body": postseason_body,
+        "read": False
+    })
     
     # 3. 계약 만료 선수 안내
     '''
@@ -431,6 +775,136 @@ def check_season_end(players, state, date_str):
     '''
     return True
 
+def move_player_to_fa(state, player):
+    old_team = player.team
+    if old_team in state.team_rosters and player in state.team_rosters[old_team]:
+        state.team_rosters[old_team].remove(player)
+
+    state.team_rosters.setdefault("FA", [])
+    if player not in state.team_rosters["FA"]:
+        state.team_rosters["FA"].append(player)
+
+    player.team = "FA"
+    player.backnumber = None
+    player.contract = {
+        "salary": 0,
+        "begin": None,
+        "end": None
+    }
+    player.status["roster"] = "fa"
+
+    player.data["team"] = "FA"
+    player.data["backnumber"] = None
+    player.data["contract"] = player.contract
+    player.data["status"] = player.status
+
+def process_user_contracts(state, curr_date, date_str):
+    user_roster = list(state.team_rosters.get(state.user_team, []))
+    expiring_soon = []
+    expired = []
+
+    for player in user_roster:
+        end_text = player.contract_end()
+        if not end_text:
+            continue
+
+        try:
+            end_date = date.fromisoformat(end_text)
+        except ValueError:
+            continue
+
+        days_left = (end_date - curr_date).days
+        if days_left == 30 and not player.status.get("contract_30day_notice_sent"):
+            player.status["contract_30day_notice_sent"] = True
+            expiring_soon.append(player)
+        elif days_left <= 0 and not player.status.get("contract_expired_notice_sent"):
+            player.status["contract_expired_notice_sent"] = True
+            expired.append(player)
+
+    if expiring_soon:
+        body = "The following players' contracts expire in 30 days:\n\n"
+        for player in expiring_soon:
+            body += f"- {player.name} ({player.pos})  End: {player.contract_end()}\n"
+        state.inbox.append({
+            "date": date_str,
+            "subject": "Contract Expiry Notice",
+            "body": body,
+            "read": False
+        })
+
+    if expired:
+        body = "The following players' contracts have expired and they became free agents:\n\n"
+        for player in expired:
+            body += f"- {player.name} ({player.pos})\n"
+            move_player_to_fa(state, player)
+        state.inbox.append({
+            "date": date_str,
+            "subject": "Players Became Free Agents",
+            "body": body,
+            "read": False
+        })
+
+    return bool(expiring_soon or expired)
+
+def staff_trait_bonus(state, role, trait_name):
+    staff = getattr(state, "staff_slots", {}).get(role)
+    if not staff or not hasattr(staff, "get_trait_bonus"):
+        return 0
+    return staff.get_trait_bonus(trait_name)
+
+def apply_training_staff_bonus(state, player, exp_gain):
+    if player.team != state.user_team:
+        return exp_gain
+
+    bonus = staff_trait_bonus(state, "HD", "training_efficiency")
+    age = player.age()
+    if age is not None and age <= 25:
+        bonus += staff_trait_bonus(state, "HD", "young_growth_boost")
+
+    return int(exp_gain * (1 + bonus * 0.05))
+
+def apply_rest_fatigue_staff_bonus(state, player, fatigue_recovery):
+    if player.team != state.user_team:
+        return fatigue_recovery
+
+    bonus = staff_trait_bonus(state, "HD", "rest_fatigue_recovery")
+    return fatigue_recovery + bonus * 8
+
+def apply_health_recovery_staff_bonus(state, player, health_recovery):
+    if player.team != state.user_team:
+        return health_recovery
+
+    bonus = staff_trait_bonus(state, "HD", "rest_fatigue_recovery")
+    return health_recovery + bonus * 20
+
+def apply_injury_risk_staff_bonus(state, player, injury_chance):
+    if player.team != state.user_team:
+        return injury_chance
+
+    bonus = staff_trait_bonus(state, "DR", "injury_risk_reduction")
+    return injury_chance * max(0.50, 1 - bonus * 0.06)
+
+def apply_injury_days_staff_bonus(state, player, injury_days):
+    if player.team != state.user_team:
+        return injury_days
+
+    bonus = staff_trait_bonus(state, "DR", "injury_days_reduction")
+    return max(1, int(injury_days * max(0.50, 1 - bonus * 0.06)))
+
+def has_surprise_rehab(state, player):
+    if player.team != state.user_team:
+        return False
+
+    bonus = staff_trait_bonus(state, "DR", "surprise_rehab")
+    return bonus > 0 and random.random() < min(0.10, bonus * 0.01)
+
+def apply_veteran_decline_staff_bonus(state, player, decline):
+    if player.team != state.user_team:
+        return decline
+
+    bonus = staff_trait_bonus(state, "HD", "veteran_decline_slowdown")
+    return max(0, int(decline * max(0.50, 1 - bonus * 0.06)))
+
 def process_day(players, state):
     import random
     from datetime import date, timedelta
@@ -441,11 +915,16 @@ def process_day(players, state):
     base_y, base_m, base_d = state.base_date
     curr_date = date(base_y, base_m, base_d) + timedelta(days=state.current_day - 1)
     date_str = curr_date.strftime("%m/%d")
+    if getattr(state, "postseason", {}).get("active"):
+        advance_postseason_if_needed(state, date_str)
     day_data = state.master_schedule.get(date_str)
     
     all_players = []
     for team, roster in state.team_rosters.items():
         all_players.extend(roster)
+
+    if process_user_contracts(state, curr_date, date_str):
+        something = 1
     
     # 1. 월초 처리 (매달 1일)
     if curr_date.day == 1:
@@ -494,7 +973,10 @@ def process_day(players, state):
                     if len(form) > 5: form.pop(0) # 최근 5경기 유지
                     state.team_data[t]["recent_form"] = form
             
-            state.record_match_result(winner, loser)
+            if day_data.get("stage") == "postseason":
+                record_postseason_result(state, winner, loser, date_str, f"{w_score}:{l_score}")
+            else:
+                state.record_match_result(winner, loser)
             simulate_ai_player_stats(state.team_rosters.get(winner), state.team_rosters.get(loser))
             
             daily_report.append(f"{winner} {w_score} : {l_score} {loser}")
@@ -536,9 +1018,10 @@ def process_day(players, state):
     for p in all_players: 
         if p.status["fatigue"] > 200:
             injury_chance = min(0.5, ((p.status["fatigue"] - 200) ** 2) / 40000 + 0.05)
+            injury_chance = apply_injury_risk_staff_bonus(state, p, injury_chance)
             if random.random() < injury_chance: 
                 p.status["is_injured"] = True
-                p.status["injury_days"] = random.randint(3, 30)
+                p.status["injury_days"] = apply_injury_days_staff_bonus(state, p, random.randint(3, 30))
                 if p.team == state.user_team:
                     state.inbox.append({
                     "date": date_str, "subject": f"Injury Report: {p.name}",
@@ -552,18 +1035,19 @@ def process_day(players, state):
 
         if p.status.get("training_mode") == "REST":
             recovery = 60 * (getattr(p, 'stamina', 100) / 100)
+            recovery = apply_rest_fatigue_staff_bonus(state, p, recovery)
             p.status["fatigue"] = max(0, p.status["fatigue"] - recovery)
-            p.status["exp"] += 5
+            p.status["exp"] += apply_training_staff_bonus(state, p, 5)
         elif p.status.get("training_mode") == "TRAIN":
             if p.status["condition"] < 70:
                 p.status["condition"] = min(70, p.status["condition"] + 10)
             p.status["fatigue"] = max(0, p.status["fatigue"] - 20)
-            p.status["exp"] += 30
+            p.status["exp"] += apply_training_staff_bonus(state, p, 30)
         else:
             if p.status["condition"] < 70:
                 p.status["condition"] = min(70, p.status["condition"] + 15)
             p.status["fatigue"] = max(0, p.status["fatigue"] - 10)
-            p.status["exp"] += 50
+            p.status["exp"] += apply_training_staff_bonus(state, p, 50)
 
     # 휴식일 알림 (선택 사항)
     if game and game["type"] == "REST":
@@ -577,6 +1061,8 @@ def process_day(players, state):
     for p in all_players:
         if p.status.get("is_injured"):
             p.status["injury_days"] = max(0, p.status["injury_days"] - 1)
+            if has_surprise_rehab(state, p):
+                p.status["injury_days"] = 0
             if p.status["injury_days"] == 0:
                 p.status["is_injured"] = False
                 p.status["health"] = 1000
@@ -594,10 +1080,7 @@ def process_day(players, state):
         else:
             recovery = 100
         
-        if p.team == state.user_team:
-            hd = state.staff_slots.get("HD")
-            if hd and "recovery" in hd.effect_dict:
-                recovery += (hd.stars * hd.effect_dict["recovery"])
+        recovery = apply_health_recovery_staff_bonus(state, p, recovery)
             
         p.status["health"] = min(1000, p.status.get("health", 0) + recovery)
         
@@ -605,8 +1088,8 @@ def process_day(players, state):
         max_exp = p.status.get("maxexp", 1000)
         grow = 0
         
-        if age > 32:
-            p.status["exp"] -= 10 * (age-32)
+        if age is not None and age > 32:
+            p.status["exp"] -= apply_veteran_decline_staff_bonus(state, p, 10 * (age-32))
             
         while p.status.get("exp", 0) < 0:
             p.status["exp"] += max_exp
@@ -688,6 +1171,18 @@ def main():
     
     raw_players_dict = load_players()
     players = [Player(p) for p in raw_players_dict.values()]
+
+    raw_staff_dict = load_staff()
+    staff_members = [Staff(s) for s in raw_staff_dict.values()]
+
+    if staff_members:
+        state.all_staff = staff_members
+        state.owned_staff = [s for s in staff_members if s.team == state.user_team]
+
+        state.staff_slots = {}
+        for s in state.owned_staff:
+            if s.role not in state.staff_slots:
+                state.staff_slots[s.role] = s
     
     state.team_data = load_team_data()
     
@@ -722,6 +1217,7 @@ def main():
     "option": OptionScene(),
     "info": TeamDetailScene(state,state.user_team),
     "reserve": ReserveScene(user_players,state),
+    "transfer": TransferScene(state),
     }
 
     current="title"
@@ -753,6 +1249,7 @@ def main():
     while True:
         screen.fill(white)
         events=pygame.event.get()
+        space_pressed = False
         """
         if current == "title":
             target_bgm = os.path.join(ASSET_PATH, "bensound-creativeminds.mp3")
@@ -771,6 +1268,12 @@ def main():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONUP:
                 state.waiting_for_click_release = False
+
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                space_pressed = True
+
+            if event.type == pygame.KEYUP and event.key == pygame.K_SPACE:
+                state.waiting_for_click_release = False
             
         filtered_events = events
         if state.is_fading:
@@ -783,6 +1286,15 @@ def main():
                 
         #result = scenes[current].update(events)
         result = scenes[current].update(filtered_events)
+
+        if (
+            result is None
+            and space_pressed
+            and current != "game"
+            and current != "title"
+            and not state.is_fading
+        ):
+            result = "advance_time"
         
         if result == "advance_time":
             if not getattr(state, 'waiting_for_click_release', False): 
@@ -807,6 +1319,18 @@ def main():
                 state.prevscene = current
                 scenes["player_detail"] = PlayerDetailScene(player,state)
                 current = "player_detail"
+            elif key == "staff_detail":
+                state.prevscene = current
+                scenes["staff_detail"] = StaffDetailScene(player,state)
+                current = "staff_detail"
+
+            elif key == "staff_contract":
+                scenes["staff_contract"] = player
+                current = "staff_contract"
+
+            elif key == "staff_detail_refresh":
+                scenes["staff_detail"] = StaffDetailScene(player,state)
+                current = "staff_detail"
                 
             elif key == "result":
                 scenes["result"] = ResultScene(player, state)
@@ -830,6 +1354,9 @@ def main():
                 scenes["game"] = GameScene(user_players, state)
                 current = "game"
             elif result in scenes:
+                if result == "team":
+                    user_players = state.team_rosters.get(state.user_team, [])
+                    scenes["team"] = TeamScene(user_players, state, state.user_team)
                 if result == "squad":
                     scenes["squad"] = SquadScene(user_players, state)
                 current = result

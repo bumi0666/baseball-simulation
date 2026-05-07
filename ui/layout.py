@@ -1,35 +1,72 @@
+from turtle import color
+
 import pygame
 from datetime import date, timedelta
 from ui.button import Button
 from config import *
 
 def get_common_buttons(scene_obj):
-    """모든 씬에서 공통으로 사용할 버튼 리스트 반환"""
-    gap = 70
+    """모든 scene에서 공통으로 사용하는 사이드바 버튼 리스트 반환"""
+
+    scene_key_map = {
+        "HubScene": "hub",
+        "InboxScene": "inbox",
+        "TeamScene": "team",
+        "SquadScene": "squad",
+        "StaffScene": "staff",
+        "TrainingScene": "train",
+        "MedicalScene": "medical",
+        "ScheduleScene": "schedule",
+        "TransferScene": "transfer",
+        "FinanceScene": "finance",
+        "TeamDetailScene": "info",
+        "ReserveScene": "reserve",
+    }
+
+    active_key = getattr(scene_obj, "nav_key", None)
+    if active_key is None:
+        active_key = scene_key_map.get(scene_obj.__class__.__name__)
+
     add = 30
-    
-    # 사이드바 버튼들의 X 좌표와 너비 통일
     btn_x = 20
     btn_w = 150
     btn_h = 40
-    
-    return [
-        Button((btn_x, 60+add, btn_w, btn_h), "Home", lambda: "hub"),
-        Button((btn_x, 110+add, btn_w, btn_h), "Inbox", lambda: "inbox"),
-        Button((btn_x, 160+add, btn_w, btn_h), "Player", lambda: "team"),
-        Button((btn_x, 210+add, btn_w, btn_h), "Squad", lambda: "squad"),
-        Button((btn_x, 260+add, btn_w, btn_h), "Staff", lambda: "staff"),
-        Button((btn_x, 310+add, btn_w, btn_h), "Training", lambda: "train"),
-        Button((btn_x, 360+add, btn_w, btn_h), "Medical", lambda: "medical"),
-        Button((btn_x, 410+add, btn_w, btn_h), "Schedule", lambda: "schedule"),
-        Button((btn_x, 460+add, btn_w, btn_h), "Transfers", lambda: "transfer"),
-        Button((btn_x, 510+add, btn_w, btn_h), "Finances", lambda: "finance"),
-        Button((btn_x, 560+add, btn_w, btn_h), "Team", lambda: "info"),
-        Button((btn_x, 610+add, btn_w, btn_h), "Reserve", lambda: "reserve"),
-        
-        # 우측 상단 진행 버튼 (Next)
-        Button((width - 190, 20, 160, 40), "NEXT", lambda: "advance_time")
+
+    nav_items = [
+        ("Home", "hub", 60 + add),
+        ("Inbox", "inbox", 110 + add),
+        ("Player", "team", 160 + add),
+        ("Squad", "squad", 210 + add),
+        ("Staff", "staff", 260 + add),
+        ("Training", "train", 310 + add),
+        ("Medical", "medical", 360 + add),
+        ("Schedule", "schedule", 410 + add),
+        ("Transfers", "transfer", 460 + add),
+        ("Finances", "finance", 510 + add),
+        ("Team", "info", 560 + add),
+        ("Reserve", "reserve", 610 + add),
     ]
+
+    buttons = []
+
+    for label, target, y in nav_items:
+        btn = Button(
+            (btn_x, y, btn_w, btn_h),
+            label,
+            lambda t=target: t
+        )
+        btn.active = (target == active_key)
+        buttons.append(btn)
+
+    next_btn = Button(
+        (width - 190, 20, 160, 40),
+        "NEXT",
+        lambda: "advance_time"
+    )
+    next_btn.active = False
+    buttons.append(next_btn)
+
+    return buttons
 
 def draw_common_ui(screen, state, font):
     """사이드바 배경과 날짜 표시 (GameState 객체 대응)"""
@@ -73,3 +110,30 @@ def draw_common_ui(screen, state, font):
         count_surf = small_font.render(str(unread_count), True, (255, 255, 255))
         count_rect = count_surf.get_rect(center=(badge_x, badge_y))
         screen.blit(count_surf, count_rect)
+
+    def draw(self, screen):
+        is_active = getattr(self, "active", False)
+
+        if is_active:
+            color = (45, 80, 135)
+            border_color = (90, 180, 255)
+        elif self.hover:
+            color = (35, 35, 35)
+            border_color = (90, 90, 90)
+        else:
+            color = (0, 0, 0)
+            border_color = (40, 40, 40)
+
+        pygame.draw.rect(screen, color, self.rect)
+        pygame.draw.rect(screen, border_color, self.rect, 2)
+
+        if is_active:
+            pygame.draw.rect(
+                screen,
+                (0, 200, 255),
+                (self.rect.x, self.rect.y, 5, self.rect.height)
+            )
+
+        text_surf = self.font.render(self.text, True, white)
+        text_rect = text_surf.get_rect(center=self.rect.center)
+        screen.blit(text_surf, text_rect)

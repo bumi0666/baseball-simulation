@@ -287,6 +287,17 @@ class ContractScene(Scene):
     def get_current_wage_total(self):
         return sum(p.salary() for p in self.state.team_rosters[self.state.user_team])
 
+    def get_game_date(self):
+        y, m, d = self.state.base_date
+        return date(y, m, d) + timedelta(days=self.state.current_day - 1)
+
+    def contract_years_left(self):
+        end = self.player.contract_end()
+        if not end:
+            return 0
+        end_date = date.fromisoformat(end)
+        return max(0, (end_date - self.get_game_date()).days // 365)
+
     def increase_salary(self):
         current_total = self.get_current_wage_total()
         available     = self.state.wage_budget - current_total + self.player.salary()
@@ -342,8 +353,7 @@ class ContractScene(Scene):
         y, m, d = self.state.base_date
         current_date_obj = date(y, m, d) + timedelta(days=self.state.current_day - 1)
         begin    = current_date_obj.strftime("%Y-%m-%d")
-        end_year = current_date_obj.year + 1  # 1년 고정
-        end      = f"{end_year}-12-31"
+        end      = (current_date_obj + timedelta(days=365)).strftime("%Y-%m-%d")
 
         self.player.contract["begin"]  = begin
         self.player.contract["end"]    = end
@@ -385,7 +395,7 @@ class ContractScene(Scene):
         begin      = self.player.contract.get("begin", "-")
         end        = self.player.contract.get("end",   "-")
         salary     = self.player.salary()
-        years_left = self.player.contract_years_left()
+        years_left = self.contract_years_left()
 
         for i, (lbl, val) in enumerate([
             ("Period",     f"{begin}"),

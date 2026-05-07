@@ -228,6 +228,40 @@ class GameScene(Scene):
         self._pending_my_team = None
         self._pending_walk    = False
 
+    def staff_trait_bonus(self, role, trait_name):
+        staff = getattr(self.state, "staff_slots", {}).get(role)
+        if not staff or not hasattr(staff, "get_trait_bonus"):
+            return 0
+        return staff.get_trait_bonus(trait_name)
+
+    def apply_game_fatigue_staff_bonus(self, player, fatigue_inc):
+        if player.team != self.state.user_team:
+            return fatigue_inc
+
+        bonus = self.staff_trait_bonus("HD", "game_fatigue_reduction")
+        return fatigue_inc * max(0.50, 1 - bonus * 0.05)
+
+    def apply_injury_risk_staff_bonus(self, player, injury_chance):
+        if player.team != self.state.user_team:
+            return injury_chance
+
+        bonus = self.staff_trait_bonus("DR", "injury_risk_reduction")
+        return injury_chance * max(0.50, 1 - bonus * 0.06)
+
+    def apply_injury_days_staff_bonus(self, player, injury_days):
+        if player.team != self.state.user_team:
+            return injury_days
+
+        bonus = self.staff_trait_bonus("DR", "injury_days_reduction")
+        return max(1, int(injury_days * max(0.50, 1 - bonus * 0.06)))
+
+    def apply_rest_fatigue_staff_bonus(self, player, fatigue_recovery):
+        if player.team != self.state.user_team:
+            return fatigue_recovery
+
+        bonus = self.staff_trait_bonus("HD", "rest_fatigue_recovery")
+        return fatigue_recovery + bonus * 8
+
         # 항상 표시할 야수 위치 (FieldSim 없을 때)
         # FieldSim의 INITIAL_FIELDERS를 그대로 사용
         from simulation import INITIAL_FIELDERS
@@ -1384,13 +1418,15 @@ class GameScene(Scene):
                 p.status["exp"] = p.status.get("exp", 0) + health_loss * 2
                 inc = (2.7 * health_loss) * (100 / getattr(p, 'stamina', 100)) / 10 if p.pos == "P" else (8*9 if p.pos == "C" else 5*9)
                 if p.status.get("condition", 100) < 70: inc *= 1.3
+                inc = self.apply_game_fatigue_staff_bonus(p, inc)
                 p.status["fatigue"]   += inc - 10
                 p.status["condition"] = min(100, p.status["condition"] + random.randint(5, 10))
                 if p.status["fatigue"] > 200:
                     injury_chance = min(0.5, ((p.status["fatigue"]-200)**2)/40000 + 0.05)
+                    injury_chance = self.apply_injury_risk_staff_bonus(p, injury_chance)
                     if random.random() < injury_chance:
                         p.status["is_injured"]   = True
-                        p.status["injury_days"]  = random.randint(3, 30)
+                        p.status["injury_days"]  = self.apply_injury_days_staff_bonus(p, random.randint(3, 30))
                         self.state.inbox.append({
                             "date": date_str, "subject": f"Injury Report: {p.name}",
                             "body": f"Unfortunately, {p.name} suffered an injury. \nExpected recovery will be {p.status['injury_days']} days.",
@@ -1400,12 +1436,36 @@ class GameScene(Scene):
         bench_players = [p for p in user_players if p not in active_players]
         for p in bench_players:
             if not p.status.get("is_injured"):
-                p.status["fatigue"]   = max(0, p.status["fatigue"] - 30)
+                p.status["fatigue"]   = max(0, p.status["fatigue"] - self.apply_rest_fatigue_staff_bonus(p, 30))
                 p.status["condition"] = max(0, p.status["condition"] - 2)
 
     def update_team_record(self):
         my  = self.state.user_team
         opp = self.opponent_team
+        current_date = self.state.get_current_date_str()
+        schedule_entry = self.state.schedule.get(current_date, {})
+
+        if schedule_entry.get("stage") == "postseason":
+            winner = my if self.my_score > self.opp_score else opp
+            loser = opp if winner == my else my
+            if current_date in self.state.schedule:
+                self.state.schedule[current_date]["score"] = f"{self.my_score} : {self.opp_score}"
+
+            ps = getattr(self.state, "postseason", {})
+            series = ps.get("current_series")
+            if ps.get("active") and series and not series.get("winner"):
+                series["wins"][winner] += 1
+                series["results"].append({
+                    "date": current_date,
+                    "winner": winner,
+                    "loser": loser,
+                    "score": f"{self.my_score}:{self.opp_score}"
+                })
+                series["game_no"] += 1
+                if series["wins"][winner] >= series["wins_needed"]:
+                    series["winner"] = winner
+            return
+
         if self.my_score > self.opp_score:
             self.state.team_stats[my]["win"]   += 1
             self.state.team_stats[opp]["loss"] += 1
@@ -1414,7 +1474,6 @@ class GameScene(Scene):
             self.state.team_stats[opp]["win"]  += 1
         self.state.team_stats[my]["games"]  += 1
         self.state.team_stats[opp]["games"] += 1
-        current_date = self.state.get_current_date_str()
         if current_date in self.state.schedule:
             self.state.schedule[current_date]["score"] = f"{self.my_score} : {self.opp_score}"
 
