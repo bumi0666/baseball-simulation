@@ -9,6 +9,7 @@ class HubScene(Scene):
     def __init__(self, state):
         self.state = state
         self.buttons = get_common_buttons(self)
+        self.buttons.append(Button((width - 360, 20, 150, 40), "OPTIONS", self.open_options))
         
         self.TITLE_FONT = pygame.font.SysFont("malgungothic", 40, bold=True)
         self.DESC_FONT = pygame.font.SysFont("malgungothic", 25)
@@ -25,6 +26,9 @@ class HubScene(Scene):
                 "베어스": {"win": 8, "loss": 12, "games": 20},
                 "이글스": {"win": 5, "loss": 15, "games": 20}
             }
+
+    def open_options(self):
+        return "option"
 
     def draw_standings(self, screen, x, y):
         # 1. 데이터 가공 (무승부 포함 승률 계산 및 정렬)

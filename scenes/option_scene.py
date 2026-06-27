@@ -5,7 +5,8 @@ import pygame
 from ui.slider import Slider
 
 class OptionScene(Scene):
-    def __init__(self):
+    def __init__(self, state=None):
+        self.state = state
         self.bgm_slider = Slider((410, 395), 200, settings["vol_bgm"])
         self.sfx_slider = Slider((410, 455), 200, settings["vol_sfx"])
         
@@ -16,6 +17,7 @@ class OptionScene(Scene):
             Button((450, 260, 120, 40), "CHANGE", self.toggle_fps),
             # 언어 변경 버튼
             Button((450, 320, 120, 40), "CHANGE", self.toggle_language),
+            Button((width//2 - 170, 500, 100, 50), "SAVE", self.save),
             # 뒤로가기
             Button((width//2 - 50, 500, 100, 50), "BACK", self.back)
         ]
@@ -38,7 +40,12 @@ class OptionScene(Scene):
         settings["language"] = LANGUAGES[idx]
 
     def back(self):
+        if self.state is not None:
+            return getattr(self.state, "prevscene", "title") or "title"
         return "title"
+
+    def save(self):
+        return "save_game"
 
     def draw(self, screen):
         screen.fill((220, 220, 220))

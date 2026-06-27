@@ -108,9 +108,9 @@ class GameState:
         self.monthly_income = data.get("monthly_income", {"Tickets": 0, "Player sell": 0, "Sponsor": 0, "TV rights": 0, "Merchandise": 0})
         self.monthly_expense = data.get("monthly_expense", {"Wages": 0, "Player buy": 0, "Facility": 0, "Management": 0, "Tax" : 0})
         
-        self.transfer_budget = 1000000
-        self.wage_budget = 3000000
-        self.current_wage = 150000
+        self.transfer_budget = data.get("transfer_budget", 1000000)
+        self.wage_budget = data.get("wage_budget", 3000000)
+        self.current_wage = data.get("current_wage", 150000)
         
         # 월별 손익 기록 (최근 5~6개월치 그래프용)
         self.profit_history = data.get("profit_history", [0, 0, 0, 0, 0])
@@ -119,7 +119,11 @@ class GameState:
         #self.schedule = data.get("schedule", {}) # {"05/10": "HOME"} 형식
         
         self.schedule = data.get("schedule", {})
-        self.user_team = "Lions"
+        self.master_schedule = data.get("master_schedule", {})
+        self.postseason = data.get("postseason", {})
+        self.champion = data.get("champion")
+        self.regular_season_ended = data.get("regular_season_ended", False)
+        self.season_ended = data.get("season_ended", False)
         self.opponents = ["Tigers", "Bears", "Wizards", "Eagles", "Twins", "Landers", "Dinos", "Heroes", "Giants"]
         
         self.lineup = {
@@ -127,6 +131,11 @@ class GameState:
             "3B": None, "SS": None, "LF": None, "CF": None, "RF": None, "DH": None
         }
         self.batting_order = [None] * 9     
+        self.bullpen = [None] * 8
+        self.saved_lineup_ids = data.get("lineup_ids", {})
+        self.saved_batting_order_ids = data.get("batting_order_ids", [])
+        self.saved_bullpen_ids = data.get("bullpen_ids", [])
+        self.saved_staff_slot_ids = data.get("staff_slot_ids", {})
         
         self.staff_slots = {
         #"HD": Staff("kim head", "HD", 3, "전체 능력치 소폭 상승"),
@@ -135,7 +144,7 @@ class GameState:
         #"BC": Staff("choi bullpen", "BC", 2, "불펜 투수 구위 상승"),
         #"DC": Staff("jung defense", "DC", 3, "실책 확률 감소")
         }
-        self.team_stats = {
+        self.team_stats = data.get("team_stats", {
             "Tigers":  {"win": 0,  "loss": 0, "draw": 0, "games": 0},
             "Wizards": {"win": 0, "loss": 0, "draw": 0, "games": 0},
             "Eagles": {"win": 0, "loss": 0, "draw": 0,  "games": 0},
@@ -146,10 +155,10 @@ class GameState:
             "Lions":   {"win": 0,  "loss": 0, "draw": 0,  "games": 0},
             "Bears":   {"win": 0,  "loss": 0, "draw": 0,  "games": 0},
             "Giants": {"win": 0,  "loss": 0, "draw": 0,  "games": 0}
-        }
+        })
         
-        self.todaygamenotice = False
-        self.todaygamedone = False
+        self.todaygamenotice = data.get("todaygamenotice", False)
+        self.todaygamedone = data.get("todaygamedone", False)
         
         self.salary_paid_this_month = data.get("salary_paid_this_month", False)
         
@@ -1156,6 +1165,45 @@ def process_day(players, state):
     if check_season_end(players, state, date_str):
         return "NEW_MESSAGE"
     return None
+
+def restore_saved_references(state, players, staff_members):
+    player_by_id = {p.id: p for p in players}
+    staff_by_id = {s.id: s for s in staff_members}
+
+    lineup_ids = getattr(state, "saved_lineup_ids", {})
+    if lineup_ids:
+        for pos in state.lineup:
+            state.lineup[pos] = player_by_id.get(lineup_ids.get(pos))
+
+    order_ids = getattr(state, "saved_batting_order_ids", [])
+    if order_ids:
+        state.batting_order = [player_by_id.get(pid) for pid in order_ids[:9]]
+        while len(state.batting_order) < 9:
+            state.batting_order.append(None)
+
+    bullpen_ids = getattr(state, "saved_bullpen_ids", [])
+    if bullpen_ids:
+        state.bullpen = [player_by_id.get(pid) for pid in bullpen_ids[:8]]
+        while len(state.bullpen) < 8:
+            state.bullpen.append(None)
+
+    state.all_staff = staff_members
+    state.owned_staff = [s for s in staff_members if s.team == state.user_team]
+
+    slot_ids = getattr(state, "saved_staff_slot_ids", {})
+    state.staff_slots = {}
+    if slot_ids:
+        for role, staff_id in slot_ids.items():
+            staff = staff_by_id.get(staff_id)
+            if staff:
+                state.staff_slots[role] = staff
+    else:
+        for staff in state.owned_staff:
+            if staff.role not in state.staff_slots:
+                state.staff_slots[staff.role] = staff
+
+def save_current_game(state, players):
+    save_game(state, players, getattr(state, "all_staff", []))
         
         
 def main():
@@ -1169,22 +1217,20 @@ def main():
     #raw_players_dict = load_players()
     #players = [Player(p) for p in raw_players_dict.values()]
     
-    raw_players_dict = load_players()
-    players = [Player(p) for p in raw_players_dict.values()]
+    if raw_state.get("players"):
+        players = [Player(p) for p in raw_state.get("players", [])]
+    else:
+        raw_players_dict = load_players()
+        players = [Player(p) for p in raw_players_dict.values()]
 
-    raw_staff_dict = load_staff()
-    staff_members = [Staff(s) for s in raw_staff_dict.values()]
-
-    if staff_members:
-        state.all_staff = staff_members
-        state.owned_staff = [s for s in staff_members if s.team == state.user_team]
-
-        state.staff_slots = {}
-        for s in state.owned_staff:
-            if s.role not in state.staff_slots:
-                state.staff_slots[s.role] = s
+    if raw_state.get("staff"):
+        staff_members = [Staff(s) for s in raw_state.get("staff", [])]
+    else:
+        raw_staff_dict = load_staff()
+        staff_members = [Staff(s) for s in raw_staff_dict.values()]
     
-    state.team_data = load_team_data()
+    if not state.team_data:
+        state.team_data = load_team_data()
     
     state.team_data[state.user_team]
 
@@ -1196,10 +1242,13 @@ def main():
             state.team_rosters[team] = []
         state.team_rosters[team].append(p)
 
+    restore_saved_references(state, players, staff_members)
+
     # 내 팀 선수만 따로
     user_players = state.team_rosters[state.user_team]
 
-    generate_season_schedule(state)
+    if not state.master_schedule:
+        generate_season_schedule(state)
 
     scenes = {
     "title": TitleScene(),
@@ -1214,7 +1263,7 @@ def main():
     "squad":SquadScene(user_players,state),
     "staff":StaffScene(state),
     "lineup":LineupScene(user_players,state),
-    "option": OptionScene(),
+    "option": OptionScene(state),
     "info": TeamDetailScene(state,state.user_team),
     "reserve": ReserveScene(user_players,state),
     "transfer": TransferScene(state),
@@ -1263,7 +1312,7 @@ def main():
         """
         for event in events:
             if event.type==pygame.QUIT:
-                #save_game(state.current_day, state.base_date)
+                save_current_game(state, players)
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONUP:
@@ -1350,10 +1399,22 @@ def main():
                 scenes["contract"] = player
                 current = "contract"
         elif result:
-            if result == "game": # LineupScene이 완료되어 "game"을 반환하면
+            if result == "save_game":
+                save_current_game(state, players)
+                state.inbox.append({
+                    "date": state.get_current_date_str(),
+                    "subject": "Game Saved",
+                    "body": "Your game has been saved.",
+                    "read": False
+                })
+                scenes["inbox"] = InboxScene(state)
+                current = "inbox"
+            elif result == "game": # LineupScene이 완료되어 "game"을 반환하면
                 scenes["game"] = GameScene(user_players, state)
                 current = "game"
             elif result in scenes:
+                if result == "option":
+                    state.prevscene = current
                 if result == "team":
                     user_players = state.team_rosters.get(state.user_team, [])
                     scenes["team"] = TeamScene(user_players, state, state.user_team)
@@ -1374,6 +1435,7 @@ def main():
                 # [수정] 정점에서 날짜를 미리 올림 (중복 실행 방지)
                 if not getattr(state, 'day_incremented_this_fade', False):
                     state.current_day += 1
+                    save_current_game(state, players)
                     #stop_reason = process_day(players, state)
                     state.day_incremented_this_fade = True
                     
