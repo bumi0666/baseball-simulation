@@ -1,0 +1,538 @@
+{
+  "generatedAt": "2026-08-04T07:33:58.629Z",
+  "fieldCounts": [
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "byCount": {
+    "5": {
+      "samples": 5,
+      "changedFields": {
+        "min": 5,
+        "median": 5,
+        "p90": 5,
+        "max": 5
+      },
+      "burstDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "maxInterUpdateGapMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "sameFrameRate": 1,
+      "fieldsPerMsMedian": {
+        "min": 5,
+        "median": 5,
+        "p90": 5,
+        "max": 5
+      },
+      "liveNodeCount": {
+        "min": 5,
+        "median": 5,
+        "p90": 5,
+        "max": 5
+      }
+    },
+    "10": {
+      "samples": 5,
+      "changedFields": {
+        "min": 10,
+        "median": 10,
+        "p90": 10,
+        "max": 10
+      },
+      "burstDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "maxInterUpdateGapMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "sameFrameRate": 1,
+      "fieldsPerMsMedian": {
+        "min": 10,
+        "median": 10,
+        "p90": 10,
+        "max": 10
+      },
+      "liveNodeCount": {
+        "min": 10,
+        "median": 10,
+        "p90": 10,
+        "max": 10
+      }
+    },
+    "25": {
+      "samples": 5,
+      "changedFields": {
+        "min": 25,
+        "median": 25,
+        "p90": 25,
+        "max": 25
+      },
+      "burstDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "maxInterUpdateGapMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "sameFrameRate": 1,
+      "fieldsPerMsMedian": {
+        "min": 25,
+        "median": 25,
+        "p90": 25,
+        "max": 25
+      },
+      "liveNodeCount": {
+        "min": 25,
+        "median": 25,
+        "p90": 25,
+        "max": 25
+      }
+    },
+    "50": {
+      "samples": 5,
+      "changedFields": {
+        "min": 50,
+        "median": 50,
+        "p90": 50,
+        "max": 50
+      },
+      "burstDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "maxInterUpdateGapMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "sameFrameRate": 1,
+      "fieldsPerMsMedian": {
+        "min": 50,
+        "median": 50,
+        "p90": 50,
+        "max": 50
+      },
+      "liveNodeCount": {
+        "min": 50,
+        "median": 50,
+        "p90": 50,
+        "max": 50
+      }
+    },
+    "100": {
+      "samples": 5,
+      "changedFields": {
+        "min": 100,
+        "median": 100,
+        "p90": 100,
+        "max": 100
+      },
+      "burstDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "maxInterUpdateGapMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "sameFrameRate": 1,
+      "fieldsPerMsMedian": {
+        "min": 100,
+        "median": 100,
+        "p90": 100,
+        "max": 100
+      },
+      "liveNodeCount": {
+        "min": 100,
+        "median": 100,
+        "p90": 100,
+        "max": 100
+      }
+    }
+  },
+  "rawRows": [
+    {
+      "fieldCount": 5,
+      "iteration": 0,
+      "expectedFields": 5,
+      "changedFields": 5,
+      "sensitiveVisible": 5,
+      "mutationRecords": 5,
+      "firstUpdateAtMs": 39.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 5
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 1,
+      "expectedFields": 5,
+      "changedFields": 5,
+      "sensitiveVisible": 5,
+      "mutationRecords": 5,
+      "firstUpdateAtMs": 20.9,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 5
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 2,
+      "expectedFields": 5,
+      "changedFields": 5,
+      "sensitiveVisible": 5,
+      "mutationRecords": 5,
+      "firstUpdateAtMs": 21.5,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 5
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 3,
+      "expectedFields": 5,
+      "changedFields": 5,
+      "sensitiveVisible": 5,
+      "mutationRecords": 5,
+      "firstUpdateAtMs": 20.3,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 5
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 4,
+      "expectedFields": 5,
+      "changedFields": 5,
+      "sensitiveVisible": 5,
+      "mutationRecords": 5,
+      "firstUpdateAtMs": 22.5,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 5
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 0,
+      "expectedFields": 10,
+      "changedFields": 10,
+      "sensitiveVisible": 10,
+      "mutationRecords": 10,
+      "firstUpdateAtMs": 23.5,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 10
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 1,
+      "expectedFields": 10,
+      "changedFields": 10,
+      "sensitiveVisible": 10,
+      "mutationRecords": 10,
+      "firstUpdateAtMs": 21.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 10
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 2,
+      "expectedFields": 10,
+      "changedFields": 10,
+      "sensitiveVisible": 10,
+      "mutationRecords": 10,
+      "firstUpdateAtMs": 19.7,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 10
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 3,
+      "expectedFields": 10,
+      "changedFields": 10,
+      "sensitiveVisible": 10,
+      "mutationRecords": 10,
+      "firstUpdateAtMs": 21.9,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 10
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 4,
+      "expectedFields": 10,
+      "changedFields": 10,
+      "sensitiveVisible": 10,
+      "mutationRecords": 10,
+      "firstUpdateAtMs": 21.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 10
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 0,
+      "expectedFields": 25,
+      "changedFields": 25,
+      "sensitiveVisible": 25,
+      "mutationRecords": 25,
+      "firstUpdateAtMs": 22.7,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 25
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 1,
+      "expectedFields": 25,
+      "changedFields": 25,
+      "sensitiveVisible": 25,
+      "mutationRecords": 25,
+      "firstUpdateAtMs": 21.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 25
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 2,
+      "expectedFields": 25,
+      "changedFields": 25,
+      "sensitiveVisible": 25,
+      "mutationRecords": 25,
+      "firstUpdateAtMs": 21.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 25
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 3,
+      "expectedFields": 25,
+      "changedFields": 25,
+      "sensitiveVisible": 25,
+      "mutationRecords": 25,
+      "firstUpdateAtMs": 23.6,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 25
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 4,
+      "expectedFields": 25,
+      "changedFields": 25,
+      "sensitiveVisible": 25,
+      "mutationRecords": 25,
+      "firstUpdateAtMs": 21.5,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 25
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 0,
+      "expectedFields": 50,
+      "changedFields": 50,
+      "sensitiveVisible": 50,
+      "mutationRecords": 50,
+      "firstUpdateAtMs": 23.6,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 50
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 1,
+      "expectedFields": 50,
+      "changedFields": 50,
+      "sensitiveVisible": 50,
+      "mutationRecords": 50,
+      "firstUpdateAtMs": 23.1,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 50
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 2,
+      "expectedFields": 50,
+      "changedFields": 50,
+      "sensitiveVisible": 50,
+      "mutationRecords": 50,
+      "firstUpdateAtMs": 22,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 50
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 3,
+      "expectedFields": 50,
+      "changedFields": 50,
+      "sensitiveVisible": 50,
+      "mutationRecords": 50,
+      "firstUpdateAtMs": 24.2,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 50
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 4,
+      "expectedFields": 50,
+      "changedFields": 50,
+      "sensitiveVisible": 50,
+      "mutationRecords": 50,
+      "firstUpdateAtMs": 21.9,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 50
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 0,
+      "expectedFields": 100,
+      "changedFields": 100,
+      "sensitiveVisible": 100,
+      "mutationRecords": 100,
+      "firstUpdateAtMs": 29.3,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 100
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 1,
+      "expectedFields": 100,
+      "changedFields": 100,
+      "sensitiveVisible": 100,
+      "mutationRecords": 100,
+      "firstUpdateAtMs": 27.4,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 100
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 2,
+      "expectedFields": 100,
+      "changedFields": 100,
+      "sensitiveVisible": 100,
+      "mutationRecords": 100,
+      "firstUpdateAtMs": 27.3,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 100
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 3,
+      "expectedFields": 100,
+      "changedFields": 100,
+      "sensitiveVisible": 100,
+      "mutationRecords": 100,
+      "firstUpdateAtMs": 29,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 100
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 4,
+      "expectedFields": 100,
+      "changedFields": 100,
+      "sensitiveVisible": 100,
+      "mutationRecords": 100,
+      "firstUpdateAtMs": 29.7,
+      "burstDurationMs": 0,
+      "maxInterUpdateGapMs": 0,
+      "sameFrameLikely": true,
+      "fieldsPerMs": null,
+      "liveNodeCount": 100
+    }
+  ],
+  "interpretation": {
+    "measured": "Mutation timing for the current interaction-gated template. This measures DOM update burst shape, not actual screen-reader speech output.",
+    "risk": "When many aria-live/status nodes update inside one frame, assistive technologies may coalesce, reorder, skip, or interrupt announcements depending on browser and screen-reader implementation."
+  }
+}

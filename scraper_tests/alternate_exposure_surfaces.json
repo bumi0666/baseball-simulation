@@ -1,0 +1,412 @@
+{
+  "generatedAt": "2026-07-30T11:50:47.541Z",
+  "auditedRoutes": [
+    "/",
+    "/assets/runtime/risk-events.js",
+    "/structured",
+    "/sitemap.xml",
+    "/feed.xml",
+    "/amp",
+    "/print",
+    "/api/public-summary"
+  ],
+  "summary": {
+    "fullLeakRoutes": [],
+    "partExposureRoutes": [],
+    "apiHintRoutes": [],
+    "structuredDataScriptCount": 1,
+    "pass": true
+  },
+  "routeAudits": [
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "label": "/",
+      "rawBytes": 2297,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/assets/runtime/risk-events.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "label": "/assets/runtime/risk-events.js",
+      "rawBytes": 46849,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/structured",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "label": "/structured",
+      "rawBytes": 761,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 1,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "label": "/sitemap.xml",
+      "rawBytes": 189,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 1,
+          "total": 3,
+          "foundParts": [
+            "le.test"
+          ],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/feed.xml",
+      "status": 200,
+      "contentType": "application/rss+xml; charset=utf-8",
+      "label": "/feed.xml",
+      "rawBytes": 494,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/amp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "label": "/amp",
+      "rawBytes": 384,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/print",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "label": "/print",
+      "rawBytes": 462,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    },
+    {
+      "path": "/api/public-summary",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "label": "/api/public-summary",
+      "rawBytes": 195,
+      "fullLeaks": [],
+      "partLeaks": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 1,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3,
+          "foundParts": [],
+          "significant": false
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 0,
+          "foundParts": [],
+          "significant": false
+        }
+      ],
+      "apiHints": [],
+      "structuredDataScripts": 0,
+      "structuredDataLeaks": []
+    }
+  ],
+  "interpretation": {
+    "covered": "Audits the deployed page, external JS, JSON-LD sample, sitemap, RSS, AMP, print view, and public API sample for plaintext sensitive values and obvious API endpoint hints.",
+    "notCovered": "Does not discover real production endpoints, mobile app APIs, authenticated GraphQL schemas, CDN logs, backups, or third-party caches. Those require environment-specific crawling and access-control review."
+  }
+}

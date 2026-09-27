@@ -1,0 +1,5853 @@
+{
+  "generatedAt": "2026-08-04T10:41:25.133Z",
+  "iterations": 5,
+  "renderGuards": [
+    "none",
+    "simple",
+    "quorum"
+  ],
+  "layouts": [
+    "compact",
+    "below-fold"
+  ],
+  "actions": [
+    "noInteraction",
+    "eventNoScroll",
+    "scrollOnly",
+    "scrollThenEvent",
+    "locatorClick"
+  ],
+  "fingerprints": {
+    "compact:none": {
+      "rawBytes": 4697,
+      "gzipBytes": 1890,
+      "getComputedStyle": 1,
+      "getBoundingClientRect": 0,
+      "elementFromPoint": 0,
+      "requestAnimationFrame": 0,
+      "fontsReady": 0,
+      "ariaLive": 1
+    },
+    "compact:simple": {
+      "rawBytes": 5024,
+      "gzipBytes": 1999,
+      "getComputedStyle": 2,
+      "getBoundingClientRect": 1,
+      "elementFromPoint": 0,
+      "requestAnimationFrame": 0,
+      "fontsReady": 0,
+      "ariaLive": 1
+    },
+    "compact:quorum": {
+      "rawBytes": 6149,
+      "gzipBytes": 2322,
+      "getComputedStyle": 2,
+      "getBoundingClientRect": 3,
+      "elementFromPoint": 1,
+      "requestAnimationFrame": 2,
+      "fontsReady": 3,
+      "ariaLive": 1
+    },
+    "below-fold:none": {
+      "rawBytes": 4834,
+      "gzipBytes": 1936,
+      "getComputedStyle": 1,
+      "getBoundingClientRect": 0,
+      "elementFromPoint": 0,
+      "requestAnimationFrame": 0,
+      "fontsReady": 0,
+      "ariaLive": 1
+    },
+    "below-fold:simple": {
+      "rawBytes": 5161,
+      "gzipBytes": 2044,
+      "getComputedStyle": 2,
+      "getBoundingClientRect": 1,
+      "elementFromPoint": 0,
+      "requestAnimationFrame": 0,
+      "fontsReady": 0,
+      "ariaLive": 1
+    },
+    "below-fold:quorum": {
+      "rawBytes": 6286,
+      "gzipBytes": 2365,
+      "getComputedStyle": 2,
+      "getBoundingClientRect": 3,
+      "elementFromPoint": 1,
+      "requestAnimationFrame": 2,
+      "fontsReady": 3,
+      "ariaLive": 1
+    }
+  },
+  "summary": {
+    "byLayoutGuardAction": {
+      "compact:none:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 6.493,
+        "medianActionMs": 122.631
+      },
+      "compact:none:eventNoScroll": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.724,
+        "medianActionMs": 130.335
+      },
+      "compact:none:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 5.087,
+        "medianActionMs": 126.604
+      },
+      "compact:none:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 7.43,
+        "medianActionMs": 168.435
+      },
+      "compact:none:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.669,
+        "medianActionMs": 175.501
+      },
+      "compact:simple:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 5.518,
+        "medianActionMs": 127.258
+      },
+      "compact:simple:eventNoScroll": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.388,
+        "medianActionMs": 130.588
+      },
+      "compact:simple:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 6.824,
+        "medianActionMs": 122.865
+      },
+      "compact:simple:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.503,
+        "medianActionMs": 168.221
+      },
+      "compact:simple:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.015,
+        "medianActionMs": 188.176
+      },
+      "compact:quorum:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 8.49,
+        "medianActionMs": 125.22
+      },
+      "compact:quorum:eventNoScroll": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.635,
+        "medianActionMs": 124.016
+      },
+      "compact:quorum:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 8.537,
+        "medianActionMs": 128.952
+      },
+      "compact:quorum:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.728,
+        "medianActionMs": 167.688
+      },
+      "compact:quorum:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.778,
+        "medianActionMs": 180.162
+      },
+      "below-fold:none:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 6.191,
+        "medianActionMs": 124.052
+      },
+      "below-fold:none:eventNoScroll": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.801,
+        "medianActionMs": 129.867
+      },
+      "below-fold:none:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 6.082,
+        "medianActionMs": 129.373
+      },
+      "below-fold:none:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 8.365,
+        "medianActionMs": 165.39
+      },
+      "below-fold:none:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.935,
+        "medianActionMs": 185.831
+      },
+      "below-fold:simple:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 7.382,
+        "medianActionMs": 124.182
+      },
+      "below-fold:simple:eventNoScroll": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.71,
+        "medianActionMs": 127.516
+      },
+      "below-fold:simple:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 7.702,
+        "medianActionMs": 124.648
+      },
+      "below-fold:simple:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 8.254,
+        "medianActionMs": 166.344
+      },
+      "below-fold:simple:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.357,
+        "medianActionMs": 183.556
+      },
+      "below-fold:quorum:noInteraction": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 6.319,
+        "medianActionMs": 127.653
+      },
+      "below-fold:quorum:eventNoScroll": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 5.942,
+        "medianActionMs": 126.016
+      },
+      "below-fold:quorum:scrollOnly": {
+        "runs": 5,
+        "leaks": 0,
+        "fullLeaks": 0,
+        "actionErrors": 0,
+        "leakRate": 0,
+        "fullLeakRate": 0,
+        "medianLoadMs": 5.138,
+        "medianActionMs": 126.997
+      },
+      "below-fold:quorum:scrollThenEvent": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 5.886,
+        "medianActionMs": 168.137
+      },
+      "below-fold:quorum:locatorClick": {
+        "runs": 5,
+        "leaks": 5,
+        "fullLeaks": 5,
+        "actionErrors": 0,
+        "leakRate": 1,
+        "fullLeakRate": 1,
+        "medianLoadMs": 6.081,
+        "medianActionMs": 179.938
+      }
+    }
+  },
+  "rawRows": [
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 10.35,
+      "actionMs": 122.527,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 10.547,
+      "actionMs": 121.229,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 6.493,
+      "actionMs": 122.631,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 4.726,
+      "actionMs": 131.567,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 4.382,
+      "actionMs": 127.025,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 5.724,
+      "actionMs": 127.119,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 5.013,
+      "actionMs": 132.31,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 6.082,
+      "actionMs": 130.335,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 5.46,
+      "actionMs": 125.615,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 7.296,
+      "actionMs": 130.661,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 5.304,
+      "actionMs": 126.604,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 5.136,
+      "actionMs": 132.035,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 4.835,
+      "actionMs": 123.758,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 4.542,
+      "actionMs": 123.3,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 5.087,
+      "actionMs": 127.173,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 5.151,
+      "actionMs": 173.587,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 17.47,
+      "actionMs": 161.596,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 5.698,
+      "actionMs": 168.435,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 8.232,
+      "actionMs": 170.613,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 7.43,
+      "actionMs": 167.242,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.634,
+      "actionMs": 194.683,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.669,
+      "actionMs": 173.728,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.993,
+      "actionMs": 173.947,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.156,
+      "actionMs": 193.511,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.807,
+      "actionMs": 175.501,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 5.364,
+      "actionMs": 134.396,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 5.072,
+      "actionMs": 132.01,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 5.793,
+      "actionMs": 125.453,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 6.884,
+      "actionMs": 127.258,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 5.518,
+      "actionMs": 119.893,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 5.533,
+      "actionMs": 123.189,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 5.554,
+      "actionMs": 126.501,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 6.404,
+      "actionMs": 130.588,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 6.388,
+      "actionMs": 134.66,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 7.145,
+      "actionMs": 130.792,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 5.642,
+      "actionMs": 129.305,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 20.247,
+      "actionMs": 121.8,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 18.87,
+      "actionMs": 122.865,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 6.402,
+      "actionMs": 122.274,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 6.824,
+      "actionMs": 137.311,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 7.438,
+      "actionMs": 160.137,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 5.435,
+      "actionMs": 178.321,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 6.503,
+      "actionMs": 176.239,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 7.262,
+      "actionMs": 164.125,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 5.72,
+      "actionMs": 168.221,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 9.506,
+      "actionMs": 184.365,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 6.015,
+      "actionMs": 192.54,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 12.583,
+      "actionMs": 179.442,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 4.716,
+      "actionMs": 188.176,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 5.83,
+      "actionMs": 191.247,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 8.49,
+      "actionMs": 123.697,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 6.067,
+      "actionMs": 137.03,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 17.043,
+      "actionMs": 127.183,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 10.041,
+      "actionMs": 125.22,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 5.13,
+      "actionMs": 122.426,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 6.8,
+      "actionMs": 122.901,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 5.078,
+      "actionMs": 123.179,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 6.635,
+      "actionMs": 125.722,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 7.098,
+      "actionMs": 133.547,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 4.494,
+      "actionMs": 124.016,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 8.537,
+      "actionMs": 133.371,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 6.139,
+      "actionMs": 123.551,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 8.892,
+      "actionMs": 129.645,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 5.421,
+      "actionMs": 128.952,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 20.063,
+      "actionMs": 122.099,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 24.274,
+      "actionMs": 164.838,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 7.136,
+      "actionMs": 179.192,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.728,
+      "actionMs": 159.516,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.369,
+      "actionMs": 177.317,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.396,
+      "actionMs": 167.688,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 5.431,
+      "actionMs": 180.162,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 6.004,
+      "actionMs": 172.474,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 5.619,
+      "actionMs": 175.408,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 5.778,
+      "actionMs": 184.543,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "compact",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 8.57,
+      "actionMs": 186.6,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 270,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 8.363,
+      "actionMs": 126.694,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 6.552,
+      "actionMs": 120.764,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 6.191,
+      "actionMs": 126.431,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 4.895,
+      "actionMs": 121.658,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "noInteraction",
+      "loadMs": 5.861,
+      "actionMs": 124.052,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 5.836,
+      "actionMs": 124.876,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 6.801,
+      "actionMs": 128.571,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 21.828,
+      "actionMs": 129.867,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 6.2,
+      "actionMs": 131.65,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "eventNoScroll",
+      "loadMs": 6.876,
+      "actionMs": 133.82,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 6.236,
+      "actionMs": 131.504,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 17.881,
+      "actionMs": 129.373,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 5.718,
+      "actionMs": 129.005,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 5.661,
+      "actionMs": 126.112,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollOnly",
+      "loadMs": 6.082,
+      "actionMs": 131.695,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 5.699,
+      "actionMs": 173.752,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 21.433,
+      "actionMs": 165.39,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 8.365,
+      "actionMs": 165.313,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 25.712,
+      "actionMs": 164.087,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "scrollThenEvent",
+      "loadMs": 7.346,
+      "actionMs": 170.889,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 21.533,
+      "actionMs": 191.714,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 4.504,
+      "actionMs": 171.859,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 6.814,
+      "actionMs": 187.336,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.935,
+      "actionMs": 180.681,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "none",
+      "action": "locatorClick",
+      "loadMs": 5.676,
+      "actionMs": 185.831,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 23.031,
+      "actionMs": 121.491,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 10.405,
+      "actionMs": 126.2,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 7.382,
+      "actionMs": 127.818,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 6.705,
+      "actionMs": 123.237,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "noInteraction",
+      "loadMs": 5.911,
+      "actionMs": 124.182,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 5.71,
+      "actionMs": 127.516,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 19.724,
+      "actionMs": 128.924,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 15.965,
+      "actionMs": 129.386,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 5.624,
+      "actionMs": 125.404,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "eventNoScroll",
+      "loadMs": 5.422,
+      "actionMs": 125.314,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 5.938,
+      "actionMs": 124.648,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 17.655,
+      "actionMs": 125.512,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 5.467,
+      "actionMs": 123.204,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 7.732,
+      "actionMs": 125.536,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollOnly",
+      "loadMs": 7.702,
+      "actionMs": 124.282,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 6.564,
+      "actionMs": 166.344,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 8.254,
+      "actionMs": 171.534,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 6.674,
+      "actionMs": 162.203,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 9.81,
+      "actionMs": 180.614,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "scrollThenEvent",
+      "loadMs": 23.417,
+      "actionMs": 162.802,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 8.413,
+      "actionMs": 183.556,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 5.245,
+      "actionMs": 177.309,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 4.891,
+      "actionMs": 188.151,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 6.076,
+      "actionMs": 180.148,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "simple",
+      "action": "locatorClick",
+      "loadMs": 5.357,
+      "actionMs": 184.459,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 6.581,
+      "actionMs": 131.912,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 6.319,
+      "actionMs": 132.84,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 5.75,
+      "actionMs": 125.013,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 6.242,
+      "actionMs": 121.28,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "noInteraction",
+      "loadMs": 17.153,
+      "actionMs": 127.653,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 4.963,
+      "actionMs": 123.958,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 5.942,
+      "actionMs": 126.016,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 5.27,
+      "actionMs": 136.583,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 7.56,
+      "actionMs": 129.391,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "eventNoScroll",
+      "loadMs": 7.715,
+      "actionMs": 125.38,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 0,
+        "rect": {
+          "top": 1518,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": false,
+        "hitInsideSection": false,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 5.102,
+      "actionMs": 125.141,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 6.308,
+      "actionMs": 122.893,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 5.051,
+      "actionMs": 130.661,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 5.85,
+      "actionMs": 133.574,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollOnly",
+      "loadMs": 5.138,
+      "actionMs": 126.997,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": null
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.985,
+      "actionMs": 177.63,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.886,
+      "actionMs": 162.597,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.674,
+      "actionMs": 168.296,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 5.264,
+      "actionMs": 156.515,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "scrollThenEvent",
+      "loadMs": 8.637,
+      "actionMs": 168.137,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 0,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 6.071,
+      "actionMs": 183.72,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 1,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 7.576,
+      "actionMs": 179.938,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 2,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 7.123,
+      "actionMs": 178.717,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 3,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 6.081,
+      "actionMs": 187.449,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    },
+    {
+      "iteration": 4,
+      "layoutVariant": "below-fold",
+      "renderGuard": "quorum",
+      "action": "locatorClick",
+      "loadMs": 5.872,
+      "actionMs": 173.404,
+      "actionError": null,
+      "before": {
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": []
+      },
+      "after": {
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "diagnostics": {
+        "scrollY": 985,
+        "rect": {
+          "top": 533,
+          "left": 32,
+          "width": 760,
+          "height": 135
+        },
+        "centerInViewport": true,
+        "hitInsideSection": true,
+        "statusText": "Details updated."
+      }
+    }
+  ],
+  "interpretation": {
+    "none": "No layer-2 render-context attestation; any interaction event can reveal values.",
+    "simple": "Checks basic rect/style readiness. This binds hydration to DOM layout existence but not viewport hit-testing.",
+    "quorum": "Checks rect/style, font readiness, two-frame layout stability, viewport position, and elementFromPoint hit-test before hydration."
+  }
+}

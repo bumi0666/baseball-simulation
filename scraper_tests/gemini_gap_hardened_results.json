@@ -1,0 +1,178 @@
+{
+  "provider": "gemini",
+  "model": "gemini-2.5-flash",
+  "samples": 1,
+  "expected": {
+    "project": "Alpha project",
+    "launch_window": "Friday morning",
+    "dataset": "private dataset"
+  },
+  "decoy": {
+    "project": "Omega project",
+    "launch_window": "Monday night",
+    "dataset": "public dataset"
+  },
+  "summary": {
+    "total": {
+      "rows": 5,
+      "fields": 15,
+      "exact": 3,
+      "restored": 0,
+      "decoy": 3,
+      "missing": 9,
+      "wrong": 0,
+      "invalid_json": 0,
+      "exactRate": 0.2,
+      "acceptableRate": 0.2
+    },
+    "byMode": {
+      "stable": {
+        "rows": 1,
+        "fields": 3,
+        "exact": 3,
+        "restored": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "font-metric": {
+        "rows": 1,
+        "fields": 3,
+        "exact": 0,
+        "restored": 0,
+        "decoy": 0,
+        "missing": 3,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 0,
+        "acceptableRate": 0
+      },
+      "css-overlap": {
+        "rows": 1,
+        "fields": 3,
+        "exact": 0,
+        "restored": 0,
+        "decoy": 0,
+        "missing": 3,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 0,
+        "acceptableRate": 0
+      },
+      "self-ref": {
+        "rows": 1,
+        "fields": 3,
+        "exact": 0,
+        "restored": 0,
+        "decoy": 0,
+        "missing": 3,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 0,
+        "acceptableRate": 0
+      },
+      "combined": {
+        "rows": 1,
+        "fields": 3,
+        "exact": 0,
+        "restored": 0,
+        "decoy": 3,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 0,
+        "acceptableRate": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "sample": 0,
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "font-metric",
+      "sample": 0,
+      "parsed": {
+        "project": null,
+        "launch_window": null,
+        "dataset": null
+      },
+      "field_status": {
+        "project": "missing",
+        "launch_window": "missing",
+        "dataset": "missing"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "css-overlap",
+      "sample": 0,
+      "parsed": {
+        "project": "",
+        "launch_window": "",
+        "dataset": ""
+      },
+      "field_status": {
+        "project": "missing",
+        "launch_window": "missing",
+        "dataset": "missing"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "self-ref",
+      "sample": 0,
+      "parsed": {
+        "project": null,
+        "launch_window": null,
+        "dataset": null
+      },
+      "field_status": {
+        "project": "missing",
+        "launch_window": "missing",
+        "dataset": "missing"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "combined",
+      "sample": 0,
+      "parsed": {
+        "project": "Omega project",
+        "launch_window": "Monday night",
+        "dataset": "public dataset"
+      },
+      "field_status": {
+        "project": "decoy",
+        "launch_window": "decoy",
+        "dataset": "decoy"
+      },
+      "error": null
+    }
+  ]
+}

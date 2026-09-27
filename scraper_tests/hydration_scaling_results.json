@@ -1,0 +1,1045 @@
+{
+  "generatedAt": "2026-08-04T07:31:26.526Z",
+  "iterations": 8,
+  "fieldCounts": [
+    1,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "byCount": {
+    "1": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 10.082,
+        "median": 10.51,
+        "p90": 17.684,
+        "max": 47.952
+      },
+      "domContentLoadedMs": {
+        "min": 8.6,
+        "median": 8.9,
+        "p90": 15.8,
+        "max": 44.9
+      },
+      "loadMs": {
+        "min": 8.8,
+        "median": 9.1,
+        "p90": 15.8,
+        "max": 45.8
+      },
+      "fcpMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 28,
+        "max": 32
+      },
+      "hydrationAfterIntentMs": {
+        "min": 1.1,
+        "median": 1.4,
+        "p90": 1.6,
+        "max": 9.4
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 18,
+        "median": 18,
+        "p90": 18,
+        "max": 18
+      },
+      "source": {
+        "html": {
+          "rawBytes": 1683,
+          "gzipBytes": 793
+        },
+        "externalJs": {
+          "rawBytes": 46561,
+          "gzipBytes": 2810
+        }
+      }
+    },
+    "5": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 7.429,
+        "median": 8.966,
+        "p90": 17.336,
+        "max": 20.683
+      },
+      "domContentLoadedMs": {
+        "min": 6.2,
+        "median": 7.1,
+        "p90": 15.9,
+        "max": 19.5
+      },
+      "loadMs": {
+        "min": 6.3,
+        "median": 7.3,
+        "p90": 15.9,
+        "max": 19.5
+      },
+      "fcpMs": {
+        "min": 0,
+        "median": 24,
+        "p90": 32,
+        "max": 36
+      },
+      "hydrationAfterIntentMs": {
+        "min": 1.6,
+        "median": 1.9,
+        "p90": 2.5,
+        "max": 3.2
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 30,
+        "median": 30,
+        "p90": 30,
+        "max": 30
+      },
+      "source": {
+        "html": {
+          "rawBytes": 2435,
+          "gzipBytes": 873
+        },
+        "externalJs": {
+          "rawBytes": 47113,
+          "gzipBytes": 2881
+        }
+      }
+    },
+    "10": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 7.3,
+        "median": 7.99,
+        "p90": 9.681,
+        "max": 21.518
+      },
+      "domContentLoadedMs": {
+        "min": 6,
+        "median": 6.6,
+        "p90": 8,
+        "max": 20
+      },
+      "loadMs": {
+        "min": 6.2,
+        "median": 6.8,
+        "p90": 8.4,
+        "max": 20
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 36,
+        "max": 36
+      },
+      "hydrationAfterIntentMs": {
+        "min": 1.8,
+        "median": 1.9,
+        "p90": 2.4,
+        "max": 2.7
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 45,
+        "median": 45,
+        "p90": 45,
+        "max": 45
+      },
+      "source": {
+        "html": {
+          "rawBytes": 3382,
+          "gzipBytes": 915
+        },
+        "externalJs": {
+          "rawBytes": 47803,
+          "gzipBytes": 2966
+        }
+      }
+    },
+    "25": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 8.426,
+        "median": 9.042,
+        "p90": 9.508,
+        "max": 9.725
+      },
+      "domContentLoadedMs": {
+        "min": 7.1,
+        "median": 7.6,
+        "p90": 8.1,
+        "max": 8.3
+      },
+      "loadMs": {
+        "min": 7.3,
+        "median": 7.9,
+        "p90": 8.4,
+        "max": 8.6
+      },
+      "fcpMs": {
+        "min": 0,
+        "median": 24,
+        "p90": 32,
+        "max": 40
+      },
+      "hydrationAfterIntentMs": {
+        "min": 2.4,
+        "median": 2.8,
+        "p90": 3.5,
+        "max": 4.1
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 90,
+        "median": 90,
+        "p90": 90,
+        "max": 90
+      },
+      "source": {
+        "html": {
+          "rawBytes": 6220,
+          "gzipBytes": 1025
+        },
+        "externalJs": {
+          "rawBytes": 49873,
+          "gzipBytes": 3205
+        }
+      }
+    },
+    "50": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 9.089,
+        "median": 9.515,
+        "p90": 10.323,
+        "max": 20.946
+      },
+      "domContentLoadedMs": {
+        "min": 7.8,
+        "median": 8,
+        "p90": 8.6,
+        "max": 19.4
+      },
+      "loadMs": {
+        "min": 8.1,
+        "median": 8.4,
+        "p90": 8.9,
+        "max": 19.5
+      },
+      "fcpMs": {
+        "min": 0,
+        "median": 36,
+        "p90": 40,
+        "max": 40
+      },
+      "hydrationAfterIntentMs": {
+        "min": 3.1,
+        "median": 3.3,
+        "p90": 3.6,
+        "max": 4.8
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 165,
+        "median": 165,
+        "p90": 165,
+        "max": 165
+      },
+      "source": {
+        "html": {
+          "rawBytes": 10950,
+          "gzipBytes": 1191
+        },
+        "externalJs": {
+          "rawBytes": 53323,
+          "gzipBytes": 3587
+        }
+      }
+    },
+    "100": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 9.115,
+        "median": 10.501,
+        "p90": 12.104,
+        "max": 20.546
+      },
+      "domContentLoadedMs": {
+        "min": 7.3,
+        "median": 8.6,
+        "p90": 10,
+        "max": 19
+      },
+      "loadMs": {
+        "min": 7.7,
+        "median": 9.1,
+        "p90": 10.6,
+        "max": 19.1
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 40,
+        "max": 40
+      },
+      "hydrationAfterIntentMs": {
+        "min": 5,
+        "median": 5.7,
+        "p90": 6.6,
+        "max": 7.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "nodeCount": {
+        "min": 315,
+        "median": 315,
+        "p90": 315,
+        "max": 315
+      },
+      "source": {
+        "html": {
+          "rawBytes": 20411,
+          "gzipBytes": 1506
+        },
+        "externalJs": {
+          "rawBytes": 60223,
+          "gzipBytes": 4282
+        }
+      }
+    }
+  },
+  "scaling": {
+    "loadMsPerField": {
+      "slope": 0.01311,
+      "intercept": 7.683,
+      "r2": 0.27628
+    },
+    "hydrationMsPerField": {
+      "slope": 0.04096,
+      "intercept": 1.529,
+      "r2": 0.98354
+    },
+    "rawBytesPerField": {
+      "slope": 327.19691,
+      "intercept": 47913.732,
+      "r2": 1
+    },
+    "gzipBytesPerField": {
+      "slope": 21.73862,
+      "intercept": 3646.987,
+      "r2": 0.9973
+    },
+    "nodeCountPerField": {
+      "slope": 3,
+      "intercept": 15,
+      "r2": 1
+    }
+  },
+  "rawRows": [
+    {
+      "fieldCount": 1,
+      "iteration": 0,
+      "gotoMs": 47.952,
+      "domContentLoadedMs": 44.9,
+      "loadMs": 45.8,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 9.4,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 1,
+      "gotoMs": 10.664,
+      "domContentLoadedMs": 9.1,
+      "loadMs": 9.5,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 1.5,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 2,
+      "gotoMs": 10.082,
+      "domContentLoadedMs": 8.7,
+      "loadMs": 8.9,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 1.3,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 3,
+      "gotoMs": 10.467,
+      "domContentLoadedMs": 8.6,
+      "loadMs": 8.8,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 1.1,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 4,
+      "gotoMs": 10.255,
+      "domContentLoadedMs": 8.8,
+      "loadMs": 9.1,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 1.3,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 5,
+      "gotoMs": 17.571,
+      "domContentLoadedMs": 15.8,
+      "loadMs": 15.8,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 1.5,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 6,
+      "gotoMs": 17.684,
+      "domContentLoadedMs": 15.7,
+      "loadMs": 15.8,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 1.4,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 1,
+      "iteration": 7,
+      "gotoMs": 10.51,
+      "domContentLoadedMs": 8.9,
+      "loadMs": 9.1,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 1.6,
+      "noInteractionNonEmptySlots": 1,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 1,
+      "nodeCount": 18,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 0,
+      "gotoMs": 8.966,
+      "domContentLoadedMs": 7.1,
+      "loadMs": 7.3,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 3.2,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 1,
+      "gotoMs": 9.02,
+      "domContentLoadedMs": 7.6,
+      "loadMs": 7.8,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 1.7,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 2,
+      "gotoMs": 9.384,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.1,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 2.1,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 3,
+      "gotoMs": 7.877,
+      "domContentLoadedMs": 6.3,
+      "loadMs": 6.4,
+      "fcpMs": 20,
+      "hydrationAfterIntentMs": 1.6,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 4,
+      "gotoMs": 17.336,
+      "domContentLoadedMs": 15.9,
+      "loadMs": 15.9,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 1.9,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 5,
+      "gotoMs": 8.102,
+      "domContentLoadedMs": 6.7,
+      "loadMs": 6.9,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 1.6,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 6,
+      "gotoMs": 7.429,
+      "domContentLoadedMs": 6.2,
+      "loadMs": 6.3,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 2.3,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 5,
+      "iteration": 7,
+      "gotoMs": 20.683,
+      "domContentLoadedMs": 19.5,
+      "loadMs": 19.5,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 2.5,
+      "noInteractionNonEmptySlots": 5,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 5,
+      "nodeCount": 30,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 0,
+      "gotoMs": 9.681,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.4,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 2.7,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 1,
+      "gotoMs": 21.518,
+      "domContentLoadedMs": 20,
+      "loadMs": 20,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 1.9,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 2,
+      "gotoMs": 8.69,
+      "domContentLoadedMs": 7.4,
+      "loadMs": 7.6,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 1.8,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 3,
+      "gotoMs": 8.287,
+      "domContentLoadedMs": 7.1,
+      "loadMs": 7.3,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 2.4,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 4,
+      "gotoMs": 7.951,
+      "domContentLoadedMs": 6.6,
+      "loadMs": 6.8,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 1.9,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 5,
+      "gotoMs": 7.99,
+      "domContentLoadedMs": 6.6,
+      "loadMs": 6.8,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 1.9,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 6,
+      "gotoMs": 7.3,
+      "domContentLoadedMs": 6,
+      "loadMs": 6.2,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 1.8,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 10,
+      "iteration": 7,
+      "gotoMs": 7.652,
+      "domContentLoadedMs": 6.5,
+      "loadMs": 6.7,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 1.8,
+      "noInteractionNonEmptySlots": 10,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 10,
+      "nodeCount": 45,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 0,
+      "gotoMs": 8.426,
+      "domContentLoadedMs": 7.1,
+      "loadMs": 7.3,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 4.1,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 1,
+      "gotoMs": 8.914,
+      "domContentLoadedMs": 7.6,
+      "loadMs": 7.8,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 3.1,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 2,
+      "gotoMs": 8.611,
+      "domContentLoadedMs": 7.3,
+      "loadMs": 7.6,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 2.8,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 3,
+      "gotoMs": 9.431,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.3,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 2.8,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 4,
+      "gotoMs": 9.508,
+      "domContentLoadedMs": 8.1,
+      "loadMs": 8.4,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 3.5,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 5,
+      "gotoMs": 9.265,
+      "domContentLoadedMs": 7.8,
+      "loadMs": 8.1,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 2.8,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 6,
+      "gotoMs": 9.725,
+      "domContentLoadedMs": 8.3,
+      "loadMs": 8.6,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 2.6,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 25,
+      "iteration": 7,
+      "gotoMs": 9.042,
+      "domContentLoadedMs": 7.6,
+      "loadMs": 7.9,
+      "fcpMs": 32,
+      "hydrationAfterIntentMs": 2.4,
+      "noInteractionNonEmptySlots": 25,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 25,
+      "nodeCount": 90,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 0,
+      "gotoMs": 9.216,
+      "domContentLoadedMs": 7.9,
+      "loadMs": 8.2,
+      "fcpMs": null,
+      "hydrationAfterIntentMs": 3.2,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 1,
+      "gotoMs": 9.917,
+      "domContentLoadedMs": 8.4,
+      "loadMs": 8.8,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 3.2,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 2,
+      "gotoMs": 9.515,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.4,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 3.1,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 3,
+      "gotoMs": 20.946,
+      "domContentLoadedMs": 19.4,
+      "loadMs": 19.5,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 3.5,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 4,
+      "gotoMs": 9.089,
+      "domContentLoadedMs": 7.8,
+      "loadMs": 8.1,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 3.3,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 5,
+      "gotoMs": 9.4,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.2,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 3.3,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 6,
+      "gotoMs": 9.566,
+      "domContentLoadedMs": 8.2,
+      "loadMs": 8.4,
+      "fcpMs": 36,
+      "hydrationAfterIntentMs": 4.8,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 50,
+      "iteration": 7,
+      "gotoMs": 10.323,
+      "domContentLoadedMs": 8.6,
+      "loadMs": 8.9,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 3.6,
+      "noInteractionNonEmptySlots": 50,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 50,
+      "nodeCount": 165,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 0,
+      "gotoMs": 9.973,
+      "domContentLoadedMs": 8.2,
+      "loadMs": 8.6,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 7.5,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 1,
+      "gotoMs": 9.558,
+      "domContentLoadedMs": 8.2,
+      "loadMs": 8.6,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 5,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 2,
+      "gotoMs": 10.773,
+      "domContentLoadedMs": 8.6,
+      "loadMs": 9.1,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 5.6,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 3,
+      "gotoMs": 20.546,
+      "domContentLoadedMs": 19,
+      "loadMs": 19.1,
+      "fcpMs": 24,
+      "hydrationAfterIntentMs": 5.8,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 4,
+      "gotoMs": 10.94,
+      "domContentLoadedMs": 9.1,
+      "loadMs": 9.5,
+      "fcpMs": 28,
+      "hydrationAfterIntentMs": 5.7,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 5,
+      "gotoMs": 12.104,
+      "domContentLoadedMs": 10,
+      "loadMs": 10.6,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 6.2,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 6,
+      "gotoMs": 9.115,
+      "domContentLoadedMs": 7.3,
+      "loadMs": 7.7,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 6.6,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    },
+    {
+      "fieldCount": 100,
+      "iteration": 7,
+      "gotoMs": 10.501,
+      "domContentLoadedMs": 8.9,
+      "loadMs": 9.2,
+      "fcpMs": 40,
+      "hydrationAfterIntentMs": 5.2,
+      "noInteractionNonEmptySlots": 100,
+      "noInteractionSensitiveVisible": 0,
+      "finalSensitiveVisible": 100,
+      "nodeCount": 315,
+      "longTaskMs": 0
+    }
+  ]
+}

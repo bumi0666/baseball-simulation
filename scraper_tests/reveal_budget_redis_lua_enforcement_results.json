@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-08-06T08:37:31.865Z",
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "ping": "PONG",
+    "scriptSha": "0bc1368173450c78bd08248d32109f945e6f5ab8"
+  },
+  "config": {
+    "requests": 80,
+    "concurrency": 50,
+    "rounds": 6,
+    "fieldCount": 5,
+    "budgetFields": 25,
+    "windowSeconds": 600
+  },
+  "scenarios": [
+    {
+      "label": "inMemoryAtomicDual",
+      "rounds": 6,
+      "totalMs": {
+        "count": 6,
+        "min": 0.055,
+        "p50": 0.079,
+        "p95": 0.234,
+        "p99": 0.234,
+        "max": 0.234
+      },
+      "perRevealMs": {
+        "p50": 0.0346,
+        "p95": 0.0419,
+        "p99": 0.0424
+      },
+      "allowed": {
+        "count": 6,
+        "min": 25,
+        "p50": 25,
+        "p95": 25,
+        "p99": 25,
+        "max": 25
+      },
+      "raw": [
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.234,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0095,
+            "p50": 0.0615,
+            "p95": 0.1098,
+            "p99": 0.1449,
+            "max": 0.1449
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.073,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0095,
+            "p50": 0.0341,
+            "p95": 0.0397,
+            "p99": 0.0415,
+            "max": 0.0415
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.126,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0101,
+            "p50": 0.0532,
+            "p95": 0.0821,
+            "p99": 0.083,
+            "max": 0.083
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.079,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0152,
+            "p50": 0.0346,
+            "p95": 0.0419,
+            "p99": 0.0424,
+            "max": 0.0424
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.055,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0074,
+            "p50": 0.0234,
+            "p95": 0.0292,
+            "p99": 0.0297,
+            "max": 0.0297
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 0.106,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.0359,
+            "p50": 0.0421,
+            "p95": 0.065,
+            "p99": 0.0671,
+            "max": 0.0671
+          }
+        }
+      ]
+    },
+    {
+      "label": "redisLuaDual",
+      "rounds": 6,
+      "totalMs": {
+        "count": 6,
+        "min": 5.668,
+        "p50": 6.029,
+        "p95": 8.309,
+        "p99": 8.309,
+        "max": 8.309
+      },
+      "perRevealMs": {
+        "p50": 2.94,
+        "p95": 4.3692,
+        "p99": 4.8372
+      },
+      "allowed": {
+        "count": 6,
+        "min": 25,
+        "p50": 25,
+        "p95": 25,
+        "p99": 25,
+        "max": 25
+      },
+      "raw": [
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 8.309,
+          "perRevealMs": {
+            "count": 80,
+            "min": 1.727,
+            "p50": 4.1988,
+            "p95": 4.8291,
+            "p99": 5.1755,
+            "max": 5.1755
+          }
+        },
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 6.305,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.7095,
+            "p50": 2.94,
+            "p95": 4.5096,
+            "p99": 5.1263,
+            "max": 5.1263
+          }
+        },
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 6.029,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.7516,
+            "p50": 3.1078,
+            "p95": 4.3692,
+            "p99": 4.8372,
+            "max": 4.8372
+          }
+        },
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 6.029,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.7578,
+            "p50": 2.9917,
+            "p95": 4.3643,
+            "p99": 4.7879,
+            "max": 4.7879
+          }
+        },
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 5.668,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.7045,
+            "p50": 2.6126,
+            "p95": 4.1637,
+            "p99": 4.3114,
+            "max": 4.3114
+          }
+        },
+        {
+          "label": "redisLuaDual",
+          "allowed": 25,
+          "blocked": 55,
+          "totalMs": 6.121,
+          "perRevealMs": {
+            "count": 80,
+            "min": 0.7179,
+            "p50": 2.8842,
+            "p95": 4.5681,
+            "p99": 4.9653,
+            "max": 4.9653
+          }
+        }
+      ]
+    }
+  ]
+}

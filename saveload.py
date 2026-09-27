@@ -1,14 +1,27 @@
 import json
 import os
+from datetime import datetime
 
 
 SAVE_VERSION = 1
 DEFAULT_SAVE_PATH = "save.json"
+SAVE_DIR = "saves"
+SAVE_SLOT_COUNT = 3
+
+
+def slot_path(slot):
+    try:
+        slot_num = int(slot)
+    except (TypeError, ValueError):
+        slot_num = 1
+    slot_num = max(1, min(SAVE_SLOT_COUNT, slot_num))
+    return os.path.join(SAVE_DIR, f"slot_{slot_num}.json")
 
 
 def default_save_data():
     return {
         "schema_version": SAVE_VERSION,
+        "active_save_slot": 1,
         "current_day": 1,
         "base_date": (2024, 1, 1),
         "inbox": [],
@@ -60,6 +73,7 @@ def _staff_data(staff):
 def _state_data(state):
     return {
         "user_team": state.user_team,
+        "active_save_slot": getattr(state, "active_save_slot", 1),
         "team_data": getattr(state, "team_data", {}),
         "match_history": getattr(state, "match_history", {}),
         "current_day": state.current_day,
@@ -110,13 +124,49 @@ def build_save_data(state, players, staff_members=None):
     data = _state_data(state)
     data.update({
         "schema_version": SAVE_VERSION,
+        "saved_at": datetime.now().isoformat(timespec="seconds"),
         "players": [_player_data(player) for player in players],
         "staff": [_staff_data(staff) for staff in staff_members],
     })
     return data
 
 
-def load_game(path=DEFAULT_SAVE_PATH):
+def get_save_path(slot=None, path=None):
+    if path is not None:
+        return path
+    if slot is not None:
+        return slot_path(slot)
+    return DEFAULT_SAVE_PATH
+
+
+def summarize_save(data, slot):
+    base_date = data.get("base_date", (2024, 1, 1))
+    if isinstance(base_date, list):
+        base_date = tuple(base_date)
+    return {
+        "slot": slot,
+        "exists": True,
+        "user_team": data.get("user_team", "Lions"),
+        "current_day": data.get("current_day", 1),
+        "base_date": base_date,
+        "saved_at": data.get("saved_at", ""),
+    }
+
+
+def list_save_slots():
+    slots = []
+    for slot in range(1, SAVE_SLOT_COUNT + 1):
+        path = slot_path(slot)
+        if os.path.exists(path):
+            data = load_game(slot=slot)
+            slots.append(summarize_save(data, slot))
+        else:
+            slots.append({"slot": slot, "exists": False})
+    return slots
+
+
+def load_game(path=None, slot=None):
+    path = get_save_path(slot=slot, path=path)
     if not os.path.exists(path):
         return default_save_data()
 
@@ -142,10 +192,13 @@ def load_game(path=DEFAULT_SAVE_PATH):
     except (TypeError, ValueError):
         data["current_day"] = 1
 
+    if slot is not None:
+        data["active_save_slot"] = slot
+
     return data
 
 
-def save_game(state, players=None, staff_members=None, path=DEFAULT_SAVE_PATH):
+def save_game(state, players=None, staff_members=None, path=None, slot=None):
     if not hasattr(state, "current_day"):
         current_day = state
         base_date = players
@@ -156,7 +209,11 @@ def save_game(state, players=None, staff_members=None, path=DEFAULT_SAVE_PATH):
             "base_date": [y, m, d],
         }
     else:
+        if slot is not None:
+            state.active_save_slot = slot
         data = build_save_data(state, players or [], staff_members)
 
+    path = get_save_path(slot=slot, path=path)
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

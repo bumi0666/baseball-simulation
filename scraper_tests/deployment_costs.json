@@ -1,0 +1,3542 @@
+{
+  "iterations": 12,
+  "generatedAt": "2026-07-29T13:58:46.914Z",
+  "costs": {
+    "source": {
+      "plain": {
+        "html": {
+          "rawBytes": 1866,
+          "gzipBytes": 783
+        },
+        "externalJs": {
+          "rawBytes": 0,
+          "gzipBytes": 0
+        }
+      },
+      "inlinePlaceholderGated": {
+        "html": {
+          "rawBytes": 3294,
+          "gzipBytes": 1490
+        },
+        "externalJs": {
+          "rawBytes": 0,
+          "gzipBytes": 0
+        }
+      },
+      "externalSmall": {
+        "html": {
+          "rawBytes": 2031,
+          "gzipBytes": 833
+        },
+        "externalJs": {
+          "rawBytes": 1226,
+          "gzipBytes": 717
+        }
+      },
+      "externalRuntimeLike": {
+        "html": {
+          "rawBytes": 2037,
+          "gzipBytes": 837
+        },
+        "externalJs": {
+          "rawBytes": 46247,
+          "gzipBytes": 2827
+        }
+      }
+    },
+    "serverBuildMs": {
+      "plain": {
+        "min": 0.008,
+        "median": 0.013,
+        "p90": 0.02,
+        "max": 0.805
+      },
+      "inlinePlaceholderGated": {
+        "min": 0.012,
+        "median": 0.014,
+        "p90": 0.029,
+        "max": 0.657
+      },
+      "externalRuntimeLike": {
+        "min": 4.079,
+        "median": 5.933,
+        "p90": 7.019,
+        "max": 11.04
+      }
+    }
+  },
+  "accessibility": {
+    "plain": {
+      "hasDetailsLabel": true,
+      "rowCount": 5,
+      "placeholderCount": 0,
+      "hoverOnlySignals": false,
+      "focusSignals": false,
+      "note": "Static probe only. It checks whether source exposes safe fallback text and whether this candidate appears hover-only."
+    },
+    "inlinePlaceholderGated": {
+      "hasDetailsLabel": true,
+      "rowCount": 5,
+      "placeholderCount": 5,
+      "hoverOnlySignals": false,
+      "focusSignals": false,
+      "note": "Static probe only. It checks whether source exposes safe fallback text and whether this candidate appears hover-only."
+    },
+    "externalSmall": {
+      "hasDetailsLabel": true,
+      "rowCount": 5,
+      "placeholderCount": 5,
+      "hoverOnlySignals": false,
+      "focusSignals": false,
+      "note": "Static probe only. It checks whether source exposes safe fallback text and whether this candidate appears hover-only."
+    },
+    "externalRuntimeLike": {
+      "hasDetailsLabel": true,
+      "rowCount": 5,
+      "placeholderCount": 5,
+      "hoverOnlySignals": false,
+      "focusSignals": false,
+      "note": "Static probe only. It checks whether source exposes safe fallback text and whether this candidate appears hover-only."
+    }
+  },
+  "browserSummary": {
+    "desktop:plain": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 7.602,
+        "median": 8.491,
+        "p90": 16.681,
+        "max": 20.628
+      },
+      "domContentLoadedMs": {
+        "min": 6.5,
+        "median": 7,
+        "p90": 14.4,
+        "max": 18.2
+      },
+      "loadMs": {
+        "min": 6.6,
+        "median": 7.3,
+        "p90": 14.8,
+        "max": 18.2
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 32,
+        "max": 100
+      },
+      "textReadyMs": {
+        "min": 0.3,
+        "median": 0.4,
+        "p90": 0.5,
+        "max": 0.5
+      },
+      "clickLatencyMs": {
+        "min": 0.2,
+        "median": 0.4,
+        "p90": 0.4,
+        "max": 0.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "desktop",
+        "variant": "plain",
+        "iteration": 11,
+        "gotoMs": 20.627599999999802,
+        "domContentLoadedMs": 18.200000047683716,
+        "loadMs": 18.200000047683716,
+        "fcpMs": 28,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.5,
+        "clickLatencyMs": 0.5,
+        "nodeCount": 29,
+        "scriptCount": 0,
+        "externalScriptCount": 0,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 0,
+          "transferSize": 0,
+          "decodedBodySize": 0,
+          "scriptResources": []
+        }
+      }
+    },
+    "desktop:inlinePlaceholderGated": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 14.226,
+        "median": 16.38,
+        "p90": 22.726,
+        "max": 50.047
+      },
+      "domContentLoadedMs": {
+        "min": 12.5,
+        "median": 14.4,
+        "p90": 20.9,
+        "max": 48.4
+      },
+      "loadMs": {
+        "min": 12.6,
+        "median": 14.5,
+        "p90": 21,
+        "max": 48.4
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 32,
+        "p90": 36,
+        "max": 52
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.1,
+        "max": 0.2
+      },
+      "clickLatencyMs": {
+        "min": 0.3,
+        "median": 0.4,
+        "p90": 0.4,
+        "max": 0.6
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "desktop",
+        "variant": "inlinePlaceholderGated",
+        "iteration": 11,
+        "gotoMs": 14.225800000000163,
+        "domContentLoadedMs": 12.5,
+        "loadMs": 12.600000023841858,
+        "fcpMs": 24,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0,
+        "clickLatencyMs": 0.3,
+        "nodeCount": 31,
+        "scriptCount": 2,
+        "externalScriptCount": 0,
+        "inlineScriptBytes": 1247,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 0,
+          "transferSize": 0,
+          "decodedBodySize": 0,
+          "scriptResources": []
+        }
+      }
+    },
+    "desktop:externalSmall": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 15.231,
+        "median": 15.962,
+        "p90": 20.117,
+        "max": 33.218
+      },
+      "domContentLoadedMs": {
+        "min": 13.5,
+        "median": 14.1,
+        "p90": 18.4,
+        "max": 31.8
+      },
+      "loadMs": {
+        "min": 13.5,
+        "median": 14.1,
+        "p90": 18.4,
+        "max": 31.8
+      },
+      "fcpMs": {
+        "min": 28,
+        "median": 32,
+        "p90": 32,
+        "max": 36
+      },
+      "textReadyMs": {
+        "min": 0.1,
+        "median": 0.1,
+        "p90": 0.1,
+        "max": 0.2
+      },
+      "clickLatencyMs": {
+        "min": 0.3,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 1226,
+        "median": 1226,
+        "p90": 1226,
+        "max": 1226
+      },
+      "lastSample": {
+        "profile": "desktop",
+        "variant": "externalSmall",
+        "iteration": 11,
+        "gotoMs": 20.967599999999948,
+        "domContentLoadedMs": 19.399999976158142,
+        "loadMs": 19.5,
+        "fcpMs": 28,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.1,
+        "clickLatencyMs": 0.4,
+        "nodeCount": 30,
+        "scriptCount": 1,
+        "externalScriptCount": 1,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 1,
+          "transferSize": 1526,
+          "decodedBodySize": 1226,
+          "scriptResources": [
+            {
+              "decodedBodySize": 1226,
+              "duration": 1.6
+            }
+          ]
+        }
+      }
+    },
+    "desktop:externalRuntimeLike": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 14.655,
+        "median": 16.602,
+        "p90": 20.705,
+        "max": 24.226
+      },
+      "domContentLoadedMs": {
+        "min": 13.1,
+        "median": 14.7,
+        "p90": 18.7,
+        "max": 22.1
+      },
+      "loadMs": {
+        "min": 13.2,
+        "median": 14.7,
+        "p90": 18.7,
+        "max": 22.2
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 32,
+        "p90": 36,
+        "max": 36
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.2,
+        "max": 0.3
+      },
+      "clickLatencyMs": {
+        "min": 0.2,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.4
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 46247,
+        "median": 46247,
+        "p90": 46247,
+        "max": 46247
+      },
+      "lastSample": {
+        "profile": "desktop",
+        "variant": "externalRuntimeLike",
+        "iteration": 11,
+        "gotoMs": 16.633200000000215,
+        "domContentLoadedMs": 14.699999988079071,
+        "loadMs": 14.699999988079071,
+        "fcpMs": 32,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.3,
+        "clickLatencyMs": 0.3,
+        "nodeCount": 30,
+        "scriptCount": 1,
+        "externalScriptCount": 1,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 1,
+          "transferSize": 46547,
+          "decodedBodySize": 46247,
+          "scriptResources": [
+            {
+              "decodedBodySize": 46247,
+              "duration": 1.7
+            }
+          ]
+        }
+      }
+    },
+    "mobile:plain": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 7.975,
+        "median": 9.461,
+        "p90": 18.845,
+        "max": 19.51
+      },
+      "domContentLoadedMs": {
+        "min": 6.6,
+        "median": 7.8,
+        "p90": 16.9,
+        "max": 18
+      },
+      "loadMs": {
+        "min": 6.8,
+        "median": 8,
+        "p90": 16.9,
+        "max": 18
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 32,
+        "max": 36
+      },
+      "textReadyMs": {
+        "min": 0.3,
+        "median": 0.4,
+        "p90": 0.4,
+        "max": 0.4
+      },
+      "clickLatencyMs": {
+        "min": 0.3,
+        "median": 0.4,
+        "p90": 0.4,
+        "max": 0.4
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "mobile",
+        "variant": "plain",
+        "iteration": 11,
+        "gotoMs": 8.308499999999185,
+        "domContentLoadedMs": 6.800000011920929,
+        "loadMs": 7.099999964237213,
+        "fcpMs": 24,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.3,
+        "clickLatencyMs": 0.3,
+        "nodeCount": 29,
+        "scriptCount": 0,
+        "externalScriptCount": 0,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 0,
+          "transferSize": 0,
+          "decodedBodySize": 0,
+          "scriptResources": []
+        }
+      }
+    },
+    "mobile:inlinePlaceholderGated": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 13.482,
+        "median": 15.966,
+        "p90": 20.351,
+        "max": 23.298
+      },
+      "domContentLoadedMs": {
+        "min": 12,
+        "median": 14.4,
+        "p90": 18.9,
+        "max": 21.3
+      },
+      "loadMs": {
+        "min": 12,
+        "median": 14.5,
+        "p90": 18.9,
+        "max": 21.3
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 28,
+        "max": 40
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.1,
+        "max": 0.2
+      },
+      "clickLatencyMs": {
+        "min": 0.3,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "mobile",
+        "variant": "inlinePlaceholderGated",
+        "iteration": 11,
+        "gotoMs": 23.297500000000582,
+        "domContentLoadedMs": 20.80000001192093,
+        "loadMs": 20.899999976158142,
+        "fcpMs": 40,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.1,
+        "clickLatencyMs": 0.3,
+        "nodeCount": 31,
+        "scriptCount": 2,
+        "externalScriptCount": 0,
+        "inlineScriptBytes": 1247,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 0,
+          "transferSize": 0,
+          "decodedBodySize": 0,
+          "scriptResources": []
+        }
+      }
+    },
+    "mobile:externalSmall": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 14.572,
+        "median": 15.235,
+        "p90": 17.638,
+        "max": 21.163
+      },
+      "domContentLoadedMs": {
+        "min": 12.7,
+        "median": 13.4,
+        "p90": 16,
+        "max": 19.5
+      },
+      "loadMs": {
+        "min": 12.8,
+        "median": 13.4,
+        "p90": 16,
+        "max": 19.5
+      },
+      "fcpMs": {
+        "min": 28,
+        "median": 32,
+        "p90": 32,
+        "max": 36
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.1,
+        "max": 0.2
+      },
+      "clickLatencyMs": {
+        "min": 0.2,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 1226,
+        "median": 1226,
+        "p90": 1226,
+        "max": 1226
+      },
+      "lastSample": {
+        "profile": "mobile",
+        "variant": "externalSmall",
+        "iteration": 11,
+        "gotoMs": 15.101900000001478,
+        "domContentLoadedMs": 13.399999976158142,
+        "loadMs": 13.399999976158142,
+        "fcpMs": 28,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.1,
+        "clickLatencyMs": 0.4,
+        "nodeCount": 30,
+        "scriptCount": 1,
+        "externalScriptCount": 1,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 1,
+          "transferSize": 1526,
+          "decodedBodySize": 1226,
+          "scriptResources": [
+            {
+              "decodedBodySize": 1226,
+              "duration": 1.5
+            }
+          ]
+        }
+      }
+    },
+    "mobile:externalRuntimeLike": {
+      "samples": 12,
+      "gotoMs": {
+        "min": 14.562,
+        "median": 15.726,
+        "p90": 20.813,
+        "max": 21.791
+      },
+      "domContentLoadedMs": {
+        "min": 13.1,
+        "median": 14.1,
+        "p90": 19.3,
+        "max": 20
+      },
+      "loadMs": {
+        "min": 13.1,
+        "median": 14.1,
+        "p90": 19.3,
+        "max": 20.1
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 32,
+        "max": 44
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.1,
+        "max": 0.2
+      },
+      "clickLatencyMs": {
+        "min": 0.2,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.5
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "medianResourceBytes": {
+        "min": 46247,
+        "median": 46247,
+        "p90": 46247,
+        "max": 46247
+      },
+      "lastSample": {
+        "profile": "mobile",
+        "variant": "externalRuntimeLike",
+        "iteration": 11,
+        "gotoMs": 19.645300000000134,
+        "domContentLoadedMs": 18,
+        "loadMs": 18.100000023841858,
+        "fcpMs": 28,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "textReadyMs": 0.1,
+        "clickLatencyMs": 0.3,
+        "nodeCount": 30,
+        "scriptCount": 1,
+        "externalScriptCount": 1,
+        "inlineScriptBytes": 0,
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0,
+        "resourceSummary": {
+          "count": 1,
+          "transferSize": 46547,
+          "decodedBodySize": 46247,
+          "scriptResources": [
+            {
+              "decodedBodySize": 46247,
+              "duration": 1.4
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rawRows": [
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 0,
+      "gotoMs": 17.034299999999973,
+      "domContentLoadedMs": 14.399999976158142,
+      "loadMs": 14.799999952316284,
+      "fcpMs": 100,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 1,
+      "gotoMs": 9.118100000000027,
+      "domContentLoadedMs": 7.5,
+      "loadMs": 7.899999976158142,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.5,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 2,
+      "gotoMs": 11.558999999999969,
+      "domContentLoadedMs": 7.699999988079071,
+      "loadMs": 8.100000023841858,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.5,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 3,
+      "gotoMs": 7.980000000000018,
+      "domContentLoadedMs": 6.5,
+      "loadMs": 6.900000035762787,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 4,
+      "gotoMs": 16.680799999999863,
+      "domContentLoadedMs": 15.399999976158142,
+      "loadMs": 15.399999976158142,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 5,
+      "gotoMs": 8.354700000000093,
+      "domContentLoadedMs": 7,
+      "loadMs": 7.300000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 6,
+      "gotoMs": 8.036099999999806,
+      "domContentLoadedMs": 6.599999964237213,
+      "loadMs": 6.899999976158142,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 7,
+      "gotoMs": 7.751500000000306,
+      "domContentLoadedMs": 6.5,
+      "loadMs": 6.699999988079071,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 8,
+      "gotoMs": 7.6021999999998116,
+      "domContentLoadedMs": 6.5,
+      "loadMs": 6.599999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 9,
+      "gotoMs": 8.490800000000036,
+      "domContentLoadedMs": 6.599999964237213,
+      "loadMs": 6.899999976158142,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 10,
+      "gotoMs": 11.36010000000033,
+      "domContentLoadedMs": 8.800000011920929,
+      "loadMs": 9.400000035762787,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "plain",
+      "iteration": 11,
+      "gotoMs": 20.627599999999802,
+      "domContentLoadedMs": 18.200000047683716,
+      "loadMs": 18.200000047683716,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.5,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 0,
+      "gotoMs": 17.97460000000001,
+      "domContentLoadedMs": 16.19999998807907,
+      "loadMs": 16.19999998807907,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 1,
+      "gotoMs": 16.50720000000001,
+      "domContentLoadedMs": 14.300000011920929,
+      "loadMs": 14.300000011920929,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 2,
+      "gotoMs": 22.725600000000668,
+      "domContentLoadedMs": 20.900000035762787,
+      "loadMs": 21,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 3,
+      "gotoMs": 22.067199999999502,
+      "domContentLoadedMs": 20.19999998807907,
+      "loadMs": 20.30000001192093,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 4,
+      "gotoMs": 23.943099999999504,
+      "domContentLoadedMs": 22.200000047683716,
+      "loadMs": 22.30000001192093,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 5,
+      "gotoMs": 15.141700000000128,
+      "domContentLoadedMs": 13.300000011920929,
+      "loadMs": 13.300000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 6,
+      "gotoMs": 16.380299999999806,
+      "domContentLoadedMs": 14.699999988079071,
+      "loadMs": 14.699999988079071,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 7,
+      "gotoMs": 15.906600000000253,
+      "domContentLoadedMs": 14.399999976158142,
+      "loadMs": 14.5,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 8,
+      "gotoMs": 15.343200000000252,
+      "domContentLoadedMs": 13.600000023841858,
+      "loadMs": 13.699999988079071,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.6,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 9,
+      "gotoMs": 50.04709999999977,
+      "domContentLoadedMs": 48.40000003576279,
+      "loadMs": 48.40000003576279,
+      "fcpMs": 52,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 10,
+      "gotoMs": 16.026700000000346,
+      "domContentLoadedMs": 13.900000035762787,
+      "loadMs": 14,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 11,
+      "gotoMs": 14.225800000000163,
+      "domContentLoadedMs": 12.5,
+      "loadMs": 12.600000023841858,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 0,
+      "gotoMs": 16.157600000000457,
+      "domContentLoadedMs": 14.399999976158142,
+      "loadMs": 14.399999976158142,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 2.2
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 1,
+      "gotoMs": 15.230900000000474,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.699999988079071,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 2,
+      "gotoMs": 15.272100000000137,
+      "domContentLoadedMs": 13.5,
+      "loadMs": 13.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 3,
+      "gotoMs": 15.770400000001246,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.699999988079071,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 4,
+      "gotoMs": 15.961699999999837,
+      "domContentLoadedMs": 14.100000023841858,
+      "loadMs": 14.100000023841858,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 5,
+      "gotoMs": 16.26300000000083,
+      "domContentLoadedMs": 14.300000011920929,
+      "loadMs": 14.300000011920929,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 2
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 6,
+      "gotoMs": 20.116799999999785,
+      "domContentLoadedMs": 18.399999976158142,
+      "loadMs": 18.399999976158142,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 7,
+      "gotoMs": 15.330299999999625,
+      "domContentLoadedMs": 13.899999976158142,
+      "loadMs": 13.899999976158142,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 8,
+      "gotoMs": 15.45429999999942,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.800000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 9,
+      "gotoMs": 16.277500000000146,
+      "domContentLoadedMs": 14.5,
+      "loadMs": 14.5,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 10,
+      "gotoMs": 33.217500000000655,
+      "domContentLoadedMs": 31.80000001192093,
+      "loadMs": 31.80000001192093,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalSmall",
+      "iteration": 11,
+      "gotoMs": 20.967599999999948,
+      "domContentLoadedMs": 19.399999976158142,
+      "loadMs": 19.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 0,
+      "gotoMs": 18.047500000000582,
+      "domContentLoadedMs": 16.19999998807907,
+      "loadMs": 16.19999998807907,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 2.4
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 1,
+      "gotoMs": 14.654900000001362,
+      "domContentLoadedMs": 13.100000023841858,
+      "loadMs": 13.199999988079071,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 2,
+      "gotoMs": 20.70470000000023,
+      "domContentLoadedMs": 18.69999998807907,
+      "loadMs": 18.69999998807907,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.2
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 3,
+      "gotoMs": 15.257200000000012,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.800000011920929,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.8
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 4,
+      "gotoMs": 16.26680000000124,
+      "domContentLoadedMs": 14.100000023841858,
+      "loadMs": 14.100000023841858,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 5,
+      "gotoMs": 16.66860000000088,
+      "domContentLoadedMs": 15.099999964237213,
+      "loadMs": 15.099999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 6,
+      "gotoMs": 16.560199999999895,
+      "domContentLoadedMs": 14.399999976158142,
+      "loadMs": 14.5,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.9
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 7,
+      "gotoMs": 22.261099999999715,
+      "domContentLoadedMs": 20.399999976158142,
+      "loadMs": 20.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 8,
+      "gotoMs": 16.601999999998952,
+      "domContentLoadedMs": 14.899999976158142,
+      "loadMs": 14.899999976158142,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 9,
+      "gotoMs": 15.649899999998524,
+      "domContentLoadedMs": 14,
+      "loadMs": 14,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 10,
+      "gotoMs": 24.225899999999456,
+      "domContentLoadedMs": 22.099999964237213,
+      "loadMs": 22.19999998807907,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "desktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 11,
+      "gotoMs": 16.633200000000215,
+      "domContentLoadedMs": 14.699999988079071,
+      "loadMs": 14.699999988079071,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 0,
+      "gotoMs": 10.638899999999921,
+      "domContentLoadedMs": 8.699999988079071,
+      "loadMs": 9.100000023841858,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 1,
+      "gotoMs": 9.550900000000183,
+      "domContentLoadedMs": 7.800000011920929,
+      "loadMs": 8.100000023841858,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 2,
+      "gotoMs": 19.51039999999921,
+      "domContentLoadedMs": 18,
+      "loadMs": 18,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 3,
+      "gotoMs": 9.663300000000163,
+      "domContentLoadedMs": 8,
+      "loadMs": 8.300000011920929,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 4,
+      "gotoMs": 7.975400000001173,
+      "domContentLoadedMs": 6.600000023841858,
+      "loadMs": 6.800000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 5,
+      "gotoMs": 9.018599999999424,
+      "domContentLoadedMs": 7.399999976158142,
+      "loadMs": 7.699999988079071,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 6,
+      "gotoMs": 18.845100000002276,
+      "domContentLoadedMs": 16.899999976158142,
+      "loadMs": 16.899999976158142,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 7,
+      "gotoMs": 9.06039999999848,
+      "domContentLoadedMs": 7.600000023841858,
+      "loadMs": 7.800000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 8,
+      "gotoMs": 9.078699999998207,
+      "domContentLoadedMs": 7.199999988079071,
+      "loadMs": 7.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 9,
+      "gotoMs": 19.032400000000052,
+      "domContentLoadedMs": 17,
+      "loadMs": 17,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 10,
+      "gotoMs": 9.460699999999633,
+      "domContentLoadedMs": 7.800000011920929,
+      "loadMs": 8,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.4,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "plain",
+      "iteration": 11,
+      "gotoMs": 8.308499999999185,
+      "domContentLoadedMs": 6.800000011920929,
+      "loadMs": 7.099999964237213,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.3,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 29,
+      "scriptCount": 0,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 0,
+      "gotoMs": 15.254300000000512,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.800000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 1,
+      "gotoMs": 13.481700000000274,
+      "domContentLoadedMs": 12,
+      "loadMs": 12,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 2,
+      "gotoMs": 19.097999999998137,
+      "domContentLoadedMs": 17.599999964237213,
+      "loadMs": 17.599999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 3,
+      "gotoMs": 19.788799999998446,
+      "domContentLoadedMs": 18.19999998807907,
+      "loadMs": 18.30000001192093,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 4,
+      "gotoMs": 15.265400000000227,
+      "domContentLoadedMs": 13.5,
+      "loadMs": 13.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 5,
+      "gotoMs": 15.966499999998632,
+      "domContentLoadedMs": 14.399999976158142,
+      "loadMs": 14.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 6,
+      "gotoMs": 13.936399999998685,
+      "domContentLoadedMs": 12.199999988079071,
+      "loadMs": 12.300000011920929,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 7,
+      "gotoMs": 18.94789999999921,
+      "domContentLoadedMs": 17.5,
+      "loadMs": 17.599999964237213,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 8,
+      "gotoMs": 22.951600000000326,
+      "domContentLoadedMs": 21.30000001192093,
+      "loadMs": 21.30000001192093,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 9,
+      "gotoMs": 14.664400000001478,
+      "domContentLoadedMs": 13,
+      "loadMs": 13.099999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 10,
+      "gotoMs": 20.350899999997637,
+      "domContentLoadedMs": 18.899999976158142,
+      "loadMs": 18.899999976158142,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "inlinePlaceholderGated",
+      "iteration": 11,
+      "gotoMs": 23.297500000000582,
+      "domContentLoadedMs": 20.80000001192093,
+      "loadMs": 20.899999976158142,
+      "fcpMs": 40,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 31,
+      "scriptCount": 2,
+      "externalScriptCount": 0,
+      "inlineScriptBytes": 1247,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 0,
+        "transferSize": 0,
+        "decodedBodySize": 0,
+        "scriptResources": []
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 0,
+      "gotoMs": 15.23530000000028,
+      "domContentLoadedMs": 13.399999976158142,
+      "loadMs": 13.399999976158142,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 1,
+      "gotoMs": 21.162799999998242,
+      "domContentLoadedMs": 19.5,
+      "loadMs": 19.5,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 2,
+      "gotoMs": 15.53780000000188,
+      "domContentLoadedMs": 13.600000023841858,
+      "loadMs": 13.600000023841858,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 3,
+      "gotoMs": 14.952699999998003,
+      "domContentLoadedMs": 13.300000011920929,
+      "loadMs": 13.300000011920929,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 4,
+      "gotoMs": 14.670399999999063,
+      "domContentLoadedMs": 13,
+      "loadMs": 13.099999964237213,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 5,
+      "gotoMs": 20.953599999997095,
+      "domContentLoadedMs": 18.900000035762787,
+      "loadMs": 19,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 6,
+      "gotoMs": 16.8778999999995,
+      "domContentLoadedMs": 14.899999976158142,
+      "loadMs": 15,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 7,
+      "gotoMs": 15.425400000000081,
+      "domContentLoadedMs": 13.200000047683716,
+      "loadMs": 13.200000047683716,
+      "fcpMs": 36,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 8,
+      "gotoMs": 14.572000000000116,
+      "domContentLoadedMs": 12.699999988079071,
+      "loadMs": 12.799999952316284,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 9,
+      "gotoMs": 17.638199999997596,
+      "domContentLoadedMs": 16,
+      "loadMs": 16,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 10,
+      "gotoMs": 15.217099999998027,
+      "domContentLoadedMs": 13.5,
+      "loadMs": 13.5,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalSmall",
+      "iteration": 11,
+      "gotoMs": 15.101900000001478,
+      "domContentLoadedMs": 13.399999976158142,
+      "loadMs": 13.399999976158142,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 1526,
+        "decodedBodySize": 1226,
+        "scriptResources": [
+          {
+            "decodedBodySize": 1226,
+            "duration": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 0,
+      "gotoMs": 15.432600000000093,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.699999988079071,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 1,
+      "gotoMs": 19.722799999999552,
+      "domContentLoadedMs": 18,
+      "loadMs": 18.100000023841858,
+      "fcpMs": 44,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.8
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 2,
+      "gotoMs": 14.82719999999972,
+      "domContentLoadedMs": 13.099999964237213,
+      "loadMs": 13.099999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 3,
+      "gotoMs": 21.791300000000774,
+      "domContentLoadedMs": 20,
+      "loadMs": 20.100000023841858,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 4,
+      "gotoMs": 20.151600000001054,
+      "domContentLoadedMs": 18.599999964237213,
+      "loadMs": 18.599999964237213,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 5,
+      "gotoMs": 15.72609999999986,
+      "domContentLoadedMs": 14.099999964237213,
+      "loadMs": 14.099999964237213,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.2,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 6,
+      "gotoMs": 15.378300000000309,
+      "domContentLoadedMs": 13.699999988079071,
+      "loadMs": 13.699999988079071,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.6
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 7,
+      "gotoMs": 21.12619999999879,
+      "domContentLoadedMs": 19.399999976158142,
+      "loadMs": 19.5,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.4,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.9
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 8,
+      "gotoMs": 20.81300000000192,
+      "domContentLoadedMs": 19.30000001192093,
+      "loadMs": 19.30000001192093,
+      "fcpMs": 24,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 9,
+      "gotoMs": 14.561699999998382,
+      "domContentLoadedMs": 13.299999952316284,
+      "loadMs": 13.299999952316284,
+      "fcpMs": 32,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.2,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 10,
+      "gotoMs": 15.714199999998527,
+      "domContentLoadedMs": 13.899999976158142,
+      "loadMs": 14,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0,
+      "clickLatencyMs": 0.5,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.7
+          }
+        ]
+      }
+    },
+    {
+      "profile": "mobile",
+      "variant": "externalRuntimeLike",
+      "iteration": 11,
+      "gotoMs": 19.645300000000134,
+      "domContentLoadedMs": 18,
+      "loadMs": 18.100000023841858,
+      "fcpMs": 28,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "textReadyMs": 0.1,
+      "clickLatencyMs": 0.3,
+      "nodeCount": 30,
+      "scriptCount": 1,
+      "externalScriptCount": 1,
+      "inlineScriptBytes": 0,
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0,
+      "resourceSummary": {
+        "count": 1,
+        "transferSize": 46547,
+        "decodedBodySize": 46247,
+        "scriptResources": [
+          {
+            "decodedBodySize": 46247,
+            "duration": 1.4
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation": {
+    "measured": [
+      "local Chromium navigation/load/paint approximations",
+      "CLS and long-task observer output",
+      "synthetic click-to-next-frame latency, not real INP",
+      "local asset transfer size and JS payload size",
+      "server-side string-generation microbenchmark"
+    ],
+    "notMeasured": [
+      "real Google ranking impact",
+      "real field Core Web Vitals from users",
+      "cross-device low-end Android performance",
+      "production CDN/cache behavior",
+      "full WCAG/screen-reader audit"
+    ]
+  }
+}

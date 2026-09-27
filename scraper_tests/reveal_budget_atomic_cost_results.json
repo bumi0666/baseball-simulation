@@ -1,0 +1,1270 @@
+{
+  "generatedAt": "2026-08-06T08:29:22.057Z",
+  "config": {
+    "requests": 1000,
+    "fieldCount": 5,
+    "budgetFields": 1000000,
+    "rounds": 8,
+    "concurrency": 50,
+    "rttProfilesMs": [
+      0,
+      0.2,
+      1,
+      5
+    ]
+  },
+  "note": "Redis is not installed in this local environment. The Redis rows model Lua as one network round trip plus atomic check/commit, and non-atomic GET/check/SET as two round trips with a race window.",
+  "scenarios": [
+    {
+      "label": "inMemoryAtomicDual",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 0.473,
+        "p50": 0.522,
+        "p95": 1.065,
+        "p99": 1.065,
+        "max": 1.065
+      },
+      "perRevealMs": {
+        "p50": 0.0225,
+        "p95": 0.0286,
+        "p99": 0.0775
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 1.065,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0071,
+            "p50": 0.0422,
+            "p95": 0.0895,
+            "p99": 0.1213,
+            "max": 0.1439
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.772,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0053,
+            "p50": 0.0272,
+            "p95": 0.0477,
+            "p99": 0.1885,
+            "max": 0.1892
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.473,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0052,
+            "p50": 0.0225,
+            "p95": 0.0244,
+            "p99": 0.0266,
+            "max": 0.0305
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.54,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0049,
+            "p50": 0.0227,
+            "p95": 0.0292,
+            "p99": 0.0844,
+            "max": 0.0847
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.522,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0049,
+            "p50": 0.0225,
+            "p95": 0.0281,
+            "p99": 0.0757,
+            "max": 0.0759
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.517,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0067,
+            "p50": 0.0229,
+            "p95": 0.03,
+            "p99": 0.0557,
+            "max": 0.0558
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.543,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0045,
+            "p50": 0.0223,
+            "p95": 0.0286,
+            "p99": 0.0839,
+            "max": 0.084
+          }
+        },
+        {
+          "label": "inMemoryAtomicDual",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.52,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0046,
+            "p50": 0.0223,
+            "p95": 0.0266,
+            "p99": 0.0775,
+            "max": 0.0776
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisLuaDual:rtt=0ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 0.494,
+        "p50": 0.53,
+        "p95": 1.107,
+        "p99": 1.107,
+        "max": 1.107
+      },
+      "perRevealMs": {
+        "p50": 0.0218,
+        "p95": 0.0368,
+        "p99": 0.0869
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 1.107,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.021,
+            "p50": 0.0337,
+            "p95": 0.1376,
+            "p99": 0.1557,
+            "max": 0.2819
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.557,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0163,
+            "p50": 0.0218,
+            "p95": 0.0368,
+            "p99": 0.1074,
+            "max": 0.1075
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.525,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0204,
+            "p50": 0.0218,
+            "p95": 0.0288,
+            "p99": 0.0869,
+            "max": 0.087
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.517,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0162,
+            "p50": 0.0219,
+            "p95": 0.0275,
+            "p99": 0.0869,
+            "max": 0.0873
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.53,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0174,
+            "p50": 0.0222,
+            "p95": 0.0399,
+            "p99": 0.0465,
+            "max": 0.0481
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.577,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0169,
+            "p50": 0.0215,
+            "p95": 0.046,
+            "p99": 0.1191,
+            "max": 0.1199
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.538,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0159,
+            "p50": 0.0212,
+            "p95": 0.0428,
+            "p99": 0.0831,
+            "max": 0.0834
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 0.494,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0159,
+            "p50": 0.0214,
+            "p95": 0.0248,
+            "p99": 0.077,
+            "max": 0.0772
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisLuaDual:rtt=0.2ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 229.003,
+        "p50": 253.655,
+        "p95": 289.626,
+        "p99": 289.626,
+        "max": 289.626
+      },
+      "perRevealMs": {
+        "p50": 15.2037,
+        "p95": 16.114,
+        "p99": 16.507
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 260.197,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.9552,
+            "p50": 15.2174,
+            "p95": 16.114,
+            "p99": 17.1758,
+            "max": 17.3393
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 266.638,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.1689,
+            "p50": 15.2658,
+            "p95": 17.5014,
+            "p99": 19.0707,
+            "max": 19.1595
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 251.64,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 2.6165,
+            "p50": 15.1119,
+            "p95": 15.7662,
+            "p99": 15.8673,
+            "max": 15.8778
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 272.212,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.2102,
+            "p50": 15.3119,
+            "p95": 17.7363,
+            "p99": 22.6135,
+            "max": 22.6143
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 253.655,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.1633,
+            "p50": 15.0512,
+            "p95": 16.2206,
+            "p99": 16.301,
+            "max": 16.3738
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 229.003,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.1519,
+            "p50": 14.891,
+            "p95": 15.9307,
+            "p99": 16.507,
+            "max": 16.5702
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 246.47,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0953,
+            "p50": 15.2586,
+            "p95": 15.6863,
+            "p99": 15.7487,
+            "max": 15.7652
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 289.626,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 3.7333,
+            "p50": 15.2037,
+            "p95": 18.3554,
+            "p99": 20.0861,
+            "max": 20.0933
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisLuaDual:rtt=1ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 231.603,
+        "p50": 248.136,
+        "p95": 311.69,
+        "p99": 311.69,
+        "max": 311.69
+      },
+      "perRevealMs": {
+        "p50": 15.1057,
+        "p95": 16.0179,
+        "p99": 16.2787
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 261.043,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.1036,
+            "p50": 15.0634,
+            "p95": 15.7787,
+            "p99": 15.8289,
+            "max": 15.8847
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 237.586,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 1.9824,
+            "p50": 15.0684,
+            "p95": 16.2002,
+            "p99": 16.5029,
+            "max": 16.5494
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 234.35,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 2.364,
+            "p50": 15.17,
+            "p95": 15.9019,
+            "p99": 15.9616,
+            "max": 15.9955
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 311.69,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 11.2643,
+            "p50": 15.5433,
+            "p95": 19.2203,
+            "p99": 20.4043,
+            "max": 20.436
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 248.136,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.114,
+            "p50": 15.2051,
+            "p95": 15.9754,
+            "p99": 16.1248,
+            "max": 16.1336
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 231.603,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0427,
+            "p50": 15.1057,
+            "p95": 16.0179,
+            "p99": 17.2611,
+            "max": 17.3933
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 256.255,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.1034,
+            "p50": 14.9741,
+            "p95": 16.1913,
+            "p99": 16.2787,
+            "max": 17.604
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 307.344,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 4.194,
+            "p50": 15.4446,
+            "p95": 19.7162,
+            "p99": 21.5977,
+            "max": 21.599
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisLuaDual:rtt=5ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 261.884,
+        "p50": 287.901,
+        "p95": 305.594,
+        "p99": 305.594,
+        "max": 305.594
+      },
+      "perRevealMs": {
+        "p50": 15.2635,
+        "p95": 16.2054,
+        "p99": 16.7908
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 286.23,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.2229,
+            "p50": 15.0315,
+            "p95": 16.1963,
+            "p99": 17.3862,
+            "max": 17.3902
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 261.884,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 5.8482,
+            "p50": 14.8192,
+            "p95": 16.662,
+            "p99": 18.1595,
+            "max": 18.1611
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 305.594,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 14.1182,
+            "p50": 15.3926,
+            "p95": 16.092,
+            "p99": 16.219,
+            "max": 16.2399
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 305.182,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 8.6398,
+            "p50": 15.5549,
+            "p95": 17.8399,
+            "p99": 19.7467,
+            "max": 19.7643
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 277.528,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.1277,
+            "p50": 15.2281,
+            "p95": 16.1039,
+            "p99": 16.1436,
+            "max": 16.1911
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 296.987,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.357,
+            "p50": 15.2833,
+            "p95": 16.3985,
+            "p99": 19.6121,
+            "max": 19.6277
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 291.323,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 5.7406,
+            "p50": 15.2635,
+            "p95": 16.2054,
+            "p99": 16.7908,
+            "max": 16.8311
+          }
+        },
+        {
+          "label": "simulatedRedisLuaDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 287.901,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.3133,
+            "p50": 15.3557,
+            "p95": 16.3715,
+            "p99": 16.5078,
+            "max": 16.5455
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 1.045,
+        "p50": 2.507,
+        "p95": 3.512,
+        "p99": 3.512,
+        "max": 3.512
+      },
+      "perRevealMs": {
+        "p50": 0.0953,
+        "p95": 0.1571,
+        "p99": 0.403
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 3.512,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0447,
+            "p50": 0.1599,
+            "p95": 0.3651,
+            "p99": 0.4639,
+            "max": 0.5321
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 3.243,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0471,
+            "p50": 0.1292,
+            "p95": 0.1571,
+            "p99": 0.9605,
+            "max": 0.9611
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 1.173,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0326,
+            "p50": 0.0431,
+            "p95": 0.1119,
+            "p99": 0.146,
+            "max": 0.1527
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 2.377,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0414,
+            "p50": 0.1079,
+            "p95": 0.1675,
+            "p99": 0.403,
+            "max": 0.4185
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 1.045,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0349,
+            "p50": 0.0458,
+            "p95": 0.0766,
+            "p99": 0.1145,
+            "max": 0.1238
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 2.808,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.0452,
+            "p50": 0.0791,
+            "p95": 0.5269,
+            "p99": 0.6222,
+            "max": 0.6234
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 2.507,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.063,
+            "p50": 0.0953,
+            "p95": 0.202,
+            "p99": 0.3071,
+            "max": 0.3075
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 2.715,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 0.04,
+            "p50": 0.1217,
+            "p95": 0.1293,
+            "p99": 0.7078,
+            "max": 0.719
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 501.886,
+        "p50": 524.88,
+        "p95": 565.52,
+        "p99": 565.52,
+        "max": 565.52
+      },
+      "perRevealMs": {
+        "p50": 30.396,
+        "p95": 31.9736,
+        "p99": 33.9517
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 554.921,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 4.1657,
+            "p50": 30.9503,
+            "p95": 37.9897,
+            "p99": 38.4613,
+            "max": 38.9484
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 524.88,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 8.4357,
+            "p50": 29.2359,
+            "p95": 31.8775,
+            "p99": 33.6392,
+            "max": 33.6922
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 537.065,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 9.9152,
+            "p50": 30.4195,
+            "p95": 38.6888,
+            "p99": 40.1445,
+            "max": 40.146
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 505.117,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 5.944,
+            "p50": 29.6002,
+            "p95": 31.7213,
+            "p99": 33.1629,
+            "max": 36.646
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 565.52,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 7.9523,
+            "p50": 30.8564,
+            "p95": 34.9857,
+            "p99": 35.5637,
+            "max": 35.5705
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 501.886,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 10.4161,
+            "p50": 30.6956,
+            "p95": 33.5403,
+            "p99": 34.3507,
+            "max": 34.3563
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 542.958,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 10.2402,
+            "p50": 30.396,
+            "p95": 31.9736,
+            "p99": 33.9517,
+            "max": 33.9923
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=0.2ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 511.207,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 17.9509,
+            "p50": 24.3697,
+            "p95": 31.0083,
+            "p99": 31.1094,
+            "max": 31.1122
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 277.471,
+        "p50": 356.543,
+        "p95": 552.087,
+        "p99": 552.087,
+        "max": 552.087
+      },
+      "perRevealMs": {
+        "p50": 12.1741,
+        "p95": 31.5995,
+        "p99": 31.6955
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 552.087,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 8.2469,
+            "p50": 30.6077,
+            "p95": 32.2625,
+            "p99": 35.3021,
+            "max": 35.3222
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 532.587,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 9.0177,
+            "p50": 30.5074,
+            "p95": 32.4541,
+            "p99": 32.8962,
+            "max": 32.9007
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 521.584,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 3.8293,
+            "p50": 30.5636,
+            "p95": 32.0614,
+            "p99": 32.1202,
+            "max": 32.1731
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 292.124,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.1424,
+            "p50": 12.1455,
+            "p95": 24.6329,
+            "p99": 31.1479,
+            "max": 31.1636
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 356.543,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 9.3865,
+            "p50": 12.1741,
+            "p95": 31.5995,
+            "p99": 31.6955,
+            "max": 32.0359
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 277.471,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 11.1575,
+            "p50": 12.1647,
+            "p95": 19.1288,
+            "p99": 23.8266,
+            "max": 23.8441
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 296.514,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 6.0087,
+            "p50": 12.1588,
+            "p95": 27.0872,
+            "p99": 29.8671,
+            "max": 29.8678
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=1ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 422.445,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 10.9913,
+            "p50": 18.3996,
+            "p95": 35.7736,
+            "p99": 36.4371,
+            "max": 36.4508
+          }
+        }
+      ]
+    },
+    {
+      "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+      "rounds": 8,
+      "totalMs": {
+        "count": 8,
+        "min": 551.92,
+        "p50": 567.426,
+        "p95": 604.211,
+        "p99": 604.211,
+        "max": 604.211
+      },
+      "perRevealMs": {
+        "p50": 30.3807,
+        "p95": 33.6371,
+        "p99": 34.7717
+      },
+      "allowed": {
+        "count": 8,
+        "min": 1000,
+        "p50": 1000,
+        "p95": 1000,
+        "p99": 1000,
+        "max": 1000
+      },
+      "raw": [
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 575.996,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 19.8938,
+            "p50": 30.5571,
+            "p95": 35.779,
+            "p99": 36.2696,
+            "max": 36.2741
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 579.901,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 21.2195,
+            "p50": 30.4476,
+            "p95": 34.3049,
+            "p99": 34.9271,
+            "max": 34.9297
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 567.426,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 10.5115,
+            "p50": 30.3807,
+            "p95": 34.3848,
+            "p99": 34.7717,
+            "max": 34.7729
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 585.903,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 20.715,
+            "p50": 30.4719,
+            "p95": 34.7779,
+            "p99": 35.3699,
+            "max": 35.3725
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 562.354,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 15.9796,
+            "p50": 30.372,
+            "p95": 31.7469,
+            "p99": 32.309,
+            "max": 32.3116
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 551.92,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 14.9918,
+            "p50": 30.2883,
+            "p95": 33.6371,
+            "p99": 35.0511,
+            "max": 35.0642
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 604.211,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 19.6536,
+            "p50": 30.8852,
+            "p95": 33.4104,
+            "p99": 34.0074,
+            "max": 35.3653
+          }
+        },
+        {
+          "label": "simulatedRedisNonAtomicDual:rtt=5ms",
+          "allowed": 1000,
+          "blocked": 0,
+          "totalMs": 564.309,
+          "perRevealMs": {
+            "count": 1000,
+            "min": 21.1537,
+            "p50": 30.3071,
+            "p95": 33.2571,
+            "p99": 34.0521,
+            "max": 34.072
+          }
+        }
+      ]
+    }
+  ]
+}

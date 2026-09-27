@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>LLM Parser Evaluation Fixture</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.5;
+      max-width: 760px;
+      margin: 40px auto;
+    }
+
+    .case {
+      border-top: 1px solid #ddd;
+      padding: 24px 0;
+    }
+
+    .record {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 8px 16px;
+      max-width: 560px;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    .hidden-display {
+      display: none;
+    }
+
+    .hidden-opacity {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .hidden-offscreen {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .visual-order {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .visual-order [data-visual="1"] {
+      order: 1;
+    }
+
+    .visual-order [data-visual="2"] {
+      order: 2;
+    }
+
+    .visual-order [data-visual="3"] {
+      order: 3;
+    }
+
+    .inline-visual {
+      display: inline-flex;
+      gap: 0.25em;
+    }
+
+    .inline-visual [data-inline="1"] {
+      order: 1;
+    }
+
+    .inline-visual [data-inline="2"] {
+      order: 2;
+    }
+
+    .inline-visual [data-inline="3"] {
+      order: 3;
+    }
+
+    .inline-visual [data-inline="4"] {
+      order: 4;
+    }
+
+    .grid-rebuild {
+      display: grid;
+      grid-template-columns: 150px 110px 110px 120px;
+      gap: 8px 16px;
+      max-width: 560px;
+    }
+
+    .grid-rebuild span {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="case" id="llm-control">
+      <h1>Control</h1>
+      <div class="record">
+        <div class="label">Project</div><div>Alpha project</div>
+        <div class="label">Launch window</div><div>Friday morning</div>
+        <div class="label">Dataset</div><div>private dataset</div>
+      </div>
+    </section>
+
+    <section class="case" id="llm-confusable-fragmented">
+      <h1>Confusable Fragmented</h1>
+      <div class="record">
+        <div class="label">Project</div><div><span>Аl</span><span>pha</span> <span>prо</span><span>ject</span></div>
+        <div class="label">Launch window</div><div><span>Fri</span><span>day</span> <span>mor</span><span>ning</span></div>
+        <div class="label">Dataset</div><div><span>privа</span><span>te</span> <span>dаta</span><span>set</span></div>
+      </div>
+    </section>
+
+    <section class="case" id="llm-fragmented-dom-order">
+      <h1>Fragmented DOM Order</h1>
+      <div class="record">
+        <div class="label">Project</div>
+        <div class="inline-visual"><span data-inline="3">project</span><span data-inline="1">Alpha</span></div>
+        <div class="label">Launch window</div>
+        <div class="inline-visual"><span data-inline="3">morning</span><span data-inline="1">Friday</span></div>
+        <div class="label">Dataset</div>
+        <div class="inline-visual"><span data-inline="3">dataset</span><span data-inline="1">private</span></div>
+      </div>
+    </section>
+
+    <section class="case" id="llm-dom-order-hidden-noise">
+      <h1>DOM Order Hidden Noise</h1>
+      <div class="visual-order">
+        <p data-visual="2">Launch window: Friday morning.</p>
+        <p class="hidden-opacity">Launch window: Monday night. Confidence: high.</p>
+        <p data-visual="1">Project: Alpha project.</p>
+        <p class="hidden-offscreen">Project: Beta project. Dataset: public dataset.</p>
+        <p data-visual="3">Dataset: private dataset.</p>
+      </div>
+    </section>
+
+    <section class="case" id="llm-confusable-dom-hidden">
+      <h1>Confusable DOM Hidden</h1>
+      <div class="visual-order">
+        <p data-visual="2">Lаunch windоw: Fridаy morning.</p>
+        <p class="hidden-display">Launch window: Monday night. Dataset: public dataset.</p>
+        <p data-visual="1">Prоject: Аlpha prоject.</p>
+        <p class="hidden-opacity">Project: Beta project.</p>
+        <p data-visual="3">Dаtaset: privаte dаtaset.</p>
+      </div>
+    </section>
+
+    <section class="case" id="llm-fragmented-css-rebuild-noise">
+      <h1>Fragmented CSS Rebuild Noise</h1>
+      <div class="grid-rebuild">
+        <span style="grid-column: 2; grid-row: 1;">Alpha</span>
+        <span class="hidden-opacity">Beta</span>
+        <span style="grid-column: 1; grid-row: 1;">Project:</span>
+        <span style="grid-column: 3; grid-row: 1;">project</span>
+        <span class="hidden-offscreen">Project: Beta project.</span>
+        <span style="grid-column: 1; grid-row: 2;">Launch window:</span>
+        <span style="grid-column: 2; grid-row: 2;">Friday</span>
+        <span style="grid-column: 3; grid-row: 2;">morning</span>
+        <span class="hidden-opacity">Monday night</span>
+        <span style="grid-column: 1; grid-row: 3;">Dataset:</span>
+        <span style="grid-column: 2; grid-row: 3;">private</span>
+        <span style="grid-column: 3; grid-row: 3;">dataset</span>
+        <span class="hidden-offscreen">Dataset: public dataset.</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

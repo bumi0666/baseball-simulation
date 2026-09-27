@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-08-06T10:17:33.493Z",
+  "config": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "badPort": 6390,
+    "connectTimeoutMs": 500,
+    "fieldCount": 5,
+    "budgetFields": 25,
+    "windowSeconds": 600
+  },
+  "noscriptRecovery": {
+    "ping": "PONG",
+    "originalSha": "0bc1368173450c78bd08248d32109f945e6f5ab8",
+    "beforeFlushAllowed": true,
+    "reloaded": true,
+    "recoveredAllowed": true,
+    "recoveredSha": "0bc1368173450c78bd08248d32109f945e6f5ab8",
+    "recoveryMs": 3.742
+  },
+  "failurePolicies": [
+    {
+      "policy": "fail-closed",
+      "allowed": false,
+      "degraded": true,
+      "error": "connect ECONNREFUSED 127.0.0.1:6390",
+      "ms": 1.649
+    },
+    {
+      "policy": "fail-open",
+      "allowed": true,
+      "degraded": true,
+      "error": "connect ECONNREFUSED 127.0.0.1:6390",
+      "ms": 0.644
+    }
+  ],
+  "interpretation": {
+    "noscript": "A production client should catch NOSCRIPT, SCRIPT LOAD the Lua body, and retry the failed reveal once.",
+    "failClosed": "Protects sensitive fields during Redis outage but may hide values from legitimate users.",
+    "failOpen": "Preserves UX during Redis outage but disables the reveal-budget layer for that interval."
+  }
+}

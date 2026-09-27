@@ -1,0 +1,431 @@
+{
+  "target": "http://127.0.0.1:53485/",
+  "tools": {
+    "scrapy": {
+      "available": true,
+      "bodyCssText": {
+        "textLength": 541,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations Contact Available on request Desk Contact team Reference Restricted Dataset Access required Terms Not publicly listed"
+      },
+      "bodyXpathText": {
+        "textLength": 541,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations Contact Available on request Desk Contact team Reference Restricted Dataset Access required Terms Not publicly listed"
+      },
+      "valueCssText": {
+        "textLength": 80,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "Available on request Contact team Restricted Access required Not publicly listed"
+      },
+      "links": [
+        "/assets/runtime/risk-events.js"
+      ]
+    },
+    "crawl4ai": {
+      "available": true,
+      "success": true,
+      "error": "",
+      "markdown": {
+        "textLength": 441,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "# Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations ContactAvailable on request DeskContact team ReferenceRestricted DatasetAccess required TermsNot publicly listed"
+      },
+      "cleanedHtml": {
+        "textLength": 1162,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "<html> <head> <title>Alpha Research Portal</title> </head> <body> <main> <article> <h1>Alpha Research Portal</h1> <p class=\"summary\">A public overview of the Alpha research program, including project status, regional scope, and publication schedule.</p> <p class=\"content\">The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing.</p> <p class=\"category\">Category: Research Operations</p> <section cla"
+      },
+      "html": {
+        "textLength": 2311,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "<!DOCTYPE html><html lang=\"en\"><head> <meta charset=\"utf-8\"> <title>Alpha Research Portal</title> <meta name=\"description\" content=\"A public overview of the Alpha research program, including project status, regional scope, and publication schedule.\"> <style> body { font: 16px Arial, sans-serif; margin: 32px; color: #202124; line-height: 1.5; } main { max-width: 760px; } h1 { font-size: 28px; margin: 0 0 12px; } .summary { font-size: 18px; margin: 0 0 18px; } .content { margin: 0 0 24px; } .detai"
+      },
+      "extractedContent": {
+        "textLength": 0,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [],
+        "sample": ""
+      }
+    },
+    "crawl4aiWithIntent": {
+      "available": true,
+      "success": true,
+      "error": "",
+      "markdown": {
+        "textLength": 457,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "sample": "# Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations Contactmina.park@example.test Desk+82-10-5555-0137 ReferenceINT-ALPHA-7429 Datasetprivate cohort dataset Q4 Terms$42,500 minimum"
+      },
+      "cleanedHtml": {
+        "textLength": 1178,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "sample": "<html> <head> <title>Alpha Research Portal</title> </head> <body> <main> <article> <h1>Alpha Research Portal</h1> <p class=\"summary\">A public overview of the Alpha research program, including project status, regional scope, and publication schedule.</p> <p class=\"content\">The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing.</p> <p class=\"category\">Category: Research Operations</p> <section cla"
+      },
+      "html": {
+        "textLength": 2327,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 1,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "sample": "<!DOCTYPE html><html lang=\"en\"><head> <meta charset=\"utf-8\"> <title>Alpha Research Portal</title> <meta name=\"description\" content=\"A public overview of the Alpha research program, including project status, regional scope, and publication schedule.\"> <style> body { font: 16px Arial, sans-serif; margin: 32px; color: #202124; line-height: 1.5; } main { max-width: 760px; } h1 { font-size: 28px; margin: 0 0 12px; } .summary { font-size: 18px; margin: 0 0 18px; } .content { margin: 0 0 24px; } .detai"
+      },
+      "extractedContent": {
+        "textLength": 0,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [],
+        "sample": ""
+      }
+    },
+    "browserUse": {
+      "available": true,
+      "status": "ok",
+      "historyText": {
+        "textLength": 1719,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory='Found initial url and automatically loaded it. Navigated to http://127.0.0.1:53485/', extracted_content='🔗 Navigated to http://127.0.0.1:53485/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, judgement=JudgementResult(reasoning=\"The agent successfully navigated to the pro"
+      },
+      "rawSample": "AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory='Found initial url and automatically loaded it. Navigated to http://127.0.0.1:53485/', extracted_content='🔗 Navigated to http://127.0.0.1:53485/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, judgement=JudgementResult(reasoning=\"The agent successfully navigated to the provided URL. It then extracted all the requested values: Contact, Desk, Reference, Dataset, and Terms. The extracted values were returned in the specified plain text format, fulfilling all aspects of the user's request. The agent did not encounter any issues or require further interaction, indicating the values were readily available on the initial page load.\", verdict=True, failure_reason='', impossible_task=False, reached_captcha=False), error=None, attachments=[], images=None, long_term_memory="
+    },
+    "browserUseAggressive": {
+      "available": true,
+      "status": "ok",
+      "historyText": {
+        "textLength": 2680,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 5,
+        "sensitiveTotal": 5,
+        "placeholderFound": 1,
+        "leakedValues": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "sample": "AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory='Found initial url and automatically loaded it. Navigated to http://127.0.0.1:53485/', extracted_content='🔗 Navigated to http://127.0.0.1:53485/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory=Non"
+      },
+      "rawSample": "AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory='Found initial url and automatically loaded it. Navigated to http://127.0.0.1:53485/', extracted_content='🔗 Navigated to http://127.0.0.1:53485/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, judgement=None, error=None, attachments=None, images=None, long_term_memory=None, extracted_content='Clicked section \"Contact\\nAvailable on request\\nD...\" aria-label=Additional details', include_extracted_content_only_once=False, metadata={'click_x': 412.0000305175781, 'click_y': 337.2857208251953}, include_in_memory=False), ActionResult(is_done=True, success=True, judgement=JudgementResult(reasoning=\"The agent successfully navigated to the provided URL. It then correctly identified the 'Additional details' section and performed a click interaction, as instructed. This int"
+    },
+    "scrapeGraphAI": {
+      "available": true,
+      "status": "ok",
+      "resultText": {
+        "textLength": 161,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "{\"content\": {\"Contact\": \"Available on request\", \"Desk\": \"Contact team\", \"Reference\": \"Restricted\", \"Dataset\": \"Access required\", \"Terms\": \"Not publicly listed\"}}"
+      },
+      "rawSample": "{\"content\": {\"Contact\": \"Available on request\", \"Desk\": \"Contact team\", \"Reference\": \"Restricted\", \"Dataset\": \"Access required\", \"Terms\": \"Not publicly listed\"}}"
+    },
+    "scrapeGraphAIAggressive": {
+      "available": true,
+      "status": "ok",
+      "resultText": {
+        "textLength": 145,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [],
+        "sample": "{\"content\": {\"Contact\": \"NOT_REVEALED\", \"Desk\": \"NOT_REVEALED\", \"Reference\": \"NOT_REVEALED\", \"Dataset\": \"NOT_REVEALED\", \"Terms\": \"NOT_REVEALED\"}}"
+      },
+      "rawSample": "{\"content\": {\"Contact\": \"NOT_REVEALED\", \"Desk\": \"NOT_REVEALED\", \"Reference\": \"NOT_REVEALED\", \"Dataset\": \"NOT_REVEALED\", \"Terms\": \"NOT_REVEALED\"}}"
+    },
+    "staticBaselines": {
+      "beautifulSoupGetText": {
+        "textLength": 515,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "Alpha Research Portal Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations Contact Available on request Desk Contact team Reference Restricted Dataset Access required Terms Not publicly listed"
+      },
+      "readabilityLxml": {
+        "textLength": 469,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations Contact Available on request Desk Contact team Reference Restricted Dataset Access required Terms Not publicly listed"
+      },
+      "trafilatura": {
+        "textLength": 325,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 0,
+        "leakedValues": [],
+        "sample": "Alpha Research Portal A public overview of the Alpha research program, including project status, regional scope, and publication schedule. The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing. Category: Research Operations"
+      }
+    },
+    "httpOnlyHtmlAndJs": {
+      "html": {
+        "textLength": 2297,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "<!doctype html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Alpha Research Portal</title> <meta name=\"description\" content=\"A public overview of the Alpha research program, including project status, regional scope, and publication schedule.\"> <style> body { font: 16px Arial, sans-serif; margin: 32px; color: #202124; line-height: 1.5; } main { max-width: 760px; } h1 { font-size: 28px; margin: 0 0 12px; } .summary { font-size: 18px; margin: 0 0 18px; } .content { margin: 0 0 24px; } .det"
+      },
+      "externalJsAsText": {
+        "textLength": 46849,
+        "publicFound": 0,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 1,
+        "leakedValues": [],
+        "sample": "(function(){ function t0(s){try{var n=(s&&s.length)||0;return {i:0,w:window.innerWidth,h:window.innerHeight,n:n,ts:Date.now()%997};}catch(e){return {i:0,e:1};}} function t1(s){try{var n=(s&&s.length)||0;return {i:1,w:window.innerWidth,h:window.innerHeight,n:n,ts:Date.now()%997};}catch(e){return {i:1,e:1};}} function t2(s){try{var n=(s&&s.length)||0;return {i:2,w:window.innerWidth,h:window.innerHeight,n:n,ts:Date.now()%997};}catch(e){return {i:2,e:1};}} function t3(s){try{var n=(s&&s.length)||0;r"
+      },
+      "combinedHtmlAndJsAsText": {
+        "textLength": 49147,
+        "publicFound": 4,
+        "publicTotal": 4,
+        "sensitiveFound": 0,
+        "sensitiveTotal": 5,
+        "placeholderFound": 5,
+        "leakedValues": [],
+        "sample": "<!doctype html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Alpha Research Portal</title> <meta name=\"description\" content=\"A public overview of the Alpha research program, including project status, regional scope, and publication schedule.\"> <style> body { font: 16px Arial, sans-serif; margin: 32px; color: #202124; line-height: 1.5; } main { max-width: 760px; } h1 { font-size: 28px; margin: 0 0 12px; } .summary { font-size: 18px; margin: 0 0 18px; } .content { margin: 0 0 24px; } .det"
+      }
+    }
+  },
+  "summary": {
+    "rows": [
+      {
+        "tool": "scrapy.bodyCssText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 541
+      },
+      {
+        "tool": "scrapy.bodyXpathText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 541
+      },
+      {
+        "tool": "scrapy.valueCssText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 0,
+        "textLength": 80
+      },
+      {
+        "tool": "crawl4ai.markdown",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 441
+      },
+      {
+        "tool": "crawl4ai.cleanedHtml",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 1162
+      },
+      {
+        "tool": "crawl4ai.html",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 2311
+      },
+      {
+        "tool": "crawl4ai.extractedContent",
+        "sensitiveFound": 0,
+        "placeholderFound": 0,
+        "publicFound": 0,
+        "textLength": 0
+      },
+      {
+        "tool": "crawl4aiWithIntent.markdown",
+        "sensitiveFound": 5,
+        "placeholderFound": 0,
+        "publicFound": 4,
+        "textLength": 457
+      },
+      {
+        "tool": "crawl4aiWithIntent.cleanedHtml",
+        "sensitiveFound": 5,
+        "placeholderFound": 0,
+        "publicFound": 4,
+        "textLength": 1178
+      },
+      {
+        "tool": "crawl4aiWithIntent.html",
+        "sensitiveFound": 5,
+        "placeholderFound": 1,
+        "publicFound": 4,
+        "textLength": 2327
+      },
+      {
+        "tool": "crawl4aiWithIntent.extractedContent",
+        "sensitiveFound": 0,
+        "placeholderFound": 0,
+        "publicFound": 0,
+        "textLength": 0
+      },
+      {
+        "tool": "browserUse.historyText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 0,
+        "textLength": 1719
+      },
+      {
+        "tool": "browserUseAggressive.historyText",
+        "sensitiveFound": 5,
+        "placeholderFound": 1,
+        "publicFound": 0,
+        "textLength": 2680
+      },
+      {
+        "tool": "scrapeGraphAI.resultText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 0,
+        "textLength": 161
+      },
+      {
+        "tool": "scrapeGraphAIAggressive.resultText",
+        "sensitiveFound": 0,
+        "placeholderFound": 0,
+        "publicFound": 0,
+        "textLength": 145
+      },
+      {
+        "tool": "static.beautifulSoupGetText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 515
+      },
+      {
+        "tool": "static.readabilityLxml",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 469
+      },
+      {
+        "tool": "static.trafilatura",
+        "sensitiveFound": 0,
+        "placeholderFound": 0,
+        "publicFound": 4,
+        "textLength": 325
+      },
+      {
+        "tool": "httpOnly.html",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 2297
+      },
+      {
+        "tool": "httpOnly.externalJsAsText",
+        "sensitiveFound": 0,
+        "placeholderFound": 1,
+        "publicFound": 0,
+        "textLength": 46849
+      },
+      {
+        "tool": "httpOnly.combinedHtmlAndJsAsText",
+        "sensitiveFound": 0,
+        "placeholderFound": 5,
+        "publicFound": 4,
+        "textLength": 49147
+      }
+    ],
+    "anySensitiveLeak": true
+  }
+}

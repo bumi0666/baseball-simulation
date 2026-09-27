@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Computational gap fixture</title>
+  <style>
+    body { font: 16px Arial, sans-serif; margin: 24px; color: #202124; }
+    section.case { margin: 0 0 28px; padding: 0; }
+    h2 { font-size: 18px; margin: 0 0 10px; }
+    .row { display: grid; grid-template-columns: 150px 260px; gap: 12px; height: 26px; align-items: baseline; }
+    .label { font-weight: 700; }
+    .overlap-board { position: relative; width: 460px; height: 86px; }
+    .overlap-board span {
+      position: absolute;
+      display: block;
+      background: white;
+      line-height: 22px;
+      padding: 0 2px;
+    }
+    .overlap-board .x0 { color: #fff; background: #fff; z-index: 1; }
+    .overlap-board .x1 { color: #202124; z-index: 4; }
+    .combined-source { position: absolute; left: -9999px; top: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="case" id="stable">
+      <h2>Stable baseline</h2>
+      <p>Project: Alpha project Launch window: Friday morning Dataset: private dataset</p>
+    </section>
+
+    <section class="case computed" id="font-metric">
+      <h2>Font metric mapping</h2>
+      <div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+      <div class="row"><span class="label">Launch window:</span><span class="slot" data-field="launch_window"></span></div>
+      <div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+    </section>
+
+    <section class="case" id="css-overlap">
+      <h2>CSS overlap encoding</h2>
+      <div class="overlap-board">
+        <span class="x0" data-field="project" data-pack="0" style="left:0;top:0"></span>
+        <span class="x0" data-field="launch_window" data-pack="0" style="left:0;top:28px"></span>
+        <span class="x0" data-field="dataset" data-pack="0" style="left:0;top:56px"></span>
+        <span class="x1" data-visible-text data-field="project" data-pack="1" style="left:0;top:0"></span>
+        <span class="x1" data-visible-text data-field="launch_window" data-pack="1" style="left:0;top:28px"></span>
+        <span class="x1" data-visible-text data-field="dataset" data-pack="1" style="left:0;top:56px"></span>
+      </div>
+    </section>
+
+    <section class="case computed" id="self-ref">
+      <h2>Self reference ordering</h2>
+      <div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+      <div class="row"><span class="label">Launch window:</span><span class="slot" data-field="launch_window"></span></div>
+      <div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+    </section>
+
+    <section class="case computed" id="combined">
+      <h2>Combined rendering gate</h2>
+      <div class="combined-source">
+        Project: Omega project Launch window: Monday night Dataset: public dataset
+      </div>
+      <div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+      <div class="row"><span class="label">Launch window:</span><span class="slot" data-field="launch_window"></span></div>
+      <div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+    </section>
+  </main>
+
+  <script type="application/json" id="payload">{"key":91,"fields":["project","launch_window","dataset"],"labels":{"project":"Project:","launch_window":"Launch window:","dataset":"Dataset:"},"slots":{"project":[{"q":[20,1,24,233,254,144,177,160,140,158,96,117,83],"t":"m0"},{"q":[26,0,13,230,254,144,177,160,140,158,96,117,83],"t":"m1"}],"launch_window":[{"q":[22,3,19,234,254,201,225,188,138,147,109,98],"t":"m0"},{"q":[29,30,20,234,254,201,225,191,140,134,107,127,73,95],"t":"m1"}],"dataset":[{"q":[43,25,31,226,246,211,225,182,130,128,100,101,66,76],"t":"m0"},{"q":[43,30,20,248,254,196,164,242,135,149,113,119,84,93,61],"t":"m1"}]}}</script>
+
+  <script>
+    (() => {
+      const payload = JSON.parse(document.querySelector("#payload").textContent);
+
+      function decode(entry) {
+        return entry.q
+          .map((code, index) => String.fromCharCode(code ^ ((payload.key + index * 17) & 255)))
+          .join("");
+      }
+
+      function hash(text) {
+        let value = 2166136261;
+        for (let i = 0; i < text.length; i += 1) {
+          value ^= text.charCodeAt(i);
+          value = Math.imul(value, 16777619);
+        }
+        return value >>> 0;
+      }
+
+      function materialize(field, entryIndex) {
+        const entry = payload.slots[field][entryIndex];
+        return payload.labels[field] + " " + decode(entry);
+      }
+
+      function targetIndex(field, salt) {
+        const candidates = payload.slots[field];
+        const anchor = hash(decode(candidates[1])) ^ salt;
+        let best = 0;
+        let bestDistance = Infinity;
+        candidates.forEach((candidate, index) => {
+          const distance = Math.abs((hash(decode(candidate)) ^ salt) - anchor);
+          if (distance < bestDistance) {
+            best = index;
+            bestDistance = distance;
+          }
+        });
+        return best;
+      }
+
+      function chooseByFontMetric(section) {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.font = getComputedStyle(document.body).font;
+        section.querySelectorAll(".slot").forEach((slot) => {
+          const field = slot.dataset.field;
+          const width = Math.round(ctx.measureText(field + ":" + section.id).width);
+          slot.textContent = decode(payload.slots[field][targetIndex(field, width)]);
+        });
+      }
+
+      function fillOverlap(section) {
+        section.querySelectorAll("[data-pack]").forEach((node) => {
+          node.textContent = materialize(node.dataset.field, Number(node.dataset.pack));
+        });
+      }
+
+      function chooseBySelfReference(section) {
+        const probe = document.createElement("div");
+        probe.style.cssText = "position:absolute;visibility:hidden;overflow:scroll;width:99px;height:99px;";
+        document.body.appendChild(probe);
+        const scrollbar = probe.offsetWidth - probe.clientWidth;
+        const seed = (section.getBoundingClientRect().height + scrollbar + window.innerWidth) % 2;
+        document.body.removeChild(probe);
+        section.querySelectorAll(".slot").forEach((slot) => {
+          const field = slot.dataset.field;
+          slot.textContent = decode(payload.slots[field][targetIndex(field, seed)]);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        chooseByFontMetric(document.querySelector("#font-metric"));
+        fillOverlap(document.querySelector("#css-overlap"));
+        chooseBySelfReference(document.querySelector("#self-ref"));
+        chooseByFontMetric(document.querySelector("#combined"));
+      });
+    })();
+  </script>
+</body>
+</html>

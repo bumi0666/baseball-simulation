@@ -28,7 +28,7 @@ from scenes.result_scene import ResultScene
 from scenes.teamdetail_scene import TeamDetailScene
 from scenes.reserve_scene import ReserveScene
 from scenes.transfer_scene import TransferScene
-from saveload import load_game, save_game
+from saveload import default_save_data, load_game, save_game
 from datetime import date, timedelta
 
 pygame.init()
@@ -84,6 +84,7 @@ class GameState:
         self.fade_direction = 1      # 1이면 어두워짐(In), -1이면 밝아짐(Out)
         
         self.user_team = data.get("user_team", "Lions")
+        self.active_save_slot = data.get("active_save_slot", 1)
         self.team_data = data.get("team_data", {})
         
         self.match_history = data.get("match_history", {
@@ -1202,21 +1203,74 @@ def restore_saved_references(state, players, staff_members):
             if staff.role not in state.staff_slots:
                 state.staff_slots[staff.role] = staff
 
-def save_current_game(state, players):
-    save_game(state, players, getattr(state, "all_staff", []))
-        
-        
+def save_current_game(state, players, slot=None):
+    slot = slot or getattr(state, "active_save_slot", 1)
+    save_game(state, players, getattr(state, "all_staff", []), slot=slot)
+
+
+def build_runtime(raw_state):
+    state = GameState(raw_state)
+
+    if raw_state.get("players"):
+        players = [Player(p) for p in raw_state.get("players", [])]
+    else:
+        raw_players_dict = load_players()
+        players = [Player(p) for p in raw_players_dict.values()]
+
+    if raw_state.get("staff"):
+        staff_members = [Staff(s) for s in raw_state.get("staff", [])]
+    else:
+        raw_staff_dict = load_staff()
+        staff_members = [Staff(s) for s in raw_staff_dict.values()]
+
+    if not state.team_data:
+        state.team_data = load_team_data()
+
+    state.team_data[state.user_team]
+
+    state.team_rosters = {}
+    for p in players:
+        team = getattr(p, "team", None)
+        if team not in state.team_rosters:
+            state.team_rosters[team] = []
+        state.team_rosters[team].append(p)
+
+    restore_saved_references(state, players, staff_members)
+    user_players = state.team_rosters[state.user_team]
+
+    if not state.master_schedule:
+        generate_season_schedule(state)
+
+    scenes = {
+    "title": TitleScene(),
+    "hub": HubScene(state),
+    "inbox": InboxScene(state),
+    "team": TeamScene(user_players,state,state.user_team),
+    "finance": FinanceScene(state,user_players),
+    "schedule": ScheduleScene(state),
+    "medical": MedicalScene(user_players,state),
+    "train":TrainingScene(user_players,state),
+    "squad":SquadScene(user_players,state),
+    "staff":StaffScene(state),
+    "lineup":LineupScene(user_players,state),
+    "option": OptionScene(state),
+    "info": TeamDetailScene(state,state.user_team),
+    "reserve": ReserveScene(user_players,state),
+    "transfer": TransferScene(state),
+    }
+
+    return state, players, staff_members, user_players, scenes
+
+
 def main():
-    raw_state = load_game()
+    raw_state = default_save_data()
     state = GameState(raw_state)
 
     #current_day = state["current_day"]
     #base_year, base_month, base_day = state["base_date"]
       
     clock=pygame.time.Clock()
-    #raw_players_dict = load_players()
-    #players = [Player(p) for p in raw_players_dict.values()]
-    
+
     if raw_state.get("players"):
         players = [Player(p) for p in raw_state.get("players", [])]
     else:
@@ -1268,7 +1322,6 @@ def main():
     "reserve": ReserveScene(user_players,state),
     "transfer": TransferScene(state),
     }
-
     current="title"
     
     ts=0
@@ -1364,7 +1417,22 @@ def main():
                     
         elif isinstance(result, tuple):
             key, player = result
-            if key == "player_detail":
+            if key == "load_slot":
+                state, players, staff_members, user_players, scenes = build_runtime(load_game(slot=player))
+                tutorial = 1
+                current = "hub"
+            elif key == "save_game":
+                save_current_game(state, players, slot=player)
+                scenes["title"].refresh_slots()
+                state.inbox.append({
+                    "date": state.get_current_date_str(),
+                    "subject": "Game Saved",
+                    "body": f"Your game has been saved to slot {player}.",
+                    "read": False
+                })
+                scenes["inbox"] = InboxScene(state)
+                current = "inbox"
+            elif key == "player_detail":
                 state.prevscene = current
                 scenes["player_detail"] = PlayerDetailScene(player,state)
                 current = "player_detail"

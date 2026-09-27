@@ -1,0 +1,721 @@
+{
+  "generatedAt": "2026-08-06T08:26:46.908Z",
+  "config": {
+    "requests": 80,
+    "fieldCount": 5,
+    "budgetFields": 25,
+    "expectedAllowedRequests": 5,
+    "jitterMs": 3,
+    "rounds": 12
+  },
+  "summaries": {
+    "nonAtomicSingleIdentity": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 80,
+        "median": 80,
+        "max": 80
+      },
+      "revealedFields": {
+        "min": 400,
+        "median": 400,
+        "max": 400
+      },
+      "anyOverBudget": true,
+      "maxOverBudgetFields": 375
+    },
+    "atomicSingleIdentity": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 5,
+        "median": 5,
+        "max": 5
+      },
+      "revealedFields": {
+        "min": 25,
+        "median": 25,
+        "max": 25
+      },
+      "anyOverBudget": false,
+      "maxOverBudgetFields": 0
+    },
+    "dualSameSessionSameIp": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 5,
+        "median": 5,
+        "max": 5
+      },
+      "revealedFields": {
+        "min": 25,
+        "median": 25,
+        "max": 25
+      },
+      "anyOverBudget": false,
+      "maxOverBudgetFields": 0
+    },
+    "dualRotatingSessionSameIp": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 5,
+        "median": 5,
+        "max": 5
+      },
+      "revealedFields": {
+        "min": 25,
+        "median": 25,
+        "max": 25
+      },
+      "anyOverBudget": false,
+      "maxOverBudgetFields": 0
+    },
+    "dualSameSessionRotatingIp": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 5,
+        "median": 5,
+        "max": 5
+      },
+      "revealedFields": {
+        "min": 25,
+        "median": 25,
+        "max": 25
+      },
+      "anyOverBudget": false,
+      "maxOverBudgetFields": 0
+    },
+    "dualRotatingBoth": {
+      "rounds": 12,
+      "allowedRequests": {
+        "min": 80,
+        "median": 80,
+        "max": 80
+      },
+      "revealedFields": {
+        "min": 400,
+        "median": 400,
+        "max": 400
+      },
+      "anyOverBudget": true,
+      "maxOverBudgetFields": 375
+    }
+  },
+  "raw": {
+    "nonAtomic": [
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 14.095
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 23.026
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 31.062
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 25.338
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 31.195
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 30.416
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 19.527
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 18.377
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 31.297
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 26.433
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 20.978
+      },
+      {
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 13.654
+      }
+    ],
+    "atomic": [
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 4.807
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.602
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.316
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 4.636
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.696
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.368
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 10.59
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 5.842
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.531
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.133
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 2.632
+      },
+      {
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.563
+      }
+    ],
+    "dualSame": [
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.835
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.071
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 16.283
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 16.221
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 6.878
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 16.545
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.369
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.733
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.963
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 14.135
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.846
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 11.59
+      }
+    ],
+    "dualRotateSession": [
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 17.568
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 16.012
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 5.306
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 2.04
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 17.297
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 3.645
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.856
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 14.817
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.461
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.074
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.589
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": false,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.695
+      }
+    ],
+    "dualRotateIp": [
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.842
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 5.085
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.441
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.753
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.223
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.539
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 11.958
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.954
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 5.827
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.707
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 15.023
+      },
+      {
+        "rotateSession": false,
+        "rotateIp": true,
+        "allowedRequests": 5,
+        "blockedRequests": 75,
+        "revealedFields": 25,
+        "overBudgetFields": 0,
+        "ms": 13.931
+      }
+    ],
+    "dualRotateBoth": [
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 15.529
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 15.828
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 2.621
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 15.872
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 15.728
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 14.326
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 5.046
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 2.315
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 11.006
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 11.685
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 16.237
+      },
+      {
+        "rotateSession": true,
+        "rotateIp": true,
+        "allowedRequests": 80,
+        "blockedRequests": 0,
+        "revealedFields": 400,
+        "overBudgetFields": 375,
+        "ms": 15.757
+      }
+    ]
+  },
+  "redisImplementationNote": {
+    "requirement": "The budget decision and counter update must be a single atomic operation. Redis GET/check followed by INCR/SET is not sufficient under concurrent reveal requests.",
+    "practicalShape": "Use a Lua script or equivalent atomic transaction that checks session and IP buckets, refuses if either would exceed budget, and increments both buckets only when both pass."
+  }
+}

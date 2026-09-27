@@ -1,0 +1,1399 @@
+{
+  "generatedAt": "2026-07-29T14:03:42.522Z",
+  "iterations": 8,
+  "profiles": {
+    "fastDesktop": {
+      "viewport": {
+        "width": 1200,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "cpuRate": 1,
+      "network": null
+    },
+    "midMobile4gCpu4": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "cpuRate": 4,
+      "network": {
+        "latency": 80,
+        "downloadThroughput": 209715.2,
+        "uploadThroughput": 96000
+      }
+    },
+    "slowMobile3gCpu6": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "cpuRate": 6,
+      "network": {
+        "latency": 300,
+        "downloadThroughput": 51200,
+        "uploadThroughput": 51200
+      }
+    }
+  },
+  "assets": {
+    "plain": {
+      "htmlRawBytes": 1866,
+      "htmlGzipBytes": 783,
+      "jsRawBytes": 0,
+      "jsGzipBytes": 0
+    },
+    "externalRuntimeLike": {
+      "htmlRawBytes": 2037,
+      "htmlGzipBytes": 837,
+      "jsRawBytes": 46247,
+      "jsGzipBytes": 2827
+    }
+  },
+  "summary": {
+    "fastDesktop:plain": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 7.451,
+        "median": 10.326,
+        "p90": 18.602,
+        "max": 21.553
+      },
+      "domContentLoadedMs": {
+        "min": 6.2,
+        "median": 8.6,
+        "p90": 16.9,
+        "max": 18.1
+      },
+      "loadMs": {
+        "min": 6.5,
+        "median": 9,
+        "p90": 16.9,
+        "max": 18.5
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 28,
+        "p90": 32,
+        "max": 112
+      },
+      "textReadyMs": {
+        "min": 0.2,
+        "median": 0.3,
+        "p90": 0.4,
+        "max": 0.4
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "fastDesktop",
+        "variant": "plain",
+        "iteration": 7,
+        "gotoMs": 8.241,
+        "domContentLoadedMs": 6.4,
+        "loadMs": 6.8,
+        "fcpMs": 32,
+        "textReadyMs": 0.4,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "scriptResources": [],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    },
+    "fastDesktop:externalRuntimeLike": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 14.903,
+        "median": 22.563,
+        "p90": 23.593,
+        "max": 30.085
+      },
+      "domContentLoadedMs": {
+        "min": 13.2,
+        "median": 20.5,
+        "p90": 21.8,
+        "max": 28.2
+      },
+      "loadMs": {
+        "min": 13.3,
+        "median": 20.6,
+        "p90": 21.9,
+        "max": 28.2
+      },
+      "fcpMs": {
+        "min": 24,
+        "median": 32,
+        "p90": 40,
+        "max": 60
+      },
+      "textReadyMs": {
+        "min": 0,
+        "median": 0.1,
+        "p90": 0.2,
+        "max": 0.2
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 1.7,
+        "median": 2.1,
+        "p90": 2.4,
+        "max": 2.4
+      },
+      "lastSample": {
+        "profile": "fastDesktop",
+        "variant": "externalRuntimeLike",
+        "iteration": 7,
+        "gotoMs": 23.208,
+        "domContentLoadedMs": 21.8,
+        "loadMs": 21.9,
+        "fcpMs": 32,
+        "textReadyMs": 0.2,
+        "cls": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "scriptResources": [
+          {
+            "duration": 2.4,
+            "decodedBodySize": 46247,
+            "transferSize": 3127
+          }
+        ],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    },
+    "midMobile4gCpu4:plain": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 122.849,
+        "median": 140.676,
+        "p90": 211.769,
+        "max": 222.79
+      },
+      "domContentLoadedMs": {
+        "min": 120.3,
+        "median": 138,
+        "p90": 210.4,
+        "max": 220.2
+      },
+      "loadMs": {
+        "min": 121.3,
+        "median": 139.3,
+        "p90": 210.6,
+        "max": 220.5
+      },
+      "fcpMs": {
+        "min": 188,
+        "median": 212,
+        "p90": 224,
+        "max": 228
+      },
+      "textReadyMs": {
+        "min": 1.1,
+        "median": 1.5,
+        "p90": 2.5,
+        "max": 2.7
+      },
+      "longTaskMs": {
+        "min": 54,
+        "median": 72,
+        "p90": 79,
+        "max": 82
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "midMobile4gCpu4",
+        "variant": "plain",
+        "iteration": 7,
+        "gotoMs": 122.849,
+        "domContentLoadedMs": 120.3,
+        "loadMs": 121.3,
+        "fcpMs": 188,
+        "textReadyMs": 1.5,
+        "cls": 0,
+        "longTasks": 1,
+        "longTaskMs": 57,
+        "scriptResources": [],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    },
+    "midMobile4gCpu4:externalRuntimeLike": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 222.503,
+        "median": 245.54,
+        "p90": 262.936,
+        "max": 270.302
+      },
+      "domContentLoadedMs": {
+        "min": 220.8,
+        "median": 244.2,
+        "p90": 260.6,
+        "max": 268.3
+      },
+      "loadMs": {
+        "min": 221.2,
+        "median": 244.4,
+        "p90": 260.9,
+        "max": 268.4
+      },
+      "fcpMs": {
+        "min": 176,
+        "median": 204,
+        "p90": 212,
+        "max": 216
+      },
+      "textReadyMs": {
+        "min": 0.4,
+        "median": 0.5,
+        "p90": 0.6,
+        "max": 0.9
+      },
+      "longTaskMs": {
+        "min": 0,
+        "median": 57,
+        "p90": 66,
+        "max": 67
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 99.6,
+        "median": 115.4,
+        "p90": 126.9,
+        "max": 128
+      },
+      "lastSample": {
+        "profile": "midMobile4gCpu4",
+        "variant": "externalRuntimeLike",
+        "iteration": 7,
+        "gotoMs": 245.54,
+        "domContentLoadedMs": 244.2,
+        "loadMs": 244.4,
+        "fcpMs": 204,
+        "textReadyMs": 0.9,
+        "cls": 0,
+        "longTasks": 1,
+        "longTaskMs": 54,
+        "scriptResources": [
+          {
+            "duration": 118.4,
+            "decodedBodySize": 46247,
+            "transferSize": 3127
+          }
+        ],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    },
+    "slowMobile3gCpu6:plain": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 467.13,
+        "median": 507.006,
+        "p90": 521.609,
+        "max": 528.687
+      },
+      "domContentLoadedMs": {
+        "min": 465.4,
+        "median": 505.4,
+        "p90": 518.5,
+        "max": 526.4
+      },
+      "loadMs": {
+        "min": 465.7,
+        "median": 505.6,
+        "p90": 518.8,
+        "max": 526.9
+      },
+      "fcpMs": {
+        "min": 468,
+        "median": 508,
+        "p90": 520,
+        "max": 528
+      },
+      "textReadyMs": {
+        "min": 2,
+        "median": 3.7,
+        "p90": 5.1,
+        "max": 6.3
+      },
+      "longTaskMs": {
+        "min": 103,
+        "median": 132,
+        "p90": 139,
+        "max": 147
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "lastSample": {
+        "profile": "slowMobile3gCpu6",
+        "variant": "plain",
+        "iteration": 7,
+        "gotoMs": 528.687,
+        "domContentLoadedMs": 526.4,
+        "loadMs": 526.9,
+        "fcpMs": 528,
+        "textReadyMs": 3.9,
+        "cls": 0,
+        "longTasks": 1,
+        "longTaskMs": 147,
+        "scriptResources": [],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    },
+    "slowMobile3gCpu6:externalRuntimeLike": {
+      "samples": 8,
+      "gotoMs": {
+        "min": 754.453,
+        "median": 760.87,
+        "p90": 764.56,
+        "max": 766.485
+      },
+      "domContentLoadedMs": {
+        "min": 752.7,
+        "median": 759,
+        "p90": 761.9,
+        "max": 763.2
+      },
+      "loadMs": {
+        "min": 753.1,
+        "median": 759.4,
+        "p90": 762.4,
+        "max": 764.4
+      },
+      "fcpMs": {
+        "min": 456,
+        "median": 468,
+        "p90": 468,
+        "max": 472
+      },
+      "textReadyMs": {
+        "min": 0.3,
+        "median": 0.6,
+        "p90": 1,
+        "max": 1.2
+      },
+      "longTaskMs": {
+        "min": 78,
+        "median": 95,
+        "p90": 97,
+        "max": 101
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "scriptDurationMs": {
+        "min": 384.2,
+        "median": 392.9,
+        "p90": 402.1,
+        "max": 404.1
+      },
+      "lastSample": {
+        "profile": "slowMobile3gCpu6",
+        "variant": "externalRuntimeLike",
+        "iteration": 7,
+        "gotoMs": 762.678,
+        "domContentLoadedMs": 761.3,
+        "loadMs": 761.8,
+        "fcpMs": 468,
+        "textReadyMs": 0.4,
+        "cls": 0,
+        "longTasks": 1,
+        "longTaskMs": 88,
+        "scriptResources": [
+          {
+            "duration": 395.9,
+            "decodedBodySize": 46247,
+            "transferSize": 3127
+          }
+        ],
+        "sensitiveVisible": 5,
+        "placeholdersVisible": 0
+      }
+    }
+  },
+  "rawRows": [
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 0,
+      "gotoMs": 21.553,
+      "domContentLoadedMs": 18.1,
+      "loadMs": 18.5,
+      "fcpMs": 112,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 1,
+      "gotoMs": 10.326,
+      "domContentLoadedMs": 8.6,
+      "loadMs": 9,
+      "fcpMs": 32,
+      "textReadyMs": 0.2,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 2,
+      "gotoMs": 7.451,
+      "domContentLoadedMs": 6.2,
+      "loadMs": 6.5,
+      "fcpMs": 28,
+      "textReadyMs": 0.3,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 3,
+      "gotoMs": 17.161,
+      "domContentLoadedMs": 15.7,
+      "loadMs": 15.8,
+      "fcpMs": 24,
+      "textReadyMs": 0.3,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 4,
+      "gotoMs": 18.602,
+      "domContentLoadedMs": 16.9,
+      "loadMs": 16.9,
+      "fcpMs": 24,
+      "textReadyMs": 0.3,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 5,
+      "gotoMs": 18.263,
+      "domContentLoadedMs": 16.5,
+      "loadMs": 16.6,
+      "fcpMs": 24,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 6,
+      "gotoMs": 10.122,
+      "domContentLoadedMs": 8.6,
+      "loadMs": 8.9,
+      "fcpMs": 32,
+      "textReadyMs": 0.3,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "plain",
+      "iteration": 7,
+      "gotoMs": 8.241,
+      "domContentLoadedMs": 6.4,
+      "loadMs": 6.8,
+      "fcpMs": 32,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 0,
+      "gotoMs": 22.563,
+      "domContentLoadedMs": 20.5,
+      "loadMs": 20.6,
+      "fcpMs": 28,
+      "textReadyMs": 0,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.3,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 1,
+      "gotoMs": 23.593,
+      "domContentLoadedMs": 21.5,
+      "loadMs": 21.6,
+      "fcpMs": 28,
+      "textReadyMs": 0.1,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.2,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 2,
+      "gotoMs": 14.903,
+      "domContentLoadedMs": 13.2,
+      "loadMs": 13.3,
+      "fcpMs": 24,
+      "textReadyMs": 0.1,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 1.7,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 3,
+      "gotoMs": 23.332,
+      "domContentLoadedMs": 21.6,
+      "loadMs": 21.6,
+      "fcpMs": 32,
+      "textReadyMs": 0.2,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.1,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 4,
+      "gotoMs": 17.156,
+      "domContentLoadedMs": 15.5,
+      "loadMs": 15.5,
+      "fcpMs": 40,
+      "textReadyMs": 0,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.1,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 5,
+      "gotoMs": 30.085,
+      "domContentLoadedMs": 28.2,
+      "loadMs": 28.2,
+      "fcpMs": 60,
+      "textReadyMs": 0,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 6,
+      "gotoMs": 18.72,
+      "domContentLoadedMs": 16.8,
+      "loadMs": 16.9,
+      "fcpMs": 40,
+      "textReadyMs": 0.1,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.4,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "fastDesktop",
+      "variant": "externalRuntimeLike",
+      "iteration": 7,
+      "gotoMs": 23.208,
+      "domContentLoadedMs": 21.8,
+      "loadMs": 21.9,
+      "fcpMs": 32,
+      "textReadyMs": 0.2,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 2.4,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 0,
+      "gotoMs": 139.545,
+      "domContentLoadedMs": 136.4,
+      "loadMs": 137.8,
+      "fcpMs": 220,
+      "textReadyMs": 2,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 74,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 1,
+      "gotoMs": 207.562,
+      "domContentLoadedMs": 205.8,
+      "loadMs": 206,
+      "fcpMs": 212,
+      "textReadyMs": 2.1,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 71,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 2,
+      "gotoMs": 140.676,
+      "domContentLoadedMs": 138,
+      "loadMs": 139.3,
+      "fcpMs": 200,
+      "textReadyMs": 1.1,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 54,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 3,
+      "gotoMs": 211.769,
+      "domContentLoadedMs": 210.4,
+      "loadMs": 210.6,
+      "fcpMs": 216,
+      "textReadyMs": 2.5,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 75,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 4,
+      "gotoMs": 137.799,
+      "domContentLoadedMs": 134.4,
+      "loadMs": 135.8,
+      "fcpMs": 228,
+      "textReadyMs": 1.5,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 82,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 5,
+      "gotoMs": 202.492,
+      "domContentLoadedMs": 200.4,
+      "loadMs": 200.6,
+      "fcpMs": 204,
+      "textReadyMs": 2.7,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 72,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 6,
+      "gotoMs": 222.79,
+      "domContentLoadedMs": 220.2,
+      "loadMs": 220.5,
+      "fcpMs": 224,
+      "textReadyMs": 1.4,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 79,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "plain",
+      "iteration": 7,
+      "gotoMs": 122.849,
+      "domContentLoadedMs": 120.3,
+      "loadMs": 121.3,
+      "fcpMs": 188,
+      "textReadyMs": 1.5,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 57,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 0,
+      "gotoMs": 222.503,
+      "domContentLoadedMs": 220.8,
+      "loadMs": 221.2,
+      "fcpMs": 176,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "scriptResources": [
+        {
+          "duration": 99.6,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 1,
+      "gotoMs": 243.194,
+      "domContentLoadedMs": 241.5,
+      "loadMs": 241.6,
+      "fcpMs": 200,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 57,
+      "scriptResources": [
+        {
+          "duration": 116.1,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 2,
+      "gotoMs": 236.866,
+      "domContentLoadedMs": 235.1,
+      "loadMs": 235.3,
+      "fcpMs": 196,
+      "textReadyMs": 0.6,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 66,
+      "scriptResources": [
+        {
+          "duration": 114.5,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 3,
+      "gotoMs": 247.074,
+      "domContentLoadedMs": 245.2,
+      "loadMs": 245.7,
+      "fcpMs": 208,
+      "textReadyMs": 0.5,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 57,
+      "scriptResources": [
+        {
+          "duration": 115.4,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 4,
+      "gotoMs": 270.302,
+      "domContentLoadedMs": 268.3,
+      "loadMs": 268.4,
+      "fcpMs": 216,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 67,
+      "scriptResources": [
+        {
+          "duration": 128,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 5,
+      "gotoMs": 262.936,
+      "domContentLoadedMs": 260.6,
+      "loadMs": 260.9,
+      "fcpMs": 212,
+      "textReadyMs": 0.6,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 66,
+      "scriptResources": [
+        {
+          "duration": 126.9,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 6,
+      "gotoMs": 249.919,
+      "domContentLoadedMs": 247.9,
+      "loadMs": 248.3,
+      "fcpMs": 208,
+      "textReadyMs": 0.5,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 63,
+      "scriptResources": [
+        {
+          "duration": 113.6,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "midMobile4gCpu4",
+      "variant": "externalRuntimeLike",
+      "iteration": 7,
+      "gotoMs": 245.54,
+      "domContentLoadedMs": 244.2,
+      "loadMs": 244.4,
+      "fcpMs": 204,
+      "textReadyMs": 0.9,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 54,
+      "scriptResources": [
+        {
+          "duration": 118.4,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 0,
+      "gotoMs": 507.006,
+      "domContentLoadedMs": 505.4,
+      "loadMs": 505.6,
+      "fcpMs": 508,
+      "textReadyMs": 3.1,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 132,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 1,
+      "gotoMs": 483.188,
+      "domContentLoadedMs": 481.5,
+      "loadMs": 481.7,
+      "fcpMs": 484,
+      "textReadyMs": 2.8,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 111,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 2,
+      "gotoMs": 467.13,
+      "domContentLoadedMs": 465.4,
+      "loadMs": 465.7,
+      "fcpMs": 468,
+      "textReadyMs": 6.3,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 103,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 3,
+      "gotoMs": 490.616,
+      "domContentLoadedMs": 488.2,
+      "loadMs": 488.6,
+      "fcpMs": 492,
+      "textReadyMs": 4.9,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 116,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 4,
+      "gotoMs": 521.609,
+      "domContentLoadedMs": 518.5,
+      "loadMs": 518.8,
+      "fcpMs": 520,
+      "textReadyMs": 3.7,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 139,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 5,
+      "gotoMs": 507.618,
+      "domContentLoadedMs": 505.9,
+      "loadMs": 506.2,
+      "fcpMs": 508,
+      "textReadyMs": 2,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 138,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 6,
+      "gotoMs": 519.984,
+      "domContentLoadedMs": 518.1,
+      "loadMs": 518.5,
+      "fcpMs": 520,
+      "textReadyMs": 5.1,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 135,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "plain",
+      "iteration": 7,
+      "gotoMs": 528.687,
+      "domContentLoadedMs": 526.4,
+      "loadMs": 526.9,
+      "fcpMs": 528,
+      "textReadyMs": 3.9,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 147,
+      "scriptResources": [],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 0,
+      "gotoMs": 754.453,
+      "domContentLoadedMs": 752.7,
+      "loadMs": 753.1,
+      "fcpMs": 468,
+      "textReadyMs": 0.6,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 95,
+      "scriptResources": [
+        {
+          "duration": 392.7,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 1,
+      "gotoMs": 760.87,
+      "domContentLoadedMs": 759,
+      "loadMs": 759.4,
+      "fcpMs": 468,
+      "textReadyMs": 1.2,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 97,
+      "scriptResources": [
+        {
+          "duration": 402.1,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 2,
+      "gotoMs": 758.891,
+      "domContentLoadedMs": 757.2,
+      "loadMs": 757.7,
+      "fcpMs": 464,
+      "textReadyMs": 0.7,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 96,
+      "scriptResources": [
+        {
+          "duration": 396.9,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 3,
+      "gotoMs": 766.485,
+      "domContentLoadedMs": 763.2,
+      "loadMs": 764.4,
+      "fcpMs": 460,
+      "textReadyMs": 1,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 78,
+      "scriptResources": [
+        {
+          "duration": 384.2,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 4,
+      "gotoMs": 760.763,
+      "domContentLoadedMs": 759,
+      "loadMs": 759.4,
+      "fcpMs": 456,
+      "textReadyMs": 0.3,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 80,
+      "scriptResources": [
+        {
+          "duration": 392,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 5,
+      "gotoMs": 764.56,
+      "domContentLoadedMs": 761.1,
+      "loadMs": 761.7,
+      "fcpMs": 468,
+      "textReadyMs": 0.6,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 97,
+      "scriptResources": [
+        {
+          "duration": 392.9,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 6,
+      "gotoMs": 763.89,
+      "domContentLoadedMs": 761.9,
+      "loadMs": 762.4,
+      "fcpMs": 472,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 101,
+      "scriptResources": [
+        {
+          "duration": 404.1,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    },
+    {
+      "profile": "slowMobile3gCpu6",
+      "variant": "externalRuntimeLike",
+      "iteration": 7,
+      "gotoMs": 762.678,
+      "domContentLoadedMs": 761.3,
+      "loadMs": 761.8,
+      "fcpMs": 468,
+      "textReadyMs": 0.4,
+      "cls": 0,
+      "longTasks": 1,
+      "longTaskMs": 88,
+      "scriptResources": [
+        {
+          "duration": 395.9,
+          "decodedBodySize": 46247,
+          "transferSize": 3127
+        }
+      ],
+      "sensitiveVisible": 5,
+      "placeholdersVisible": 0
+    }
+  ],
+  "caveats": [
+    "Chromium CDP throttling is a lab approximation, not field Core Web Vitals.",
+    "Localhost still differs from CDN, TLS, cache, and real mobile radio behavior.",
+    "The script is intentionally tiny after gzip; production padding should not be meaningless noise."
+  ]
+}

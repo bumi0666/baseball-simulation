@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "rendered": "node extract_rendered_playwright.js",
+    "llm:evaluate": "node evaluate_llm_parser.js",
+    "llm:evaluate-html": "node evaluate_llm_html_parser.js",
+    "llm:evaluate-large-html": "node evaluate_llm_large_html_parser.js",
+    "llm:evaluate-gap": "node evaluate_llm_computational_gap.js",
+    "llm:evaluate-pure-gap-scale": "node evaluate_llm_pure_gap_scale.js",
+    "llm:evaluate-sensitive-template": "node evaluate_llm_sensitive_template.js",
+    "gap:headless": "node benchmark_headless_pure_gap.js",
+    "gap:interaction": "node benchmark_interaction_gate.js",
+    "gap:fingerprint": "node benchmark_gate_fingerprints.js",
+    "gap:sensitive-fields": "node benchmark_sensitive_field_template.js",
+    "gap:real-site-baseline": "node benchmark_real_site_fingerprint_baseline.js",
+    "gap:vendor-script-baseline": "node benchmark_vendor_script_fingerprint_baseline.js",
+    "gap:script-placement": "node benchmark_script_placement_context.js",
+    "gap:audit-key-dependency": "node audit_render_key_dependency.js",
+    "gap:final-audit": "node final_candidate_audit.js",
+    "gap:deployment-costs": "node benchmark_deployment_costs.js",
+    "gap:throttled-field": "node benchmark_throttled_field_conditions.js",
+    "gap:a11y-hydration": "node benchmark_accessibility_hydration.js",
+    "gap:alternate-surfaces": "node audit_alternate_exposure_surfaces.js",
+    "gap:oss-crawlers": "python benchmark_oss_crawlers.py",
+    "gap:render-keyed-sensitive": "node benchmark_render_keyed_sensitive_field.js",
+    "gap:render-key-stability": "node benchmark_render_key_environment_stability.js",
+    "churn:server": "node structural_churn_server.js",
+    "churn:measure": "node measure_structural_churn.js",
+    "churn:benchmark": "node benchmark_structural_churn.js",
+    "churn:real-parsers": "node benchmark_real_parsers.js",
+    "churn:node-parse-cost": "node benchmark_node_parse_cost.js",
+    "gap:benchmark": "node benchmark_computational_gap.js",
+    "churn:cases": "node generate_structural_cases.js"
+  },
+  "devDependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "cheerio": "^1.2.0",
+    "jsdom": "^29.1.1",
+    "playwright": "^1.54.2"
+  }
+}

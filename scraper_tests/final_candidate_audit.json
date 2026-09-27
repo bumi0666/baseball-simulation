@@ -1,0 +1,257 @@
+{
+  "candidate": "placeholderGated + non-value placeholders + interaction gate + external runtime-like placement",
+  "generatedAt": "2026-07-30T11:49:52.037Z",
+  "source": {
+    "publicCoverage": {
+      "found": 4,
+      "total": 4,
+      "rate": 1,
+      "values": [
+        "Alpha Research Portal",
+        "A public overview of the Alpha research program, including project status, regional scope, and publication schedule.",
+        "The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing.",
+        "Research Operations"
+      ]
+    },
+    "sensitiveLeakage": {
+      "found": 0,
+      "total": 5,
+      "rate": 0,
+      "values": []
+    },
+    "sensitivePartExposure": {
+      "found": 0,
+      "total": 15,
+      "rate": 0,
+      "exposures": [
+        {
+          "field": "owner_email",
+          "found": 0,
+          "total": 3
+        },
+        {
+          "field": "direct_phone",
+          "found": 0,
+          "total": 3
+        },
+        {
+          "field": "internal_case_id",
+          "found": 0,
+          "total": 3
+        },
+        {
+          "field": "restricted_dataset",
+          "found": 0,
+          "total": 3
+        },
+        {
+          "field": "contract_floor",
+          "found": 0,
+          "total": 3
+        }
+      ]
+    },
+    "placeholderCoverage": {
+      "found": 5,
+      "total": 5,
+      "rate": 1,
+      "values": [
+        "Available on request",
+        "Contact team",
+        "Restricted",
+        "Access required",
+        "Not publicly listed"
+      ]
+    }
+  },
+  "render": {
+    "noInteraction": {
+      "publicCoverage": {
+        "found": 4,
+        "total": 4,
+        "rate": 1,
+        "values": [
+          "Alpha Research Portal",
+          "A public overview of the Alpha research program, including project status, regional scope, and publication schedule.",
+          "The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing.",
+          "Research Operations"
+        ]
+      },
+      "sensitiveVisibility": {
+        "found": 0,
+        "total": 5,
+        "rate": 0,
+        "values": []
+      },
+      "placeholderVisibility": {
+        "found": 5,
+        "total": 5,
+        "rate": 1,
+        "values": [
+          "Available on request",
+          "Contact team",
+          "Restricted",
+          "Access required",
+          "Not publicly listed"
+        ]
+      }
+    },
+    "afterIntent": {
+      "publicCoverage": {
+        "found": 4,
+        "total": 4,
+        "rate": 1,
+        "values": [
+          "Alpha Research Portal",
+          "A public overview of the Alpha research program, including project status, regional scope, and publication schedule.",
+          "The Alpha research program shares public progress updates, non-sensitive milestones, and general methodology notes for external readers and search indexing.",
+          "Research Operations"
+        ]
+      },
+      "sensitiveVisibility": {
+        "found": 5,
+        "total": 5,
+        "rate": 1,
+        "values": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ]
+      },
+      "placeholderAfterRender": {
+        "found": 0,
+        "total": 5,
+        "rate": 0,
+        "values": []
+      }
+    }
+  },
+  "llm": {
+    "status": "ok",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "leakageRate": 0,
+    "safeFailureRate": 1,
+    "unsafeFailureRate": 0,
+    "raw": {
+      "fields": 5,
+      "exact": 0,
+      "restored": 0,
+      "missing": 5,
+      "placeholder": 0,
+      "wrong": 0,
+      "leakageRate": 0,
+      "safeFailureRate": 1,
+      "unsafeFailureRate": 0
+    }
+  },
+  "placement": {
+    "html": {
+      "rawBytes": 2297,
+      "gzipBytes": 871,
+      "inlineScriptBytes": 0,
+      "inlineScriptRatio": 0,
+      "inlineScriptCount": 0,
+      "externalScriptCount": 1,
+      "inlineSuspiciousCounts": {
+        "fromCharCode": 0,
+        "charCodeAt": 0,
+        "atob": 0,
+        "xorOperator": 0,
+        "bitwiseOperators": 0,
+        "canvasApis": 0,
+        "layoutApis": 0,
+        "jsonPayload": 0,
+        "numericArrayLike": 0,
+        "base64LikeStrings": 0
+      }
+    },
+    "js": {
+      "rawBytes": 46849,
+      "gzipBytes": 3005,
+      "entropyBitsPerChar": 5.1498,
+      "longestStringLiteral": 215,
+      "counts": {
+        "fromCharCode": 1,
+        "charCodeAt": 0,
+        "atob": 0,
+        "xorOperator": 3,
+        "bitwiseOperators": 1251,
+        "canvasApis": 5,
+        "layoutApis": 2,
+        "jsonPayload": 0,
+        "numericArrayLike": 5,
+        "base64LikeStrings": 0
+      },
+      "densityPerKb": {
+        "fromCharCode": 0.022,
+        "charCodeAt": 0,
+        "atob": 0,
+        "xorOperator": 0.066,
+        "bitwiseOperators": 27.344,
+        "canvasApis": 0.109,
+        "layoutApis": 0.044,
+        "jsonPayload": 0,
+        "numericArrayLike": 0.109,
+        "base64LikeStrings": 0
+      }
+    }
+  },
+  "scorecard": [
+    {
+      "area": "Public SEO Content",
+      "status": "pass",
+      "summary": "source publicCoverage=1"
+    },
+    {
+      "area": "Source Sensitive Leakage",
+      "status": "pass",
+      "summary": "full=0, parts=0"
+    },
+    {
+      "area": "Safe Placeholder",
+      "status": "pass",
+      "summary": "placeholderCoverage=1"
+    },
+    {
+      "area": "No-Interaction Render Gate",
+      "status": "pass",
+      "summary": "public=1, sensitive=0, placeholders=1"
+    },
+    {
+      "area": "After-Intent Rendered UX",
+      "status": "pass",
+      "summary": "public=1, sensitive=1, placeholders=0"
+    },
+    {
+      "area": "LLM-only Extraction",
+      "status": "pass",
+      "summary": "gemini/gemini-2.5-flash: leakage=0, safe=1, unsafe=0"
+    },
+    {
+      "area": "HTML Placement Fingerprint",
+      "status": "pass",
+      "summary": "inlineScriptBytes=0, externalScriptCount=1"
+    },
+    {
+      "area": "External Runtime Context",
+      "status": "pass",
+      "summary": "jsBytes=46849, fromCharCode=1, bitwise=1251"
+    }
+  ],
+  "threatModel": {
+    "blocks": [
+      "source-only parser",
+      "LLM-only tested parser",
+      "no-JS extraction",
+      "render-only crawler without user intent events"
+    ],
+    "doesNotBlock": [
+      "code-execution bot",
+      "headless browser with interaction exploration",
+      "targeted runtime analysis"
+    ]
+  }
+}

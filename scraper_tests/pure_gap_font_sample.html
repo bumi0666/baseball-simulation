@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pure computational gap fontMetricPure session-0</title>
+  <style>
+    body { font: 16px Arial, sans-serif; margin: 32px; line-height: 1.45; color: #202124; }
+    .card { border-top: 1px solid #ddd; padding: 14px 0; max-width: 760px; }
+    h2 { font-size: 18px; margin: 0 0 10px; }
+    .row { display: grid; grid-template-columns: 170px 1fr; gap: 6px 14px; min-height: 24px; }
+    .label { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main data-mode="fontMetricPure" data-seed="session-0">
+    <h1>Records</h1>
+    <section class="card runtime-card" data-record="R001"><h2>R001</h2><div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+<div class="row"><span class="label">Launch Window:</span><span class="slot" data-field="launch_window"></span></div>
+<div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+<div class="row"><span class="label">Owner:</span><span class="slot" data-field="owner"></span></div>
+<div class="row"><span class="label">Region:</span><span class="slot" data-field="region"></span></div>
+<div class="row"><span class="label">Budget:</span><span class="slot" data-field="budget"></span></div>
+<div class="row"><span class="label">Status:</span><span class="slot" data-field="status"></span></div>
+<div class="row"><span class="label">Priority:</span><span class="slot" data-field="priority"></span></div></section>
+<section class="card runtime-card" data-record="R002"><h2>R002</h2><div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+<div class="row"><span class="label">Launch Window:</span><span class="slot" data-field="launch_window"></span></div>
+<div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+<div class="row"><span class="label">Owner:</span><span class="slot" data-field="owner"></span></div>
+<div class="row"><span class="label">Region:</span><span class="slot" data-field="region"></span></div>
+<div class="row"><span class="label">Budget:</span><span class="slot" data-field="budget"></span></div>
+<div class="row"><span class="label">Status:</span><span class="slot" data-field="status"></span></div>
+<div class="row"><span class="label">Priority:</span><span class="slot" data-field="priority"></span></div></section>
+<section class="card runtime-card" data-record="R003"><h2>R003</h2><div class="row"><span class="label">Project:</span><span class="slot" data-field="project"></span></div>
+<div class="row"><span class="label">Launch Window:</span><span class="slot" data-field="launch_window"></span></div>
+<div class="row"><span class="label">Dataset:</span><span class="slot" data-field="dataset"></span></div>
+<div class="row"><span class="label">Owner:</span><span class="slot" data-field="owner"></span></div>
+<div class="row"><span class="label">Region:</span><span class="slot" data-field="region"></span></div>
+<div class="row"><span class="label">Budget:</span><span class="slot" data-field="budget"></span></div>
+<div class="row"><span class="label">Status:</span><span class="slot" data-field="status"></span></div>
+<div class="row"><span class="label">Priority:</span><span class="slot" data-field="priority"></span></div></section>
+  </main>
+  <script type="application/json" id="payload">{"key":137,"fields":["project","launch_window","dataset","owner","region","budget","status","priority"],"records":[{"id":"R001","cells":{"project":[200,202,179,136,156,58,71,38,30,228,206,171,145,34,47,13],"launch_window":[207,212,170,132,156,99,23,57,30,252,197,161,139,101],"dataset":[249,212,170,150,156,110,82,116,21,239,223,169,150,103,107],"owner":[196,207,173,129,221,74,86,38,26],"region":[218,195,172,149,145],"budget":[173,151,241,204,205,42,7],"status":[237,212,162,134,137],"priority":[217,150]}},{"id":"R002","cells":{"project":[200,202,179,136,156,58,71,38,30,228,206,171,145,34,47,14],"launch_window":[221,211,166,147,153,123,78,116,21,239,220,166],"dataset":[251,195,176,148,143,115,84,32,20,234,139,172,132,118,126,79,60,2],"owner":[195,211,175,133,142,58,124,61,28],"region":[203,211,176,129,147],"budget":[173,151,241,204,202,47,7],"status":[232,214,179,146,146,108,82,48],"priority":[217,151]}},{"id":"R003","cells":{"project":[200,202,179,136,156,58,71,38,30,228,206,171,145,34,47,15],"launch_window":[196,201,173,132,156,99,23,49,7,235,197,161,139,101],"dataset":[224,200,183,133,143,116,86,56,81,234,202,188,132,113,122,72],"owner":[199,201,162,136,221,89,95,59,24],"region":[192,200,160,136,152,117,89],"budget":[173,151,240,204,200,42,7],"status":[249,195,173,132,148,116,80],"priority":[217,148]}}]}</script>
+  <script>
+    (() => {
+      const mode = "font";
+      const payload = JSON.parse(document.querySelector("#payload").textContent);
+
+      function decode(codes) {
+        return codes.map((code, index) => String.fromCharCode(code ^ ((payload.key + index * 29) & 255))).join("");
+      }
+
+      function hash(text) {
+        let value = 2166136261;
+        for (let i = 0; i < text.length; i += 1) {
+          value ^= text.charCodeAt(i);
+          value = Math.imul(value, 16777619);
+        }
+        return value >>> 0;
+      }
+
+      function saltFor(card, field) {
+        if (mode === "font") {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          ctx.font = getComputedStyle(document.body).font;
+          return Math.round(ctx.measureText(card.dataset.record + ":" + field + ":" + window.devicePixelRatio).width);
+        }
+        const probe = document.createElement("div");
+        probe.style.cssText = "position:absolute;visibility:hidden;overflow:scroll;width:99px;height:99px;";
+        document.body.appendChild(probe);
+        const scrollbar = probe.offsetWidth - probe.clientWidth;
+        const rect = card.getBoundingClientRect();
+        document.body.removeChild(probe);
+        return Math.round(rect.height + rect.top + scrollbar + window.innerWidth + window.devicePixelRatio);
+      }
+
+      function choose(codes, salt) {
+        const gate = (hash(String(salt)) ^ hash(String(salt))) & 255;
+        return decode(codes.map((code) => code ^ gate));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const byId = new Map(payload.records.map((record) => [record.id, record]));
+        document.querySelectorAll(".runtime-card").forEach((card) => {
+          const record = byId.get(card.dataset.record);
+          card.querySelectorAll(".slot").forEach((slot) => {
+            const salt = saltFor(card, slot.dataset.field);
+            slot.textContent = choose(record.cells[slot.dataset.field], salt);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

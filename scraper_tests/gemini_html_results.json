@@ -1,0 +1,719 @@
+{
+  "provider": "gemini",
+  "model": "gemini-2.5-flash",
+  "samples": 6,
+  "expected": {
+    "project": "Alpha project",
+    "launch_window": "Friday morning",
+    "dataset": "private dataset"
+  },
+  "summary": {
+    "total": {
+      "rows": 36,
+      "fields": 108,
+      "exact": 108,
+      "restored": 0,
+      "confusable_or_control": 0,
+      "decoy": 0,
+      "missing": 0,
+      "wrong": 0,
+      "invalid_json": 0,
+      "exactRate": 1,
+      "acceptableRate": 1
+    },
+    "byMode": {
+      "stable": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "splitOnly": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "splitPlusDecoy": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "splitPlusZeroWidth": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "splitPlusDecoyZeroWidth": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      },
+      "splitPlusChurnDecoyZeroWidth": {
+        "rows": 6,
+        "fields": 18,
+        "exact": 18,
+        "restored": 0,
+        "confusable_or_control": 0,
+        "decoy": 0,
+        "missing": 0,
+        "wrong": 0,
+        "invalid_json": 0,
+        "exactRate": 1,
+        "acceptableRate": 1
+      }
+    }
+  },
+  "results": [
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "stable",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitOnly",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoy",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusZeroWidth",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusDecoyZeroWidth",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-0",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-1",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-2",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-3",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-4",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "mode": "splitPlusChurnDecoyZeroWidth",
+      "seed": "session-5",
+      "parsed": {
+        "project": "Alpha project",
+        "launch_window": "Friday morning",
+        "dataset": "private dataset"
+      },
+      "field_status": {
+        "project": "exact",
+        "launch_window": "exact",
+        "dataset": "exact"
+      },
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-08-06T13:20:29.116Z",
+  "config": {
+    "fieldCount": 5
+  },
+  "elapsedMs": 7683.989,
+  "results": [
+    {
+      "variant": "layer1Only",
+      "staticFullSource": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "staticVisibleText": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "renderOnly": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "afterSequenceInteraction": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      }
+    },
+    {
+      "variant": "layer2Only",
+      "staticFullSource": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "staticVisibleText": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "renderOnly": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "afterSequenceInteraction": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      }
+    },
+    {
+      "variant": "layer1PlusLayer2",
+      "staticFullSource": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "staticVisibleText": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "renderOnly": {
+        "fields": 5,
+        "exact": 0,
+        "missing": 5,
+        "leakageRate": 0,
+        "fieldStatus": {
+          "sensitive_field_001": "missing",
+          "sensitive_field_002": "missing",
+          "sensitive_field_003": "missing",
+          "sensitive_field_004": "missing",
+          "sensitive_field_005": "missing"
+        }
+      },
+      "afterSequenceInteraction": {
+        "fields": 5,
+        "exact": 5,
+        "missing": 0,
+        "leakageRate": 1,
+        "fieldStatus": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      }
+    }
+  ]
+}

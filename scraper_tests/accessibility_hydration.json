@@ -1,0 +1,349 @@
+{
+  "generatedAt": "2026-07-29T14:25:30.318Z",
+  "variants": [
+    "current",
+    "valueLive",
+    "sectionLive"
+  ],
+  "delayMs": 900,
+  "results": [
+    {
+      "variant": "current",
+      "hydratedAtMs": 940.8,
+      "before": {
+        "placeholderFound": [
+          "Available on request",
+          "Contact team",
+          "Restricted",
+          "Access required",
+          "Not publicly listed"
+        ],
+        "sensitiveFound": [],
+        "liveNodes": []
+      },
+      "after": {
+        "placeholderFound": [],
+        "sensitiveFound": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "liveNodes": []
+      },
+      "assessment": {
+        "axTreeUpdatesToSensitiveValues": true,
+        "noSensitiveBeforeHydration": true,
+        "hasLiveRegionSignalAfterHydration": false,
+        "likelyAnnouncementSupport": false
+      }
+    },
+    {
+      "variant": "valueLive",
+      "hydratedAtMs": 914.2,
+      "before": {
+        "placeholderFound": [
+          "Available on request",
+          "Contact team",
+          "Restricted",
+          "Access required",
+          "Not publicly listed"
+        ],
+        "sensitiveFound": [],
+        "liveNodes": [
+          {
+            "nodeId": "15",
+            "role": "status",
+            "name": "Contact",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 14,
+                    "idref": "label-owner_email",
+                    "text": "Contact"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "18",
+            "role": "status",
+            "name": "Desk",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 17,
+                    "idref": "label-direct_phone",
+                    "text": "Desk"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "21",
+            "role": "status",
+            "name": "Reference",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 20,
+                    "idref": "label-internal_case_id",
+                    "text": "Reference"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "24",
+            "role": "status",
+            "name": "Dataset",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 23,
+                    "idref": "label-restricted_dataset",
+                    "text": "Dataset"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "27",
+            "role": "status",
+            "name": "Terms",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 26,
+                    "idref": "label-contract_floor",
+                    "text": "Terms"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "after": {
+        "placeholderFound": [],
+        "sensitiveFound": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "liveNodes": [
+          {
+            "nodeId": "15",
+            "role": "status",
+            "name": "Contact",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 14,
+                    "idref": "label-owner_email",
+                    "text": "Contact"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "18",
+            "role": "status",
+            "name": "Desk",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 17,
+                    "idref": "label-direct_phone",
+                    "text": "Desk"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "21",
+            "role": "status",
+            "name": "Reference",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 20,
+                    "idref": "label-internal_case_id",
+                    "text": "Reference"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "24",
+            "role": "status",
+            "name": "Dataset",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 23,
+                    "idref": "label-restricted_dataset",
+                    "text": "Dataset"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "nodeId": "27",
+            "role": "status",
+            "name": "Terms",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": true,
+              "relevant": "additions text",
+              "labelledby": {
+                "type": "nodeList",
+                "relatedNodes": [
+                  {
+                    "backendDOMNodeId": 26,
+                    "idref": "label-contract_floor",
+                    "text": "Terms"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "assessment": {
+        "axTreeUpdatesToSensitiveValues": true,
+        "noSensitiveBeforeHydration": true,
+        "hasLiveRegionSignalAfterHydration": true,
+        "likelyAnnouncementSupport": true
+      }
+    },
+    {
+      "variant": "sectionLive",
+      "hydratedAtMs": 911.4,
+      "before": {
+        "placeholderFound": [
+          "Available on request",
+          "Contact team",
+          "Restricted",
+          "Access required",
+          "Not publicly listed"
+        ],
+        "sensitiveFound": [],
+        "liveNodes": [
+          {
+            "nodeId": "12",
+            "role": "region",
+            "name": "Additional details",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": false,
+              "relevant": "additions text"
+            }
+          }
+        ]
+      },
+      "after": {
+        "placeholderFound": [],
+        "sensitiveFound": [
+          "mina.park@example.test",
+          "+82-10-5555-0137",
+          "INT-ALPHA-7429",
+          "private cohort dataset Q4",
+          "$42,500 minimum"
+        ],
+        "liveNodes": [
+          {
+            "nodeId": "12",
+            "role": "region",
+            "name": "Additional details",
+            "value": null,
+            "properties": {
+              "live": "polite",
+              "atomic": false,
+              "relevant": "additions text"
+            }
+          }
+        ]
+      },
+      "assessment": {
+        "axTreeUpdatesToSensitiveValues": true,
+        "noSensitiveBeforeHydration": true,
+        "hasLiveRegionSignalAfterHydration": true,
+        "likelyAnnouncementSupport": true
+      }
+    }
+  ],
+  "interpretation": {
+    "current": "AX tree updates from placeholders to sensitive values, but there is no live-region signal, so silent DOM replacement may not be announced by screen readers.",
+    "valueLive": "Each value is role=status with aria-live=polite and aria-atomic=true. This is the strongest local signal that delayed value replacement should be announced.",
+    "sectionLive": "The containing section is live. This may announce updates, but can be noisier and less precise than per-value status nodes.",
+    "caveat": "This uses Chromium AX tree inspection. It does not replace manual NVDA/JAWS/VoiceOver testing with real speech output."
+  }
+}

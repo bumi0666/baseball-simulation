@@ -1,0 +1,440 @@
+{
+  "generatedAt": "2026-08-06T08:43:16.746Z",
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "ping": "PONG",
+    "scriptSha": "0bc1368173450c78bd08248d32109f945e6f5ab8"
+  },
+  "config": {
+    "rounds": 20,
+    "concurrentRequests": 50,
+    "budgetFields": 25,
+    "prefillFields": 20,
+    "remainingFieldsBeforeRace": 5,
+    "fieldCount": 5,
+    "expectedAllowedAtBoundary": 1
+  },
+  "summaries": {
+    "redisLuaAtomicBoundary": {
+      "allowed": {
+        "min": 1,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "overBudgetFields": {
+        "min": 0,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "finalSession": {
+        "min": 25,
+        "p50": 25,
+        "p95": 25,
+        "max": 25
+      },
+      "ms": {
+        "min": 3.68,
+        "p50": 4.704,
+        "p95": 6.403,
+        "max": 7.84
+      },
+      "anyOverBudget": false
+    },
+    "redisNonAtomicBoundary": {
+      "allowed": {
+        "min": 50,
+        "p50": 50,
+        "p95": 50,
+        "max": 50
+      },
+      "overBudgetFields": {
+        "min": 245,
+        "p50": 245,
+        "p95": 245,
+        "max": 245
+      },
+      "finalSession": {
+        "min": 270,
+        "p50": 270,
+        "p95": 270,
+        "max": 270
+      },
+      "ms": {
+        "min": 12.185,
+        "p50": 14.308,
+        "p95": 16.847,
+        "max": 19.257
+      },
+      "anyOverBudget": true
+    }
+  },
+  "raw": {
+    "lua": [
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 7.84
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 5.647
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 5.33
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 6.216
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.342
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.343
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.928
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 6.403
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.704
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.32
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 5.911
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.392
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.543
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.293
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.711
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.592
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 4.588
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 5.545
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 5.386
+      },
+      {
+        "label": "redisLuaAtomicBoundary",
+        "allowed": 1,
+        "blocked": 49,
+        "finalSession": 25,
+        "finalIp": 25,
+        "overBudgetFields": 0,
+        "ms": 3.68
+      }
+    ],
+    "nonAtomic": [
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 19.257
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 16.847
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 12.699
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.66
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 12.837
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 15.21
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 12.927
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.949
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.987
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 13.39
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 15.274
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.308
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 13.963
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.453
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 16.093
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.246
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 14.931
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 12.185
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 13.684
+      },
+      {
+        "label": "redisNonAtomicBoundary",
+        "allowed": 50,
+        "blocked": 0,
+        "finalSession": 270,
+        "finalIp": 270,
+        "overBudgetFields": 245,
+        "ms": 13.337
+      }
+    ]
+  }
+}

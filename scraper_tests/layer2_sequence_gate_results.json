@@ -1,0 +1,790 @@
+{
+  "generatedAt": "2026-08-06T11:35:27.804Z",
+  "config": {
+    "iterations": 3,
+    "fieldCount": 5,
+    "dwellMs": 650
+  },
+  "results": [
+    {
+      "mode": "simple",
+      "scenario": "noInteraction",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 0,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 30.248,
+        "p95": 31.567,
+        "max": 31.567
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "pointerenterOnly",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 1,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 54.664,
+        "p95": 57.641,
+        "max": 57.641
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "clickOnly",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 1,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 60.4,
+        "p95": 71.248,
+        "max": 71.248
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "hoverThenImmediateClick",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 5,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 171.717,
+        "p95": 189.424,
+        "max": 189.424
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "hoverDwellClick",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 5,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 849.521,
+        "p95": 853.368,
+        "max": 853.368
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "keyboardImmediate",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 2,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 60.357,
+        "p95": 71.934,
+        "max": 71.934
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "keyboardDwell",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 2,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 708.368,
+        "p95": 710.448,
+        "max": 710.448
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "bruteForceDispatchAll",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 100,
+      "attemptedElements": 25,
+      "interactionMs": {
+        "p50": 267.246,
+        "p95": 272.916,
+        "max": 272.916
+      }
+    },
+    {
+      "mode": "simple",
+      "scenario": "bruteForceDwellAll",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 100,
+      "attemptedElements": 25,
+      "interactionMs": {
+        "p50": 16443.138,
+        "p95": 16449.541,
+        "max": 16449.541
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "noInteraction",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 0,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 31.549,
+        "p95": 34.632,
+        "max": 34.632
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "pointerenterOnly",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 1,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 54.36,
+        "p95": 57.875,
+        "max": 57.875
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "clickOnly",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 1,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 55.59,
+        "p95": 67.111,
+        "max": 67.111
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "hoverThenImmediateClick",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 5,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 166.939,
+        "p95": 175.329,
+        "max": 175.329
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "hoverDwellClick",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 5,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 826.662,
+        "p95": 842.037,
+        "max": 842.037
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "keyboardImmediate",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 2,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 54.739,
+        "p95": 60.698,
+        "max": 60.698
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "keyboardDwell",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 2,
+      "attemptedElements": 0,
+      "interactionMs": {
+        "p50": 714.246,
+        "p95": 737.831,
+        "max": 737.831
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "bruteForceDispatchAll",
+      "score": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "events": 100,
+      "attemptedElements": 25,
+      "interactionMs": {
+        "p50": 287.269,
+        "p95": 290.74,
+        "max": 290.74
+      }
+    },
+    {
+      "mode": "sequence",
+      "scenario": "bruteForceDwellAll",
+      "score": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "events": 100,
+      "attemptedElements": 25,
+      "interactionMs": {
+        "p50": 16441.133,
+        "p95": 16444.449,
+        "max": 16444.449
+      }
+    }
+  ],
+  "byMode": {
+    "simple": {
+      "noInteraction": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "pointerenterOnly": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "clickOnly": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "hoverThenImmediateClick": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "hoverDwellClick": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "keyboardImmediate": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "keyboardDwell": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "bruteForceDispatchAll": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "bruteForceDwellAll": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      }
+    },
+    "sequence": {
+      "noInteraction": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "pointerenterOnly": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "clickOnly": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "hoverThenImmediateClick": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "hoverDwellClick": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "keyboardImmediate": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "keyboardDwell": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      },
+      "bruteForceDispatchAll": {
+        "fields": 5,
+        "exact": 0,
+        "placeholder": 5,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 0,
+        "safeFailureRate": 1,
+        "statuses": {
+          "sensitive_field_001": "placeholder",
+          "sensitive_field_002": "placeholder",
+          "sensitive_field_003": "placeholder",
+          "sensitive_field_004": "placeholder",
+          "sensitive_field_005": "placeholder"
+        }
+      },
+      "bruteForceDwellAll": {
+        "fields": 5,
+        "exact": 5,
+        "placeholder": 0,
+        "missing": 0,
+        "wrong": 0,
+        "leakageRate": 1,
+        "safeFailureRate": 0,
+        "statuses": {
+          "sensitive_field_001": "exact",
+          "sensitive_field_002": "exact",
+          "sensitive_field_003": "exact",
+          "sensitive_field_004": "exact",
+          "sensitive_field_005": "exact"
+        }
+      }
+    }
+  }
+}
