@@ -5,7 +5,8 @@ from scenes.base_scene import Scene
 from ui.button import Button
 from config import *
 import pygame, random, math, colorsys
-from simulation import PitchSim, FieldSim
+from simulation import PitchSim, FieldSim, make_batted_ball, FENCE_DIST, BASE_POS
+from ui.game_fx import GameFX
 
 # ════════════════════════════════════════════════════════
 #  화면 좌표 변환 헬퍼
@@ -171,6 +172,11 @@ def draw_radar_chart_game(surface, player, cx, cy, radius=28):
 
 
 class GameScene(Scene):
+    # 투수 구위가 타석 결과에 미치는 영향 (리그 평균 구속 80, stuff 71 기준)
+    PITCH_BASE    = 50.0    # 평균 투수의 '타자 컨택 상쇄량'
+    PITCH_V_SLOPE = 0.7     # 구속 1pt당 상쇄량
+    PITCH_S_SLOPE = 0.45    # stuff 1pt당 상쇄량
+
     def __init__(self, players, state):
         self.players = players
         self.state = state
@@ -185,8 +191,9 @@ class GameScene(Scene):
         self.smallFONT = pygame.font.SysFont("malgungothic", 24)
         self.verysmallFONT = pygame.font.SysFont("malgungothic", 16)
         
-        self.my_lineup = state.lineup
-        self.my_order = state.batting_order
+        # 경기 중 투수 교체가 사용자가 정한 선발 라인업을 바꾸지 않도록 복사본을 쓴다
+        self.my_lineup = dict(state.lineup)
+        self.my_order = list(state.batting_order)
         
         self.inning = 1
         self.half = "TOP"
@@ -266,6 +273,7 @@ class GameScene(Scene):
         from simulation import INITIAL_FIELDERS
         self._fielder_display = {k: list(v) for k, v in INITIAL_FIELDERS.items()}
         self._ball_trail = []   # 공 잔상 표시용 (최근 위치 몇 개)
+        self.fx = GameFX(get_korean_font(20), get_korean_font(15), get_korean_font(64, bold=True))
 
     def staff_trait_bonus(self, role, trait_name):
         staff = getattr(self.state, "staff_slots", {}).get(role)
@@ -438,7 +446,7 @@ class GameScene(Scene):
             batter     = self.get_current_batter()
             pitcher    = self.get_current_pitcher()
             is_my_team = (self.half == "BOT")
-            def_lineup = self.my_lineup if is_my_team else self.opp_lineup
+            def_lineup = self.opp_lineup if is_my_team else self.my_lineup   # 수비는 공격의 반대 팀
             catcher    = def_lineup.get("C")
 
             # 견제 우선 판정 — 시도했다면 이번 턴은 투구 없이 소모된다
@@ -522,7 +530,8 @@ class GameScene(Scene):
                     runners_on=runners_on,
                     def_stats=def_stats,
                     run_stats=run_stats,
-                    scripted={"outcome": result["outcome"], "trajectory": result["trajectory"]},
+                    batted=result["batted"],
+                    outs=self.out,
                 )
                 for _ in range(600):
                     if fsim.is_over:
@@ -555,6 +564,7 @@ class GameScene(Scene):
         self._pending_pitcher = pitcher
         self._pending_my_team = is_my_team
         self.pitch_sim = PitchSim(pitch_result["type"])
+        self.fx.begin_pitch(pitch_result, pitcher)
 
     def _on_pitch_sim_done(self):
         """PitchSim 완료 → 결과 처리 or FieldSim 시작."""
@@ -564,11 +574,12 @@ class GameScene(Scene):
         is_my_team = self._pending_my_team
 
         self.pitch_sim = None
+        self.fx.pitch_landed(result["type"])
 
         if result["type"] == "IN_PLAY":
             # 인플레이 → FieldSim 생성
             runners_on = [b is not None for b in self.bases]
-            def_lineup = self.my_lineup if is_my_team else self.opp_lineup
+            def_lineup = self.opp_lineup if is_my_team else self.my_lineup   # 수비는 공격의 반대 팀
 
             def _def(pos):
                 p = def_lineup.get(pos)
@@ -597,7 +608,8 @@ class GameScene(Scene):
                 runners_on=runners_on,
                 def_stats=def_stats,
                 run_stats=run_stats,
-                scripted={"outcome": result["outcome"], "trajectory": result["trajectory"]},
+                batted=result["batted"],
+                    outs=self.out,
             )
         else:
             # COUNT(볼/스트/헛스윙) → 볼넷/삼진 체크 후 끝
@@ -614,6 +626,7 @@ class GameScene(Scene):
             pitcher.game_stats["bb_p"] += 1
             batter.game_stats["bb"]    += 1
             self.last_event = f"{batter.name} draws a walk!"
+            self.fx.banner("볼  넷", (110, 215, 130), f"{batter.name} 출루", 80)
             runners_on = [b is not None for b in self.bases]
             walk_run_stats = {}
             if hasattr(batter, "get_attr"):
@@ -645,6 +658,7 @@ class GameScene(Scene):
             batter.game_stats["so"] += 1
             self.out += 1
             self.last_event = f"Strike Three! {pitcher.name} fans {batter.name}!"
+            self.fx.banner("삼  진 !", (255, 110, 100), f"{pitcher.name}  K {pitcher.game_stats['so_p']}", 85)
             if self.half == "TOP":
                 self.opp_bat_idx += 1
             else:
@@ -695,7 +709,7 @@ class GameScene(Scene):
             return
 
         # ── 인플레이 완료 ──
-        # scripted 모드에서 최종 결과(호수비로 아웃 처리된 경우 포함)는
+        # 실시간 물리 연산으로 나온 최종 결과(호수비로 아웃 처리된 경우 포함)는
         # 이미 FieldSim.get_result()가 정확히 반영해서 돌려준다
         final = sim_result
 
@@ -719,6 +733,10 @@ class GameScene(Scene):
         else:
             self.apply_hit(final, batter, is_my_team, existing_runs)
             self.last_event = f"{batter.name} hits a {final}!"
+
+        self.fx.play_result(final, (pending or {}).get("batted"), existing_runs,
+                            final == "OUT" and had_runner_out,
+                            sim_to_screen(*field_sim_ref.ball_target) if final == "HR" else None)
 
         if is_my_team:
             self.my_bat_idx += 1
@@ -990,7 +1008,7 @@ class GameScene(Scene):
 
         # ── 외야 잔디 (홈 기준 1루선~3루선 사이 부채꼴) ─────────
         GRASS = (32, 96, 52)
-        FENCE_R = 100
+        FENCE_R = FENCE_DIST
         arc_pts = [sim_to_screen(0, 0)]
         for deg in range(0, 91, 5):
             rad = math.radians(deg)
@@ -1052,7 +1070,7 @@ class GameScene(Scene):
                 pygame.draw.circle(screen, offense_color, (hx, hy), 14)
                 pygame.draw.circle(screen, white, (hx, hy), 14, 2)
                 name_surf = self.verysmallFONT.render(batter.name, True, white)
-                screen.blit(name_surf, (hx - name_surf.get_width() // 2, hy + 18))
+                screen.blit(name_surf, (hx + 18, hy - 8))      # 포수 이름과 겹치지 않게 오른쪽에 표시
 
         # ── 야수 ─────────────────────────────────────────────
         # FieldSim 진행 중이면 sim 야수 위치, 아니면 기본 위치
@@ -1066,11 +1084,29 @@ class GameScene(Scene):
         for pos_key, pos in fielders_pos.items():
             fx, fy = sim_to_screen(pos[0], pos[1])
             pygame.draw.circle(screen, defense_color, (fx, fy), 13)
-            pygame.draw.circle(screen, white, (fx, fy), 13, 2)
+            has_ball = bool(self.field_sim and self.field_sim.ball_owner == pos_key)
+            pygame.draw.circle(screen, (255, 225, 60) if has_ball else white, (fx, fy), 15 if has_ball else 13, 3 if has_ball else 2)
+            pos_txt = self.verysmallFONT.render(pos_key, True, (15, 25, 15))
+            screen.blit(pos_txt, (fx - pos_txt.get_width() // 2, fy - pos_txt.get_height() // 2))
             player = def_lineup.get(pos_key)
             label_text = player.name if player and hasattr(player, "name") else pos_key
             label = self.verysmallFONT.render(label_text, True, (225, 225, 225))
-            screen.blit(label, (fx - label.get_width() // 2, fy - 26))
+            if pos_key == "C":      # 홈플레이트의 타자 이름과 겹치지 않게 포수 이름은 왼쪽에 표시
+                screen.blit(label, (fx - label.get_width() - 18, fy - 8))
+            else:
+                screen.blit(label, (fx - label.get_width() // 2, fy - 26))
+
+        # ── 송구선 (공을 잡은 야수 → 던질 베이스) ───────────────
+        if self.field_sim and self.field_sim.ball_owner and self.field_sim.throw_to in BASE_POS:
+            ox, oy = self.field_sim.fielders[self.field_sim.ball_owner]
+            tx, ty = BASE_POS[self.field_sim.throw_to]
+            a = sim_to_screen(ox, oy); b = sim_to_screen(tx, ty)
+            dist = math.dist(a, b)
+            for i in range(int(dist // 14)):
+                t0, t1 = (i * 14) / dist, (i * 14 + 7) / dist
+                pygame.draw.line(screen, (255, 225, 60),
+                                 (a[0] + (b[0] - a[0]) * t0, a[1] + (b[1] - a[1]) * t0),
+                                 (a[0] + (b[0] - a[0]) * t1, a[1] + (b[1] - a[1]) * t1), 2)
 
         # ── FieldSim 주자 이동 ────────────────────────────────
         if self.field_sim:
@@ -1098,8 +1134,15 @@ class GameScene(Scene):
         elif self.field_sim:
             ball_pos = self.field_sim.ball_pos
 
+        height = self.field_sim.ball_height if (self.field_sim and not self.pitch_sim) else 0.0
         if ball_pos:
-            bxy = sim_to_screen(ball_pos[0], ball_pos[1])
+            gx, gy = sim_to_screen(ball_pos[0], ball_pos[1])
+            # 그림자: 지면 위치에 고정, 높을수록 작고 옅게
+            sh_w = max(6, int(18 - height * 0.10))
+            shadow = pygame.Surface((sh_w * 2 + 2, sh_w + 2), pygame.SRCALPHA)
+            pygame.draw.ellipse(shadow, (0, 0, 0, max(40, int(150 - height * 1.1))), shadow.get_rect())
+            screen.blit(shadow, (gx - sh_w - 1, gy - sh_w // 2))
+            bxy = (gx, int(gy - height))
             self._ball_trail.append(bxy)
             if len(self._ball_trail) > 6:
                 self._ball_trail.pop(0)
@@ -1107,11 +1150,14 @@ class GameScene(Scene):
             self._ball_trail.clear()
 
         trail_len = len(self._ball_trail)
+        scale = 1.0 + height / 120.0           # 높이 뜬 공은 약간 크게 (원근감)
         for i, (tx, ty) in enumerate(self._ball_trail):
             fade = (i + 1) / max(trail_len, 1)
-            radius = max(2, int(9 * fade))
+            radius = max(2, int(9 * fade * scale))
             color = (int(255 * fade), int(255 * fade), int(60 + 40 * fade))
             pygame.draw.circle(screen, color, (tx, ty), radius)
+            if i == trail_len - 1:
+                pygame.draw.circle(screen, (30, 30, 30), (tx, ty), radius, 1)
 
     def draw_board(self, screen):
         # 중앙 필드 박스 → draw_field 로 위임
@@ -1187,6 +1233,13 @@ class GameScene(Scene):
                         screen.blit(self.smallFONT.render(f" (+{bonus})", True, (0,255,100)),
                                     (cx+surf.get_width(), cy))
 
+        if pitcher:
+            pc = self.fx.pitch_counts.get(id(pitcher), 0)
+            mult = self.gamso(pitcher.status["health"])
+            col = (120, 230, 140) if mult >= 0.9 else (240, 200, 80) if mult >= 0.65 else (240, 100, 90)
+            warn = "  교체 고려" if pitcher.status["health"] < 300 else ""
+            screen.blit(self.fx.ft.render(f"투구수 {pc}  구위 {int(mult * 100)}%{warn}", True, col), (170, 372))
+
         # 타자 박스
         pygame.draw.rect(screen, white, [100-50, 500-50, 350-50, 150], 3)
         batter = self.get_current_batter()
@@ -1217,9 +1270,11 @@ class GameScene(Scene):
                                 (cx+surf.get_width(), cy))
 
         if self.last_event:
+            # 홈플레이트 주변 선수 이름(x≈690~)과 겹치지 않도록 왼쪽에서 시작해 폭을 제한한다
             surf = self.smallFONT.render(self.last_event, True, (255, 220, 80))
-            screen.blit(surf, (screen.get_width() // 2 - surf.get_width() // 2,
-                               screen.get_height() - 30))
+            if surf.get_width() > 310:
+                surf = self.verysmallFONT.render(self.last_event, True, (255, 220, 80))
+            screen.blit(surf, (370, screen.get_height() - 28), pygame.Rect(0, 0, 310, 30))
 
     # ════════════════════════════════════════════════════════
     #  simulate_pitch: COUNT 결과도 명확히 반환
@@ -1228,9 +1283,8 @@ class GameScene(Scene):
     def simulate_pitch(self, pitcher, batter):
         """투구 1회 결과를 dict로 반환한다.
         {"type": "BALL"/"STRIKE"/"SWING_MISS"/"IN_PLAY", ...}
-        인플레이인 경우 "outcome"(OUT/1B/2B/3B/HR)과 "trajectory"(GROUND/FLY)를
-        추가로 담는다. 안타 종류가 먼저 정해지고, 그 안에서의 구체적인 타구
-        지점(존)은 FieldSim이 scripted 모드로 넘겨받아 별도로 뽑는다."""
+        인플레이인 경우 "batted"(타구 파라미터)를 담는다. 아웃/안타 여부는
+        여기서 정하지 않고, FieldSim이 타구·수비·주루를 물리적으로 계산해 결정한다."""
         control  = pitcher.get_attr("control",  self.state) * self.gamso(pitcher.status["health"])
         velocity = pitcher.get_attr("velocity", self.state) * self.gamso(pitcher.status["health"])
         stuff    = pitcher.get_attr("stuff",    self.state) * self.gamso(pitcher.status["health"])
@@ -1238,7 +1292,9 @@ class GameScene(Scene):
         power    = batter.get_attr("power",     self.state) * self.gamso(batter.status["health"])
         eye      = batter.get_attr("eye",       self.state) * self.gamso(batter.status["health"])
 
-        pitcher.status["health"] = max(0, pitcher.status["health"] - 10)
+        # 스태미나가 높은 투수는 투구당 체력 소모가 적다 (스태미나 70 기준 10)
+        stamina   = max(30, pitcher.get_attr("stamina", self.state)) if "stamina" in pitcher.attr else 70
+        pitcher.status["health"] = max(0, pitcher.status["health"] - 10 * 70 / stamina)
         batter.status["health"]  = max(0, batter.status["health"]  - 10)
 
         strike_prob = 0.5 + (control - eye) / 200
@@ -1256,34 +1312,20 @@ class GameScene(Scene):
                 self.last_event = f"Ball! {batter.name} didn't bite on that one."
                 return {"type": "BALL"}
 
-        contact_score = contact - (velocity + stuff) * 0.3 + random.randint(-20, 20)
+        # 구위: 구속은 헛스윙(삼진), 구종 위력(stuff)은 헛스윙과 약한 타구에 영향
+        pitch_power   = (self.PITCH_BASE + self.PITCH_V_SLOPE * (velocity - 80)
+                         + self.PITCH_S_SLOPE * (stuff - 71))
+        contact_score = contact - pitch_power + random.randint(-20, 20)
         if contact_score < 20:
             self.strike += 1
             self.last_event = f"Swing and a miss! {batter.name} was way off the timing."
             return {"type": "SWING_MISS"}
 
-        # 인플레이: 안타 종류(OUT/1B/2B/3B/HR)가 먼저 정해진다
-        hit_roll    = random.random()
-        power_bonus = (power - 50) / 200
-        if hit_roll < 0.60:
-            outcome = "OUT"
-        elif hit_roll < 0.80 - power_bonus:
-            outcome = "1B"
-        elif hit_roll < 0.92 - power_bonus:
-            outcome = "2B"
-        elif hit_roll < 0.97:
-            outcome = "3B"
-        else:
-            outcome = "HR"
-
-        # 타구 궤적: OUT/1B는 땅볼·뜬공이 섞여있고, 장타(2B 이상)는 전부
-        # 외야로 날아가는 성격의 타구로 취급한다
-        if outcome in ("OUT", "1B"):
-            trajectory = "GROUND" if random.random() < 0.5 else "FLY"
-        else:
-            trajectory = "FLY"
-
-        return {"type": "IN_PLAY", "outcome": outcome, "trajectory": trajectory}
+        # 인플레이: 타구 강도(0~1)만 정하고 결과는 FieldSim이 계산한다
+        hardness = (0.46 + (power - 50) / 150 + (contact_score - 40) / 250
+                    - (stuff - 71) / 300 + random.gauss(0, 0.2))
+        hardness = max(0.05, min(1.0, hardness))
+        return {"type": "IN_PLAY", "batted": make_batted_ball(hardness)}
 
     def _runner_run_stat(self, player):
         if player is not None and hasattr(player, "get_attr"):
@@ -1475,6 +1517,8 @@ class GameScene(Scene):
     def reset_count(self):
         self.ball = 0
         self.strike = 0
+        if getattr(self, "fx", None):
+            self.fx.clear_pa()
         
     def check_inning(self):
         if self.out < 3:
@@ -1507,9 +1551,14 @@ class GameScene(Scene):
         
     def draw(self, screen):
         screen.fill((20, 20, 20))
-        screen.blit(self.FONT.render("Press Space to continue", True, (255,255,255)), (50, 640+20))
+        screen.blit(self.smallFONT.render("Press Space to continue", True, (255,255,255)), (50, 14))
+        self.fx.sample_wp(self)
         self.draw_scoreboard(screen)
         self.draw_board(screen)
+        self.fx.draw_wp(screen, self)
+        self.fx.draw_zone(screen, self)
+        self.fx.draw_log(screen, self)
+        self.fx.draw_effects(screen, self)
         self.instant_btn.draw(screen)
 
         if self.half == "TOP":

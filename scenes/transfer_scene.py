@@ -3,6 +3,7 @@ from ui.button import Button
 from config import *
 from ui.layout import get_common_buttons, draw_common_ui
 import pygame
+import ai_advisor
 
 
 class TransferScene(Scene):
@@ -38,6 +39,10 @@ class TransferScene(Scene):
             Button((CONTENT_X + 440, CONTENT_Y - 34, 100, 28), "Staff", lambda: self.set_tab("staff"), self.smallFONT),
         ]
 
+        self.ai_on = False
+        self._ai_cache = {}
+        self.ai_btn = Button((CONTENT_X + 550, CONTENT_Y - 34, 100, 28), "AI Pick", self.toggle_ai, self.smallFONT)
+
         self.position_buttons = []
         for i, pos in enumerate(["ALL", "P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "DH"]):
             self.position_buttons.append(
@@ -64,11 +69,32 @@ class TransferScene(Scene):
         self.filter_role = role
         self.scroll_offset = 0
 
+    def toggle_ai(self):
+        self.ai_on = not self.ai_on
+        self.scroll_offset = 0
+
+    def _ai_recs(self):
+        """현재 포지션 필터 기준 AI 추천 {id: Recommendation}"""
+        key = (self.filter_pos, getattr(self.state, "current_day", 0))
+        if key not in self._ai_cache:
+            self._ai_cache = {}
+            fa = self.state.team_rosters.get("FA", [])
+            if self.filter_pos != "ALL":
+                fa = [p for p in fa if p.pos == self.filter_pos]
+            mine = self.state.team_rosters.get(self.state.user_team, [])
+            recs = ai_advisor.get_advisor().recommend_fa(self.state, fa, mine, top_n=10)
+            self._ai_cache[key] = recs
+        return self._ai_cache[key]
+
     def get_fa_players(self):
         fa_players = self.state.team_rosters.get("FA", [])
-        if self.filter_pos == "ALL":
-            return fa_players
-        return [p for p in fa_players if p.pos == self.filter_pos]
+        if self.filter_pos != "ALL":
+            fa_players = [p for p in fa_players if p.pos == self.filter_pos]
+        if self.ai_on and self.active_tab == "players":
+            recs = [r.player for r in self._ai_recs()]
+            ids = {p.id for p in recs}
+            return recs + [p for p in fa_players if p.id not in ids]
+        return fa_players
 
     def get_fa_staff(self):
         staff_pool = getattr(self.state, "all_staff", [])
@@ -134,6 +160,16 @@ class TransferScene(Scene):
 
         screen.blit(self.titleFONT.render("TRANSFER MARKET", True, white), (top_rect.x + 18, top_rect.y + 16))
 
+        if self.active_tab == "players":
+            if self.ai_on:
+                pygame.draw.rect(screen, (60, 90, 140), self.ai_btn.rect)
+            self.ai_btn.draw(screen)
+            if self.ai_on:
+                recs = self._ai_recs()
+                if recs:
+                    r = recs[0]
+                    txt = f"★ {r.player.name}: {r.reason}"
+                    screen.blit(self.smallFONT.render(txt[:70], True, (255, 215, 90)), (top_rect.x + 18 + 400, top_rect.y + 52))
         for btn in self.tab_buttons:
             if (btn.text == "Players" and self.active_tab == "players") or (btn.text == "Staff" and self.active_tab == "staff"):
                 pygame.draw.rect(screen, (60, 90, 140), btn.rect)
@@ -295,7 +331,7 @@ class TransferScene(Scene):
         filtered = self.get_fa_staff() if self.active_tab == "staff" else self.get_fa_players()
         filter_buttons = self.role_buttons if self.active_tab == "staff" else self.position_buttons
 
-        for btn in self.buttons + self.tab_buttons + filter_buttons:
+        for btn in self.buttons + self.tab_buttons + filter_buttons + [self.ai_btn]:
             btn.update_hover(mouse_pos)
 
         for e in events:
@@ -307,6 +343,8 @@ class TransferScene(Scene):
                     self.scroll_offset = min(max_offset, self.scroll_offset + 1)
 
                 if e.button == 1:
+                    if self.active_tab == "players":
+                        self.ai_btn.handle_event(e)
                     for btn in self.tab_buttons:
                         result = btn.handle_event(e)
                         if result is not None:

@@ -1,4 +1,3 @@
-from turtle import color
 
 import pygame
 from datetime import date, timedelta

@@ -3,6 +3,7 @@ from ui.button import Button
 from config import *
 from ui.layout import get_common_buttons, draw_common_ui
 import pygame
+import ai_advisor
 
 class ReserveScene(Scene):
     def __init__(self, players, state):
@@ -20,6 +21,8 @@ class ReserveScene(Scene):
             Button((CONTENT_X + 260, filter_y, 120, 40), "PITCHERS", self.show_pitchers),
         ])
 
+        self.ai_on = False
+        self.buttons.append(Button((CONTENT_X + 390, CONTENT_Y - 80, 120, 40), "AI Pick", self.toggle_ai))
         self.selected_player = None
         self.scroll_offset   = 0
         self.visible_count   = VISIBLE_ROWS
@@ -42,13 +45,23 @@ class ReserveScene(Scene):
         self.filter_mode = "PITCHER"
         self.scroll_offset = 0
 
+    def toggle_ai(self):
+        self.ai_on = not self.ai_on
+        self.scroll_offset = 0
+
+    def _ai_recs(self):
+        return ai_advisor.get_advisor().recommend_prospects(self.state, self.players, top_n=10)
+
     def get_filtered_players(self):
         # 2군(inactive) 선수만
         pool = [p for p in self.players if p.status.get("roster", "active") == "inactive"]
         if self.filter_mode == "BATTER":
             return [p for p in pool if p.pos != "P"]
         elif self.filter_mode == "PITCHER":
-            return [p for p in pool if p.pos == "P"]
+            pool = [p for p in pool if p.pos == "P"]
+        if self.ai_on:
+            recs = [r.player for r in self._ai_recs() if r.player in pool]
+            return recs + [p for p in pool if p not in recs]
         return pool
 
     def _draw_up_triangle(self, screen, cx, cy):
@@ -69,6 +82,13 @@ class ReserveScene(Scene):
         total_inactive = len([p for p in self.players if p.status.get("roster", "active") == "inactive"])
         screen.blit(FONT.render("Reserve", True, (255, 180, 80)), (CONTENT_X, CONTENT_Y - 110))
         screen.blit(FONT.render(f"({total_inactive} players)", True, (150, 150, 150)), (CONTENT_X + 180, CONTENT_Y - 110))
+
+        if self.ai_on:
+            pygame.draw.rect(screen, (60, 90, 140), self.buttons[-1].rect)
+            recs = self._ai_recs()
+            if recs:
+                txt = f"★ {recs[0].player.name}: {recs[0].reason}"
+                screen.blit(self.smallFONT.render(txt[:80], True, (255, 215, 90)), (CONTENT_X + 530, CONTENT_Y - 70))
 
         # 헤더
         header_y = CONTENT_Y - 35
