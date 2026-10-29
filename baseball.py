@@ -28,6 +28,9 @@ from scenes.result_scene import ResultScene
 from scenes.teamdetail_scene import TeamDetailScene
 from scenes.reserve_scene import ReserveScene
 from scenes.transfer_scene import TransferScene
+from scenes.transactions_scene import TransactionsScene
+from scenes.draft_scene import DraftScene
+import draft as draft_module
 from saveload import default_save_data, load_game, save_game
 from datetime import date, timedelta
 
@@ -96,6 +99,11 @@ class GameState:
         self.current_day = data.get("current_day", 1)
         self.base_date = data.get("base_date", (2024, 1, 1))
         self.inbox = data.get("inbox", [])
+        self.transactions = data.get("transactions", [])   # 다른 구단의 영입/방출/재계약 기록
+        self.team_profiles = data.get("team_profiles", {})  # AI 구단별 재정(임금 상한)·성향
+        self.draft = data.get("draft")                      # 신인 드래프트 진행 상태
+        self.season_history = data.get("season_history", [])  # 지난 시즌 우승팀·최종 순위
+        self.season_ended_year = data.get("season_ended_year")  # 시즌 종료를 처음 확인한 연도(다음 시즌 개막 판정용)
         
         self.money = data.get("money", 5000000)
         #self.money = 5000000
@@ -272,10 +280,18 @@ def add_user_schedule_entry(state, date_str, day_matches, stage="regular", serie
 
     state.schedule[date_str] = entry
 
-def generate_season_schedule(state, games_per_pair=16):
+KBO_OPENING_ANCHOR = (3, 21)    # 개막일은 3월 21일 다음의 첫 화/금요일 시리즈 (KBO는 3월 하순 개막)
+
+
+def generate_season_schedule(state, games_per_pair=16, season_year=None):
+    """season_year 시즌의 정규시즌 일정을 만든다. 3월 하순 개막(KBO 기준)이며, 144경기가 9월 말까지 이어진다.
+    season_year가 없으면 게임 시작 연도의 시즌을 만든다(시작일이 개막 이후면 시작일부터)."""
     teams = LEAGUE_TEAMS[:]
     base_y, base_m, base_d = state.base_date
-    current_date = date(base_y, base_m, base_d)
+    anchor_year = season_year if season_year is not None else base_y
+    current_date = date(anchor_year, *KBO_OPENING_ANCHOR)
+    if season_year is None and date(base_y, base_m, base_d) > current_date:
+        current_date = date(base_y, base_m, base_d)
 
     state.master_schedule = {}
     state.schedule = {}
@@ -670,6 +686,44 @@ def advance_postseason_if_needed(state, date_str):
 
     return schedule_current_postseason_game(state, date_str)
 
+def sync_game_date(state):
+    """선수 나이 등이 게임 날짜를 따르도록 현재 게임 날짜를 Player 모듈에 알린다."""
+    from models import player as player_module
+    y, m, d = state.base_date
+    player_module.set_game_date(date(y, m, d) + timedelta(days=state.current_day - 1))
+
+
+def start_new_season(state, curr_date, date_str):
+    """오프시즌이 지나 새 해가 되면 지난 시즌을 기록하고 새 시즌(순위·일정·포스트시즌)을 연다."""
+    year = curr_date.year
+    standings = get_regular_standings(state)
+    state.season_history.append({
+        "year": getattr(state, "season_ended_year", year - 1),
+        "champion": state.champion,
+        "standings": [[t, s["win"], s["loss"], s.get("draw", 0)] for t, s in standings],
+    })
+    for s in state.team_stats.values():
+        s.update({"win": 0, "loss": 0, "draw": 0, "games": 0})
+    state.regular_season_ended = False
+    state.season_ended = False
+    state.season_ended_year = None
+    state.champion = None
+    state.todaygamedone = False
+    state.todaygamenotice = False
+    generate_season_schedule(state, season_year=year)
+    first = min((datetime_key(k, year) for k, v in state.master_schedule.items()), default=None)
+    state.inbox.append({
+        "date": date_str, "subject": "[Season] %d season" % year,
+        "body": "The %d season has been scheduled. Opening day: %s." % (
+            year, first.strftime("%Y-%m-%d") if first else "-"),
+        "read": False})
+
+
+def datetime_key(date_str, year):
+    m, d = map(int, date_str.split("/"))
+    return date(year, m, d)
+
+
 def check_season_end(players, state, date_str):
     regular_days = [v for v in state.master_schedule.values() if v.get("stage", "regular") == "regular"]
     regular_user_games = [g for g in state.schedule.values() if g.get("stage", "regular") == "regular"]
@@ -925,6 +979,7 @@ def process_day(players, state):
     base_y, base_m, base_d = state.base_date
     curr_date = date(base_y, base_m, base_d) + timedelta(days=state.current_day - 1)
     date_str = curr_date.strftime("%m/%d")
+    sync_game_date(state)
     if getattr(state, "postseason", {}).get("active"):
         advance_postseason_if_needed(state, date_str)
     day_data = state.master_schedule.get(date_str)
@@ -933,7 +988,28 @@ def process_day(players, state):
     for team, roster in state.team_rosters.items():
         all_players.extend(roster)
 
+    # 시즌이 끝났으면 해가 바뀔 때 새 시즌을 개막한다 (오프시즌: 드래프트·FA·계약)
+    if getattr(state, "season_ended", False):
+        if getattr(state, "season_ended_year", None) is None:
+            state.season_ended_year = curr_date.year
+        elif curr_date.year > state.season_ended_year:
+            start_new_season(state, curr_date, date_str)
+            something = 1
+            day_data = state.master_schedule.get(date_str)
+
     if process_user_contracts(state, curr_date, date_str):
+        something = 1
+
+    # AI 구단의 재계약·방출·FA 영입 (하루 1회)
+    if getattr(state, "_ai_tx_day", None) != state.current_day:
+        state._ai_tx_day = state.current_day
+        import ai_team_manager
+        ai_log = ai_team_manager.process_ai_teams(state, curr_date)
+        if ai_team_manager.post_news(state, ai_log, date_str):
+            something = 1
+
+    # 시즌이 끝나면 신인 드래프트를 열고 진행한다
+    if draft_module.process_daily(state, players, curr_date, get_regular_standings(state), date_str):
         something = 1
     
     # 1. 월초 처리 (매달 1일)
@@ -1026,7 +1102,7 @@ def process_day(players, state):
                 res= "GAME"
 
     for p in all_players: 
-        if p.status["fatigue"] > 200:
+        if p.status["fatigue"] > 200 and not p.status.get("is_injured"):
             injury_chance = min(0.5, ((p.status["fatigue"] - 200) ** 2) / 40000 + 0.05)
             injury_chance = apply_injury_risk_staff_bonus(state, p, injury_chance)
             if random.random() < injury_chance: 
@@ -1058,6 +1134,9 @@ def process_day(players, state):
                 p.status["condition"] = min(70, p.status["condition"] + 15)
             p.status["fatigue"] = max(0, p.status["fatigue"] - 10)
             p.status["exp"] += apply_training_staff_bonus(state, p, 50)
+
+        if p.status.get("roster") == "inactive" and (p.age() or 30) <= 26:
+            p.status["exp"] += 25      # 2군 육성: 젊은 2군 선수는 매일 추가 경험치
 
     # 휴식일 알림 (선택 사항)
     if game and game["type"] == "REST":
@@ -1101,8 +1180,12 @@ def process_day(players, state):
         if age is not None and age > 32:
             p.status["exp"] -= apply_veteran_decline_staff_bonus(state, p, 10 * (age-32))
             
-        while p.status.get("exp", 0) < 0:
-            p.status["exp"] += max_exp
+        if p.status.get("exp", 0) < 0:
+            # 음수 경험치는 별도 하락 카운터로 이월(성장 경험치와 분리)
+            p.status["decline_exp"] = p.status.get("decline_exp", 0) - p.status["exp"]
+            p.status["exp"] = 0
+        while p.status.get("decline_exp", 0) >= max_exp:
+            p.status["decline_exp"] -= max_exp
             stats_to_decline = list(p.attr.keys())
             
             target_stat = random.choice(stats_to_decline)
@@ -1144,6 +1227,9 @@ def process_day(players, state):
                 "body": f"Our staffs observed remarkable improvement in {p.name}'s performance.", "read": False
             })
                    
+    # 부상 보고 등 다른 메시지가 매일 있어도 정규시즌 종료 판정은 건너뛰지 않는다
+    if check_season_end(players, state, date_str):
+        return "NEW_MESSAGE"
     if res == "NEW_MESSAGE" or something == 1:
         return "NEW_MESSAGE"
     if res == "GAME": return "GAME"
@@ -1237,6 +1323,7 @@ def build_runtime(raw_state):
 
     restore_saved_references(state, players, staff_members)
     user_players = state.team_rosters[state.user_team]
+    sync_game_date(state)
 
     if not state.master_schedule:
         generate_season_schedule(state)
@@ -1257,6 +1344,8 @@ def build_runtime(raw_state):
     "info": TeamDetailScene(state,state.user_team),
     "reserve": ReserveScene(user_players,state),
     "transfer": TransferScene(state),
+    "transactions": TransactionsScene(state),
+    "draft": DraftScene(state),
     }
 
     return state, players, staff_members, user_players, scenes
@@ -1300,6 +1389,7 @@ def main():
 
     # 내 팀 선수만 따로
     user_players = state.team_rosters[state.user_team]
+    sync_game_date(state)
 
     if not state.master_schedule:
         generate_season_schedule(state)
@@ -1321,6 +1411,8 @@ def main():
     "info": TeamDetailScene(state,state.user_team),
     "reserve": ReserveScene(user_players,state),
     "transfer": TransferScene(state),
+    "transactions": TransactionsScene(state),
+    "draft": DraftScene(state),
     }
     current="title"
     
@@ -1352,6 +1444,7 @@ def main():
         screen.fill(white)
         events=pygame.event.get()
         space_pressed = False
+        space_advance = False
         """
         if current == "title":
             target_bgm = os.path.join(ASSET_PATH, "bensound-creativeminds.mp3")
@@ -1397,7 +1490,25 @@ def main():
             and not state.is_fading
         ):
             result = "advance_time"
-        
+            space_advance = True
+
+        # 스페이스바: 허브·받은편지함에서는 읽지 않은 메시지를 오래된 것부터 하나씩 열고,
+        # 모두 읽은 뒤에야 다음 날로 넘어간다.
+        if (result == "advance_time" and space_advance and current in ("hub", "inbox")
+                and not getattr(state, 'waiting_for_click_release', False)):
+            unread = [m for m in state.inbox if not m.get("read")]
+            if unread:
+                mail = unread[0]
+                mail["read"] = True
+                inbox_scene = scenes["inbox"]
+                inbox_scene.selected_mail = mail
+                idx = len(state.inbox) - 1 - state.inbox.index(mail)      # 목록은 최신이 위
+                max_off = max(0, len(state.inbox) - inbox_scene.visible_rows)
+                inbox_scene.scroll_offset = min(idx, max_off) if idx >= inbox_scene.visible_rows else 0
+                current = "inbox"
+                state.waiting_for_click_release = True
+                result = None
+
         if result == "advance_time":
             if not getattr(state, 'waiting_for_click_release', False): 
                 stop_reason = process_day(players, state) 
@@ -1503,6 +1614,7 @@ def main():
                 # [수정] 정점에서 날짜를 미리 올림 (중복 실행 방지)
                 if not getattr(state, 'day_incremented_this_fade', False):
                     state.current_day += 1
+                    sync_game_date(state)
                     save_current_game(state, players)
                     #stop_reason = process_day(players, state)
                     state.day_incremented_this_fade = True

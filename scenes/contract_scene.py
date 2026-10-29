@@ -160,9 +160,9 @@ def calc_salary_adjustment(player, stats):
 
 def expected_salary(player, stats):
     """선수가 요구하는 기대 연봉 (FA면 15% 프리미엄)"""
-    base = player.salary()
+    base = player.base_salary()
     adj  = calc_salary_adjustment(player, stats)
-    exp  = int(base * (1 + adj))
+    exp  = int(base * (1 + adj) * player.age_pot_factor())     # 나이·잠재력 반영
 
     if player.is_free_agent():
         exp = int(exp * 1.15)  # FA 프리미엄
@@ -203,7 +203,7 @@ def incentive_pct(inc_def, stats):
         return result if result > 0.0 else thresholds[-1][2]
 
 
-def calc_effective_offer(player, offer_salary, offer_transfer, selected_incentives, curr_stats):
+def calc_effective_offer(player, offer_salary, offer_transfer, selected_incentives, curr_stats, years=1):
     """
     유효 오퍼 = 연봉 + 계약금(FA 시) + 인센티브 기대값
     인센티브 기대값 = 연봉 × Σ(최고등급 퍼센트 × 등급별 달성 확률)
@@ -226,7 +226,9 @@ def calc_effective_offer(player, offer_salary, offer_transfer, selected_incentiv
 
     transfer_value = offer_transfer if player.is_free_agent() else 0
 
-    return offer_salary + transfer_value + inc_value
+    eff = offer_salary + transfer_value + inc_value
+    # 계약 기간 선호: 노장은 장기 계약, 유망주는 단기 계약을 더 높게 평가
+    return eff * (1 + player.contract_year_pref() * (max(1, years) - 1))
 
 
 # ══════════════════════════════════════════════════════════
@@ -245,6 +247,7 @@ class ContractScene(Scene):
 
         self.offer_salary   = player.salary()
         self.offer_transfer = 0
+        self.offer_years    = 1
         self.salary_step    = 5000
         self.transfer_step  = 5000
 
@@ -270,6 +273,8 @@ class ContractScene(Scene):
             Button((width - 160, height - 60, 120, 45), "BACK", self.back),
         ]
         bx = self.mid.x + 280
+        self.buttons.append(Button((bx,      self.mid.y + 85,  36, 30), "+", self.increase_years))
+        self.buttons.append(Button((bx + 40, self.mid.y + 85,  36, 30), "-", self.decrease_years))
         self.buttons.append(Button((bx,      self.mid.y + 155, 36, 30), "+", self.increase_salary))
         self.buttons.append(Button((bx + 40, self.mid.y + 155, 36, 30), "-", self.decrease_salary))
         self.buttons.append(Button((bx,      self.mid.y + 215, 36, 30), "+", self.increase_transfer))
@@ -297,6 +302,14 @@ class ContractScene(Scene):
             return 0
         end_date = date.fromisoformat(end)
         return max(0, (end_date - self.get_game_date()).days // 365)
+
+    def increase_years(self):
+        if self.offer_years < 5:
+            self.offer_years += 1
+
+    def decrease_years(self):
+        if self.offer_years > 1:
+            self.offer_years -= 1
 
     def increase_salary(self):
         current_total = self.get_current_wage_total()
@@ -336,7 +349,8 @@ class ContractScene(Scene):
             self.offer_salary,
             self.offer_transfer,
             self.selected_incentives,
-            self.curr_stats
+            self.curr_stats,
+            self.offer_years,
         )
 
     def make_offer(self):
@@ -353,7 +367,7 @@ class ContractScene(Scene):
         y, m, d = self.state.base_date
         current_date_obj = date(y, m, d) + timedelta(days=self.state.current_day - 1)
         begin    = current_date_obj.strftime("%Y-%m-%d")
-        end      = (current_date_obj + timedelta(days=365)).strftime("%Y-%m-%d")
+        end      = (current_date_obj + timedelta(days=365 * self.offer_years)).strftime("%Y-%m-%d")
 
         self.player.contract["begin"]  = begin
         self.player.contract["end"]    = end
@@ -438,11 +452,16 @@ class ContractScene(Scene):
         screen.blit(self.FONT.render("CONTRACT OFFER", True, black),
                     (mid.x + 15, mid.y + 15))
 
-        # 계약 기간 (1년 고정)
+        # 계약 기간 (1~5년, 버튼으로 조정)
         screen.blit(self.SMALL.render("Contract Length", True, (100, 100, 100)),
                     (mid.x + 20, mid.y + 60))
-        screen.blit(self.FONT.render("1 year", True, black),
+        screen.blit(self.FONT.render(f"{self.offer_years} year" + ("s" if self.offer_years > 1 else ""), True, black),
                     (mid.x + 20, mid.y + 78))
+
+        pref = self.player.contract_year_pref()
+        hint = ("Prefers longer deals (+%d%%/yr)" % round(pref * 100) if pref > 0 else
+                "Prefers shorter deals (%d%%/yr)" % round(pref * 100) if pref < 0 else "No length preference")
+        screen.blit(self.TINY.render(hint, True, (120, 120, 120)), (mid.x + 20, mid.y + 108))
 
         # 연봉
         screen.blit(self.SMALL.render("Annual Salary", True, (100, 100, 100)),

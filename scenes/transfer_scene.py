@@ -126,8 +126,8 @@ class TransferScene(Scene):
         return self._format_money(player.data.get("market_value", 0))
 
     def _demand_salary(self, player):
-        value = player.data.get("market_value", 0)
-        return self._format_money(max(player.salary(), int(value * 0.12)))
+        from scenes.contract_scene import expected_salary
+        return self._format_money(expected_salary(player, self._latest_stats(player)))
 
     def _staff_value(self, staff):
         return self._format_money(getattr(staff, "market_value", 0))

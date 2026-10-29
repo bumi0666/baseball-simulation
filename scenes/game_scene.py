@@ -183,7 +183,10 @@ class GameScene(Scene):
         
         date_str = state.get_current_date_str()
         self.opponent_team = state.schedule[date_str]["opponent"]
-        opp_players = state.team_rosters[self.opponent_team]
+        opp_all = state.team_rosters[self.opponent_team]
+        opp_players = [p for p in opp_all if p.status.get("roster", "active") != "inactive"]   # 2군은 출전하지 않는다
+        if len(opp_players) < 12:
+            opp_players = opp_all
 
         self.opp_lineup, self.opp_order = self.make_ai_lineup(opp_players)
         

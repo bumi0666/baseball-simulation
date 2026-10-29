@@ -155,12 +155,13 @@ class FieldSim:
     FLY_SPEED     = 1.2    # 뜬공 비행 속도 (프레임당)
     HR_FLY_SPEED  = 1.5    # 홈런 타구 비행 속도
     THROW_SPEED   = 2.0    # 송구 속도
-    RUN_SPEED     = 0.45   # 주자 기본 속도
+    RUN_SPEED     = 0.54   # 주자 기본 속도
     FIELD_SPEED   = 0.50    # 수비수 기본 이동 속도
     CATCH_RADIUS  = 2.0    # 뜬공 포구 가능 반경
     PICKUP_RADIUS = 1.0    # 땅볼/루즈볼 처리 반경
     RELEASE_DELAY = 21     # 포구 후 송구 동작까지 걸리는 프레임
     REACTION_DELAY = 14    # 타구 직후 수비수가 반응하기까지 걸리는 프레임
+    OF_RELEASE_EXTRA = -10  # 외야수 송구 보정(음수=더 빠름): 2루타 비율 보정용
 
     def __init__(self, runners_on, def_stats=None, run_stats=None, is_walk=False,
                  batted=None, outs=0):
@@ -356,7 +357,7 @@ class FieldSim:
         self._assign_cover(k)
         self._decide_nonforced_holds()
         self.state         = "CAUGHT"
-        self._release_wait = self.RELEASE_DELAY
+        self._release_wait = self.RELEASE_DELAY + (self.OF_RELEASE_EXTRA if k in OUTFIELDERS else 0)
         self.throw_to      = self._pick_throw_base()
 
     @property
@@ -440,7 +441,7 @@ class FieldSim:
         self._out_keys.add("B")
         self._assign_cover(k)
         self.state         = "CAUGHT"
-        self._release_wait = self.RELEASE_DELAY
+        self._release_wait = self.RELEASE_DELAY + (self.OF_RELEASE_EXTRA if k in OUTFIELDERS else 0)
         self._runners_go   = True
 
         deep = self.is_outfield and math.dist(self.ball_pos, (0, 0)) >= 35

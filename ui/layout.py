@@ -20,6 +20,8 @@ def get_common_buttons(scene_obj):
         "FinanceScene": "finance",
         "TeamDetailScene": "info",
         "ReserveScene": "reserve",
+        "TransactionsScene": "transactions",
+        "DraftScene": "draft",
     }
 
     active_key = getattr(scene_obj, "nav_key", None)
@@ -29,21 +31,23 @@ def get_common_buttons(scene_obj):
     add = 30
     btn_x = 20
     btn_w = 150
-    btn_h = 40
+    btn_h = 38
 
     nav_items = [
         ("Home", "hub", 60 + add),
         ("Inbox", "inbox", 110 + add),
-        ("Player", "team", 160 + add),
-        ("Squad", "squad", 210 + add),
-        ("Staff", "staff", 260 + add),
-        ("Training", "train", 310 + add),
-        ("Medical", "medical", 360 + add),
-        ("Schedule", "schedule", 410 + add),
-        ("Transfers", "transfer", 460 + add),
-        ("Finances", "finance", 510 + add),
-        ("Team", "info", 560 + add),
-        ("Reserve", "reserve", 610 + add),
+        ("Player", "team", 152 + add),
+        ("Squad", "squad", 194 + add),
+        ("Staff", "staff", 236 + add),
+        ("Training", "train", 278 + add),
+        ("Medical", "medical", 320 + add),
+        ("Schedule", "schedule", 362 + add),
+        ("Transfers", "transfer", 404 + add),
+        ("Finances", "finance", 446 + add),
+        ("Team", "info", 488 + add),
+        ("Reserve", "reserve", 530 + add),
+        ("News", "transactions", 572 + add),
+        ("Draft", "draft", 614 + add),
     ]
 
     buttons = []

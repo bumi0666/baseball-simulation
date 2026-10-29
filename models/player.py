@@ -1,5 +1,14 @@
 from datetime import date, datetime
 
+_GAME_DATE = None      # 게임 안의 오늘 날짜. 설정돼 있으면 나이 계산의 기준이 된다
+
+
+def set_game_date(d):
+    """baseball.sync_game_date가 날짜가 바뀔 때마다 호출한다."""
+    global _GAME_DATE
+    _GAME_DATE = d
+
+
 class Player:
     def __init__(self, data):
         self.data = data
@@ -35,7 +44,7 @@ class Player:
         if not self.birth():
             return None
         y, m, d = map(int, self.birth().split("-"))
-        today = date.today()
+        today = _GAME_DATE or date.today()
         return today.year - y - ((today.month, today.day) < (m, d))
 
     def height(self):
@@ -49,6 +58,65 @@ class Player:
 
     def salary(self):
         return self.contract.get("salary", 0)
+
+    def base_salary(self):
+        """기준 연봉. 계약 중이면 현재 연봉, 무적(FA)이면 시장가치(1억~100억)를
+        로스터 연봉대(5만~10만)에 로그 스케일로 대응시킨 값."""
+        cur = self.salary()
+        if cur > 0:
+            return cur
+        import math
+        mv = max(1, self.data.get("market_value", 0))
+        t = (math.log10(mv) - 8.0) / 2.0
+        t = max(0.0, min(1.0, t))
+        return int(50000 + 50000 * t)
+
+    # ── 나이·잠재력 기반 계약 평가 ──────────────────────────────
+    def pot_gap(self):
+        """잠재력 여력: (잠재치 - 현재치)의 능력치 평균"""
+        gaps = [v["pot"] - v["cur"] for v in self.attr.values()
+                if isinstance(v, dict) and "cur" in v and "pot" in v]
+        return sum(gaps) / len(gaps) if gaps else 0.0
+
+    def projected_ovr(self, years):
+        """게임의 성장·노쇠 규칙에 맞춘 years년 뒤 OVR 추정 (성장은 잠재치까지, 32세 이후 하락)"""
+        ovr = float(self.calculate_ovr())
+        age = self.age() or 27
+        left = max(0.0, self.pot_gap())
+        for _ in range(years):
+            if age <= 29 and left > 0:
+                g = min(left, 0.4)
+                ovr += g
+                left -= g
+            elif age >= 32:
+                ovr -= 0.04 * (age - 31)
+            age += 1
+        return ovr
+
+    def age_pot_factor(self):
+        """연봉 요구 배율: 젊고 잠재력 큰 선수는 프리미엄, 31세 이상은 할인 (0.7~1.3)"""
+        age = self.age() or 27
+        f = 1.0
+        if age <= 25:
+            f += min(0.25, 0.02 * self.pot_gap())
+        elif age >= 31:
+            f -= min(0.30, 0.03 * (age - 30))
+        return max(0.7, min(1.3, f))
+
+    def demand_salary(self, fa=None):
+        """요구 연봉: 기준 연봉 × 나이·잠재력 배율 (FA는 15% 프리미엄)"""
+        if fa is None:
+            fa = self.is_free_agent()
+        return int(self.base_salary() * self.age_pot_factor() * (1.15 if fa else 1.0))
+
+    def contract_year_pref(self):
+        """계약 1년 연장당 유효 오퍼 보정률: 노장은 장기 계약 선호(+), 유망주는 단기 선호(-)"""
+        age = self.age() or 27
+        if age >= 31:
+            return 0.03
+        if age <= 25 and self.pot_gap() >= 5:
+            return -0.04
+        return 0.0
 
     def contract_begin(self):
         return self.contract.get("begin")

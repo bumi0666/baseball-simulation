@@ -78,6 +78,7 @@ class StaffContractScene(Scene):
 
         self.offer_salary = max(staff.salary(), expected_staff_salary(staff))
         self.offer_bonus = 0
+        self.offer_years = 1
         self.salary_step = 5000
         self.bonus_step = 5000
         self.offer_result = None
@@ -90,6 +91,8 @@ class StaffContractScene(Scene):
             Button((width - 160, height - 60, 120, 45), "BACK", self.back),
         ]
         bx = self.mid.x + 280
+        self.buttons.append(Button((bx, self.mid.y + 85, 36, 30), "+", self.increase_years))
+        self.buttons.append(Button((bx + 40, self.mid.y + 85, 36, 30), "-", self.decrease_years))
         self.buttons.append(Button((bx, self.mid.y + 155, 36, 30), "+", self.increase_salary))
         self.buttons.append(Button((bx + 40, self.mid.y + 155, 36, 30), "-", self.decrease_salary))
         self.buttons.append(Button((bx, self.mid.y + 215, 36, 30), "+", self.increase_bonus))
@@ -114,6 +117,14 @@ class StaffContractScene(Scene):
 
     def get_available_salary(self):
         return max(0, getattr(self.state, "wage_budget", 0) - self.get_total_wage())
+
+    def increase_years(self):
+        if self.offer_years < 5:
+            self.offer_years += 1
+
+    def decrease_years(self):
+        if self.offer_years > 1:
+            self.offer_years -= 1
 
     def increase_salary(self):
         if self.offer_salary + self.salary_step <= self.get_available_salary():
@@ -147,7 +158,7 @@ class StaffContractScene(Scene):
     def confirm_contract(self):
         current_date = self.get_game_date()
         begin = current_date.strftime("%Y-%m-%d")
-        end = (current_date + timedelta(days=365)).strftime("%Y-%m-%d")
+        end = (current_date + timedelta(days=365 * self.offer_years)).strftime("%Y-%m-%d")
 
         self.staff.contract["begin"] = begin
         self.staff.contract["end"] = end
@@ -259,7 +270,7 @@ class StaffContractScene(Scene):
 
         screen.blit(self.FONT.render("CONTRACT OFFER", True, black), (self.mid.x + 15, self.mid.y + 15))
         screen.blit(self.SMALL.render("Contract Length", True, (100, 100, 100)), (self.mid.x + 20, self.mid.y + 60))
-        screen.blit(self.FONT.render("1 year", True, black), (self.mid.x + 20, self.mid.y + 78))
+        screen.blit(self.FONT.render(f"{self.offer_years} year" + ("s" if self.offer_years > 1 else ""), True, black), (self.mid.x + 20, self.mid.y + 78))
         screen.blit(self.SMALL.render("Annual Salary", True, (100, 100, 100)), (self.mid.x + 20, self.mid.y + 130))
         screen.blit(self.FONT.render(fmt_money(self.offer_salary), True, black), (self.mid.x + 20, self.mid.y + 148))
 

@@ -73,7 +73,7 @@ def _roster_at(players, pos):
 
 
 def _demand_salary(p):
-    return max(p.salary(), int(p.data.get("market_value", 0) * 0.12))
+    return p.demand_salary(fa=True)
 
 
 def _best_ovr(players, pos):
@@ -157,9 +157,11 @@ class NNAdvisor(RuleBasedAdvisor):
 
     def __init__(self, path=None):
         import os
+        import sys
         import numpy as np
         self._np = np
-        path = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), "ai_model.npz")
+        base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+        path = path or os.path.join(base, "ai_model.npz")
         m = np.load(path)
         self.m = {k: m[k] for k in m.files}
         if self.m["W1"].shape[0] != N_FEATURES:

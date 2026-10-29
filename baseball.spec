@@ -5,7 +5,7 @@ a = Analysis(
     ['baseball.py'],
     pathex=[],
     binaries=[],
-    datas=[('assets', 'assets'), ('players', 'players'), ('staff', 'staff'), ('teams.json', '.')],
+    datas=[('assets', 'assets'), ('players', 'players'), ('staff', 'staff'), ('teams.json', '.'), ('ai_model.npz', '.'), ('ai_gm_policy.npz', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
