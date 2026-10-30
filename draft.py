@@ -2,7 +2,8 @@
 
 흐름: maybe_start() -> (유저 차례까지) AI 지명 자동 진행 -> user_pick() 반복 -> finalize()
   · 지명 순서는 정규시즌 성적 역순이고 ROUNDS라운드 동안 같은 순서를 반복한다.
-  · AI 구단은 성향(ai_team_manager.STYLES)에 맞춘 평가함수로 지명한다 (현재 능력치·잠재력·포지션 필요).
+  · AI 구단은 학습된 가치망(ai_draft_policy.npz: 신인 능력치·잠재력·나이·포지션 필요·구단 성향 -> 기대 가치)이 가장 큰 신인을 지명한다.
+    (파일이 없으면 예전 평가함수 ai_score)
   · 유저가 DEADLINE_DAYS일 안에 끝내지 않으면 남은 유저 지명은 자동으로 진행된다.
 상태는 state.draft(dict)와 team 이름이 "DRAFT"인 선수 목록(state.team_rosters["DRAFT"])에 저장된다.
 """
@@ -38,6 +39,18 @@ def maybe_start(state, players, curr_date, standings):
     if cur and cur.get("season") == key:
         return False
     teams = [t for t, _ in reversed(standings)]            # 꼴찌부터
+    _open(state, players, curr_date, teams, key)
+    return True
+
+
+def start_initial(state, players, curr_date, teams):
+    """새 게임 시작 시 첫 드래프트를 연다(전 시즌 순위가 없으므로 지명 순서는 무작위)."""
+    order = list(teams)
+    random.Random("draftorder:%d" % curr_date.year).shuffle(order)
+    _open(state, players, curr_date, order, current_season_key(curr_date))
+
+
+def _open(state, players, curr_date, teams, key):
     n_picks = ROUNDS * len(teams)
     pool_n = n_picks + POOL_EXTRA
     rnd = random.Random(f"draft:{key}")
@@ -51,7 +64,6 @@ def maybe_start(state, players, curr_date, standings):
         pool_ids.append(pl.id)
     state.draft = {"season": key, "status": "open", "order": teams * ROUNDS, "pick": 0, "picks": [],
                    "pool_ids": pool_ids, "deadline": (curr_date + timedelta(days=DEADLINE_DAYS)).strftime("%Y-%m-%d")}
-    return True
 
 
 def _make_rookie(pid, rnd, year):
@@ -87,8 +99,43 @@ def on_the_clock(state):
     return d["order"][d["pick"]]
 
 
+def _horizon(state):
+    """이 날짜 이전에 계약이 끝나는 선수는 다음 시즌이 끝나면 떠난다고 보고 인원에서 뺀다."""
+    d = getattr(state, "draft", None)
+    year = d["season"] if d else date.today().year
+    return "%d-12-31" % (year + 1)
+
+
+def _pos_of_pick(state, pk):
+    for p in _pool(state):                                   # 지명된 신인은 마감 전까지 DRAFT 목록에 있다
+        if p.id == pk["id"]:
+            return p.pos
+    for lst in state.team_rosters.values():
+        for p in lst:
+            if p.id == pk["id"]:
+                return p.pos
+    return None
+
+
 def _depth(state, team, pos):
-    return sum(1 for p in state.team_rosters.get(team, []) if p.pos == pos)
+    """이 구단의 포지션 인원: 다음 시즌 이후에도 남는 선수 + 이번 드래프트에서 이미 지명한 신인"""
+    hz = _horizon(state)
+    n = sum(1 for p in state.team_rosters.get(team, [])
+            if p.pos == pos and (not p.contract_end() or p.contract_end() > hz))
+    d = getattr(state, "draft", None)
+    if d:
+        n += sum(1 for pk in d["picks"] if pk["team"] == team and _pos_of_pick(state, pk) == pos)
+    return n
+
+
+def team_needs(state, team):
+    """부족한 포지션 {포지션: 부족 인원}. 드래프트 화면과 AI 지명이 같은 값을 쓴다."""
+    out = {}
+    for pos in sorted(set(POSITIONS)):
+        gap = REQUIRED_DEPTH.get(pos, 2) - _depth(state, team, pos)
+        if gap > 0:
+            out[pos] = gap
+    return out
 
 
 def ai_score(state, team, p, key, pick_no):
@@ -106,6 +153,21 @@ def ai_score(state, team, p, key, pick_no):
         score -= 1.5 * min(-gap, 2)                 # 이미 넘치는 포지션은 감점
     score += random.Random(f"{key}:{team}:{pick_no}:{p.id}").uniform(-2.0, 2.0)   # 스카우팅 오차
     return score
+
+
+def ai_pick(state, team, avail, key, pick_no):
+    """남은 신인 중 이 구단이 지명할 한 명. 학습된 가치망이 있으면 기대 가치 최대, 없으면 규칙(ai_score)."""
+    import numpy as np
+    import ai_team_manager as M
+    net = M.get_qnet("ai_draft_policy.npz")
+    if net is None:
+        return max(avail, key=lambda p: ai_score(state, team, p, key, pick_no))
+    prof = M.team_profile(state, team)
+    depth = {pos: _depth(state, team, pos) for pos in set(p.pos for p in avail)}
+    X = [[(p.calculate_ovr() - 72) / 5, p.pot_gap() / 10 - 1.5, ((p.age() or 19) - 19) / 2, 1.0 if p.pos == "P" else 0.0,
+          min(2, max(0, REQUIRED_DEPTH.get(p.pos, 2) - depth[p.pos])) / 2, prof["youth"] - 1.0, (prof["patience"] - 0.9) * 10]
+         for p in avail]
+    return avail[int(np.argmax(net.q(X)[:, 0]))]
 
 
 def _do_pick(state, team, p):
@@ -128,7 +190,7 @@ def run_ai_until_user(state, today):
         if not avail:
             d["pick"] = len(d["order"])
             continue
-        best = max(avail, key=lambda p: ai_score(state, team, p, d["season"], d["pick"]))
+        best = ai_pick(state, team, avail, d["season"], d["pick"])
         _do_pick(state, team, best)
 
 
@@ -147,7 +209,7 @@ def auto_user_pick(state, today):
     if on_the_clock(state) != state.user_team or not avail:
         return False
     d = state.draft
-    best = max(avail, key=lambda p: ai_score(state, state.user_team, p, d["season"], d["pick"]))
+    best = ai_pick(state, state.user_team, avail, d["season"], d["pick"])
     return user_pick(state, best, today)
 
 

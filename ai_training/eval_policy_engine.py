@@ -39,7 +39,7 @@ def build_episode():
         demand=np.array([c[1].base_salary() * 1.15 for c in cands]),
         inc_sal=np.array([c[2].salary() for c in cands], dtype=float),
         payroll=float(payroll), cap=float(os.environ.get('CAP', PE.WAGE_CAP)), sal_w=float(os.environ.get('SAL_W', 1.0)),
-        move_w=1.0, max_moves=PE.MAX_MOVES, need=np.zeros(len(cands)),
+        move_w=1.0, max_moves=PE.MAX_MOVES, need=np.zeros(len(cands)), dead=np.zeros(len(cands)),
         X=np.array([make_features(c[1], c[2]) for c in cands]),
         reward_vec=np.zeros(len(cands)))
     return cands, ep

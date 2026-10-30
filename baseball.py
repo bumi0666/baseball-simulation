@@ -289,9 +289,9 @@ def generate_season_schedule(state, games_per_pair=16, season_year=None):
     teams = LEAGUE_TEAMS[:]
     base_y, base_m, base_d = state.base_date
     anchor_year = season_year if season_year is not None else base_y
+    if season_year is None and date(base_y, base_m, base_d) > date(base_y, *KBO_OPENING_ANCHOR):
+        anchor_year = base_y + 1                  # 개막일을 넘겨 시작하면(예: 11월) 다음 해 시즌을 연다
     current_date = date(anchor_year, *KBO_OPENING_ANCHOR)
-    if season_year is None and date(base_y, base_m, base_d) > current_date:
-        current_date = date(base_y, base_m, base_d)
 
     state.master_schedule = {}
     state.schedule = {}
@@ -409,15 +409,57 @@ def save_player(player_obj):
         json.dump(p_data, f, ensure_ascii=False, indent=2)
     print(f"저장 완료: {filename}")
     
-def simulate_ai_player_stats(winning_roster, losing_roster):
-    """AI 팀들간의 경기 결과를 career 데이터에 누적"""
+def _blank_season_entry(team):
+    """선수 시즌 기록 항목 (game_scene이 읽는 'stats' 구조 포함). 신인처럼 career가 비어 있을 때 만든다."""
+    from models import player as _pm
+    year = (_pm._GAME_DATE or date.today()).year
+    return {"season": year, "team": team, "ab": 0, "h": 0, "wins": 0, "losses": 0,
+            "stats": {"g": 0, "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "bb": 0, "so": 0, "sb": 0,
+                      "obp": 0.0, "slg": 0.0, "ops": 0.0, "w": 0, "l": 0, "era": 0.0, "ip_outs": 0, "ip": 0.0,
+                      "h_allowed": 0, "bb_allowed": 0, "er": 0, "whip": 0.0}}
+
+
+from ai_fatigue import AI_REST_FATIGUE, AI_HITTER_FATIGUE, AI_PITCHER_FATIGUE
+
+
+def apply_ai_game_fatigue(roster, playing_given=None):
+    """AI 구단의 경기 1회: 라인업(포지션별 야수 + 선발 투수)에 피로가 쌓이고, 200을 넘으면 유저 선수와 같은 식으로 부상을 입는다.
+    피로가 높은 주전은 같은 포지션 벤치로 쉬게 하고, 벤치 선수는 피로가 회복된다."""
+    import random
+    act = [p for p in roster if p.status.get("roster", "active") == "active" and not p.status.get("is_injured")]
+    if playing_given is not None:
+        playing = playing_given          # 엔진 경기에 실제로 나선 선수들
+    else:
+        import ai_match
+        playing = ai_match.choose_lineup(roster, None, AI_REST_FATIGUE)[3]
+    for p in playing:
+        w = playing[p] if isinstance(playing, dict) else 1.0        # 교체로 일부만 뛴 선수는 출전 비율만큼만 피로·부상을 받는다 (나머지는 벤치처럼 회복)
+        inc = AI_PITCHER_FATIGUE * (100 / max(30, getattr(p, "stamina", 100) or 100)) if p.pos == "P" else (AI_HITTER_FATIGUE * 1.6 if p.pos == "C" else AI_HITTER_FATIGUE)
+        p.status["fatigue"] = max(0, p.status.get("fatigue", 0) + w * (inc - 10) - (1 - w) * 30)
+        if p.status["fatigue"] > 200:
+            chance = min(0.5, ((p.status["fatigue"] - 200) ** 2) / 40000 + 0.05) * w
+            if random.random() < chance:
+                p.status["is_injured"] = True
+                p.status["injury_days"] = random.randint(3, 30)
+    for p in act:
+        if p not in playing:
+            p.status["fatigue"] = max(0, p.status.get("fatigue", 0) - 30)      # 벤치: 경기당 회복 (유저 벤치와 같다)
+
+
+def simulate_ai_player_stats(winning_roster, losing_roster, win_playing=None, lose_playing=None):
+    """AI 팀들간의 경기 후처리. 엔진으로 치른 경기(win_playing이 있음)는 개인 기록이 이미 엔진에서 쌓였으므로 피로·부상만 처리한다.
+    엔진을 못 쓴 예외 경기만 간이 확률로 기록한다."""
     if not winning_roster or not losing_roster: return
+    apply_ai_game_fatigue(winning_roster, win_playing)
+    apply_ai_game_fatigue(losing_roster, lose_playing)
+    if win_playing is not None:
+        return
 
     for p in winning_roster + losing_roster:
         # 1. 이번 시즌 기록 주머니(dict) 가져오기
         # 만약 career가 비어있다면 하나 생성
         if not p.career:
-            p.career.append({"season": 2024, "team": p.team, "ab": 0, "h": 0, "wins": 0, "losses": 0})
+            p.career.append(_blank_season_entry(p.team))
         
         season_stat = p.career[-1] # 가장 최근 시즌 기록
 
@@ -440,12 +482,12 @@ def simulate_ai_player_stats(winning_roster, losing_roster):
 
     if win_pitchers:
         wp = random.choice(win_pitchers)
-        if not wp.career: wp.career.append({"season": 2024, "team": wp.team, "wins": 0, "losses": 0})
+        if not wp.career: wp.career.append(_blank_season_entry(wp.team))
         wp.career[-1]["wins"] = wp.career[-1].get("wins", 0) + 1
 
     if loss_pitchers:
         lp = random.choice(loss_pitchers)
-        if not lp.career: lp.career.append({"season": 2024, "team": lp.team, "wins": 0, "losses": 0})
+        if not lp.career: lp.career.append(_blank_season_entry(lp.team))
         lp.career[-1]["losses"] = lp.career[-1].get("losses", 0) + 1
 
 import random
@@ -538,9 +580,10 @@ def simulate_kbo_postseason(state, standings):
     return "\n".join(report)
 
 def get_next_postseason_date(state, from_date_str):
-    base_y, _, _ = state.base_date
+    base_y, base_m, base_d = state.base_date
     month, day = map(int, from_date_str.split("/"))
-    current = date(base_y, month, day)
+    cur_year = (date(base_y, base_m, base_d) + timedelta(days=state.current_day - 1)).year   # 시즌이 진행 중인 해
+    current = date(cur_year, month, day)
 
     while True:
         current += timedelta(days=1)
@@ -719,6 +762,23 @@ def start_new_season(state, curr_date, date_str):
         "read": False})
 
 
+def start_initial_draft(state, players):
+    """새 게임: 시작일(11월)에 첫 신인 드래프트를 연다. 드래프트가 끝나면 다음 해 3월에 시즌이 개막한다."""
+    if getattr(state, "draft", None):
+        return
+    y, m, d = state.base_date
+    curr_date = date(y, m, d) + timedelta(days=state.current_day - 1)
+    import ai_team_manager
+    ai_team_manager.ensure_profiles(state)
+    ai_team_manager.stagger_contracts(state, curr_date, include_user=True)      # 새 게임은 유저 구단도 포함해 계약 만료를 분산해 부족 포지션 판단이 현실적이 되게 한다
+    draft_module.start_initial(state, players, curr_date, LEAGUE_TEAMS[:])
+    draft_module.run_ai_until_user(state, curr_date)
+    state.inbox.append({
+        "date": curr_date.strftime("%m/%d"), "subject": "[Draft] Rookie Draft is open",
+        "body": "The rookie draft has started. Open the Draft menu to make your picks. "
+                "It will auto-complete on %s." % state.draft["deadline"], "read": False})
+
+
 def datetime_key(date_str, year):
     m, d = map(int, date_str.split("/"))
     return date(year, m, d)
@@ -862,6 +922,51 @@ def move_player_to_fa(state, player):
     player.data["contract"] = player.contract
     player.data["status"] = player.status
 
+def process_user_staff_contracts(state, curr_date, date_str):
+    """유저 팀 스태프 계약: 만료 30일 전에 알리고, 만료되면 FA로 내보낸다(담당 슬롯에서도 빠진다)."""
+    expiring_soon, expired = [], []
+    for s in list(getattr(state, "owned_staff", [])):
+        end_text = s.contract_end()
+        try:
+            end_date = date.fromisoformat(end_text) if end_text else None
+        except ValueError:
+            end_date = None
+        if end_date is None:
+            continue
+        days_left = (end_date - curr_date).days
+        if days_left <= 0:
+            expired.append(s)
+        elif days_left <= 30 and s.status.get("staff_notice_for") != end_text:
+            s.status["staff_notice_for"] = end_text          # 계약이 바뀌면(end가 달라지면) 알림도 다시 나간다
+            s.data["status"] = s.status
+            expiring_soon.append(s)
+    if expiring_soon:
+        body = "The following staff contracts expire within 30 days:\n\n"
+        for s in expiring_soon:
+            body += f"- {s.name} ({s.role})  End: {s.contract_end()}\n"
+        state.inbox.append({"date": date_str, "subject": "Staff Contract Expiry Notice", "body": body, "read": False})
+    if expired:
+        body = "The following staff contracts have expired and they became free agents:\n\n"
+        for s in expired:
+            body += f"- {s.name} ({s.role})\n"
+            s.team = "FA"
+            s.contract = {"salary": 0, "begin": None, "end": None}
+            s.status["roster"] = "fa"
+            s.status.pop("staff_notice_for", None)
+            s.data["team"] = "FA"
+            s.data["contract"] = s.contract
+            s.data["status"] = s.status
+            state.owned_staff.remove(s)
+            slots = getattr(state, "staff_slots", {})
+            if slots.get(s.role) is s:
+                del slots[s.role]
+                replacement = next((o for o in state.owned_staff if o.role == s.role), None)
+                if replacement is not None:
+                    slots[s.role] = replacement
+        state.inbox.append({"date": date_str, "subject": "Staff Became Free Agents", "body": body, "read": False})
+    return bool(expiring_soon or expired)
+
+
 def process_user_contracts(state, curr_date, date_str):
     user_roster = list(state.team_rosters.get(state.user_team, []))
     expiring_soon = []
@@ -999,6 +1104,8 @@ def process_day(players, state):
 
     if process_user_contracts(state, curr_date, date_str):
         something = 1
+    if process_user_staff_contracts(state, curr_date, date_str):
+        something = 1
 
     # AI 구단의 재계약·방출·FA 영입 (하루 1회)
     if getattr(state, "_ai_tx_day", None) != state.current_day:
@@ -1045,8 +1152,12 @@ def process_day(players, state):
                 daily_report.append(f"[MY MATCH] {team_a} vs {team_b}")
                 continue
             
-            score_a = random.randint(0, 13)
-            score_b = random.randint(0, 13)
+            import ai_match
+            res = ai_match.play(state, team_a, team_b, AI_REST_FATIGUE)      # 사용자 경기와 같은 엔진
+            if res:
+                score_a, score_b, play_a, play_b = res
+            else:                                                            # 라인업을 못 채우는 팀이 있으면 예외적으로 무작위
+                score_a, score_b, play_a, play_b = random.randint(0, 13), random.randint(0, 13), None, None
             if score_a == score_b: score_a += 1 # 무승부 방지
             
             winner, loser = (team_a, team_b) if score_a > score_b else (team_b, team_a)
@@ -1063,7 +1174,8 @@ def process_day(players, state):
                 record_postseason_result(state, winner, loser, date_str, f"{w_score}:{l_score}")
             else:
                 state.record_match_result(winner, loser)
-            simulate_ai_player_stats(state.team_rosters.get(winner), state.team_rosters.get(loser))
+            pw, pl = (play_a, play_b) if winner == team_a else (play_b, play_a)
+            simulate_ai_player_stats(state.team_rosters.get(winner), state.team_rosters.get(loser), pw, pl)
             
             daily_report.append(f"{winner} {w_score} : {l_score} {loser}")
 
@@ -1290,8 +1402,13 @@ def restore_saved_references(state, players, staff_members):
                 state.staff_slots[staff.role] = staff
 
 def save_current_game(state, players, slot=None):
+    """현재 게임을 슬롯에 저장한다. 디스크 용량 부족 등으로 실패하면 False (기존 저장 파일은 그대로 남는다)."""
     slot = slot or getattr(state, "active_save_slot", 1)
-    save_game(state, players, getattr(state, "all_staff", []), slot=slot)
+    try:
+        save_game(state, players, getattr(state, "all_staff", []), slot=slot)
+        return True
+    except OSError:
+        return False
 
 
 def build_runtime(raw_state):
@@ -1327,6 +1444,7 @@ def build_runtime(raw_state):
 
     if not state.master_schedule:
         generate_season_schedule(state)
+        start_initial_draft(state, players)
 
     scenes = {
     "title": TitleScene(),
@@ -1393,6 +1511,7 @@ def main():
 
     if not state.master_schedule:
         generate_season_schedule(state)
+        start_initial_draft(state, players)
 
     scenes = {
     "title": TitleScene(),
@@ -1458,7 +1577,8 @@ def main():
         """
         for event in events:
             if event.type==pygame.QUIT:
-                save_current_game(state, players)
+                if current != "title":                  # 타이틀에서 창을 닫을 때는 저장하지 않는다 (빈 슬롯이 생기지 않게)
+                    save_current_game(state, players)
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONUP:
@@ -1533,12 +1653,13 @@ def main():
                 tutorial = 1
                 current = "hub"
             elif key == "save_game":
-                save_current_game(state, players, slot=player)
+                saved = save_current_game(state, players, slot=player)
                 scenes["title"].refresh_slots()
                 state.inbox.append({
                     "date": state.get_current_date_str(),
-                    "subject": "Game Saved",
-                    "body": f"Your game has been saved to slot {player}.",
+                    "subject": "Game Saved" if saved else "Save Failed",
+                    "body": (f"Your game has been saved to slot {player}." if saved else
+                             f"Could not save to slot {player} (not enough disk space?). The previous save in that slot is unchanged."),
                     "read": False
                 })
                 scenes["inbox"] = InboxScene(state)
@@ -1580,6 +1701,7 @@ def main():
         elif result:
             if result == "save_game":
                 save_current_game(state, players)
+                scenes["title"].refresh_slots()
                 state.inbox.append({
                     "date": state.get_current_date_str(),
                     "subject": "Game Saved",

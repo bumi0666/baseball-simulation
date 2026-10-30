@@ -44,18 +44,8 @@ def trait_label(key):
 
 
 def expected_staff_salary(staff):
-    current_salary = staff.salary() if hasattr(staff, "salary") else 0
-    market_value = getattr(staff, "market_value", 0)
-    base = max(current_salary, int(market_value * 0.15))
-
-    stars = max(1, getattr(staff, "stars", 1))
-    star_mult = 0.75 + stars * 0.12
-    expected = int(base * star_mult)
-
-    if staff.is_free_agent():
-        expected = int(expected * 1.10)
-
-    return max(5000, expected)
+    """요구 연봉: 별·시장가치에 나이 배율을 반영한다 (models.staff.Staff.demand_salary)"""
+    return staff.demand_salary()
 
 
 def get_mood(effective_offer, expected):
@@ -144,7 +134,8 @@ class StaffContractScene(Scene):
 
     def effective_offer(self):
         bonus_value = self.offer_bonus if self.staff.is_free_agent() else 0
-        return self.offer_salary + bonus_value
+        eff = self.offer_salary + bonus_value
+        return eff * (1 + self.staff.contract_year_pref() * (max(1, self.offer_years) - 1))   # 나이별 계약 기간 선호
 
     def make_offer(self):
         expected = expected_staff_salary(self.staff)
@@ -271,6 +262,10 @@ class StaffContractScene(Scene):
         screen.blit(self.FONT.render("CONTRACT OFFER", True, black), (self.mid.x + 15, self.mid.y + 15))
         screen.blit(self.SMALL.render("Contract Length", True, (100, 100, 100)), (self.mid.x + 20, self.mid.y + 60))
         screen.blit(self.FONT.render(f"{self.offer_years} year" + ("s" if self.offer_years > 1 else ""), True, black), (self.mid.x + 20, self.mid.y + 78))
+        pref = self.staff.contract_year_pref()
+        hint = ("Prefers longer deals (+%d%%/yr)" % round(pref * 100) if pref > 0 else
+                "Prefers shorter deals (%d%%/yr)" % round(pref * 100) if pref < 0 else "No length preference")
+        screen.blit(self.TINY.render(hint, True, (120, 120, 120)), (self.mid.x + 20, self.mid.y + 108))
         screen.blit(self.SMALL.render("Annual Salary", True, (100, 100, 100)), (self.mid.x + 20, self.mid.y + 130))
         screen.blit(self.FONT.render(fmt_money(self.offer_salary), True, black), (self.mid.x + 20, self.mid.y + 148))
 
@@ -305,7 +300,7 @@ class StaffContractScene(Scene):
             f"Type: {title}",
             f"Archetype: {archetype}",
             f"Market Value: {fmt_money(getattr(self.staff, 'market_value', 0))}",
-            f"Birth: {bio.get('birth', '-')}",
+            f"Birth: {bio.get('birth', '-')}  (Age {self.staff.age() if self.staff.age() is not None else '-'})",
             f"Nationality: {bio.get('nationality', '-')}",
         ]
         for i, line in enumerate(profile_lines):

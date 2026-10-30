@@ -79,17 +79,17 @@ class Player:
         return sum(gaps) / len(gaps) if gaps else 0.0
 
     def projected_ovr(self, years):
-        """게임의 성장·노쇠 규칙에 맞춘 years년 뒤 OVR 추정 (성장은 잠재치까지, 32세 이후 하락)"""
+        """게임의 성장·노쇠 규칙에 맞춘 years년 뒤 OVR 추정.
+        AI 구단 선수 1만 명의 1년 변화를 측정한 값: 32세까지 연 +0.9(잠재치까지), 33~34세 +0.45, 35~36세 +0.1, 37세부터 -0.1"""
         ovr = float(self.calculate_ovr())
         age = self.age() or 27
         left = max(0.0, self.pot_gap())
         for _ in range(years):
-            if age <= 29 and left > 0:
-                g = min(left, 0.4)
-                ovr += g
+            g = 0.9 if age <= 32 else 0.45 if age <= 34 else 0.1 if age <= 36 else -0.1
+            if g > 0:
+                g = min(g, left)
                 left -= g
-            elif age >= 32:
-                ovr -= 0.04 * (age - 31)
+            ovr += g
             age += 1
         return ovr
 

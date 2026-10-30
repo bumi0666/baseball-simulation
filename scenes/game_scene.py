@@ -226,6 +226,16 @@ class GameScene(Scene):
         self.pitchers_used = [self.my_lineup["P"]]
         self.opp_pitchers_used = [self.opp_lineup["P"]]
 
+        # 대타·대수비: 교체 판단은 학습한 정책(ai_substitution)이 한다. 사용자 팀은 직접 운영하므로 자동 교체하지 않는다.
+        self.my_removed, self.opp_removed = [], []
+        self.t_in, self.t_out = {}, {}
+        self.sub_flags = {"my": False, "opp": True}
+        self.pitch_mode = {"my": "none", "opp": "policy"}     # 투수 교체: 사용자는 직접(none), AI 팀은 학습 정책. 'rule'은 예전 규칙(비교용)
+        self.my_bench = [p for p in players if p.pos != "P" and p.status.get("roster", "active") == "active"
+                         and not p.status.get("is_injured") and p not in self.my_order and p not in self.my_lineup.values()]
+        self.opp_bench = [p for p in opp_players if p.pos != "P" and not p.status.get("is_injured")
+                          and p not in self.opp_order and p not in self.opp_lineup.values()]
+
         self.instant_btn = Button((1100, 650, 100, 40), "Finish", self.simulate_to_end)
         
         for p in self.my_order + self.opp_order + self.pitchers_used + self.state.bullpen + ([self.opp_lineup["P"]] if self.opp_lineup.get("P") else []):
@@ -253,6 +263,9 @@ class GameScene(Scene):
         self.bullpen_btns = []
     
         self.change_p_btn = Button((1100, 600, 100, 40), "Bullpen", self.toggle_bullpen)
+        # 대타·대수비(사용자): 타석 사이(0볼 0스트라이크)에만 가능
+        self.show_bench, self.bench_btns, self.bench_stage, self.bench_pick = False, [], 0, None
+        self.bench_btn = Button((990, 600, 100, 40), "Bench", self.toggle_bench)
         
         self.winning_pitcher = None
         self.losing_pitcher = None
@@ -423,6 +436,11 @@ class GameScene(Scene):
         """현재 상태에서 게임을 즉시 완료. 애니메이션 없이 동일한 판정
         로직(견제/도루, 안타 종류 스크립트, FieldSim 주루 판정)을 그대로
         동기적으로 돌려서 결과만 반영한다."""
+        # '바로 끝내기'는 사용자 팀도 AI 감독에게 맡긴다(교체·투수 교체 모두 학습 정책)
+        if not getattr(self, "headless", False):
+            if self.pitch_mode["my"] == "none":
+                self.pitch_mode["my"] = "policy"
+            self.sub_flags["my"] = True
         # 진행 중인 애니메이션 클리어
         self.pitch_sim  = None
         self.field_sim  = None
@@ -435,16 +453,6 @@ class GameScene(Scene):
 
         while not self.is_game_over and count < max_iter:
             count += 1
-
-            # AI 투수 교체 판단 (BOT 이닝일 때)
-            if self.half == "BOT":
-                role_flag = self.ai_should_change_pitcher()
-                if role_flag:
-                    self.ai_replace_pitcher(role_flag)
-            elif self.half == "TOP":
-                role_flag = self.my_should_change_pitcher()
-                if role_flag:
-                    self.my_replace_pitcher(role_flag)
 
             batter     = self.get_current_batter()
             pitcher    = self.get_current_pitcher()
@@ -905,6 +913,49 @@ class GameScene(Scene):
                 btn.player_ref = p
                 self.bullpen_btns.append(btn)
                 
+    # ── 대타·대수비 ───────────────────────────────────────
+    def toggle_bench(self):
+        if self.show_bench:
+            self.show_bench = False
+            return
+        if self.ball or self.strike:
+            self.last_event = "Substitutions are only possible between at-bats."
+            return
+        self.show_bench, self.bench_stage, self.bench_pick = True, 0, None
+        self.setup_bench_popup()
+
+    def _bench_label(self, p):
+        st = self.state
+        return (f"{p.name} {p.pos}  OVR {p.calculate_ovr()}  CON {p.get_attr('contact', st)} POW {p.get_attr('power', st)} "
+                f"EYE {p.get_attr('eye', st)} RUN {p.get_attr('run', st)} DEF {p.get_attr('defense', st)}")
+
+    def setup_bench_popup(self):
+        import ai_substitution as S
+        self.bench_btns = []
+        if self.bench_stage == 0:
+            cands = [p for p in self.my_bench if not p.status.get("is_injured")]
+            for i, p in enumerate(cands):
+                self.bench_btns.append(Button((200, 140 + i * 48, 880, 42), self._bench_label(p), lambda q=p: self._bench_pick_player(q), font=self.verysmallFONT))
+            self.bench_title = "BENCH  -  choose a player to send in" if cands else "BENCH  -  no one available"
+        else:
+            if self.half == "BOT":
+                targets = [("Pinch hit for", self.my_order[self.my_bat_idx % 9])]
+            else:
+                targets = [(f"Replace {pos}", self.my_lineup.get(pos)) for pos in S.DR_POS if self.my_lineup.get(pos) is not None]
+            for i, (label, t) in enumerate(targets):
+                self.bench_btns.append(Button((200, 140 + i * 48, 880, 42), f"{label}: {self._bench_label(t)}", lambda q=t: self._bench_apply(q), font=self.verysmallFONT))
+            self.bench_title = f"{self.bench_pick.name}  -  whom to replace?"
+
+    def _bench_pick_player(self, p):
+        self.bench_pick, self.bench_stage = p, 1
+        self.setup_bench_popup()
+
+    def _bench_apply(self, old):
+        import ai_substitution as S
+        if self.bench_pick is not None and old is not None and old in self.my_order:
+            S._swap(self, "my", old, self.bench_pick)
+        self.show_bench, self.bench_pick, self.bench_btns = False, None, []
+
     def replace_pitcher(self, new_pitcher):
         old_pitcher = self.my_lineup["P"]
         old_pitcher.game_stats["quit_score_diff"] = self.my_score - self.opp_score
@@ -919,6 +970,10 @@ class GameScene(Scene):
         self.show_bullpen = False
 
     def make_ai_lineup(self, players):
+        import ai_match
+        r = ai_match.choose_lineup(players, self.state, 200)       # 학습한 가치 모델로 선발 라인업·타순·선발 투수를 고른다
+        if r:
+            return r[0], r[1]
         lineup = {}
         pos_map = {}
         for p in players:
@@ -932,6 +987,8 @@ class GameScene(Scene):
         return lineup, batting_order
     
     def get_current_batter(self):
+        import ai_substitution
+        ai_substitution.manage(self)
         if self.half == "TOP":
             return self.opp_order[self.opp_bat_idx % 9]
         else:
@@ -1484,15 +1541,15 @@ class GameScene(Scene):
         self._credit_runs(runs, is_my_team, pitcher)
 
     def process_pitch(self):
+        if self.ball == 0 and self.strike == 0:
+            import ai_substitution
+            ai_substitution.manage(self)        # 타석이 시작될 때 AI 감독의 교체·투수 교체 판단
         if self.half == "TOP":
             batter     = self.opp_order[self.opp_bat_idx % 9]
             pitcher    = self.my_lineup["P"]
             catcher    = self.my_lineup.get("C")
             is_my_team = False
         else:
-            role_flag = self.ai_should_change_pitcher()
-            if role_flag:
-                self.ai_replace_pitcher(role_flag)
             batter     = self.my_order[self.my_bat_idx % 9]
             pitcher    = self.opp_lineup["P"]
             catcher    = self.opp_lineup.get("C")
@@ -1566,6 +1623,16 @@ class GameScene(Scene):
 
         if self.half == "TOP":
             self.change_p_btn.draw(screen)
+        if not self.is_game_over:
+            self.bench_btn.draw(screen)
+        if self.show_bench:
+            overlay = pygame.Surface((width, height), pygame.SRCALPHA)
+            overlay.fill((0, 0, 0, 200))
+            screen.blit(overlay, (0, 0))
+            title = self.FONT.render(self.bench_title, True, (255, 255, 255))
+            screen.blit(title, (width // 2 - title.get_width() // 2, 80))
+            for btn in self.bench_btns:
+                btn.draw(screen)
         if self.show_bullpen:
             overlay = pygame.Surface((width, height), pygame.SRCALPHA)
             overlay.fill((0, 0, 0, 180))
@@ -1613,8 +1680,22 @@ class GameScene(Scene):
                     self._pending_pitcher = self._pending_my_team = None
             return
 
-        # ── 3. 불펜 팝업 ──────────────────────────────────────
+        # ── 3-0. 벤치(대타·대수비) 팝업 ───────────────────────
         mouse_pos = pygame.mouse.get_pos()
+        if self.show_bench:
+            for btn in self.bench_btns:
+                btn.update_hover(mouse_pos)
+            for e in events:
+                if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
+                    hit = next((b for b in self.bench_btns if b.rect.collidepoint(e.pos)), None)
+                    if hit:
+                        hit.action()
+                    else:
+                        self.show_bench = False        # 바깥을 누르면 닫는다
+                    break
+            return None
+
+        # ── 3. 불펜 팝업 ──────────────────────────────────────
         if self.show_bullpen:
             for btn in self.bullpen_btns:
                 btn.update_hover(mouse_pos)
@@ -1631,6 +1712,10 @@ class GameScene(Scene):
             return None
 
         # ── 4. 일반 입력 ──────────────────────────────────────
+        self.bench_btn.update_hover(mouse_pos)
+        for e in events:
+            if e.type == pygame.MOUSEBUTTONDOWN and not self.is_game_over:
+                self.bench_btn.handle_event(e)
         if self.half == "TOP":
             self.change_p_btn.update_hover(mouse_pos)
             for e in events:
@@ -1653,13 +1738,13 @@ class GameScene(Scene):
     #  기존 통계/종료 메서드 (변경 없음)
     # ════════════════════════════════════════════════════════
 
-    def apply_game_stats_to_players(self):
+    def apply_game_stats_to_players(self, with_fatigue=True):
         from datetime import date, timedelta
         y, m, d = self.state.base_date
         current_game_year = (date(y, m, d) + timedelta(days=self.state.current_day - 1)).year
         date_str = (date(y, m, d) + timedelta(days=self.state.current_day - 1)).strftime("%m/%d")
         
-        all_participants = self.my_order + self.opp_order + self.pitchers_used + self.opp_pitchers_used
+        all_participants = self.my_order + self.my_removed + self.opp_order + self.opp_removed + self.pitchers_used + self.opp_pitchers_used
         if self.opp_lineup.get("P"):
             all_participants.append(self.opp_lineup["P"])
         all_participants = list(set(p for p in all_participants if p is not None))
@@ -1670,7 +1755,7 @@ class GameScene(Scene):
             if not season_entry:
                 season_entry = {
                     "season": current_game_year,
-                    "team": self.state.user_team if p in (self.my_order + self.pitchers_used) else "Opponent",
+                    "team": self.state.user_team if p in (self.my_order + self.my_removed + self.pitchers_used) else "Opponent",
                     "stats": {
                         "g":0,"ab":0,"h":0,"2b":0,"3b":0,"hr":0,"rbi":0,"bb":0,"so":0,"sb":0,
                         "obp":0.0,"slg":0.0,"ops":0.0,
@@ -1717,7 +1802,9 @@ class GameScene(Scene):
                     season["era"]  = round((season["er"] * 9) / total_ip, 2)
                     season["whip"] = round((season["h_allowed"] + season["bb_allowed"]) / total_ip, 2)
 
-        active_players = [p for p in self.my_order + self.pitchers_used if p is not None]
+        if not with_fatigue:        # AI 구단끼리 경기는 피로·부상을 baseball.apply_ai_game_fatigue가 따로 처리한다
+            return
+        active_players = [p for p in self.my_order + self.my_removed + self.pitchers_used if p is not None]
         for p in active_players:
             if not p.status.get("is_injured"):
                 health_loss = max(0, 1000 - p.status.get("health", 1000))
@@ -1744,6 +1831,48 @@ class GameScene(Scene):
             if not p.status.get("is_injured"):
                 p.status["fatigue"]   = max(0, p.status["fatigue"] - self.apply_rest_fatigue_staff_bonus(p, 30))
                 p.status["condition"] = max(0, p.status["condition"] - 2)
+
+    def _award_pitching(self, result, finisher, oppfinisher):
+        """승·패·세이브·홀드 판정 (사용자 경기와 AI 구단끼리 경기가 같이 쓴다)"""
+        my_p  = self.starter
+        opp_p = self.oppstarter
+
+        if result in ("WIN", "LOSS") and self.losing_pitcher:
+            self.update_season_stat(self.losing_pitcher, "l")
+
+        if result == "WIN":
+            winner = self.win_candidates["my"]
+            if winner:
+                if my_p.game_stats["ip_outs"] >= 15 and my_p == winner:
+                    self.update_season_stat(my_p, "w")
+                else:
+                    self.update_season_stat(winner, "w")
+            if finisher != winner:
+                if (finisher.game_stats["ip_outs"]>=9 or
+                    (finisher.game_stats["ip_outs"]>=3 and 0 < finisher.game_stats["entry_score_diff"]<=3) or
+                    finisher.game_stats["entry_runners"] >= finisher.game_stats["entry_score_diff"]):
+                    self.update_season_stat(finisher, "sv")
+            for p in self.pitchers_used:
+                if p in (winner, finisher): continue
+                if p.game_stats["ip_outs"]>=1 and p.game_stats["entry_score_diff"]<=3 and p.game_stats["quit_score_diff"]>0:
+                    self.update_season_stat(p, "hld")
+
+        elif result == "LOSS":
+            winner = self.win_candidates["opp"]
+            if winner:
+                if opp_p and opp_p.game_stats["ip_outs"]>=15 and opp_p==winner:
+                    self.update_season_stat(opp_p, "w")
+                else:
+                    self.update_season_stat(winner, "w")
+            if oppfinisher != winner:
+                if (oppfinisher.game_stats["ip_outs"]>=9 or
+                    (oppfinisher.game_stats["ip_outs"]>=3 and 0 < oppfinisher.game_stats["entry_score_diff"]<=3) or
+                    oppfinisher.game_stats["entry_runners"] >= oppfinisher.game_stats["entry_score_diff"]):
+                    self.update_season_stat(oppfinisher, "sv")
+            for p in self.opp_pitchers_used:
+                if p in (winner, oppfinisher): continue
+                if p.game_stats["ip_outs"]>=1 and p.game_stats["entry_score_diff"]<=3 and p.game_stats["quit_score_diff"]>0:
+                    self.update_season_stat(p, "hld")
 
     def update_team_record(self):
         my  = self.state.user_team
@@ -1796,7 +1925,7 @@ class GameScene(Scene):
 
         finisher    = self.my_lineup["P"]
         oppfinisher = self.opp_lineup["P"]
-        participants = self.my_order + self.pitchers_used + self.opp_order + self.opp_pitchers_used
+        participants = self.my_order + self.my_removed + self.pitchers_used + self.opp_order + self.opp_removed + self.opp_pitchers_used
 
         self.update_team_record()
 
@@ -1804,8 +1933,8 @@ class GameScene(Scene):
             "result": result, "my_score": self.my_score, "opp_score": self.opp_score,
             "my_inning_runs": self.my_inning_runs, "opp_inning_runs": self.opp_inning_runs,
             "opponent": self.opponent_team,
-            "my_players":  self.my_order  + self.pitchers_used,
-            "opp_players": self.opp_order + self.opp_pitchers_used
+            "my_players":  self.my_order  + self.my_removed + self.pitchers_used,
+            "opp_players": self.opp_order + self.opp_removed + self.opp_pitchers_used
         }
 
         date_str = self.state.get_current_date_str()
@@ -1814,45 +1943,7 @@ class GameScene(Scene):
             "body": f"Final score: {self.my_score}:{self.opp_score}.\n", "read": False
         })
 
-        my_p  = self.starter
-        opp_p = self.oppstarter
-
-        if result in ("WIN", "LOSS") and self.losing_pitcher:
-            self.update_season_stat(self.losing_pitcher, "l")
-
-        if result == "WIN":
-            winner = self.win_candidates["my"]
-            if winner:
-                if my_p.game_stats["ip_outs"] >= 15 and my_p == winner:
-                    self.update_season_stat(my_p, "w")
-                else:
-                    self.update_season_stat(winner, "w")
-            if finisher != winner:
-                if (finisher.game_stats["ip_outs"]>=9 or
-                    (finisher.game_stats["ip_outs"]>=3 and 0 < finisher.game_stats["entry_score_diff"]<=3) or
-                    finisher.game_stats["entry_runners"] >= finisher.game_stats["entry_score_diff"]):
-                    self.update_season_stat(finisher, "sv")
-            for p in self.pitchers_used:
-                if p in (winner, finisher): continue
-                if p.game_stats["ip_outs"]>=1 and p.game_stats["entry_score_diff"]<=3 and p.game_stats["quit_score_diff"]>0:
-                    self.update_season_stat(p, "hld")
-
-        elif result == "LOSS":
-            winner = self.win_candidates["opp"]
-            if winner:
-                if opp_p and opp_p.game_stats["ip_outs"]>=15 and opp_p==winner:
-                    self.update_season_stat(opp_p, "w")
-                else:
-                    self.update_season_stat(winner, "w")
-            if oppfinisher != winner:
-                if (oppfinisher.game_stats["ip_outs"]>=9 or
-                    (oppfinisher.game_stats["ip_outs"]>=3 and 0 < oppfinisher.game_stats["entry_score_diff"]<=3) or
-                    oppfinisher.game_stats["entry_runners"] >= oppfinisher.game_stats["entry_score_diff"]):
-                    self.update_season_stat(oppfinisher, "sv")
-            for p in self.opp_pitchers_used:
-                if p in (winner, oppfinisher): continue
-                if p.game_stats["ip_outs"]>=1 and p.game_stats["entry_score_diff"]<=3 and p.game_stats["quit_score_diff"]>0:
-                    self.update_season_stat(p, "hld")
+        self._award_pitching(result, finisher, oppfinisher)
 
         w_team = self.state.user_team if result=="WIN" else self.opponent_team
         l_team = self.opponent_team   if result=="WIN" else self.state.user_team

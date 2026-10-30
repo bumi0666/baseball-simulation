@@ -1,29 +1,65 @@
 import json
 import os
-from datetime import datetime
+import re
+from datetime import datetime, date, timedelta
 
 
 SAVE_VERSION = 1
 DEFAULT_SAVE_PATH = "save.json"
 SAVE_DIR = "saves"
-SAVE_SLOT_COUNT = 3
+
+
+def _slot_num(slot):
+    try:
+        return max(1, int(slot))
+    except (TypeError, ValueError):
+        return 1
 
 
 def slot_path(slot):
+    """저장 슬롯 번호(1 이상, 개수 제한 없음) -> 파일 경로"""
+    return os.path.join(SAVE_DIR, f"slot_{_slot_num(slot)}.json")
+
+
+def meta_path(slot):
+    """목록 표시용 요약 파일 (저장 파일이 수십 MB라 목록을 만들 때마다 통째로 읽지 않기 위함)"""
+    return os.path.join(SAVE_DIR, f"slot_{_slot_num(slot)}.meta.json")
+
+
+def existing_slots():
+    """저장 파일이 있는 슬롯 번호(오름차순)"""
     try:
-        slot_num = int(slot)
-    except (TypeError, ValueError):
-        slot_num = 1
-    slot_num = max(1, min(SAVE_SLOT_COUNT, slot_num))
-    return os.path.join(SAVE_DIR, f"slot_{slot_num}.json")
+        names = os.listdir(SAVE_DIR)
+    except OSError:
+        return []
+    nums = [int(m.group(1)) for n in names for m in [re.fullmatch(r"slot_(\d+)\.json", n)] if m]
+    return sorted(nums)
+
+
+def new_slot_number():
+    """비어 있는 다음 슬롯 번호 (가장 큰 번호 + 1)"""
+    nums = existing_slots()
+    return (nums[-1] + 1) if nums else 1
+
+
+def delete_slot(slot):
+    """슬롯의 저장 파일과 요약 파일을 지운다. 지웠으면 True"""
+    removed = False
+    for path in (slot_path(slot), meta_path(slot)):
+        try:
+            os.remove(path)
+            removed = removed or path == slot_path(slot)
+        except OSError:
+            pass
+    return removed
 
 
 def default_save_data():
     return {
         "schema_version": SAVE_VERSION,
-        "active_save_slot": 1,
+        "active_save_slot": new_slot_number(),   # 새 게임은 기존 슬롯을 덮어쓰지 않도록 빈 번호에 저장된다
         "current_day": 1,
-        "base_date": (2024, 1, 1),
+        "base_date": (2023, 11, 20),   # 첫 드래프트(11월)로 시작해 다음 해 3월에 시즌 개막
         "inbox": [],
         "money": 5000000,
         "finance_history": [5000000],
@@ -148,25 +184,54 @@ def summarize_save(data, slot):
     base_date = data.get("base_date", (2024, 1, 1))
     if isinstance(base_date, list):
         base_date = tuple(base_date)
+    day = data.get("current_day", 1)
+    try:
+        game_date = (date(*base_date) + timedelta(days=int(day) - 1)).strftime("%Y-%m-%d")
+    except (TypeError, ValueError):
+        game_date = ""
     return {
         "slot": slot,
         "exists": True,
         "user_team": data.get("user_team", "Lions"),
-        "current_day": data.get("current_day", 1),
+        "current_day": day,
         "base_date": base_date,
+        "game_date": game_date,
         "saved_at": data.get("saved_at", ""),
     }
 
 
+def _write_meta(data, slot):
+    try:
+        info = summarize_save(data, slot)
+        info["base_date"] = list(info["base_date"])
+        with open(meta_path(slot), "w", encoding="utf-8") as f:
+            json.dump(info, f, ensure_ascii=False)
+    except OSError:
+        pass
+
+
 def list_save_slots():
+    """존재하는 모든 저장 슬롯의 요약(번호 오름차순). 요약 파일이 없거나 오래됐으면 저장 파일을 한 번 읽어 만든다."""
     slots = []
-    for slot in range(1, SAVE_SLOT_COUNT + 1):
-        path = slot_path(slot)
-        if os.path.exists(path):
+    for slot in existing_slots():
+        path, mpath = slot_path(slot), meta_path(slot)
+        info = None
+        try:
+            if os.path.exists(mpath) and os.path.getmtime(mpath) >= os.path.getmtime(path):
+                with open(mpath, "r", encoding="utf-8") as f:
+                    info = json.load(f)
+                info["base_date"] = tuple(info.get("base_date", (2024, 1, 1)))
+        except (OSError, ValueError):
+            info = None
+        if info is None:
             data = load_game(slot=slot)
-            slots.append(summarize_save(data, slot))
-        else:
-            slots.append({"slot": slot, "exists": False})
+            info = summarize_save(data, slot)
+            _write_meta(data, slot)
+        try:
+            info["size_mb"] = os.path.getsize(path) / (1024 * 1024)
+        except OSError:
+            info["size_mb"] = 0.0
+        slots.append(info)
     return slots
 
 
@@ -220,5 +285,16 @@ def save_game(state, players=None, staff_members=None, path=None, slot=None):
 
     path = get_save_path(slot=slot, path=path)
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    tmp = path + ".tmp"                      # 임시 파일에 먼저 쓰고 교체: 디스크가 부족해도 기존 저장이 깨지지 않는다
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, path)
+    except OSError:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        raise
+    if slot is not None:
+        _write_meta(data, slot)

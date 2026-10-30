@@ -129,8 +129,19 @@ class DraftScene(Scene):
         for team_list in self.state.team_rosters.values():
             for p in team_list:
                 pool.setdefault(p.id, p)
-        for i, pk in enumerate(reversed(d["picks"][-16:])):
+        for i, pk in enumerate(reversed(d["picks"][-9:])):
             p = pool.get(pk["id"])
             mine = pk["team"] == self.state.user_team
             txt = "#%d %s: %s (%s)" % (pk["pick"], pk["team"], p.name if p else "?", p.pos if p else "")
-            screen.blit(self.F.render(txt, True, (150, 230, 160) if mine else (200, 200, 200)), (self.LOG_X, 100 + i * 28))
+            screen.blit(self.F.render(txt, True, (150, 230, 160) if mine else (200, 200, 200)), (self.LOG_X, 100 + i * 24))
+
+        # 구단별 부족 포지션 (다음 시즌 이후에도 남는 선수 + 이번 지명 기준, 목표 인원 대비)
+        ny = 340
+        screen.blit(self.FB.render("Team needs (short positions)", True, (235, 235, 235)), (self.LOG_X, ny))
+        for i, team in enumerate(d["order"][:n_teams]):
+            needs = draft.team_needs(self.state, team)
+            txt = "  ".join("%s -%d" % (pos, n) for pos, n in sorted(needs.items(), key=lambda kv: -kv[1])) or "-"
+            mine = team == self.state.user_team
+            y = ny + 28 + i * 24
+            screen.blit(self.F.render(team, True, (150, 230, 160) if mine else (200, 200, 200)), (self.LOG_X, y))
+            screen.blit(self.F.render(txt, True, (240, 150, 120) if needs else (120, 120, 120)), (self.LOG_X + 100, y))

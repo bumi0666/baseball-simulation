@@ -17,8 +17,9 @@ MOVE_COST = 0.03            # 영입 1회 마찰 비용 (득실차 점/경기 �
 SALARY_COST = 0.10          # 순증가 연봉 5만당 비용 (점/경기)
 WAGE_CAP = 3_000_000
 N_FEAT = 19
-N_CTX = 8
-NEED_RUNS = 0.50          # 부족한 포지션 1명을 채울 때의 보너스 (점/경기)
+N_CTX = 9
+DEAD_FRAC = 0.5            # 계약 중 방출 시 남은 연봉 중 구단이 계속 부담하는 비율 (ai_team_manager.DEAD_FRAC와 같다)
+NEED_RUNS = 0.0           # 부족한 포지션 1명을 채울 때의 보너스 (점/경기)
 P_SHORT = 0.25             # 슬롯의 포지션이 부족한 상태일 확률
 N_IN = N_FEAT + N_CTX
 CAND_PER_GROUP = 3
@@ -32,24 +33,43 @@ STYLE_TABLE = {
 }
 
 
-def load(split):
-    """split='train'이면 shard_8* 제외, 'test'면 shard_8*만."""
-    X, Y = [], []
-    for f in sorted(glob.glob(os.path.join(HERE, "data", "shard_*.npz"))):
-        is_test = os.path.basename(f).startswith("shard_8")
-        if (split == "test") != is_test:
-            continue
-        d = np.load(f)
-        X.append(d["X"]); Y.append(d["y"])
-    X = np.concatenate(X).astype(np.float64)
-    Y = np.concatenate(Y).astype(np.float64)
-    inc = np.round(X[:, :9] - X[:, 9:18], 3)
+SWAP = False   # True면 '2군↔1군 교환' 환경: 연봉 변화가 없고(demand=inc_sal=0) 영입 비용만 든다 (MODE=swap으로 학습)
+VAL_TEAM, TEST_TEAM = "Giants", "Heroes"       # 구단별 데이터(tshard) 중 검증·시험용으로 통째로 빼 두는 구단
+
+
+def _groups(X):
+    inc = np.round(X[:, :9] - X[:, 9:18], 3)         # 현 주전(교체 대상)의 능력치가 같은 표본끼리 한 그룹
     _, gid = np.unique(inc, axis=0, return_inverse=True)
     groups = {}
     for i, g in enumerate(gid):
         groups.setdefault(int(g), []).append(i)
-    groups = {g: np.array(v) for g, v in groups.items() if len(v) >= 8}
-    return X, Y, groups
+    return {g: np.array(v) for g, v in groups.items() if len(v) >= 8}
+
+
+def load(split):
+    """split='train': 기존 shard_* (shard_8* 제외) + 구단별 tshard_* (검증·시험 구단 제외),
+    'val': 검증 구단(Giants)의 tshard, 'test': 시험 구단(Heroes)의 tshard — 학습·가치망 어디에도 쓰이지 않은 구단,
+    'old_test': 예전 방식의 shard_8*(가치망 학습에 쓰였으므로 참고용)."""
+    X, Y = [], []
+    if split in ("train", "old_test"):
+        for f in sorted(glob.glob(os.path.join(HERE, "data", "shard_*.npz"))):
+            is_test = os.path.basename(f).startswith("shard_8")
+            if (split == "old_test") != is_test:
+                continue
+            d = np.load(f)
+            X.append(d["X"]); Y.append(d["y"])
+    if split in ("train", "val", "test"):
+        for f in sorted(glob.glob(os.path.join(HERE, "data", "tshard_*.npz"))):
+            if os.path.basename(f) == "tshard_900.npz":
+                continue
+            d = np.load(f, allow_pickle=True)
+            team = str(d["team"])
+            keep = {"train": team not in (VAL_TEAM, TEST_TEAM), "val": team == VAL_TEAM, "test": team == TEST_TEAM}[split]
+            if keep:
+                X.append(d["X"]); Y.append(d["y"])
+    X = np.concatenate(X).astype(np.float64)
+    Y = np.concatenate(Y).astype(np.float64)
+    return X, Y, _groups(X)
 
 
 class Episode:
@@ -63,7 +83,7 @@ class Episode:
         self.sal_w, self.move_w, self.max_moves = st["sal_w"], st["move_w"], st["moves"]
         budget = rng.uniform(25e6, 50e6)                      # 구단 재정(예산)에 따라 임금 상한이 달라진다
         self.cap = WAGE_CAP * (budget / 37e6) ** 0.5 * st["cap_mult"]
-        self.slot, self.rows, self.demand, self.inc_sal, self.need = [], [], [], [], []
+        self.slot, self.rows, self.demand, self.inc_sal, self.need, self.dead = [], [], [], [], [], []
         for s, g in enumerate(gids[:10]):
             pool = groups[g]
             draw = pool[rng.choice(len(pool), size=min(40, len(pool)), replace=False)]
@@ -72,23 +92,33 @@ class Episode:
             need = 0 if rng.random() > P_SHORT else int(rng.integers(1, 3))   # 포지션 부족 인원: 부족하면 방출 없이 영입
             if need:
                 sal = 0.0
+            rem = 0 if (need or rng.random() < 0.4) else int(rng.integers(1, 5))   # 현 주전의 남은 계약 연수 (0이면 만료)
+            dead = DEAD_FRAC * sal * max(rem - 1, 0) / 5e4        # 내년 이후 계속 내야 하는 데드머니 (5만 단위)
+            if rem > 0:
+                sal = sal * (1 - DEAD_FRAC)                       # 올해 실제로 비는 연봉은 일부뿐이다
             for i in draw:
                 self.slot.append(s)
                 self.need.append(need)
                 self.rows.append(i)
                 self.demand.append(rng.uniform(50_000, 115_000) * 1.0)
                 self.inc_sal.append(sal)
+                self.dead.append(dead)
         self.slot = np.array(self.slot)
         self.need = np.array(self.need, dtype=float)
         self.rows = np.array(self.rows)
         self.demand = np.array(self.demand)
         self.inc_sal = np.array(self.inc_sal)
+        self.dead = np.array(self.dead)
+        if SWAP:
+            self.demand = np.zeros(len(self.rows)); self.inc_sal = np.zeros(len(self.rows))
+            self.dead = np.zeros(len(self.rows)); self.need = np.zeros(len(self.rows))
+            self.max_moves = 2
         self.payroll = self.cap * rng.uniform(0.73, 0.97)   # 임금 상한에 가까운 구단도 포함
         self.reward_vec = Y[self.rows] + NEED_RUNS * self.need
         self.X = X[self.rows]
 
 
-def context(ep, demand, inc_sal, payroll, moves_left, need):
+def context(ep, demand, inc_sal, payroll, moves_left, need, dead):
     room = ep.cap - payroll
     n = len(demand)
     return np.column_stack([
@@ -100,8 +130,9 @@ def context(ep, demand, inc_sal, payroll, moves_left, need):
         np.full(n, ep.sal_w),
         np.full(n, ep.move_w),
         need,
+        dead,
     ])
 
 
-def move_reward(y, demand, inc_sal, sal_w=1.0, move_w=1.0):
-    return y - MOVE_COST * move_w - SALARY_COST * sal_w * (demand - inc_sal) / 5e4
+def move_reward(y, demand, inc_sal, sal_w=1.0, move_w=1.0, dead=0.0):
+    return y - MOVE_COST * move_w - SALARY_COST * sal_w * ((demand - inc_sal) / 5e4 + dead)
