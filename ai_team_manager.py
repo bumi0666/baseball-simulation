@@ -617,7 +617,7 @@ def _manage_farm(state, team, today, value, log):
         c.status["roster"] = "active"
         inc.status["roster"] = "inactive"
         c.data["status"], inc.data["status"] = c.status, inc.status
-        log.append((team, "승격", c, "%s: 예상 %+.2f점/경기" % (prof["label"], gain)))
+        log.append((team, "승격", c, "1군 승격"))
         log.append((team, "강등", inc, "승격 선수와 교체"))
         return 1
     return 0
@@ -662,7 +662,7 @@ def _improve(state, team, today, value, log, cands):
     tag = "정책" if get_policy() is not None else "규칙"
     if release[k]:
         log.append((team, "방출", inc, "%s·%s: 전력 보강으로 교체" % (tag, prof["label"])))
-        log.append((team, "영입", c, "%s·%s: 예상 %+.2f점/경기 · %d년 계약" % (tag, prof["label"], gain, years)))
+        log.append((team, "영입", c, "%d년 계약" % years))
     else:
         log.append((team, "영입", c, "%s·%s: %s 포지션 부족 보강 · %d년 계약" % (tag, prof["label"], c.pos, years)))
     return 1

@@ -1,4 +1,4 @@
-from scenes.base_scene import Scene
+﻿from scenes.base_scene import Scene
 from ui.button import Button
 from config import *
 from datetime import date, timedelta
@@ -11,8 +11,8 @@ class InboxScene(Scene):
         self.buttons = get_common_buttons(self)
         
         # 폰트 설정
-        self.FONT = pygame.font.SysFont(None, 32)
-        self.SMALL_FONT = pygame.font.SysFont(None, 26)
+        self.FONT = pygame.font.SysFont("malgungothic", 22)
+        self.SMALL_FONT = pygame.font.SysFont("malgungothic", 18)
         
         # UI 레이아웃 설정
         self.list_x, self.list_y = 210, 80
